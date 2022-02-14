@@ -10,7 +10,7 @@
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light ">
+	 <nav class="navbar navbar-expand-lg navbar-light ">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Pimpolhos</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -18,36 +18,62 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-
+                <div class="col-12 navHamb">
+                    <ul class="navbar-nav menuLateralTab">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Meu perfil</a>
+                        </li>
+                        <hr>
+                        <li class="nav-item">
+                            <a class="nav-link clientes " aria-current="page" href="index.jsp">Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link categorias" href="indexCategoria.jsp">Categorias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link produtos" href="indexProduto.jsp">Produtos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fornecedores" href="indexFornecedor.jsp">Fornecedores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link pedidos" href="indexPedido.jsp">Pedidos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link marcas" href="indexMarca.jsp">Marcas</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
+     
     </nav>
 
     <div class="row bodyRow" style="justify-content:space-around;">
         <div class="col-2 navLateral">
             <ul class="navbar-nav menuLateralTab">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Clientes</a>
-                </li>
-                <hr>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Clientes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Categorias</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Produtos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Fornecedores</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pedidos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Marcas</a>
-                </li>
+                            <a class="nav-link" aria-current="page" href="#">Meu perfil</a>
+                        </li>
+                        <hr>
+                        <li class="nav-item">
+                            <a class="nav-link clientes " aria-current="page" href="index.jsp">Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link categorias" href="indexCategoria.jsp">Categorias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link produtos" href="indexProduto.jsp">Produtos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fornecedores" href="indexFornecedor.jsp">Fornecedores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link pedidos" href="indexPedido.jsp">Pedidos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link marcas" href="indexMarca.jsp">Marcas</a>
+                        </li>
             </ul>
         </div>
         

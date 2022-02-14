@@ -6,7 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Pimpolhos ADM</title>
-<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="stylesheet" href="css/style.css" type="text/css">
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -18,85 +18,69 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-
+                <div class="col-12 navHamb">
+                    <ul class="navbar-nav menuLateralTab">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Meu perfil</a>
+                        </li>
+                        <hr>
+                        <li class="nav-item">
+                            <a class="nav-link clientes " aria-current="page" href="index.jsp">Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link categorias" href="indexCategoria.jsp">Categorias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link produtos" href="indexProduto.jsp">Produtos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fornecedores" href="indexFornecedor.jsp">Fornecedores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link pedidos" href="indexPedido.jsp">Pedidos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link marcas" href="indexMarca.jsp">Marcas</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
-
-    <div class="row bodyRow" style="justify-content:space-around;">
+    
+    
+    
+ <div class="row bodyRow" style="justify-content:space-around;">
         <div class="col-2 navLateral">
             <ul class="navbar-nav menuLateralTab">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Menu</a>
-                </li>
-                <hr>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="index;jsp">Clientes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Categorias</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Produtos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Fornecedores</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="indexPedido.jsp">Pedidos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Marcas</a>
-                </li>
+                            <a class="nav-link" aria-current="page" href="#">Meu perfil</a>
+                        </li>
+                        <hr>
+                        <li class="nav-item">
+                            <a class="nav-link clientes " aria-current="page" href="index.jsp">Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link categorias" href="indexCategoria.jsp">Categorias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link produtos" href="indexProduto.jsp">Produtos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fornecedores" href="indexFornecedor.jsp">Fornecedores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link pedidos" href="indexPedido.jsp">Pedidos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link marcas" href="indexMarca.jsp">Marcas</a>
+                        </li>
             </ul>
         </div>
         
-        
-         <nav class="navbar navbar-expand-lg navbar-light ">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Pimpolhos</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
 
-            </div>
-        </div>
-    </nav>
-
-    <div class="row bodyRow" style="justify-content:space-around;">
-        <div class="col-2 navLateral">
-            <ul class="navbar-nav menuLateralTab">
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Clientes</a>
-                </li>
-                <hr>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Clientes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Categorias</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Produtos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Fornecedores</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pedidos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Marcas</a>
-                </li>
-            </ul>
-        </div>
         
-        
-        
-        
-        <div class="col-9 conteudo">
+        <div class="col-md-12 col-lg-9 conteudo">
           <div class = "table-responsive">
             <table class="table table-hover">
                 <thead>
@@ -105,10 +89,16 @@
                         <th>Nome</th>
                         <th>CPF</th>
                         <th>Data de Nascimento</th>
-                        <th>Email</th>
-                        <th>Senha</th>
-                        <th>Acoes</th>     
-                      
+                        <th>Email</th>    
+                         <th>Rua</th> 
+                           <th>Nº</th> 
+                           <th>CEP</th> 
+                           <th>Complemento</th> 
+                           <th>Ponto de Referencia</th> 
+                           <th>Bairro</th> 
+                          <th>Cidade</th> 
+                           <th>Estado</th> 
+                          
                     </tr>
                 </thead>
                 <tbody>
@@ -124,13 +114,14 @@
                                 <td><c:out value="${usuario.cpf}"/></td>
                                 <td><c:out value="${usuario.nascimento}"/></td>
                                 <td><c:out value="${usuario.email}"/></td>
-                                <td><c:out value="${usuario.senha}"/></td>
-                               <td>
-								<button type="submit" name="option" value="deleteUsuario">Deletar</button>
-								<button type="submit" name="option" value="updateFormUsuario">Atualizar</button>
-							  </td>
-
-                               
+                                <td><c:out value="${usuario.rua}"/></td>
+                                 <td><c:out value="${usuario.numeroCasa}"/></td>
+                                 <td><c:out value="${usuario.cep}"/></td>
+                                 <td><c:out value="${usuario.complemento}"/></td>
+                                 <td><c:out value="${usuario.pontoReferencia}"/></td>
+                                 <td><c:out value="${usuario.bairro}"/></td>
+                                 <td><c:out value="${usuario.cidade}"/></td>
+                                 <td><c:out value="${usuario.estado}"/></td>
                             </form>
                         </tr>
                     </c:forEach>
@@ -139,6 +130,7 @@
             </div>
         </div>
     </div>
-    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

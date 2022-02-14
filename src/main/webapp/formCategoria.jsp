@@ -4,13 +4,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-<link rel="stylesheet" href="style.css" type="text/css">
-<link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cadastro Categoria</title>
+	<link rel="stylesheet" href="css/style.css"type="text/css">
+	<link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light ">
+ <nav class="navbar navbar-expand-lg navbar-light ">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Pimpolhos</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -45,10 +47,10 @@
                     </ul>
                 </div>
             </div>
-            </div>
+        </div>
         </div>
     </nav>
-		
+
     <div class="row bodyRow" style="justify-content:space-around;">
         <div class="col-2 navLateral">
             <ul class="navbar-nav menuLateralTab">
@@ -76,70 +78,35 @@
                         </li>
             </ul>
         </div>
-        
-        
-        
-        
-        <div class="col-md-12 col-lg-9 conteudo">
-        	<form action="ServletPedido" method="post">
-				<a href="formPedido.jsp"><button type="submit" name="optionPedido" value="insertFormPedido">Cadastrar Pedido</button></a>
+
+
+		<div class="col-md-12 col-lg-9 conteudo">
+		  	<form action="ServletCategoria" method="post">
+				<c:choose>
+					<c:when test="${ categoria == null }">
+						<div class="container col-10 input-marca">
+							<h2 style="margin: 30px 0px 50px 0px;">Cadastrar Categoria</h2>
+							<input style="border-radius: 5px; border: 1px solid gray; height: 30px; padding: 10px; type="text" name="name" required/><br>
+						
+							<button style="margin-top: 13px; width: 20%; " class="btn btn-primary" type="submit" name="optionCategoria" value="insertCategoria">Salvar</button>
+						</div>
+					</c:when>
+					<c:otherwise>
+						<div class= "container col-10 input-marca">
+							<input type="hidden" name="cod_categoria" value="${categoria.cod_categoria}"/><br>
+							<h2 style="margin: 30px 0px 50px 0px;">Atualizar Categoria</h2>
+							<input style="border-radius: 5px; border: 1px solid gray; height: 30px; padding: 10px;" type="text" name="name" value="${categoria.nome_categoria}" required/><br>
+							
+						
+							<button class="btn btn-primary" type="submit" name="optionCategoria" value="updateCategoria">Atualizar</button>
+						</div>
+					</c:otherwise>
+				</c:choose>
 			</form>
-        
-          <div class = "table-responsive">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>Cod. Pedido</th>
-                        <th>Nome</th> 
-                        <th>cep</th>
-                        <th> cidade</th>
-                        <th>rua</th>
-                        <th>casa</th>
-                        <th>complemento</th>
-                        <th>bairro</th>
-                        <th>ponto_referencia</th>
-                        <th>descricao_estado</th>
-                        <th>descricao_frete</th>
-                        <th>valor_frete</th>
-                        <th>descricao_forma_pagamento</th>
-                        <th>descricao_status</th>
-
-                               
-                      
-                    </tr>
-                </thead>
-                <tbody>
-                    <c:forEach var="pedido" items="${listaPedido}">
-                        <tr>
-                            
-                            <form action="ServletPedido" method="post">
-                                <td>
-                                    <c:out value="${pedido.cod_pedido}"/>
-                                    <input type="hidden" name="cod_pedido" value="${pedido.cod_pedido}"/>
-                                </td>
-                                <td><c:out value="${pedido.nome_cliente}"/></td>
-                                <td><c:out value="${pedido.cep}"/></td>
-                                <td><c:out value="${pedido.nome_cidade}"/></td>
-                                <td><c:out value="${pedido.nome_rua}"/></td>
-                                <td><c:out value="${pedido.numero_casa}"/></td>
-                               	<td> <c:out value="${pedido.complemento}"/></td>
-                               	<td> <c:out value="${pedido.bairro}"/></td>
-                               	<td> <c:out value="${pedido.ponto_referencia}"/></td>
-                               	<td> <c:out value="${pedido.descricao_estado}"/></td>
-                               	<td> <c:out value="${pedido.descricao_frete}"/></td>
-                               	<td> <c:out value="${pedido.valor_frete}"/></td>
-                               	<td> <c:out value="${pedido.descricao_forma_pagamento}"/></td>
-                               	<td> <c:out value="${pedido.descricao_status}"/></td>
-                               
-                            </form>
-                        </tr>
-                    </c:forEach>
-                </tbody>
-              </table>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+		</div>
+		
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+		
+		
 </body>
 </html>
