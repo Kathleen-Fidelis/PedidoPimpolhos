@@ -90,12 +90,20 @@
                 <thead>
                     <tr>
                         <th>Cod. Pedido</th>
-                        <th>Frete</th>
-                        <th>Endereço</th>
-                        <th>Cliente</th>
-                        <th>Status</th>
-                        <th>Operação</th>
-                        <th>Forma de pagamento</th>
+                        <th>Nome</th> 
+                        <th>cep</th>
+                        <th> cidade</th>
+                        <th>rua</th>
+                        <th>casa</th>
+                        <th>complemento</th>
+                        <th>bairro</th>
+                        <th>ponto_referencia</th>
+                        <th>descricao_estado</th>
+                        <th>descricao_frete</th>
+                        <th>valor_frete</th>
+                        <th>descricao_forma_pagamento</th>
+                        <th>descricao_status</th>
+
                                
                       
                     </tr>
@@ -109,16 +117,19 @@
                                     <c:out value="${pedido.cod_pedido}"/>
                                     <input type="hidden" name="cod_pedido" value="${pedido.cod_pedido}"/>
                                 </td>
-                                <td><c:out value="${pedido.cod_frete}"/></td>
-                                <td><c:out value="${pedido.cod_endereco}"/></td>
-                                <td><c:out value="${pedido.cod_cliente}"/></td>
-                                <td><c:out value="${pedido.cod_status}"/></td>
-                                <td><c:out value="${pedido.cod_operacao}"/></td>
-                               <td> <c:out value="${pedido.cod_forma_pagamento}"/></td>
-                               <td>
-								<button type="submit" name="optionPedido" value="deletePedido">Deletar</button>
-								<button type="submit" name="optionPedido" value="updateFormPedido">Atualizar</button>
-							  </td>
+                                <td><c:out value="${pedido.nome_cliente}"/></td>
+                                <td><c:out value="${pedido.cep}"/></td>
+                                <td><c:out value="${pedido.nome_cidade}"/></td>
+                                <td><c:out value="${pedido.nome_rua}"/></td>
+                                <td><c:out value="${pedido.numero_casa}"/></td>
+                               	<td> <c:out value="${pedido.complemento}"/></td>
+                               	<td> <c:out value="${pedido.bairro}"/></td>
+                               	<td> <c:out value="${pedido.ponto_referencia}"/></td>
+                               	<td> <c:out value="${pedido.descricao_estado}"/></td>
+                               	<td> <c:out value="${pedido.descricao_frete}"/></td>
+                               	<td> <c:out value="${pedido.valor_frete}"/></td>
+                               	<td> <c:out value="${pedido.descricao_forma_pagamento}"/></td>
+                               	<td> <c:out value="${pedido.descricao_status}"/></td>
                                
                             </form>
                         </tr>
