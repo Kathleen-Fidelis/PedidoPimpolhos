@@ -22,27 +22,27 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="col-12 navHamb">
                     <ul class="navbar-nav menuLateralTab">
-                        <li class="nav-item">
+                       <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="#">Meu perfil</a>
                         </li>
                         <hr>
                         <li class="nav-item">
-                            <a class="nav-link clientes " aria-current="page" href="index.jsp">Clientes</a>
+                            <a class="nav-link clientes " aria-current="page" href="ServletPimpolhos">Clientes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link categorias" href="indexCategoria.jsp">Categorias</a>
+                            <a class="nav-link categorias" href="ServletCategoria">Categorias</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link produtos" href="indexProduto.jsp">Produtos</a>
+                            <a class="nav-link produtos" href="ServletProduto">Produtos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fornecedores" href="indexFornecedor.jsp">Fornecedores</a>
+                            <a class="nav-link fornecedores" href="ServletFornecedor">Fornecedores</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pedidos" href="indexPedido.jsp">Pedidos</a>
+                            <a class="nav-link pedidos" href="ServletPedido">Pedidos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link marcas" href="indexMarca.jsp">Marcas</a>
+                            <a class="nav-link marcas" href="ServletMarca">Marcas</a>
                         </li>
                     </ul>
                 </div>
@@ -56,28 +56,56 @@
     <div class="row bodyRow" style="justify-content:space-around;">
         <div class="col-2 navLateral">
             <ul class="navbar-nav menuLateralTab">
+               <li class="nav-item"><a class="nav-link" aria-current="page" href="#">Meu perfil</a>
+            	<hr>
                 <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">Meu perfil</a>
-                        </li>
-                        <hr>
-                        <li class="nav-item">
-                            <a class="nav-link clientes " aria-current="page" href="index.jsp">Clientes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link categorias" href="indexCategoria.jsp">Categorias</a>
+                            <a class="nav-link" aria-current="page" href="ServletPimpolhos">
+                            	<div class="row">
+                            		<img  class= "col-3" alt="" src="imgs/user (1).png" width="13%">
+                      				<span class="col-6"> Cliente</span>
+                     			</div>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link produtos" href="indexProduto.jsp">Produtos</a>
+                            <a class="nav-link" href="ServletCategoria">
+                            	<div class="row">
+                            		<img  class= "col-3" alt="" src="imgs/categories.png" width="13%">
+                      				<span class="col-6"> Categorias</span>
+                     			</div>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fornecedores" href="indexFornecedor.jsp">Fornecedores</a>
+                            <a class="nav-link" href="ServletProduto">
+                            	<div class="row">
+                            		<img  class= "col-3" alt="" src="imgs/produto.png" width="13%">
+                      				<span class="col-6"> Produtos</span>
+                     			</div>
+                            </a>
+                        </li>
+                        <li class="nav-item" >
+                            <a class="nav-link" href="ServletFornecedor">
+                            	<div class="row" >
+                            		<img  class= "col-3" alt="" src="imgs/fornecedor.png" width="13%">
+                      				<span class="col-6"> Fornecedores</span>
+                     			</div>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pedidos" href="indexPedido.jsp">Pedidos</a>
+                            <a class="nav-link" href="ServletPedido">
+                            	<div class="row">
+                            		<img  class= "col-3" alt="" src="imgs/pedido.png" width="13%">
+                      				<span class="col-6"> Pedido</span>
+                     			</div>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link marcas" href="indexMarca.jsp">Marcas</a>
-                        </li>
+                            <a class="nav-link" href="ServletMarca">
+                            	<div class="row">
+                            		<img  class= "col-3" alt="" src="imgs/etiqueta.png" width="13%">
+                      				<span class="col-6"> Marca</span>
+                     			</div>
+                            </a>
+                </li>
             </ul>
         </div>
 
@@ -102,8 +130,8 @@
 							    <label style="margin-right: 32px;">Material:</label><input type="text" name="material" required/><br>
 								<label style="margin-right: 23px;">Peso:</label><input type="text" name="peso"/><br>
 								<label style="margin-right: 32px;">Conteudo Produto:</label><input type="text" name="conteudo"/><br>
-								<label style="margin-right: 32px;">Fornecedor:</label><select name="cod_fornecedor">  <option value="valor1">1</option></select>
-								<label style="margin-right: 32px;">Categoria:</label><select name="cod_categoria">  <option value="valor1">1 <option value="valor2">2 <option value="valor3">3</option></select><br><br>
+								<label style="margin-right: 32px;">Fornecedor:</label><input name="cod_fornecedor" type="text" name="cod_fornecedor" >
+								<label style="margin-right: 32px;">Categoria:</label><input name="cod_categoria" type="text" name="cod_categoria">
 								<label style="margin-right: 32px;">Imagem:</label><input type="text" name="img_produto"/><br>
 								<label style="margin-right: 32px;">Marca:</label><input type="text" name="cod_marca"/><br>
 								
@@ -113,7 +141,7 @@
 							    
 							    
 							    
-								<button style="margin-top: 13px; width: 20%;" class="btn btn-primary" type="submit" name="optionProduto" value="insertProduto">Salvar</button>
+								<button style="margin-top: 13px; width: 20%;" class="btn btn-secondary" type="submit" name="optionProduto" value="insertProduto">Salvar</button>
 						</div>
 					</c:when>
 					<c:otherwise>
@@ -122,7 +150,7 @@
 						
 							<input type="hidden" name="cod_produto" value="${produto.cod_produto}"/><br>
 							<label style="margin-right: 17px;">Nome:</label>
-							<input type="text" name="name" value="${produto.nome}" required/><br>
+							<input type="text" name="nome" value="${produto.nome}" required/><br>
 							<label style="margin-right: 23px;">Preço:</label>
 							<input type="text" name="preco" value="${produto.preco}" required/><br>
 							<label style="margin-right: 23px;">Sexo:</label>
@@ -134,9 +162,9 @@
 							<label style="margin-right: 23px;">Peso:</label>
 							<input type="text" name="peso" value="${produto.peso}"/><br>
 							<label style="margin-right: 32px;">Conteudo produto:</label>
-							<input type="text" name="conteudo_produto" value="${produto.conteudo_produto}"/><br>
+							<input type="text" name="conteudo" value="${produto.conteudo_produto}"/><br>
 							<label style="margin-right: 32px;">Fornecedor:</label>
-							<input type="text" name="cod_fonecedor" value="${produto.cod_fornecedor}"/><br>
+							<input type="text" name="cod_fornecedor" value="${produto.cod_fornecedor}"/><br>
 							<label style="margin-right: 32px;">Categoria:</label>
 							<input type="text" name="cod_categoria" value="${produto.cod_categoria}"/><br>
 							<label style="margin-right: 32px;">Imagem:</label>
@@ -146,7 +174,7 @@
 							
 							
 						
-							<button class="btn btn-primary" type="submit" name="optionProduto" value="updateProduto">Atualizar</button>
+							<button class="btn btn-secondary" type="submit" name="optionProduto" value="updateProduto">Atualizar</button>
 						</div>
 					</c:otherwise>
 				</c:choose>

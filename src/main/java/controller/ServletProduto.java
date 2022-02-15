@@ -133,9 +133,8 @@ public class ServletProduto extends HttpServlet {
 		String materialBack = request.getParameter("material");
 		Double pesoBack = Double.parseDouble(request.getParameter("peso"));
 		String conteudoBack = request.getParameter("conteudo");
-		Integer fornecedorBack = Integer.parseInt(request.getParameter("fornecedor"));
-		Integer categoriaBack = Integer.parseInt(request.getParameter("categoria"));
-		
+		Integer fornecedorBack = Integer.parseInt(request.getParameter("cod_fornecedor"));
+		Integer categoriaBack = Integer.parseInt(request.getParameter("cod_categoria"));
 		String img_produtoBack = request.getParameter("img_produto");
 		Integer cod_marcaBack = Integer.parseInt(request.getParameter("cod_marca"));
 		
@@ -143,8 +142,7 @@ public class ServletProduto extends HttpServlet {
 		&& (materialBack != null) && (pesoBack != null) && (conteudoBack != null) && (fornecedorBack != null) && (categoriaBack != null) && (img_produtoBack != null) && (cod_marcaBack != null)) {
 			if (!nomeBack.equals("")){
 				Integer id = (cod_produtoBack);
-				Produto produto = new Produto (nomeBack, precoBack, sexoBack, dimensaoBack, materialBack, pesoBack, 
-						conteudoBack, fornecedorBack, categoriaBack, img_produtoBack, cod_marcaBack);
+				Produto produto = new  Produto(nomeBack, precoBack, sexoBack, dimensaoBack, materialBack, pesoBack, conteudoBack, fornecedorBack, categoriaBack, img_produtoBack, cod_marcaBack);
 				produto.setCod_produto(id);
 				this.daoproduto.atualizarProduto(produto);
 			}

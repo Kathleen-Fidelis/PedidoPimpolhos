@@ -47,7 +47,10 @@ public class DAOProduto {
 		Connection con = c.getConnection();
 		ArrayList<Produto> lista = new ArrayList<Produto>();
 		try {
-			PreparedStatement p = con.prepareStatement("select * from produto");
+			PreparedStatement p = con.prepareStatement("select produto.cod_produto, produto.nome, produto.preco, produto.sexo, produto.dimensao, produto.material, produto.peso, produto.conteudo_produto , f.nome_fornecedor, c.nome_categoria, produto.img_produto, m.nome_marca from produto\r\n"
+					+ "inner join fornecedor f on f.cod_fornecedor = produto.cod_fornecedor \r\n"
+					+ "inner join categoria c on c.cod_categoria = produto.cod_categoria \r\n"
+					+ "inner join marca m on m.cod_marca = produto.cod_marca ORDER BY cod_produto ASC;");
 			ResultSet r = p.executeQuery();			
 			
 			while (r.next()) {
@@ -59,10 +62,10 @@ public class DAOProduto {
 				String material = r.getString("material");
 				Double peso = r.getDouble ("peso");
 				String conteudo = r.getString("conteudo_produto");
-				Integer fornecedor = r.getInt("cod_fornecedor");
-				Integer categoria = r.getInt("cod_categoria");
+				String fornecedor = r.getString("nome_fornecedor");
+				String categoria = r.getString("nome_categoria");
 				String img_produto = r.getString("img_produto");
-				Integer cod_marca = r.getInt("cod_marca");
+				String cod_marca = r.getString("nome_marca");
 				Produto produto = new Produto(nome, preco, sexo, dimensao, material, peso, conteudo, fornecedor, categoria, img_produto, cod_marca);
 				produto.setCod_produto(id);
 				lista.add(produto);

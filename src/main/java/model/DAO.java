@@ -21,11 +21,12 @@ public class DAO {
 		Connection con = c.getConnection();
 		ArrayList<Usuario> lista = new ArrayList<Usuario>();
 		try {
-			PreparedStatement p = con.prepareStatement("select cliente.cod_cliente ,cliente.nome_cliente, cliente.cpf,cliente.data_nasc ,cliente.email,cliente.senha ,ec.cod_endereco , \r\n"
+			PreparedStatement p = con.prepareStatement("select cliente.cod_cliente ,cliente.nome_cliente, cliente.cpf,cliente.data_nasc ,cliente.email,cliente.senha ,"
+					+ "ec.cod_endereco , \r\n"
 					+ "e.nome_rua, e.numero_casa, e.bairro,e.complemento,e.ponto_referencia, e.cep , e.nome_cidade,e2.descricao_estado,ec.flag_endereco from cliente \r\n"
 					+ "inner join endereco_cliente ec on ec.cod_cliente = cliente.cod_cliente\r\n"
 					+ "inner join endereco e on e.cod_endereco = ec.cod_endereco \r\n"
-					+ "inner join estado e2  on e2.cod_estado  =  e.cod_estado  where ec.flag_endereco = 1 ORDER BY cod_pedido     \r\n"
+					+ "inner join estado e2  on e2.cod_estado  =  e.cod_estado  where ec.flag_endereco = 1    \r\n"
 					+ " ;\r\n"
 					+ "");
 			ResultSet r = p.executeQuery();			
@@ -110,7 +111,9 @@ public class DAO {
 		Connection con = c.getConnection();
 		ArrayList<Pedido> listaPedido = new ArrayList<Pedido>();
 		try {
-			PreparedStatement p = con.prepareStatement("select pedido.cod_pedido, c.nome_cliente, e.cep, e.nome_cidade, e.nome_rua, e.numero_casa, e.complemento, e.bairro, e.ponto_referencia, e2.descricao_estado, f.descricao_frete, f.valor_frete, fp.descricao_forma_pagamento, sp.descricao_status_pedido, ec.flag_endereco from pedido\r\n"
+			PreparedStatement p = con.prepareStatement("select pedido.cod_pedido, c.nome_cliente, e.cep, e.nome_cidade, e.nome_rua, "
+					+ "e.numero_casa, e.complemento, e.bairro, e.ponto_referencia, e2.descricao_estado, f.descricao_frete, f.valor_frete, fp.descricao_forma_pagamento,"
+					+ " sp.descricao_status_pedido, ec.flag_endereco from pedido\r\n"
 					+ "inner join cliente c on c.cod_cliente = pedido.cod_cliente\r\n"
 					+ "inner join endereco e on e.cod_endereco = pedido.cod_endereco\r\n"
 					+ "inner join estado e2 on e2.cod_estado = e.cod_estado\r\n"

@@ -10,37 +10,27 @@
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-	 <nav class="navbar navbar-expand-lg navbar-light ">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Pimpolhos</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <div class="col-12 navHamb">
-                    <ul class="navbar-nav menuLateralTab">
-                        <li class="nav-item">
+	 <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="#">Meu perfil</a>
                         </li>
                         <hr>
                         <li class="nav-item">
-                            <a class="nav-link clientes " aria-current="page" href="index.jsp">Clientes</a>
+                            <a class="nav-link clientes " aria-current="page" href="ServletPimpolhos">Clientes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link categorias" href="indexCategoria.jsp">Categorias</a>
+                            <a class="nav-link categorias" href="ServletCategoria">Categorias</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link produtos" href="indexProduto.jsp">Produtos</a>
+                            <a class="nav-link produtos" href="ServletProduto">Produtos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fornecedores" href="indexFornecedor.jsp">Fornecedores</a>
+                            <a class="nav-link fornecedores" href="ServletFornecedor">Fornecedores</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pedidos" href="indexPedido.jsp">Pedidos</a>
+                            <a class="nav-link pedidos" href="ServletPedido">Pedidos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link marcas" href="indexMarca.jsp">Marcas</a>
+                            <a class="nav-link marcas" href="ServletMarca">Marcas</a>
                         </li>
                     </ul>
                 </div>
@@ -52,28 +42,56 @@
     <div class="row bodyRow" style="justify-content:space-around;">
         <div class="col-2 navLateral">
             <ul class="navbar-nav menuLateralTab">
+              <li class="nav-item"><a class="nav-link" aria-current="page" href="#">Meu perfil</a>
+            	<hr>
                 <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">Meu perfil</a>
-                        </li>
-                        <hr>
-                        <li class="nav-item">
-                            <a class="nav-link clientes " aria-current="page" href="index.jsp">Clientes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link categorias" href="indexCategoria.jsp">Categorias</a>
+                            <a class="nav-link" aria-current="page" href="ServletPimpolhos">
+                            	<div class="row">
+                            		<img  class= "col-3" alt="" src="imgs/user (1).png" width="13%">
+                      				<span class="col-6"> Cliente</span>
+                     			</div>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link produtos" href="indexProduto.jsp">Produtos</a>
+                            <a class="nav-link" href="ServletCategoria">
+                            	<div class="row">
+                            		<img  class= "col-3" alt="" src="imgs/categories.png" width="13%">
+                      				<span class="col-6"> Categorias</span>
+                     			</div>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fornecedores" href="indexFornecedor.jsp">Fornecedores</a>
+                            <a class="nav-link" href="ServletProduto">
+                            	<div class="row">
+                            		<img  class= "col-3" alt="" src="imgs/produto.png" width="13%">
+                      				<span class="col-6"> Produtos</span>
+                     			</div>
+                            </a>
+                        </li>
+                        <li class="nav-item" >
+                            <a class="nav-link" href="ServletFornecedor">
+                            	<div class="row" >
+                            		<img  class= "col-3" alt="" src="imgs/fornecedor.png" width="13%">
+                      				<span class="col-6"> Fornecedores</span>
+                     			</div>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pedidos" href="indexPedido.jsp">Pedidos</a>
+                            <a class="nav-link" href="ServletPedido">
+                            	<div class="row">
+                            		<img  class= "col-3" alt="" src="imgs/pedido.png" width="13%">
+                      				<span class="col-6"> Pedido</span>
+                     			</div>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link marcas" href="indexMarca.jsp">Marcas</a>
-                        </li>
+                            <a class="nav-link" href="ServletMarca">
+                            	<div class="row">
+                            		<img  class= "col-3" alt="" src="imgs/etiqueta.png" width="13%">
+                      				<span class="col-6"> Marca</span>
+                     			</div>
+                            </a>
+                </li>
             </ul>
         </div>
         
@@ -94,7 +112,7 @@
 			    <label style="margin-right: 32px;">Forma Pagamento:</label><input type="text" name="cod_forma_pagamento"/><br>
 			    
 			    
-				<button style="margin-top: 13px;" class="btn btn-primary" type="submit" name="optionPedido" value="insertPedido">Salvar</button>
+				<button style="margin-top: 13px;" class="btn btn-secondary" type="submit" name="optionPedido" value="insertPedido">Salvar</button>
 				</div>
 			</c:when>
 			<c:otherwise>
@@ -113,7 +131,7 @@
 				<label style="margin-right: 32px;">Forma Pagamento:</label>
 				<input type="text" name="cod_forma_pagamento" value="${pedido.cod_forma_pagamento}"/><br>
 			
-				<button class="btn btn-primary" type="submit" name="optionPedido" value="updatePedido">Atualizar</button>
+				<button class="btn btn-secondary" type="submit" name="optionPedido" value="updatePedido">Atualizar</button>
 			</div>
 			</c:otherwise>
 		</c:choose>
