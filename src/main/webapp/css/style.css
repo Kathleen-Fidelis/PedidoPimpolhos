@@ -17,6 +17,11 @@ td{
 	color: black !important;
 }
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 .navLateral{
     margin-top:10px;
     background-color:#E6889A;
@@ -179,7 +184,7 @@ select{
     }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1200px) {
     .navLateral{
         display: none;
     }

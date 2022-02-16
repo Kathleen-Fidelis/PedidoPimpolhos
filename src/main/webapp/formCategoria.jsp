@@ -114,7 +114,7 @@
 					<c:when test="${ categoria == null }">
 						<div class="container col-10 input-marca">
 							<h2 style="margin: 30px 0px 50px 0px;">Cadastrar Categoria</h2>
-							<input style="border-radius: 5px; border: 1px solid gray; height: 30px; padding: 10px; type="text" name="name" required/><br>
+							<label style="margin-right: 17px;">Nome da Categoria:<input style="border-radius: 5px; border: 1px solid gray; height: 30px; padding: 10px; type="text" name="name" required/><br>
 						
 							<button style="margin-top: 13px; width: 20%; " class="btn btn-secondary" type="submit" name="optionCategoria" value="insertCategoria">Salvar</button>
 						</div>

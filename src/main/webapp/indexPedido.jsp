@@ -10,18 +10,19 @@
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-
-	<nav class="navbar navbar-expand-lg navbar-light ">
+<nav class="navbar navbar-expand-lg navbar-light ">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Pimpolhos</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
+            
             <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="col-12 navHamb">
                     <ul class="navbar-nav menuLateralTab">
-                        <li class="nav-item">
+                       <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="#">Meu perfil</a>
                         </li>
                         <hr>
@@ -48,14 +49,16 @@
             </div>
         </div>
     </nav>
-	
-	
+    
+    <form action="ServletMarca" method="post">
+		
 
+	</form>
 
     <div class="row bodyRow" style="justify-content:space-around;">
-        <div class="col-xl-2 navLateral">
+        <div class="col-2 navLateral">
             <ul class="navbar-nav menuLateralTab">
-              <li class="nav-item"><a class="nav-link" aria-current="page" href="#">Meu perfil</a>
+               <li class="nav-item"><a class="nav-link" aria-current="page" href="#">Meu perfil</a>
             	<hr>
                 <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="ServletPimpolhos">
@@ -107,29 +110,25 @@
                 </li>
             </ul>
         </div>
-        
-        
-        
-        
           <div class="col-md-12 col-lg-9 conteudo">
           <div class = "table-responsive">
             <table class="table table-hover">
                 <thead>
                     <tr>
                         <th>Cod. Pedido</th>    
-                        <th>status</th>  
-                        <th>forma de pagamento</th>  
+                        <th>Status</th>  
+                        <th>Forma De Pagamento</th>  
                         <th  style="word-wrap: break-word;min-width: 122px;max-width: 160px;">valor do frete</th>
                         <th  style="word-wrap: break-word;min-width: 122px;max-width: 160px;">tipo de envio</th>
                         <th>Nome</th> 
-                        <th>cep</th>
-                        <th> cidade</th>
-                        <th>rua</th>
-                        <th>casa</th>
-                        <th>complemento</th>
-                        <th>bairro</th>
-                        <th>ponto de referencia</th>
-                        <th>estado</th>
+                        <th>Cep</th>
+                        <th>Cidade</th>
+                        <th>Rua</th>
+                        <th>Casa</th>
+                        <th>Complemento</th>
+                        <th>Bairro</th>
+                        <th>Ponto de referencia</th>
+                        <th>Estado</th>
                         
                     
                     
@@ -151,13 +150,13 @@
                                 <td> <c:out value="${pedido.descricao_forma_pagamento}"/></td>
                                 <td> <c:out value="${pedido.valor_frete}"/></td>
                                 <td> <c:out value="${pedido.descricao_frete}"/></td>
-                                <td style="word-wrap: break-word;min-width: 440px;max-width: 160px;"><c:out value="${pedido.nome_cliente}"/></td>
-                                <td style="word-wrap: break-word;min-width: 440px;max-width: 160px;"><c:out value="${pedido.cep}"/></td>
-                                <td style="word-wrap: break-word;min-width: 440px;max-width: 160px;"><c:out value="${pedido.nome_cidade}"/></td>
-                                <td style="word-wrap: break-word;min-width: 440px;max-width: 160px;"><c:out value="${pedido.nome_rua}"/></td>
+                                <td style="word-wrap: break-word;min-width: 170px;max-width: 170px;"><c:out value="${pedido.nome_cliente}"/></td>
+                                <td style="word-wrap: break-word;min-width: 170px;max-width: 170px;"><c:out value="${pedido.cep}"/></td>
+                                <td style="word-wrap: break-word;min-width: 150px;max-width: 150px;"><c:out value="${pedido.nome_cidade}"/></td>
+                                <td style="word-wrap: break-word;min-width: 150px;max-width: 150px;"><c:out value="${pedido.nome_rua}"/></td>
                                 <td><c:out value="${pedido.numero_casa}"/></td>
                                	<td> <c:out value="${pedido.complemento}"/></td>
-                               	<td style="word-wrap: break-word;min-width: 440px;max-width: 160px;"> <c:out value="${pedido.bairro}"/></td>
+                               	<td style="word-wrap: break-word;min-width: 200px;max-width: 200px;"> <c:out value="${pedido.bairro}"/></td>
                                	<td> <c:out value="${pedido.ponto_referencia}"/></td>
                                	<td> <c:out value="${pedido.descricao_estado}"/></td>
                                	

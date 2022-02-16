@@ -114,17 +114,17 @@
                 <thead>
                     <tr>
                         <th>Cod_Cliente</th>
-                        <th style="word-wrap: break-word;min-width: 440px;max-width: 160px;">Nome</th>
-                        <th style="word-wrap: break-word;min-width: 440px;max-width: 160px;">CPF</th>
+                        <th style="word-wrap: break-word;min-width: 160px;max-width: 160px;">Nome</th>
+                        <th style="word-wrap: break-word;min-width: 160px;max-width: 160px;">CPF</th>
                         <th>Data de Nascimento</th>
                         <th>Email</th>    
-                         <th style="word-wrap: break-word;min-width: 440px;max-width: 160px;">Rua</th> 
-                           <th>Nº</th> 
-                           <th style="word-wrap: break-word;min-width: 440px;max-width: 160px;">CEP</th> 
-                           <th>Complemento</th> 
-                           <th>Ponto de Referencia</th> 
-                           <th>Bairro</th> 
-                          <th style="word-wrap: break-word;min-width: 440px;max-width: 160px;">Cidade</th> 
+                         <th style="word-wrap: break-word;min-width: 160px;max-width: 160px;">Rua</th> 
+                           <th style="word-wrap: break-word;min-width: 50px;max-width: 160px;">Nº</th> 
+                           <th style="word-wrap: break-word;min-width: 120px;max-width: 160px;">CEP</th> 
+                           <th style="word-wrap: break-word;min-width: 136px;max-width: 160px;">Complemento</th> 
+                           <th style="word-wrap: break-word;min-width: 186px;max-width: 160px;">Ponto de Referencia</th> 
+                           <th style="word-wrap: break-word;min-width: 186px;max-width: 160px;">Bairro</th> 
+                          <th style="word-wrap: break-word;min-width: 120px;max-width: 160px;">Cidade</th> 
                            <th>Estado</th> 
                           
                     </tr>
@@ -143,7 +143,7 @@
                                 <td><c:out value="${usuario.nascimento}"/></td>
                                 <td><c:out value="${usuario.email}"/></td>
                                 <td><c:out value="${usuario.rua}"/></td>
-                                 <td><c:out value="${usuario.numeroCasa}"/></td>
+                                 <td style="word-wrap: break-word;min-width: 50px;max-width: 160px;"><c:out value="${usuario.numeroCasa}"/></td>
                                  <td><c:out value="${usuario.cep}"/></td>
                                  <td><c:out value="${usuario.complemento}"/></td>
                                  <td><c:out value="${usuario.pontoReferencia}"/></td>

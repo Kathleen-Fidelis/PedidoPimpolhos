@@ -17,10 +17,12 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav1">
+            
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="col-12 navHamb">
                     <ul class="navbar-nav menuLateralTab">
-                        <li class="nav-item">
+                       <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="#">Meu perfil</a>
                         </li>
                         <hr>
@@ -47,16 +49,16 @@
             </div>
         </div>
     </nav>
-	
-	<form action="ServletCategoria" method="post">
-		<button class="btn btn-secondary col-2" style=" margin:0px 0px 35px 18px; font-weight: bold; background-color: #9ACCFF; border: none;" type="submit"  name="optionCategoria" value="insertFormCategoria"> Adicionar Categoria</button>
+    
+    <form action="ServletMarca" method="post">
+		<button class="btn btn-secondary col-2" style=" margin:0px 0px 35px 18px; font-weight: bold; background-color: #9ACCFF; border: none;" type="submit"  name="optionMarca" value="insertFormMarca"> Adicionar Categoria</button>
+
 	</form>
 
-
     <div class="row bodyRow" style="justify-content:space-around;">
-        <div class="col-xl-2 navLateral">
+        <div class="col-2 navLateral">
             <ul class="navbar-nav menuLateralTab">
-              <li class="nav-item"><a class="nav-link" aria-current="page" href="#">Meu perfil</a>
+               <li class="nav-item"><a class="nav-link" aria-current="page" href="#">Meu perfil</a>
             	<hr>
                 <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="ServletPimpolhos">
@@ -117,6 +119,7 @@
 						<tr>
 							<th>Cod. Categoria</th>
 							<th>Nome Categoria</th>
+							<th style="text-align:center;">Ações</th> 
 						</tr>
 					</thead>
 					<tbody>

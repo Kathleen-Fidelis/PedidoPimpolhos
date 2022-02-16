@@ -123,6 +123,7 @@
 						<tr>
 							<th>Cod. Fornecedor</th>
 							<th>Nome Fornecedor</th>
+							<th style="text-align:center;">Ações</th>
 						</tr>
 					</thead>
 					<tbody>

@@ -124,14 +124,14 @@
 								<h2 style="margin: 30px 0px 50px 0px">Cadastrar Produto</h2>
 								
 								<label style="margin-right: 17px;">Nome:</label><input type="text" name="nome" required/><br>
-								<label style="margin-right: 23px;">Preço:</label><input type="text" name="preco"/><br>
+								<label style="margin-right: 23px;">Preço:</label><input type="number" name="preco"/><br>
 								<label style="margin-right: 32px;">Sexo:</label><input type="text" name="sexo"/><br>
 								<label style="margin-right: 32px;">Dimensão:</label><input type="text" name="dimensao"/><br>
 							    <label style="margin-right: 32px;">Material:</label><input type="text" name="material" required/><br>
-								<label style="margin-right: 23px;">Peso:</label><input type="text" name="peso"/><br>
+								<label style="margin-right: 23px;">Peso:</label><input type="number" name="peso"/><br>
 								<label style="margin-right: 32px;">Conteudo Produto:</label><input type="text" name="conteudo"/><br>
-								<label style="margin-right: 32px;">Fornecedor:</label><input name="cod_fornecedor" type="text" name="cod_fornecedor" >
-								<label style="margin-right: 32px;">Categoria:</label><input name="cod_categoria" type="text" name="cod_categoria">
+								<label style="margin-right: 32px;">Fornecedor:</label><input name="cod_fornecedor" type="number" name="cod_fornecedor" >
+								<label style="margin-right: 32px;">Categoria:</label><input name="cod_categoria" type="number" name="cod_categoria">
 								<label style="margin-right: 32px;">Imagem:</label><input type="text" name="img_produto"/><br>
 								<label style="margin-right: 32px;">Marca:</label><input type="text" name="cod_marca"/><br>
 								
