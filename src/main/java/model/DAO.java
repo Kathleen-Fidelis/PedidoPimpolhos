@@ -14,21 +14,81 @@ public class DAO {
 	}
 	
 	// ------------------------------------------- CLIENTE -----------------------------------------------------------------
-	
+	public ArrayList<Usuario> exibirDetalhesCliente(){
+		Conexao c = Conexao.getInstance();
+		Connection con = c.getConnection();
+		ArrayList<Usuario> listaDetalheCliente = new ArrayList<Usuario>();
+		try {
+			PreparedStatement p = con.prepareStatement("select cliente.cod_cliente ,cliente.nome_cliente, cliente.cpf,cliente.data_nasc ,\r\n"
+					+ "cliente.email, \r\n"
+					+ "e.nome_rua, e.numero_casa,\r\n"
+					+ "e.bairro,\r\n"
+					+ "e.complemento,\r\n"
+					+ "e.ponto_referencia, \r\n"
+					+ "e.cep , \r\n"
+					+ "e.nome_cidade,\r\n"
+					+ "e2.descricao_estado,\r\n"
+					+ "c.nome_titular,\r\n"
+					+ "b.descricao_bandeira,\r\n"
+					+ "t.ddd,\r\n"
+					+ "t.numero_telefone,\r\n"
+					+ "tt.descricao_telefone\r\n"
+					+ "\r\n"
+					+ "from cliente \r\n"
+					+ "\r\n"
+					+ "\r\n"
+					+ "\r\n"
+					+ "inner join cliente_telefone ct ON ct.cod_cliente = cliente.cod_cliente \r\n"
+					+ "inner join telefone t on t.cod_telefone = ct.cod_telefone \r\n"
+					+ "inner join tipo_telefone tt on tt.cod_tipoTelefone = t.cod_tipoTelefone \r\n"
+					+ "inner join cartao c on c.cod_cliente = cliente.cod_cliente \r\n"
+					+ "inner join bandeira b on b.cod_bandeira = c.cod_bandeira \r\n"
+					+ "inner join endereco_cliente ec on ec.cod_cliente = cliente.cod_cliente\r\n"
+					+ "inner join endereco e on e.cod_endereco = ec.cod_endereco\r\n"
+					+ "inner join estado e2 on e2.cod_estado = e.cod_estado \r\n"
+					+ "order by cod_cliente asc ");
+			ResultSet r = p.executeQuery();			
+			
+			while (r.next()) {
+				Integer cliente = r.getInt("cod_cliente");
+				 String nomecliente = r.getString("nome_cliente");
+				 String cpf = r.getString("cpf");
+				 Date nasc  = r.getDate	("data_nasc");
+				 String email = r.getString("email") ;
+				 String rua = r.getString("nome_rua");
+				 String numeroCasa = r.getString("numero_casa");
+				 String bairro = r.getString("bairro");
+				 String complemento = r.getString("complemento");
+				 String ptReferencia = r.getString("ponto_referencia");
+				 String cep = r.getString("cep");
+				 String cidade = r.getString("nome_cidade");
+				 String estado = r.getString("descricao_estado");
+				 String titularCartao = r.getString("nome_titular");
+			     String bandeira = r.getString("descricao_bandeira");
+			     String ddd = r.getString("ddd");
+			     String telefone = r.getString("numero_telefone");
+			     String tipotelefone = r.getString("descricao_telefone");
+			     Usuario detalheC = new Usuario(nomecliente, cpf, nasc, email, rua, numeroCasa, cep, complemento, ptReferencia, bairro, cidade, estado, bandeira, titularCartao, ddd, telefone, tipotelefone);
+				 detalheC.setCod_cliente(cliente);
+			     listaDetalheCliente.add(detalheC);
+				
+			}
+			r.close();
+			p.close();
+			con.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listaDetalheCliente;
+	}
 	
 	public ArrayList<Usuario> exibirUsuarios(){
 		Conexao c = Conexao.getInstance();
 		Connection con = c.getConnection();
 		ArrayList<Usuario> lista = new ArrayList<Usuario>();
 		try {
-			PreparedStatement p = con.prepareStatement("select cliente.cod_cliente ,cliente.nome_cliente, cliente.cpf,cliente.data_nasc ,cliente.email,cliente.senha ,"
-					+ "ec.cod_endereco , \r\n"
-					+ "e.nome_rua, e.numero_casa, e.bairro,e.complemento,e.ponto_referencia, e.cep , e.nome_cidade,e2.descricao_estado,ec.flag_endereco from cliente \r\n"
-					+ "inner join endereco_cliente ec on ec.cod_cliente = cliente.cod_cliente\r\n"
-					+ "inner join endereco e on e.cod_endereco = ec.cod_endereco \r\n"
-					+ "inner join estado e2  on e2.cod_estado  =  e.cod_estado  where ec.flag_endereco = 1    \r\n"
-					+ " ;\r\n"
-					+ "");
+			PreparedStatement p = con.prepareStatement("select cliente.cod_cliente ,cliente.nome_cliente, cliente.cpf,cliente.data_nasc ,cliente.email from cliente");
 			ResultSet r = p.executeQuery();			
 			
 			while (r.next()) {
@@ -37,15 +97,7 @@ public class DAO {
 				String cpf = r.getString("cpf");
 			     Date data = r.getDate("data_nasc");
 				String email = r.getString("email");
-				String nomeRua= r.getString("nome_rua");
-				String numerocasa = r.getString("numero_casa");
-				String cep = r.getString("cep");
-				String complemento = r.getString("complemento");
-				String pontoReferencia = r.getString("ponto_referencia");
-				String bairro = r.getString("bairro");
-				String nome_cidade = r.getString("nome_cidade");
-				String estado = r.getString("descricao_estado");
-				Usuario usuario = new Usuario(nome, cpf, data, email, nomeRua, numerocasa, cep, complemento, pontoReferencia, bairro, nome_cidade, estado);
+				Usuario usuario = new Usuario(nome, cpf, data, email);
 				usuario.setCod_cliente(id);
 				lista.add(usuario);
 			}
@@ -59,34 +111,62 @@ public class DAO {
 		return lista;
 	}
 	
-
-
-	public Usuario recuperarUsuario (Integer id) {	
+	public ArrayList<Usuario> recuperarDetalhesCliente (Integer id) {	
 		Conexao c = Conexao.getInstance();
 		Connection con = c.getConnection();
-		Usuario u = null;
+		Usuario detalhes = null;
+		ArrayList<Usuario> listDetalhes = new ArrayList<Usuario>();
 		try {
-			PreparedStatement p = con.prepareStatement("select * from cliente where cod_cliente = ?");
+			PreparedStatement p = con.prepareStatement("select cliente.cod_cliente,cliente.nome_cliente, cliente.cpf,cliente.data_nasc,cliente.email, e.nome_rua, \r\n"
+					+ "e.numero_casa,\r\n"
+					+ "e.bairro,\r\n"
+					+ "e.complemento,\r\n"
+					+ "e.ponto_referencia, \r\n"
+					+ "e.cep , \r\n"
+					+ "e.nome_cidade,\r\n"
+					+ "e2.descricao_estado,\r\n"
+					+ "c.nome_titular,\r\n"
+					+ "b.descricao_bandeira,\r\n"
+					+ "t.ddd,\r\n"
+					+ "t.numero_telefone,\r\n"
+					+ "tt.descricao_telefone\r\n"
+					+ "from cliente \r\n"
+					+ "inner join cliente_telefone ct ON ct.cod_cliente = cliente.cod_cliente \r\n"
+					+ "inner join telefone t on t.cod_telefone = ct.cod_telefone \r\n"
+					+ "inner join tipo_telefone tt on tt.cod_tipoTelefone = t.cod_tipoTelefone \r\n"
+					+ "inner join cartao c on c.cod_cliente = cliente.cod_cliente \r\n"
+					+ "inner join bandeira b on b.cod_bandeira = c.cod_bandeira \r\n"
+					+ "inner join endereco_cliente ec on ec.cod_cliente = cliente.cod_cliente\r\n"
+					+ "inner join endereco e on e.cod_endereco = ec.cod_endereco\r\n"
+					+ "inner join estado e2 on e2.cod_estado = e.cod_estado where cliente.cod_cliente = ?\r\n"
+					+ "order by cod_cliente asc ");
 			p.setInt(1, id);
 			ResultSet r = p.executeQuery();			
 			
 			
 			while (r.next()) {
-				Integer id1 = r.getInt("cod_cliente");
-				String nome = r.getString("nome_cliente");
-				String cpf = r.getString("cpf");
-			     Date data = r.getDate("data_nasc");
-				String email = r.getString("email");
-				String nomeRua= r.getString("nome_rua");
-				String numerocasa = r.getString("numero_casa");
-				String cep = r.getString("cep");
-				String complemento = r.getString("complemento");
-				String pontoReferencia = r.getString("ponto_referencia");
-				String bairro = r.getString("bairro");
-				String nome_cidade = r.getString("cidade");
-				String estado = r.getString("descricao_estado");
-				u = new Usuario(nome, cpf, data, email, nomeRua, numerocasa, cep, complemento, pontoReferencia, bairro, nome_cidade, estado);
-				u.setCod_cliente(id1);
+				 Integer cliente = r.getInt("cod_cliente");
+				 String nomecliente = r.getString("nome_cliente");
+				 String cpf = r.getString("cpf");
+				 Date nasc  = r.getDate	("data_nasc");
+				 String email = r.getString("email") ;
+				 String rua = r.getString("nome_rua");
+				 String numeroCasa = r.getString("numero_casa");
+				 String bairro = r.getString("bairro");
+				 String complemento = r.getString("complemento");
+				 String ptReferencia = r.getString("ponto_referencia");
+				 String cep = r.getString("cep");
+				 String cidade = r.getString("nome_cidade");
+				 String estado = r.getString("descricao_estado");
+				 String titularCartao = r.getString("nome_titular");
+			     String bandeira = r.getString("descricao_bandeira");
+			     String ddd = r.getString("ddd");
+			     String telefone = r.getString("numero_telefone");
+			     String tipotelefone = r.getString("descricao_telefone");
+			     
+			     Usuario detalhecliente = new Usuario(nomecliente, cpf, nasc, email, rua, numeroCasa, cep, complemento, ptReferencia, bairro, cidade, estado, bandeira, titularCartao, ddd, telefone, tipotelefone); 
+			     detalhecliente.setCod_cliente(cliente);
+			     listDetalhes.add(detalhecliente);
 			}
 			r.close();
 			p.close();
@@ -95,8 +175,10 @@ public class DAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return u;
+		return listDetalhes;
 	}
+	
+
 	
 //  --------------------------------------------- PEDIDO ------------------------------------------------------------------
 	
@@ -120,7 +202,7 @@ public class DAO {
 					+ "inner join frete f on f.cod_frete = pedido.cod_frete \r\n"
 					+ "inner join forma_pagamento fp on fp.cod_forma_pagamento = pedido.cod_forma_pagamento\r\n"
 					+ "inner join status_pedido sp on sp.cod_status = pedido.cod_status \r\n"
-					+ "inner join endereco_cliente ec on ec.cod_endereco = e.cod_endereco where ec.flag_endereco = 1 ORDER BY cod_pedido ASC;\n"
+					+ "inner join endereco_cliente ec on ec.cod_endereco = e.cod_endereco where ec.flag_endereco = 0 AND 1 ORDER BY cod_pedido ASC;\n"
 					+ "");
 			ResultSet r = p.executeQuery();			
 			

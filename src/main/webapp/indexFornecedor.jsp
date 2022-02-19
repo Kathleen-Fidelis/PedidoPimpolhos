@@ -136,6 +136,7 @@
 									<td><c:out value="${fornecedor.nome_fornecedor}"/></td>
 									
 									<td class="btnAcoes">
+									  
 										<button class="btn btn-primary" type="submit" name="optionFornecedor" value="deleteFornecedor">Deletar</button>
 										<button class="btn btn-primary" type="submit" name="optionFornecedor" value="updateFormFornecedor">Atualizar</button>
 									</td>

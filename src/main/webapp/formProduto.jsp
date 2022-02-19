@@ -131,7 +131,13 @@
 								<label style="margin-right: 23px;">Peso:</label><input type="text" name="peso"/><br>
 								<label style="margin-right: 32px;">Conteudo Produto:</label><input type="text" name="conteudo"/><br>
 								<label style="margin-right: 32px;">Fornecedor:</label><input name="cod_fornecedor" type="text" name="cod_fornecedor" >
-								<label style="margin-right: 32px;">Categoria:</label><input name="cod_categoria" type="text" name="cod_categoria">
+								
+								<select name="cod_categoria" class="form-select form-select-md">
+                                 <c:forEach var="categoria" items="${listCategoria}">  
+                                 <option value ="${categoria.cod_categoria}"> ${categoria.nome_categoria}</option>										
+                                  </c:forEach>							
+                                 </select>
+                           
 								<label style="margin-right: 32px;">Imagem:</label><input type="text" name="img_produto"/><br>
 								<label style="margin-right: 32px;">Marca:</label><input type="text" name="cod_marca"/><br>
 								
@@ -180,7 +186,7 @@
 				</c:choose>
             </form>
         </div>
-        
+     
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         
 </body>

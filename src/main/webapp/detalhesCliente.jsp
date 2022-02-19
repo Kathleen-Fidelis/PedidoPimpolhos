@@ -101,35 +101,57 @@
 				<table class="table table-hover">
 					<thead>
 						<tr>
-							<th>Cod_Cliente</th>
-							<th
-								style="word-wrap: break-word; min-width: 440px; max-width: 160px;">Nome</th>
-							<th
-								style="word-wrap: break-word; min-width: 440px; max-width: 160px;">CPF</th>
+						    <th>#</th>
+							<th>Nome</th>
+							<th>CPF</th>
 							<th>Data de Nascimento</th>
 							<th>Email</th>
+				            <th>Rua </th>
+				            <th>Nº</th>
+							<th>CEP</th>
+							<th>Complemento</th>
+							<th>Ponto de referencia</th>
+							<th>Bairro</th>
+							<th>Cidade </th>
+							<th>Estado</th>
+						    <th>Bandeira</th>
+						    <th>Titular do Cartão</th>
+						    <th>DDD</th>
+						    <th>Telefone</th>
+						    <th>Tipo do telefone</th>
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="usuario" items="${listUser}">
+					<c:forEach var="usuario" items="${listDetalhes}">
 							<tr>
-
+                     
+                     
+                     
 								<form action="ServletPimpolhos" method="post">
-									<td><c:out value="${usuario.cod_cliente}" /> <input
-										type="hidden" name="cod_cliente"
-										value="${usuario.cod_cliente}" /></td>
+								
+									<td><c:out value="${usuario.cod_cliente}" /> 
+									<input type="hidden" name="cod_cliente" value="${usuario.cod_cliente}" /></td>
 									<td><c:out value="${usuario.nome}" /></td>
 									<td><span class="cpf"><c:out value="${usuario.cpf}" /></span></td>
 									<td><c:out value="${usuario.nascimento}" /></td>
 									<td><c:out value="${usuario.email}" /></td>
-									
-									<td class="btnAcoes">
-										<button type="submit" name="option"
-											value="cartaoSelecionado">Atualizar</button>
-									</td>
-								</form>
+									<td><c:out value="${usuario.rua}" /></td>
+									<td><c:out value="${usuario.numeroCasa}" /></td>
+									<td><c:out value="${usuario.cep}" /></td>
+									<td><c:out value="${usuario.complemento}" /></td>
+									<td><c:out value="${usuario.pontoReferencia}" /></td>
+									<td><c:out value="${usuario.bairro}" /></td>
+									<td><c:out value="${usuario.cidade}" /></td>
+									<td><c:out value="${usuario.estado}" /></td>
+									<td><c:out value="${usuario.bandeira}" /></td>
+									<td><c:out value="${usuario.titularCartao}" /></td>
+									<td><c:out value="${usuario.dddtelefone}" /></td>
+									<td><c:out value="${usuario.telefoneCliente}" /></td>
+							        <td><c:out value="${usuario.tipoTelefone}" /></td>
+								</form>	
+								
 							</tr>
-						</c:forEach>
+				</c:forEach>
 					</tbody>
 				</table>
 			</div>

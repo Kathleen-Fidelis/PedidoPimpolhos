@@ -103,7 +103,7 @@ public class ServletMarca extends HttpServlet {
 		String nomeBack = request.getParameter("name");
 		
 		if ((nomeBack != null) && (idBack != null)) {
-			if (!nomeBack.equals("")){
+			if (!nomeBack.equals(" ")){
 				Integer id = Integer.parseInt(idBack);
 				Marca marca = new Marca (nomeBack);
 				marca.setCod_marca(id);
