@@ -1,16 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	pageEncoding="ISO-8859-1"%>
+  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Pimpolhos ADM</title>
-<link rel="stylesheet" href="css/style.css" type="text/css">
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
- 	<input type="checkbox" id="nav-toggle">
+	<input type="checkbox" id="nav-toggle">
     <div class="sidebar">
         <div class="sidebar-brand">
             <h2><span class="las "></span> <span>Pimpolhos</span></h2>
@@ -19,14 +19,14 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="index.jsp" class="active">
+                    <a href="index.jsp" >
                         <span class="icon"> Home </span></a>
                 </li>
                 
 
                 <li>
                     <a href="ServletPimpolhos
-                    " >
+                    " class="active">
                         <img src="imgs/user (1).png" class="icon"><span class="icon "> Clientes</span></a>
                 </li>
 
@@ -85,44 +85,59 @@
                 </div>
             </div>
         </div>
-        
-   <div class="tabela" style=" margin-top: 16%;margin-left: 20%">  
 
-	<div class="col-md-12 col-lg-9 conteudo">
-		  <form action="ServletFornecedor" method="post">
-				<c:choose>
-					<c:when test="${ fornecedor == null }">
-						<div class="container col-10 input-marca">
-							<h2 style="margin: 30px 0px 50px 0px;">Cadastrar Fornecedor</h2>
-							<!--  <input style="border-radius: 5px; border: 1px solid gray; height: 30px; padding: 10px;" type="text" name="name" required/><br>-->
-							<label style="margin-right: 17px;">Nome do Fornecedor:<input style="border-radius: 5px; border: 1px solid gray; height: 30px; padding: 10px;" type="text" name="name" required/><br>
-							
-							<button style="margin-top: 13px; width: 20%; " class="btn btn-secondary" type="submit" name="optionFornecedor" value="insertFornecedor">Salvar</button>
-						</div>
-					</c:when>
-					<c:otherwise>
-						<div class="container col-10 input-marca">
-							<input type="hidden" name="cod_fornecedor" value="${fornecedor.cod_fornecedor}"/><br>
-							<h2 style="margin-bottom: 50px; ">Atualizar Fornecedor</h2>
-							<input id="mensagem" style="border-radius: 5px; border: 1px solid gray; height: 30px; padding: 10px; type="text" name="name" value="${fornecedor.nome_fornecedor}" required/><br>
-							
-						
-							<button class="btn btn-secondary" type="submit" name="optionFornecedor" value="updateFornecedor">Atualizar</button>
-						</div>
-					</c:otherwise>
-				</c:choose>
-		</form>
-	</div>
+
+
+	
+
+	<div class="tabela" style=" margin-top: 16%;margin-left: 20%">
+		<div class="col-md-12 col-lg-9 conteudo ">
+			<div class="table-responsive">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Cod_Cliente</th>
+							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Nome</th>
+							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">CPF</th>
+							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Data de Nascimento</th>
+							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Email</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="usuario" items="${listUser}">
+							<tr>
+
+								<form action="ServletPimpolhos" method="post">
+									<td><c:out value="${usuario.cod_cliente}" /> <input
+										type="hidden" name="cod_cliente"
+										value="${usuario.cod_cliente}" /></td>
+									<td><c:out value="${usuario.nome}" /></td>
+									<td><span class="cpf"><c:out value="${usuario.cpf}" /></span></td>
+									<td><span class="data"><c:out value="${usuario.nascimento}" /></td>
+									<td><c:out value="${usuario.email}" /></td>
+									
+									<td class="btnAcoes">
+										<button class="btn btn-primary" type="submit" name="option" value="cartaoSelecionado">Ver Detalhes</button>
+									</td>
+								</form>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
+		</div>
 	</div>
 </div>
-	
-	
-	
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
-	<script src="app.js" ></script>
-	
-	
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+	<script src="app.js"></script>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous"></script>
 </body>
 </html>

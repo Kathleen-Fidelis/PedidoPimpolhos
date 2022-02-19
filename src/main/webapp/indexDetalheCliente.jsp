@@ -6,97 +6,90 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Pimpolhos ADM</title>
-<link rel="stylesheet" href="css/style.css" type="text/css">
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css"
 	rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light ">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="#">Pimpolhos</a>
-			<button class="navbar-toggler" type="button"
-				data-bs-toggle="collapse" data-bs-target="#navbarNav"
-				aria-controls="navbarNav" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<div class="col-12 navHamb">
-					<ul class="navbar-nav menuLateralTab">
-						<li class="nav-item"><a class="nav-link" aria-current="page"
-							href="#">Meu perfil</a></li>
-						<hr>
-						<li class="nav-item"><a class="nav-link clientes "
-							aria-current="page" href="ServletPimpolhos">Clientes</a></li>
-						<li class="nav-item"><a class="nav-link categorias"
-							href="ServletCategoria">Categorias</a></li>
-						<li class="nav-item"><a class="nav-link produtos"
-							href="ServletProduto">Produtos</a></li>
-						<li class="nav-item"><a class="nav-link fornecedores"
-							href="ServletFornecedor">Fornecedores</a></li>
-						<li class="nav-item"><a class="nav-link pedidos"
-							href="ServletPedido">Pedidos</a></li>
-						<li class="nav-item"><a class="nav-link marcas"
-							href="ServletMarca">Marcas</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</nav>
+	<input type="checkbox" id="nav-toggle">
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2><span class="las "></span> <span>Pimpolhos</span></h2>
+        </div>
+
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="" class="active">
+                        <span class="icon"> Home </span></a>
+                </li>
+                
+
+                <li>
+                    <a href="ServletPimpolhos
+                    " >
+                        <img src="imgs/user (1).png" class="icon"><span class="icon "> Clientes</span></a>
+                </li>
+
+ 				<li>
+                    <a href="ServletCategoria
+                    ">
+                        <img src="imgs/categories.png" class="icon"><span class="icon "> Categorias </span></a>
+                </li>
+                
+                <li>
+                    <a href="ServletPedido
+                    ">
+                        <img src="imgs/pedido.png" class="icon"><span class="icon "> Pedidos </span></a>
+                </li>
+
+                <li>
+                    <a href="ServletFornecedor
+                    ">
+                        <img src="imgs/fornecedor.png" class="icon"><span class="icon "> Fornecedores </span></a>
+                </li>
+                <li>
+                    <a href="ServletMarca
+                    ">
+                        <img src="imgs/etiqueta.png" class="icon"><span class="icon "> Marcas </span></a>
+                </li>
+                <li>
+                    <a href="ServletProduto
+                    ">
+                        <img src="imgs/produto.png" class="icon"><span class="icon "> Produtos </span></a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
 
 
+    <div class="main-content">
+        <div class="header-info">
+            <h2>
+                <label for="nav-toggle">
+                    <span class="las "><img src="imgs/menu-aberto (1).png" ></span>
+                </label>
+                Dashboard
+            </h2>
 
-	<div class="row bodyRow" style="justify-content: space-around;">
-		<div class="col-2 navLateral">
-			<ul class="navbar-nav menuLateralTab">
-				<li class="nav-item"><a class="nav-link" aria-current="page"
-					href="#">Meu perfil</a>
-					<hr>
-				<li class="nav-item"><a class="nav-link" aria-current="page"
-					href="ServletPimpolhos">
-						<div class="row">
-							<img class="col-3" alt="" src="imgs/user (1).png" width="13%">
-							<span class="col-6"> Cliente</span>
-						</div>
-				</a></li>
-				<li class="nav-item"><a class="nav-link"
-					href="ServletCategoria">
-						<div class="row">
-							<img class="col-3" alt="" src="imgs/categories.png" width="13%">
-							<span class="col-6"> Categorias</span>
-						</div>
-				</a></li>
-				<li class="nav-item"><a class="nav-link" href="ServletProduto">
-						<div class="row">
-							<img class="col-3" alt="" src="imgs/produto.png" width="13%">
-							<span class="col-6"> Produtos</span>
-						</div>
-				</a></li>
-				<li class="nav-item"><a class="nav-link"
-					href="ServletFornecedor">
-						<div class="row">
-							<img class="col-3" alt="" src="imgs/fornecedor.png" width="13%">
-							<span class="col-6"> Fornecedores</span>
-						</div>
-				</a></li>
-				<li class="nav-item"><a class="nav-link" href="ServletPedido">
-						<div class="row">
-							<img class="col-3" alt="" src="imgs/pedido.png" width="13%">
-							<span class="col-6"> Pedido</span>
-						</div>
-				</a></li>
-				<li class="nav-item"><a class="nav-link" href="ServletMarca">
-						<div class="row">
-							<img class="col-3" alt="" src="imgs/etiqueta.png" width="13%">
-							<span class="col-6"> Marca</span>
-						</div>
-				</a></li>
-			</ul>
-		</div>
+            <div class="search-wrapper">
+                <span class="las la-search"></span>
+                <input type="search" placeholder="procure aqui" />
+            </div>
+
+            <div class="user-wrapper">
+                <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
+                <div>
+                    <h4>Pimpolhos</h4>
+                    <small>Bebês Reborn</small>
+                </div>
+            </div>
+        </div>
 
 
-
-		<div class="col-md-12 col-lg-9 conteudo">
+<div class="tabela" style=" margin-top: 16%;margin-left: 20%">
+	<div class="col-md-12 col-lg-9 conteudo">
 			<div class="table-responsive">
 				<table class="table table-hover">
 					<thead>
@@ -122,37 +115,41 @@
 						</tr>
 					</thead>
 					<tbody>
-					
+					<c:forEach var="usuario" items="${listDetalhes}">
 							<tr>
-
+                     
+                     
+                     
 								<form action="ServletPimpolhos" method="post">
 								
-									<td><c:out value="${cod_cliente}" /> 
-									<input type="hidden" name="cod_cliente" value="${cod_cliente}" /></td>
-									<td><c:out value="${nome}" /></td>
-									<td><span class="cpf"><c:out value="${cpf}" /></span></td>
-									<td><c:out value="${nascimento}" /></td>
-									<td><c:out value="${email}" /></td>
-									<td><c:out value="${rua}" /></td>
-									<td><c:out value="${numeroCasa}" /></td>
-									<td><c:out value="${cep}" /></td>
-									<td><c:out value="${complemento}" /></td>
-									<td><c:out value="${pontoReferencia}" /></td>
-									<td><c:out value="${bairro}" /></td>
-									<td><c:out value="${cidade}" /></td>
-									<td><c:out value="${estado}" /></td>
-									<td><c:out value="${bandeira}" /></td>
-									<td><c:out value="${titularCartao}" /></td>
-									<td><c:out value="${dddtelefone}" /></td>
-									<td><c:out value="${telefoneCliente}" /></td>
-							        <td><c:out value="${tipoTelefone}" /></td>
-								</form>
+									<td><c:out value="${usuario.cod_cliente}" /> 
+									<input type="hidden" name="cod_cliente" value="${usuario.cod_cliente}" /></td>
+									<td><c:out value="${usuario.nome}" /></td>
+									<td><span class="cpf"><c:out value="${usuario.cpf}" /></span></td>
+									<td><c:out value="${usuario.nascimento}" /></td>
+									<td><c:out value="${usuario.email}" /></td>
+									<td><c:out value="${usuario.rua}" /></td>
+									<td><c:out value="${usuario.numeroCasa}" /></td>
+									<td><span class="cep"><c:out value="${usuario.cep}" /></td>
+									<td><c:out value="${usuario.complemento}" /></td>
+									<td><c:out value="${usuario.pontoReferencia}" /></td>
+									<td><c:out value="${usuario.bairro}" /></td>
+									<td><c:out value="${usuario.cidade}" /></td>
+									<td><c:out value="${usuario.estado}" /></td>
+									<td><c:out value="${usuario.bandeira}" /></td>
+									<td><c:out value="${usuario.titularCartao}" /></td>
+									<td><c:out value="${usuario.dddtelefone}" /></td>
+									<td><span class="celular"><c:out value="${usuario.telefoneCliente}" /></td>
+							        <td><c:out value="${usuario.tipoTelefone}" /></td>
+								</form>	
+								
 							</tr>
-					
+				</c:forEach>
 					</tbody>
 				</table>
 			</div>
 		</div>
+	</div>
 	</div>
 
 	
@@ -161,5 +158,9 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 		crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+	<script src="app.js" ></script>
+		
 </body>
 </html>

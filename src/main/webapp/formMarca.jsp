@@ -13,104 +13,85 @@
     <title>Cadastro marca</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light ">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Pimpolhos</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <div class="col-12 navHamb">
-                    <ul class="navbar-nav menuLateralTab">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">Meu perfil</a>
-                        </li>
-                        <hr>
-                        <li class="nav-item">
-                            <a class="nav-link clientes " aria-current="page" href="ServletPimpolhos">Clientes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link categorias" href="ServletCategoria">Categorias</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link produtos" href="ServletProduto">Produtos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fornecedores" href="ServletFornecedor">Fornecedores</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link pedidos" href="ServletPedido">Pedidos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link marcas" href="ServletMarca">Marcas</a>
-                        </li>
-                    </ul>
+    <input type="checkbox" id="nav-toggle">
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2><span class="las "></span> <span>Pimpolhos</span></h2>
+        </div>
+
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="index.jsp" class="active">
+                        <span class="icon"> Home </span></a>
+                </li>
+                
+
+                <li>
+                    <a href="ServletPimpolhos
+                    " >
+                        <img src="imgs/user (1).png" class="icon"><span class="icon "> Clientes</span></a>
+                </li>
+
+ 				<li>
+                    <a href="ServletCategoria
+                    ">
+                        <img src="imgs/categories.png" class="icon"><span class="icon "> Categorias </span></a>
+                </li>
+                
+                <li>
+                    <a href="ServletPedido
+                    ">
+                        <img src="imgs/pedido.png" class="icon"><span class="icon "> Pedidos </span></a>
+                </li>
+
+                <li>
+                    <a href="ServletFornecedor
+                    ">
+                        <img src="imgs/fornecedor.png" class="icon"><span class="icon "> Fornecedores </span></a>
+                </li>
+                <li>
+                    <a href="ServletMarca
+                    ">
+                        <img src="imgs/etiqueta.png" class="icon"><span class="icon "> Marcas </span></a>
+                </li>
+                <li>
+                    <a href="ServletProduto
+                    ">
+                        <img src="imgs/produto.png" class="icon"><span class="icon "> Produtos </span></a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+
+    <div class="main-content">
+        <div class="header-info">
+            <h2>
+                <label for="nav-toggle">
+                    <span class="las "><img src="imgs/menu-aberto (1).png" ></span>
+                </label>
+                Dashboard
+            </h2>
+
+            <div class="search-wrapper">
+                <span class="las la-search"></span>
+                <input type="search" placeholder="procure aqui" />
+            </div>
+
+            <div class="user-wrapper">
+                <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
+                <div>
+                    <h4>Pimpolhos</h4>
+                    <small>Bebês Reborn</small>
                 </div>
             </div>
         </div>
-     
-    </nav>
-
-    <div class="row bodyRow" style="justify-content:space-around;">
-        <div class="col-2 navLateral">
-            <ul class="navbar-nav menuLateralTab">
-               <li class="nav-item"><a class="nav-link" aria-current="page" href="#">Meu perfil</a>
-            	<hr>
-                <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="ServletPimpolhos">
-                            	<div class="row">
-                            		<img  class= "col-3" alt="" src="imgs/user (1).png" width="13%">
-                      				<span class="col-6"> Cliente</span>
-                     			</div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="ServletCategoria">
-                            	<div class="row">
-                            		<img  class= "col-3" alt="" src="imgs/categories.png" width="13%">
-                      				<span class="col-6"> Categorias</span>
-                     			</div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="ServletProduto">
-                            	<div class="row">
-                            		<img  class= "col-3" alt="" src="imgs/produto.png" width="13%">
-                      				<span class="col-6"> Produtos</span>
-                     			</div>
-                            </a>
-                        </li>
-                        <li class="nav-item" >
-                            <a class="nav-link" href="ServletFornecedor">
-                            	<div class="row" >
-                            		<img  class= "col-3" alt="" src="imgs/fornecedor.png" width="13%">
-                      				<span class="col-6"> Fornecedores</span>
-                     			</div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="ServletPedido">
-                            	<div class="row">
-                            		<img  class= "col-3" alt="" src="imgs/pedido.png" width="13%">
-                      				<span class="col-6"> Pedido</span>
-                     			</div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="ServletMarca">
-                            	<div class="row">
-                            		<img  class= "col-3" alt="" src="imgs/etiqueta.png" width="13%">
-                      				<span class="col-6"> Marca</span>
-                     			</div>
-                            </a>
-                </li>
-            </ul>
-        </div>
         
         
         
-        
+      <div class="tabela" style=" margin-top: 16%;margin-left: 20%">    
         <div class="col-md-12 col-lg-9 conteudo">
              <form action="ServletMarca" method="post">
 				<c:choose>
@@ -127,7 +108,7 @@
 						<div class="container col-10 input-marca">
 							<input type="hidden" name="cod_marca" value="${marca.cod_marca}"/><br>
 							<h2 style="margin-bottom: 50px; ">Atualizar Marca</h2>
-							<input style="border-radius: 5px; border: 1px solid gray; height: 30px; padding: 10px; type="text" name="name" value="${marca.nome_marca}" required/><br>
+							<input id="mensagem" style="border-radius: 5px; border: 1px solid gray; height: 30px; padding: 10px; type="text" name="name" value="${marca.nome_marca}" required/><br>
 							
 						
 							<button class="btn btn-secondary" type="submit" name="optionMarca" value="updateMarca">Atualizar</button>
@@ -136,9 +117,14 @@
 				</c:choose>
 			</form>
         </div>
+        </div>
 </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+	<script src="app.js" ></script>
+        
         
 </body>
 </html>

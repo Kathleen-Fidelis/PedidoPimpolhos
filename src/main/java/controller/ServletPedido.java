@@ -67,47 +67,11 @@ public class ServletPedido extends HttpServlet {
 //		break;
 		default:
 			selectAllPedido(request, response);
-	}
+		}
 		
 	}
 	
-//	private void showInsertPedido(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-//		request.getRequestDispatcher("formPedido.jsp").forward(request, response);
-//	}
-	
-//	private void showUpdatePedido(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-//		Integer id = Integer.parseInt(request.getParameter("cod_pedido"));
-//		Pedido pedido = this.dao.recuperarPedido(id);
-//		request.setAttribute("pedido", pedido);
-//		request.getRequestDispatcher("formPedido.jsp").forward(request, response);
-//	}
-	
-	
-//	private void showUpdateDetalhePedido(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-//		Integer id = Integer.parseInt(request.getParameter("cod_pedido"));
-//		ArrayList<Pedido> pedido = this.dao.recuperarDetalhePedido(id);
-//		request.setAttribute("pedido", pedido);
-//		request.getRequestDispatcher("indexDetalhePedido.jsp").forward(request, response);
-//	}
-//	
-	
-//	private void insertPedido(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-//		Integer frete = Integer.parseInt(request.getParameter("cod_frete"));
-//		Integer endereco = Integer.parseInt(request.getParameter("cod_endereco"));
-//		Integer cliente = Integer.parseInt(request.getParameter("cod_cliente"));
-//		Integer status = Integer.parseInt(request.getParameter("cod_status"));
-//		Integer operacao = Integer.parseInt(request.getParameter("cod_operacao"));
-//		Integer forma_pagamento = Integer.parseInt(request.getParameter("cod_forma_pagamento"));
-//		
-//		if ((frete != null) && (endereco != null) && (cliente != null) && (status != null) && (operacao != null) && (forma_pagamento != null) ) {
-//			if (!frete.equals("") && !endereco.equals("") && !cliente.equals("") && !status.equals("") && !operacao.equals("") && !forma_pagamento.equals("")){
-//				Pedido pedido = new Pedido (frete, endereco, cliente, status, operacao, forma_pagamento);
-//				this.dao.inserirPedido(pedido);
-//	}
-//		}
-//		response.sendRedirect("ServletPedido");
-//	}
-	
+
 	private void selectAllPedido(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		request.setAttribute("listaPedido", this.dao.exibirPedido());
 		request.getRequestDispatcher("indexPedido.jsp").forward(request, response);
@@ -117,17 +81,9 @@ public class ServletPedido extends HttpServlet {
 	
 	private void selectAllDetalhePedido(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		Integer id = Integer.parseInt(request.getParameter("cod_pedido"));
-		//ArrayList<Pedido> pedido = this.dao.recuperarDetalhePedido(id);
 		request.setAttribute("listaItemDetalhePedido", this.dao.recuperarDetalhePedido(id));
 		request.getRequestDispatcher("indexDetalhePedido.jsp").forward(request, response);
 	}
 	
 	
-//	private void selectAllDetalhePedido(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-//		request.setAttribute("listaDetalhePedido", this.dao.exibirDetalhePedido());
-//		request.getRequestDispatcher("indexDetalhePedido.jsp").forward(request, response);
-//	}
-	
-
-
 }

@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.DAOCategoria;
+import model.DAOFornecedor;
+import model.DAOMarca;
 import model.DAOProduto;
 import model.Produto;
 
@@ -15,6 +18,11 @@ import model.Produto;
 public class ServletProduto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
       private DAOProduto daoproduto;
+      private DAOCategoria daocategoria;
+      private DAOFornecedor daofornecedor;
+      private DAOMarca      daomarca;
+      
+      
    /**
     * @see HttpServlet#HttpServlet()
     */
@@ -22,7 +30,10 @@ public class ServletProduto extends HttpServlet {
        super();
        // TODO Auto-generated constructor stub
        this.daoproduto = new DAOProduto();
-   }
+       this.daofornecedor = new DAOFornecedor();
+       this.daomarca = new DAOMarca();
+       this.daocategoria = new DAOCategoria();
+       }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -70,15 +81,23 @@ public class ServletProduto extends HttpServlet {
 	
 	
 	private void showInsertProduto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		request.setAttribute("listCategoria",daocategoria.exibirCategoria());
+		request.setAttribute("listFornecedor", daofornecedor.exibirFornecedor());
+	    request.setAttribute("listMarca", daomarca.exibirMarca());
 		request.getRequestDispatcher("formProduto.jsp").forward(request, response);
 	}
 	
 	private void showUpdateProduto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		request.setAttribute("listCategoria",daocategoria.exibirCategoria());
+		request.setAttribute("listMarca", daomarca.exibirMarca());
+		request.setAttribute("listFornecedor", daofornecedor.exibirFornecedor());
 		Integer id = Integer.parseInt(request.getParameter("cod_produto"));
 		Produto produto = this.daoproduto.recuperarProduto(id);
 		request.setAttribute("produto", produto);
 		request.getRequestDispatcher("formProduto.jsp").forward(request, response);
 	}
+	
+	
 	
 	private void insertProduto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		
