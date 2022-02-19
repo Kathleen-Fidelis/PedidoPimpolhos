@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+       <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     
 <!DOCTYPE html>
 <html>
@@ -125,27 +125,54 @@
 								
 								<label style="margin-right: 17px;">Nome:</label><input type="text" name="nome" required/><br>
 								<label style="margin-right: 23px;">Preço:</label><input type="text" name="preco"/><br>
-								<label style="margin-right: 32px;">Sexo:</label><input type="text" name="sexo"/><br>
+								
+								<label style="margin-right: 32px;">Tipo de produto:</label>
+								<select class="form-select" name="sexo">
+                                <option value="Menino">Bebe Reborn Menino</option>
+                                <option value="Menina">Bebe Reborn Menina</option>
+                                <option value="Acessório">Acessório</option>
+                                </select>
+								
+								
 								<label style="margin-right: 32px;">Dimensão:</label><input type="text" name="dimensao"/><br>
 							    <label style="margin-right: 32px;">Material:</label><input type="text" name="material" required/><br>
 								<label style="margin-right: 23px;">Peso:</label><input type="text" name="peso"/><br>
 								<label style="margin-right: 32px;">Conteudo Produto:</label><input type="text" name="conteudo"/><br>
-								<label style="margin-right: 32px;">Fornecedor:</label><input name="cod_fornecedor" type="text" name="cod_fornecedor" >
+
 								
-								<select name="cod_categoria" class="form-select form-select-md">
+	                        <!-- Fornecedor v -->
+							
+							<label style="margin-right: 32px;">Fornecedor:</label>
+							<select name="cod_fornecedor" class="form-select form-select-md">
+                                 <c:forEach var="fornecedor" items="${listFornecedor}">  
+                                 <option value ="${fornecedor.cod_fornecedor}"> ${fornecedor.nome_fornecedor}</option>										
+                                  </c:forEach>							
+                                 </select>
+                                 
+							<!-- Fornecedor ^ -->
+							
+							<!-- Categoria v -->
+							<label style="margin-right: 32px;">Categoria:</label>
+							<select name="cod_categoria" class="form-select form-select-md">
                                  <c:forEach var="categoria" items="${listCategoria}">  
                                  <option value ="${categoria.cod_categoria}"> ${categoria.nome_categoria}</option>										
                                   </c:forEach>							
                                  </select>
-                           
-								<label style="margin-right: 32px;">Imagem:</label><input type="text" name="img_produto"/><br>
-								<label style="margin-right: 32px;">Marca:</label><input type="text" name="cod_marca"/><br>
-								
-								
-								
-							   
-							    
-							    
+                            <!-- Fornecedor  ^ -->
+
+							<label style="margin-right: 32px;">Imagem:</label>
+							<input type="text" name="img_produto" value="${produto.img_produto}"/>
+							
+							<!-- Marca  v -->
+							<label style="margin-right: 32px;">Marca:</label>	
+							<select name="cod_marca" class="form-select form-select-md">
+                                 <c:forEach var="marca" items="${listMarca}">  
+                                 <option value ="${marca.cod_marca}"> ${marca.nome_marca}</option>										
+                                  </c:forEach>							
+                                 </select>
+							<!-- Marca ^ -->
+							
+							
 							    
 								<button style="margin-top: 13px; width: 20%;" class="btn btn-secondary" type="submit" name="optionProduto" value="insertProduto">Salvar</button>
 						</div>
@@ -155,30 +182,54 @@
 							<h2 style="margin: 30px 0px 50px 0px">Atualizar Produto</h2>
 						
 							<input type="hidden" name="cod_produto" value="${produto.cod_produto}"/><br>
-							<label style="margin-right: 17px;">Nome:</label>
-							<input type="text" name="nome" value="${produto.nome}" required/><br>
-							<label style="margin-right: 23px;">Preço:</label>
-							<input type="text" name="preco" value="${produto.preco}" required/><br>
-							<label style="margin-right: 23px;">Sexo:</label>
-							<input type="text" name="sexo" value="${produto.sexo}"/><br>
-							<label style="margin-right: 32px;">Dimensao:</label>
-							<input type="text" name="dimensao" value="${produto.dimensao}"/><br>
-							<label style="margin-right: 23px;">Material:</label>
-							<input type="text" name="material" value="${produto.material}" required/><br>
-							<label style="margin-right: 23px;">Peso:</label>
-							<input type="text" name="peso" value="${produto.peso}"/><br>
-							<label style="margin-right: 32px;">Conteudo produto:</label>
-							<input type="text" name="conteudo" value="${produto.conteudo_produto}"/><br>
+							<label style="margin-right: 17px;">Nome:</label><input type="text" name="nome" required/><br>
+								<label style="margin-right: 23px;">Preço:</label><input type="text" name="preco"/><br>
+								
+								<label style="margin-right: 32px;">Tipo de produto:</label>
+								<select class="form-select" name="sexo">
+                                <option value="Menino">Bebe Reborn Menino</option>
+                                <option value="Menina">Bebe Reborn Menina</option>
+                                <option value="Acessório">Acessório</option>
+                                </select>
+								
+								
+								<label style="margin-right: 32px;">Dimensão:</label><input type="text" name="dimensao"/><br>
+							    <label style="margin-right: 32px;">Material:</label><input type="text" name="material" required/><br>
+								<label style="margin-right: 23px;">Peso:</label><input type="text" name="peso"/><br>
+								<label style="margin-right: 32px;">Conteudo Produto:</label><input type="text" name="conteudo"/><br>
+
+								
+	                        <!-- Fornecedor v -->
+							
 							<label style="margin-right: 32px;">Fornecedor:</label>
-							<input type="text" name="cod_fornecedor" value="${produto.cod_fornecedor}"/><br>
+							<select name="cod_fornecedor" class="form-select form-select-md">
+                                 <c:forEach var="fornecedor" items="${listFornecedor}">  
+                                 <option value ="${fornecedor.cod_fornecedor}"> ${fornecedor.nome_fornecedor}</option>										
+                                  </c:forEach>							
+                                 </select>
+                                 
+							<!-- Fornecedor ^ -->
+							
+							<!-- Categoria v -->
 							<label style="margin-right: 32px;">Categoria:</label>
-							<input type="text" name="cod_categoria" value="${produto.cod_categoria}"/><br>
+							<select name="cod_categoria" class="form-select form-select-md">
+                                 <c:forEach var="categoria" items="${listCategoria}">  
+                                 <option value ="${categoria.cod_categoria}"> ${categoria.nome_categoria}</option>										
+                                  </c:forEach>							
+                                 </select>
+                            <!-- Fornecedor  ^ -->
+
 							<label style="margin-right: 32px;">Imagem:</label>
-							<input type="text" name="img_produto" value="${produto.img_produto}"/><br>
-							<label style="margin-right: 32px;">Marca:</label>
-							<input type="text" name="cod_marca" value="${produto.cod_marca}"/><br>
+							<input type="text" name="img_produto" value="${produto.img_produto}"/>
 							
-							
+							<!-- Marca  v -->
+							<label style="margin-right: 32px;">Marca:</label>	
+							<select name="cod_marca" class="form-select form-select-md">
+                                 <c:forEach var="marca" items="${listMarca}">  
+                                 <option value ="${marca.cod_marca}"> ${marca.nome_marca}</option>										
+                                  </c:forEach>							
+                                 </select>
+							<!-- Marca ^ -->
 						
 							<button class="btn btn-secondary" type="submit" name="optionProduto" value="updateProduto">Atualizar</button>
 						</div>

@@ -82,18 +82,22 @@ public class ServletProduto extends HttpServlet {
 	
 	private void showInsertProduto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		request.setAttribute("listCategoria",daocategoria.exibirCategoria());
-		// request.setAttribute("listFornecedor", daofornecedor.exibirFornecedor());
-		//request.setAttribute("produto", produto);
-		
+		request.setAttribute("listFornecedor", daofornecedor.exibirFornecedor());
+	    request.setAttribute("listMarca", daomarca.exibirMarca());
 		request.getRequestDispatcher("formProduto.jsp").forward(request, response);
 	}
 	
 	private void showUpdateProduto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		request.setAttribute("listCategoria",daocategoria.exibirCategoria());
+		request.setAttribute("listMarca", daomarca.exibirMarca());
+		request.setAttribute("listFornecedor", daofornecedor.exibirFornecedor());
 		Integer id = Integer.parseInt(request.getParameter("cod_produto"));
 		Produto produto = this.daoproduto.recuperarProduto(id);
-		request.setAttribute("usuario", produto);
+		request.setAttribute("produto", produto);
 		request.getRequestDispatcher("formProduto.jsp").forward(request, response);
 	}
+	
+	
 	
 	private void insertProduto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		
