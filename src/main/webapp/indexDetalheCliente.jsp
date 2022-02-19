@@ -11,7 +11,6 @@
 	rel="stylesheet">
 </head>
 <body>
-
 	<nav class="navbar navbar-expand-lg navbar-light ">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#">Pimpolhos</a>
@@ -47,9 +46,8 @@
 
 
 
-
 	<div class="row bodyRow" style="justify-content: space-around;">
-		<div class="col-xl-2 navLateral">
+		<div class="col-2 navLateral">
 			<ul class="navbar-nav menuLateralTab">
 				<li class="nav-item"><a class="nav-link" aria-current="page"
 					href="#">Meu perfil</a>
@@ -98,49 +96,66 @@
 
 
 
-
 		<div class="col-md-12 col-lg-9 conteudo">
 			<div class="table-responsive">
 				<table class="table table-hover">
 					<thead>
 						<tr>
-							<th>Cod. Pedido</th>
-							<th>Nome cliente</th>
-							<th>Data pedido</th>
-							<th>Quantidade</th>
-							<th style="word-wrap: break-word; min-width: 122px; max-width: 160px;">Tipo de envio</th>
-							<th style="word-wrap: break-word; min-width: 122px; max-width: 160px;">Valor do frete</th>
-							<th>Status pedido</th>
-							<th>Valor total</th>
+						    <th>#</th>
+							<th>Nome</th>
+							<th>CPF</th>
+							<th>Data de Nascimento</th>
+							<th>Email</th>
+				            <th>Rua </th>
+				            <th>Nº</th>
+							<th>CEP</th>
+							<th>Complemento</th>
+							<th>Ponto de referencia</th>
+							<th>Bairro</th>
+							<th>Cidade </th>
+							<th>Estado</th>
+						    <th>Bandeira</th>
+						    <th>Titular do Cartão</th>
+						    <th>DDD</th>
+						    <th>Telefone</th>
+						    <th>Tipo do telefone</th>
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="pedido" items="${listaPedido}">
+					
 							<tr>
 
-								<form action="ServletPedido" method="post">
-									<td><c:out value="${pedido.cod_pedido}" /> 
-										<input type="hidden" name="cod_pedido" value="${pedido.cod_pedido}" />
-									</td>
-									<td><c:out value="${pedido.nome_cliente}" /></td>
-									<td><c:out value="${pedido.data_pedido}" /></td>
-									<td><c:out value="${pedido.quantidade}" /></td>
-									<td><c:out value="${pedido.descricao_frete}" /></td>
-									<td><c:out value="${pedido.valor_frete}" /></td>
-									<td><c:out value="${pedido.descricao_status_pedido}" /></td>
-									<td><c:out value="${pedido.valor_total}" /></td>
-									<td class="btnAcoes">
-										<button type="submit" name="optionPedido" value="detalhePedido">Ver Detalhes</button>
-									</td>
+								<form action="ServletPimpolhos" method="post">
+								
+									<td><c:out value="${cod_cliente}" /> 
+									<input type="hidden" name="cod_cliente" value="${cod_cliente}" /></td>
+									<td><c:out value="${nome}" /></td>
+									<td><span class="cpf"><c:out value="${cpf}" /></span></td>
+									<td><c:out value="${nascimento}" /></td>
+									<td><c:out value="${email}" /></td>
+									<td><c:out value="${rua}" /></td>
+									<td><c:out value="${numeroCasa}" /></td>
+									<td><c:out value="${cep}" /></td>
+									<td><c:out value="${complemento}" /></td>
+									<td><c:out value="${pontoReferencia}" /></td>
+									<td><c:out value="${bairro}" /></td>
+									<td><c:out value="${cidade}" /></td>
+									<td><c:out value="${estado}" /></td>
+									<td><c:out value="${bandeira}" /></td>
+									<td><c:out value="${titularCartao}" /></td>
+									<td><c:out value="${dddtelefone}" /></td>
+									<td><c:out value="${telefoneCliente}" /></td>
+							        <td><c:out value="${tipoTelefone}" /></td>
 								</form>
 							</tr>
-						</c:forEach>
+					
 					</tbody>
 				</table>
 			</div>
 		</div>
 	</div>
 
+	
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

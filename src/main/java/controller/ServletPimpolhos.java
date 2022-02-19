@@ -60,7 +60,7 @@ public class ServletPimpolhos extends HttpServlet {
 //				insertUser(request, response);
 //			break;
 			default:
-				selectAllUsers(request, response);
+//				selectAllUsers(request, response);
 		}
 		
 //	
@@ -69,11 +69,11 @@ public class ServletPimpolhos extends HttpServlet {
 // ---------------------------------------------- CLIENTE -----------------------------------------------------------------	
 
 
-	private void selectAllUsers(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		
-		request.setAttribute("listUser", this.dao.exibirUsuarios());
-		request.getRequestDispatcher("index.jsp").forward(request, response);
-	}
-	
+//	private void selectAllUsers(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+//		
+//		request.setAttribute("lista", this.dao.exibirUsuarios());
+//		request.getRequestDispatcher("index.jsp").forward(request, response);
+//	}
+//	
 
 }

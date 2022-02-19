@@ -17,7 +17,7 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav1">
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="col-12 navHamb">
                     <ul class="navbar-nav menuLateralTab">
                         <li class="nav-item">
@@ -117,6 +117,7 @@
 						<tr>
 							<th>Cod. Categoria</th>
 							<th>Nome Categoria</th>
+							<th style="text-align:center;">Ações</th> 
 						</tr>
 					</thead>
 					<tbody>

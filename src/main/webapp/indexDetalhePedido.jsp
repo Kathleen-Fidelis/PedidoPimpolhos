@@ -10,6 +10,7 @@
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+
 	<nav class="navbar navbar-expand-lg navbar-light ">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Pimpolhos</a>
@@ -47,13 +48,14 @@
             </div>
         </div>
     </nav>
-    
-    
-    
- <div class="row bodyRow" style="justify-content:space-around;">
-        <div class="col-2 navLateral">
+	
+	
+
+
+    <div class="row bodyRow" style="justify-content:space-around;">
+        <div class="col-xl-2 navLateral">
             <ul class="navbar-nav menuLateralTab">
-               <li class="nav-item"><a class="nav-link" aria-current="page" href="#">Meu perfil</a>
+              <li class="nav-item"><a class="nav-link" aria-current="page" href="#">Meu perfil</a>
             	<hr>
                 <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="ServletPimpolhos">
@@ -106,59 +108,76 @@
             </ul>
         </div>
         
-
         
-        <div class="col-md-12 col-lg-9 conteudo">
+        
+        
+      <div class="col-md-12 col-lg-9 conteudo">
           <div class = "table-responsive">
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>Cod_Cliente</th>
-                        <th style="word-wrap: break-word;min-width: 160px;max-width: 160px;">Nome</th>
-                        <th style="word-wrap: break-word;min-width: 160px;max-width: 160px;">CPF</th>
-                        <th>Data de Nascimento</th>
-                        <th>Email</th>    
-                         <th style="word-wrap: break-word;min-width: 160px;max-width: 160px;">Rua</th> 
-                           <th style="word-wrap: break-word;min-width: 50px;max-width: 160px;">Nº</th>  
-                           <th style="word-wrap: break-word;min-width: 440px;max-width: 160px;">CEP</th> 
-                            <th style="word-wrap: break-word;min-width: 136px;max-width: 160px;">Complemento</th> 
-                           <th style="word-wrap: break-word;min-width: 186px;max-width: 160px;">Ponto de Referencia</th> 
-                           <th style="word-wrap: break-word;min-width: 186px;max-width: 160px;">Bairro</th> 
-                          <th style="word-wrap: break-word;min-width: 120px;max-width: 160px;">Cidade</th> 
-                           <th>Estado</th> 
-                          
+                        <th>Cod. Pedido</th>    
+                        <th>Data pedido</th> 
+                        <th>Nome cliente</th> 
+                        <th>Cidade</th> 
+                        <th>CEP</th> 
+                        <th>Rua</th> 
+                        <th>Número</th> 
+                        <th>Complemento</th> 
+                        <th>Bairro</th> 
+                        <th>Ponto Referência</th> 
+                        <th>Estado</th> 
+                        <th style="word-wrap: break-word;min-width: 122px;max-width: 160px;">Tipo de envio</th>
+                        <th style="word-wrap: break-word;min-width: 122px;max-width: 160px;">Valor do frete</th>
+                        <th>Status pedido</th> 
+                        <th>Forma Pagamento</th> 
+                        <th>Nome Produto</th> 
+                        <th>Preço</th>
+                        <th>Marca</th>  
+                        <th>Quantidade</th> 
+                        <th>Valor total</th> 
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    <c:forEach var="pedido" items="${listaItemDetalhePedido}">
                         <tr>
                             
-                            <form action="ServletPimpolhos" method="post">
+                            <form action="ServletPedido" method="post">
                                 <td>
-                                    <c:out value="${usuario.cod_cliente}"/>
-                                    <input type="hidden" name="cod_cliente" value="${usuario.cod_cliente}"/>
+                                    <c:out value="${pedido.cod_pedido}"/>
+                                    <input type="hidden" name="cod_pedido" value="${pedido.cod_pedido}"/>
                                 </td>
-                                <td><c:out value="${usuario.nome}"/></td>
-                                <td><c:out value="${usuario.cpf}"/></td>
-                                <td><c:out value="${usuario.nascimento}"/></td>
-                                <td><c:out value="${usuario.email}"/></td>
-                                <td><c:out value="${usuario.rua}"/></td>
-                                 <td style="word-wrap: break-word;min-width: 50px;max-width: 160px;"><c:out value="${usuario.numeroCasa}"/></td>
-                                 <td><c:out value="${usuario.cep}"/></td>
-                                 <td><c:out value="${usuario.complemento}"/></td>
-                                 <td><c:out value="${usuario.pontoReferencia}"/></td>
-                                 <td><c:out value="${usuario.bairro}"/></td>
-                                 <td><c:out value="${usuario.cidade}"/></td>
-                                 <td><c:out value="${usuario.estado}"/></td>
+                                <td> <c:out value="${pedido.data_pedido}"/></td>
+                                <td ><c:out value="${pedido.nome_cliente}"/></td>
+                                <td ><c:out value="${pedido.nome_cidade}"/></td>
+                                <td ><c:out value="${pedido.cep}"/></td>
+                                <td ><c:out value="${pedido.nome_rua}"/></td>
+                                <td ><c:out value="${pedido.numero_casa}"/></td>
+                                <td ><c:out value="${pedido.complemento}"/></td>
+                                <td ><c:out value="${pedido.bairro}"/></td>
+                                <td ><c:out value="${pedido.ponto_referencia}"/></td>
+                                <td ><c:out value="${pedido.descricao_estado}"/></td>
+                                <td> <c:out value="${pedido.descricao_frete}"/></td>
+                                <td> <c:out value="${pedido.valor_frete}"/></td>
+                                <td> <c:out value="${pedido.descricao_status_pedido}"/></td>
+                                <td> <c:out value="${pedido.descricao_forma_pagamento}"/></td>
+                                <td> <c:out value="${pedido.nome}"/></td>
+                                <td> <c:out value="${pedido.preco}"/></td>
+                                <td> <c:out value="${pedido.nome_marca}"/></td>
+                                <td> <c:out value="${pedido.quantidade}"/></td>
+                                <td> <c:out value="${pedido.valor_total}"/></td>
                             </form>
+                            
                         </tr>
-                   
+                  </c:forEach>
                 </tbody>
               </table>
             </div>
         </div>
+        
     </div>
     
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
