@@ -14,8 +14,17 @@ td{
     background-color: white !important;
 }
 
+body {
+	background-color:#f1f5f9 !important; 
+}
+
+.tabela {
+	 margin-top: 16%;
+	 margin-left: 10%;
+}
+
 .btnAcoes button{
-	/*background-color: transparent !important; 
+	/*background-color: transparent 
 	margin-left: 10px;
 	border: none;
 	text-decoration: underline;
@@ -24,15 +33,10 @@ td{
 	
 }
 
-.btn-primary{
-	background-color: #9ACCFF;
-	border: none;
-}
 
 
-.btn-primary:hover{
-	background-color: #9ACCFF;
-}
+
+
 
 
 input[type="number"]::-webkit-outer-spin-button,
@@ -108,14 +112,23 @@ tbody{
     background-color: rgb(255 255 255);
     border: 3px solid rgb(226 222 222);
     border-radius: 10px;
+    margin-top: 1%;
+    padding-bottom: 2%;
    
 }
 
 
 
-.button{
-	margin-top:15%;
-	margin-left:20%;
+.btnPage {
+	font-weight: bold;
+    background-color: #9ACCFF;
+    border: none;
+}
+
+.btn.btn-primary.btnPage {
+	font-weight: bold;
+    background-color: #9ACCFF;
+    border: none;
 }
 
 .select{
@@ -226,10 +239,7 @@ tbody{
         display: none;
     }
     
-    .conteudo{
-        margin-left: 24px;
-    }
-   
+  
 }
 
 
@@ -303,7 +313,7 @@ tbody{
 
 
 #nav-toggle:checked + .sidebar{
-    width: 70px;
+    width: 0px;
 }
 
 #nav-toggle:checked + .sidebar .sidebar-brand, 
@@ -329,8 +339,8 @@ tbody{
 }
 
 #nav-toggle:checked ~ .main-content .header-info{
-    width: calc(100% - 70px);
-    left: 70px;
+    width: 100%;
+    left: 0px;
 }
 
 .main-content{

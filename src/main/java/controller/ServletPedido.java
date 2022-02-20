@@ -1,18 +1,13 @@
 package controller;
-
 import java.io.IOException;
 import java.util.ArrayList;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import model.DAO;
 import model.Pedido;
-
-
 /**
  * Servlet implementation class ServletPedido
  */
@@ -29,7 +24,6 @@ public class ServletPedido extends HttpServlet {
         // TODO Auto-generated constructor stub
         this.dao = new DAO();
     }
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -38,7 +32,6 @@ public class ServletPedido extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		doPost(request, response);
 	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -68,9 +61,9 @@ public class ServletPedido extends HttpServlet {
 		default:
 			selectAllPedido(request, response);
 		}
-		
+
 	}
-	
+
 
 	private void selectAllPedido(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		request.setAttribute("listaPedido", this.dao.exibirPedido());
@@ -78,12 +71,12 @@ public class ServletPedido extends HttpServlet {
 	}
 	
 	
-	
+
 	private void selectAllDetalhePedido(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		Integer id = Integer.parseInt(request.getParameter("cod_pedido"));
 		request.setAttribute("listaItemDetalhePedido", this.dao.recuperarDetalhePedido(id));
 		request.getRequestDispatcher("indexDetalhePedido.jsp").forward(request, response);
 	}
-	
-	
+
+
 }

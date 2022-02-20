@@ -92,6 +92,7 @@ public class ServletProduto extends HttpServlet {
 		request.setAttribute("listMarca", daomarca.exibirMarca());
 		request.setAttribute("listFornecedor", daofornecedor.exibirFornecedor());
 		Integer id = Integer.parseInt(request.getParameter("cod_produto"));
+		System.out.println(id);
 		Produto produto = this.daoproduto.recuperarProduto(id);
 		request.setAttribute("produto", produto);
 		request.getRequestDispatcher("formProduto.jsp").forward(request, response);

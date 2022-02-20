@@ -91,7 +91,7 @@
    
         
         
-      <div class="tabela" style=" margin-top: 16%;margin-left: 20%">  
+      <div class="tabela">  
         <div class="col-md 12 col-lg-9 conteudo">
             <form action="ServletProduto" method="post">
 
@@ -153,7 +153,7 @@
 							
 							
 							    
-								<button style="margin-top: 13px; width: 20%;" class="btn btn-secondary" type="submit" name="optionProduto" value="insertProduto">Salvar</button>
+								<button class="btn btn-primary btnPage" type="submit" name="optionProduto" value="insertProduto">Salvar</button>
 						</div>
 					</c:when>
 					<c:otherwise>
@@ -161,8 +161,8 @@
 							<h2 style="margin: 30px 0px 50px 0px">Atualizar Produto</h2>
 						
 							<input class="form-control" type="hidden" name="cod_produto" value="${produto.cod_produto}"/><br>
-							<label class="form-label" style="margin-right: 17px;">Nome:</label><input class="form-control" type="text" name="nome" required/><br>
-								<label class="form-label" style="margin-right: 23px;">Preço:</label><input class="form-control" type="text" name="preco"/><br>
+							<label class="form-label" style="margin-right: 17px;">Nome:</label><input class="form-control" type="text" name="nome" value="${produto.nome}" required /><br>
+								<label class="form-label" style="margin-right: 23px;">Preço:</label><input class="form-control" type="text" name="preco" value="${produto.peso}"/><br>
 								
 								<label class="form-label" style="margin-right: 32px;">Tipo de produto:</label>
 								<select class="form-select input-select" name="sexo">
@@ -172,10 +172,10 @@
                                 </select>
 								
 								
-								<label class="form-label" style="margin-right: 32px;">Dimensão:</label><input class="form-control" type="text" name="dimensao"/><br>
-							    <label class="form-label" style="margin-right: 32px;">Material:</label><input class="form-control" type="text" name="material" required/><br>
-								<label class="form-label" style="margin-right: 23px;">Peso:</label><input class="form-control" type="text" name="peso"/><br>
-								<label class="form-label" style="margin-right: 32px;">Conteudo Produto:</label><input class="form-control" type="text" name="conteudo"/><br>
+								<label class="form-label" style="margin-right: 32px;">Dimensão:</label><input class="form-control" type="text" name="dimensao" value="${produto.dimensao}"/>
+							    <label class="form-label" style="margin-right: 32px;">Material:</label><input class="form-control" type="text" name="material" value="${produto.material}" required/>
+								<label class="form-label" style="margin-right: 23px;">Peso:</label><input class="form-control" type="text" name="peso" value="${produto.peso}"/>
+								<label class="form-label" style="margin-right: 32px;">Conteudo Produto:</label><input class="form-control" type="text" name="conteudo" value="${produto.conteudo_produto}"/>
 
 								
 	                        <!-- Fornecedor v -->
@@ -210,14 +210,14 @@
                                  </select>
 							<!-- Marca ^ -->
 						
-							<button class="btn btn-secondary" type="submit" name="optionProduto" value="updateProduto">Atualizar</button>
+							<button class="btn btn-primary btnPage" type="submit" name="optionProduto" value="updateProduto">Atualizar</button>
 						</div>
 					</c:otherwise>
 				</c:choose>
             </form>
         </div>
          </div>
-     
+     </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         
 </body>

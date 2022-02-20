@@ -88,7 +88,7 @@
         </div>
 
 
-<div class="tabela" style=" margin-top: 16%;margin-left: 20%">
+<div class="tabela">
 	<div class="col-md-12 col-lg-9 conteudo">
 			<div class="table-responsive">
 				<table class="table table-hover">

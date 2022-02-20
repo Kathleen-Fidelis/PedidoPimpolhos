@@ -90,11 +90,13 @@
         </div>
 
     <form action="ServletProduto" method="post">
-		<button class="btn btn-secondary col-3 button" style=" font-weight: bold; background-color: #9ACCFF; border: none;" type="submit"  name="optionProduto" value="insertFormProduto"> Adicionar Produto</button>
-
+		<button class="btn btn-secondary col-3 btnPage" style=" font-weight: bold; background-color: #9ACCFF; border: none;" type="submit"  name="optionProduto" value="insertFormProduto"> Adicionar Produto</button>
 	</form>
     
-    <div class="tabela" style=" margin-top: 3%;margin-left: 20%">
+    <div class="tabela">
+    <form action="ServletProduto" method="post">
+		<button class="btn btn-primary col-3 btnPage"  type="submit"  name="optionProduto" value="insertFormProduto"> Adicionar Produto</button>
+	</form>
         <div class="col-md-12 col-lg-9 conteudo">
           <div class = "table-responsive">
             <table class="table table-hover">
@@ -112,7 +114,7 @@
                         <th>Categoria</th>
                         <th>Imagem</th>
                         <th>Marca</th>
-                              
+                         <th>Ações</th>     
                       
                     </tr>
                 </thead>
@@ -141,9 +143,9 @@
                                 <td><c:out value="${produto.nome_marca}"/></td>                       
                                </div>
                                
-                               <td class="btnAcoes" >
-                               		<button type="submit" class="btn btn-primary" name="optionProduto" value="deleteProduto">Deletar</button>
-									<button type="submit" class="btn btn-primary" name="optionProduto" value="updateFormProduto">Atualizar</button>
+                               <td >
+                               		<button type="submit" class="btn btn-primary btnPage" name="optionProduto" value="deleteProduto">Deletar</button>
+									<button type="submit" class="btn btn-primary btnPage" name="optionProduto" value="updateFormProduto">Atualizar</button>
 							  </td>
 
                                

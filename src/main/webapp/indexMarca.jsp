@@ -89,12 +89,12 @@
             </div>
         </div>
     
-    <form action="ServletMarca" method="post">
-		<button class="btn btn-secondary col-3 button" style=" font-weight: bold; background-color: #9ACCFF; border: none;" type="submit"  name="optionMarca" value="insertFormMarca"> Adicionar Marca</button>
+    
 
-	</form>
-
-	<div class="tabela" style=" margin-top: 3%;margin-left: 20%">
+	<div class="tabela">
+	<form action="ServletMarca" method="post">
+		<button class="btn btn-primary col-3 btnPage" type="submit"  name="optionMarca" value="insertFormMarca"> Adicionar Marca</button>
+    </form>
         <div class="col-md-12 col-lg-9 conteudo">
           <div class = "table-responsive">
             <table class="table table-hover ">
@@ -116,8 +116,8 @@
 							<td><c:out value="${marca.nome_marca}"/></td>
 							
 							<td class="btnAcoes">
-								<button class="btn btn-primary" type="submit" name="optionMarca" value="deleteMarca">Deletar</button>
-								<button class="btn btn-primary" type="submit" name="optionMarca" value="updateFormMarca">Atualizar</button>
+								<button class="btn btn-primary btnPage" type="submit" name="optionMarca" value="deleteMarca">Deletar</button>
+								<button class="btn btn-primary btnPage" type="submit" name="optionMarca" value="updateFormMarca">Atualizar</button>
 							</td>
 						</form>	
 

@@ -87,14 +87,16 @@
             </div>
         </div>
 
-	<div>
-	
-	<form action="ServletCategoria" method="post">
-		<button class="btn btn-secondary col-3 button" style=" font-weight: bold; background-color: #9ACCFF; border: none;" type="submit"  name="optionCategoria" value="insertFormCategoria"> Adicionar Categoria</button>
-	</form>
 
-	<div class="tabela" style="margin-top: 3%;margin-left: 20%;">
-        <div class="col-md-12 col-lg-9 conteudo tabela">
+	
+	
+
+	<div class="tabela">
+	<form action="ServletCategoria" method="post">
+		<button class="btn btn-primary col-3 btnPage" type="submit"  name="optionCategoria" value="insertFormCategoria"> Adicionar Categoria</button>
+	</form>
+        <div class="col-md-12 col-lg-9 conteudo">
+        
 			<div class = "table-responsive">
 				<table class="table table-hover" >
 					<thead>
@@ -115,8 +117,8 @@
 									<td><c:out value="${categoria.nome_categoria}"/></td>
 									
 									<td class="btnAcoes">
-										<button class="btn btn-primary"  type="submit" name="optionCategoria" value="deleteCategoria">Deletar</button>
-										<button class="btn btn-primary"  type="submit" name="optionCategoria" value="updateFormCategoria">Atualizar</button>
+										<button class="btn btn-primary btnPage"  type="submit" name="optionCategoria" value="deleteCategoria">Deletar</button>
+										<button class="btn btn-primary btnPage"  type="submit" name="optionCategoria" value="updateFormCategoria">Atualizar</button>
 									</td>
 								</form>
 							</tr>
@@ -126,7 +128,6 @@
 		</div>
 	</div>
 	</div>
-</div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

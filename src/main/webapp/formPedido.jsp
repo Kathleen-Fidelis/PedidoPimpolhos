@@ -112,7 +112,7 @@
 			    <label style="margin-right: 32px;">Forma Pagamento:</label><input type="text" name="cod_forma_pagamento"/><br>
 			    
 			    
-				<button style="margin-top: 13px;" class="btn btn-secondary" type="submit" name="optionPedido" value="insertPedido">Salvar</button>
+				<button class="btn btn-primary btnPage" type="submit" name="optionPedido" value="insertPedido">Salvar</button>
 				</div>
 			</c:when>
 			<c:otherwise>
@@ -131,7 +131,7 @@
 				<label style="margin-right: 32px;">Forma Pagamento:</label>
 				<input type="text" name="cod_forma_pagamento" value="${pedido.cod_forma_pagamento}"/><br>
 			
-				<button class="btn btn-secondary" type="submit" name="optionPedido" value="updatePedido">Atualizar</button>
+				<button class="btn btn-primary btnPage" type="submit" name="optionPedido" value="updatePedido">Atualizar</button>
 			</div>
 			</c:otherwise>
 		</c:choose>

@@ -97,19 +97,19 @@
 						<div class="container col-10 input-marca"">
 							<h2 style="margin: 30px 0px 50px 0px;">Cadastrar Marca</h2>
 							<!--  <input style="border-radius: 5px; border: 1px solid gray; height: 30px; padding: 10px;" type="text" name="name" required/><br>-->
-							<label style="margin-right: 17px;">Nome da Marca:<input style="border-radius: 5px; border: 1px solid gray; height: 30px; padding: 10px;" type="text" name="name" required/><br>
+							<label style="margin-right: 17px;">Nome da Marca:<input class="form-control input-select" type="text" name="name" required/><br>
 							
-							<button style="margin-top: 13px; width: 20%; " class="btn btn-secondary" type="submit" name="optionMarca" value="insertMarca">Salvar</button>
+							<button class="btn btn-primary btnPage"   type="submit" name="optionMarca" value="insertMarca">Salvar</button>
 						</div>
 					</c:when>
 					<c:otherwise>
 						<div class="container col-10 input-marca">
 							<input type="hidden" name="cod_marca" value="${marca.cod_marca}"/><br>
 							<h2 style="margin-bottom: 50px; ">Atualizar Marca</h2>
-							<input id="mensagem" style="border-radius: 5px; border: 1px solid gray; height: 30px; padding: 10px; type="text" name="name" value="${marca.nome_marca}" required/><br>
+							<input id="mensagem" class="form-control input-select" type="text" name="name" value="${marca.nome_marca}" required/><br>
 							
 						
-							<button class="btn btn-secondary" type="submit" name="optionMarca" value="updateMarca">Atualizar</button>
+							<button class="btn btn-primary btnPage" type="submit" name="optionMarca" value="updateMarca">Atualizar</button>
 						</div>
 					</c:otherwise>
 				</c:choose>
