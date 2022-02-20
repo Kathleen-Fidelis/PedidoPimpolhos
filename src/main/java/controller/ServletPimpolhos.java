@@ -76,7 +76,7 @@ public class ServletPimpolhos extends HttpServlet {
 	private void selectAllUsers (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 	
 		request.setAttribute("listUser", this.dao.exibirUsuarios());
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		request.getRequestDispatcher("indexCliente.jsp").forward(request, response);
 	}
 	
 	private void selectAllDetalhesCliente(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
@@ -84,21 +84,9 @@ public class ServletPimpolhos extends HttpServlet {
 		Integer id = Integer.parseInt(request.getParameter("cod_cliente"));
 		System.out.println(id);
 		request.setAttribute("listDetalhes",this.dao.recuperarDetalhesCliente(id));
-		request.getRequestDispatcher("detalhesCliente.jsp").forward(request, response);
+		request.getRequestDispatcher("indexDetalheCliente.jsp").forward(request, response);
 	}
 
-	
-	
-	
-	
-//private void selectAllCard (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-//	
-//	
-//	System.out.println("Entrou");
-//        
-//		request.setAttribute("listDetalhes", this.dao.exibirDetalhesCliente());
-//		request.getRequestDispatcher("detalhesCliente.jsp").forward(request, response);
-//	}
-	
+
 	
 }

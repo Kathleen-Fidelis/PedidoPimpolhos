@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-   <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	pageEncoding="ISO-8859-1"%>
+  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,8 +10,7 @@
 <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
-
-<input type="checkbox" id="nav-toggle">
+	<input type="checkbox" id="nav-toggle">
     <div class="sidebar">
         <div class="sidebar-brand">
             <h2><span class="las "></span> <span>Pimpolhos</span></h2>
@@ -27,13 +26,13 @@
 
                 <li>
                     <a href="ServletPimpolhos
-                    " >
+                    " class="active">
                         <img src="imgs/user (1).png" class="icon"><span class="icon "> Clientes</span></a>
                 </li>
 
  				<li>
                     <a href="ServletCategoria
-                    " class="active">
+                    ">
                         <img src="imgs/categories.png" class="icon"><span class="icon "> Categorias </span></a>
                 </li>
                 
@@ -87,50 +86,58 @@
             </div>
         </div>
 
-	<div>
-	
-	<form action="ServletCategoria" method="post">
-		<button class="btn btn-secondary col-3 button" style=" font-weight: bold; background-color: #9ACCFF; border: none;" type="submit"  name="optionCategoria" value="insertFormCategoria"> Adicionar Categoria</button>
-	</form>
 
-	<div class="tabela" style="margin-top: 3%;margin-left: 20%;">
-        <div class="col-md-12 col-lg-9 conteudo tabela">
-			<div class = "table-responsive">
-				<table class="table table-hover" >
+
+	
+
+	<div class="tabela" style=" margin-top: 16%;margin-left: 20%">
+		<div class="col-md-12 col-lg-9 conteudo ">
+			<div class="table-responsive">
+				<table class="table table-hover">
 					<thead>
 						<tr>
-							<th>Cod. Categoria</th>
-							<th>Nome Categoria</th>
-							<th style="text-align:center;">Ações</th> 
+							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Cod_Cliente</th>
+							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Nome</th>
+							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">CPF</th>
+							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Data de Nascimento</th>
+							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Email</th>
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="categoria" items="${listCategoria}">
+						<c:forEach var="usuario" items="${listUser}">
 							<tr>
-								<form action="ServletCategoria" method="post">
-									<td>
-										<c:out value="${categoria.cod_categoria}"/>
-										<input type="hidden" name="cod_categoria" value="${categoria.cod_categoria}"/>
-									</td>
-									<td><c:out value="${categoria.nome_categoria}"/></td>
+
+								<form action="ServletPimpolhos" method="post">
+									<td><c:out value="${usuario.cod_cliente}" /> <input
+										type="hidden" name="cod_cliente"
+										value="${usuario.cod_cliente}" /></td>
+									<td><c:out value="${usuario.nome}" /></td>
+									<td><span class="cpf"><c:out value="${usuario.cpf}" /></span></td>
+									<td><span class="data"><c:out value="${usuario.nascimento}" /></td>
+									<td><c:out value="${usuario.email}" /></td>
 									
 									<td class="btnAcoes">
-										<button class="btn btn-primary"  type="submit" name="optionCategoria" value="deleteCategoria">Deletar</button>
-										<button class="btn btn-primary"  type="submit" name="optionCategoria" value="updateFormCategoria">Atualizar</button>
+										<button class="btn btn-primary" type="submit" name="option" value="cartaoSelecionado">Ver Detalhes</button>
 									</td>
 								</form>
 							</tr>
 						</c:forEach>
 					</tbody>
 				</table>
+			</div>
 		</div>
 	</div>
-	</div>
-</div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+	<script src="app.js"></script>
 
-
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous"></script>
 </body>
 </html>

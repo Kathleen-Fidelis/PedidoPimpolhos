@@ -1,150 +1,335 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Pimpolhos ADM</title>
-<link rel="stylesheet" href="css/style.css" type="text/css">
-<link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css"
-	rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maxinum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <title>Document</title>
 </head>
+
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light ">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="#">Pimpolhos</a>
-			<button class="navbar-toggler" type="button"
-				data-bs-toggle="collapse" data-bs-target="#navbarNav"
-				aria-controls="navbarNav" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<div class="col-12 navHamb">
-					<ul class="navbar-nav menuLateralTab">
-						<li class="nav-item"><a class="nav-link" aria-current="page"
-							href="#">Meu perfil</a></li>
-						<hr>
-						<li class="nav-item"><a class="nav-link clientes "
-							aria-current="page" href="ServletPimpolhos">Clientes</a></li>
-						<li class="nav-item"><a class="nav-link categorias"
-							href="ServletCategoria">Categorias</a></li>
-						<li class="nav-item"><a class="nav-link produtos"
-							href="ServletProduto">Produtos</a></li>
-						<li class="nav-item"><a class="nav-link fornecedores"
-							href="ServletFornecedor">Fornecedores</a></li>
-						<li class="nav-item"><a class="nav-link pedidos"
-							href="ServletPedido">Pedidos</a></li>
-						<li class="nav-item"><a class="nav-link marcas"
-							href="ServletMarca">Marcas</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</nav>
+
+    <input type="checkbox" id="nav-toggle">
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2><span class="las "></span> <span>Pimpolhos</span></h2>
+        </div>
+
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="index.jsp" class="active">
+                        <span class="icon"> Home </span></a>
+                </li>
+                
+
+                <li>
+                    <a href="ServletPimpolhos
+                    " >
+                        <img src="imgs/user (1).png" class="icon"><span class="icon "> Clientes</span></a>
+                </li>
+
+ 				<li>
+                    <a href="ServletCategoria
+                    ">
+                        <img src="imgs/categories.png" class="icon"><span class="icon "> Categorias </span></a>
+                </li>
+                
+                <li>
+                    <a href="ServletPedido
+                    ">
+                        <img src="imgs/pedido.png" class="icon"><span class="icon "> Pedidos </span></a>
+                </li>
+
+                <li>
+                    <a href="ServletFornecedor
+                    ">
+                        <img src="imgs/fornecedor.png" class="icon"><span class="icon "> Fornecedores </span></a>
+                </li>
+                <li>
+                    <a href="ServletMarca
+                    ">
+                        <img src="imgs/etiqueta.png" class="icon"><span class="icon "> Marcas </span></a>
+                </li>
+                <li>
+                    <a href="ServletProduto
+                    ">
+                        <img src="imgs/produto.png" class="icon"><span class="icon "> Produtos </span></a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+
+    <div class="main-content">
+        <div class="header-info">
+            <h2>
+                <label for="nav-toggle">
+                    <span class="las "><img src="imgs/menu-aberto (1).png" ></span>
+                </label>
+                Dashboard
+            </h2>
+
+            <div class="search-wrapper">
+                <span class="las la-search"></span>
+                <input type="search" placeholder="procure aqui" />
+            </div>
+
+            <div class="user-wrapper">
+                <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
+                <div>
+                    <h4>Pimpolhos</h4>
+                    <small>Bebês Reborn</small>
+                </div>
+            </div>
+        </div>
+
+        <main>
+
+            <div class="cards">
+                <div class="card-single">
+                    <div>
+                        <h1>25</h1>
+                        <span>Clientes</span>
+                    </div>
+                    <div>
+                        <span class="las"><img src="imgs/user (1).png" class="icon-card" width="40px" height="40px" alt=""></span>
+                    </div>
+                </div>
+
+
+                <div class="card-single">
+                    <div>
+                        <h1>30</h1>
+                        <span>Pedidos</span>
+                    </div>
+                    <div>
+                        <span class="las "><img src="imgs/pedido.png" class="icon-card" width="40px" height="40px" alt=""></span>
+                    </div>
+                </div>
+
+
+                <div class="card-single">
+                    <div>
+                        <h1>20</h1>
+                        <span>Produtos</span>
+                    </div>
+                    <div>
+                        <span class="las"> <img src="imgs/produto.png" class="icon-card" width="40px" height="40px" alt=""></span>
+                    </div>
+                </div>
+
+
+                <div class="card-single">
+                    <div>
+                        <h1>5</h1>
+                        <span>Coladoradores</span>
+                    </div>
+                    <div>
+                        <span class="lab"><img src="imgs/colaboracao.png" class="icon-card" width="40px" height="40px" alt=""></span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="recent-grid">
+                <div class="projects">
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3> Pedidos Recentes</h3>
+                            <button> See all <span class="las la-arrow-right"></span></button>
+                        </div>
+
+
+                        <div class="card-body">
+                            <table width="100%">
+                                <thead>
+                                    <tr>
+                                        <td> Pedido </td>
+                                        <td> Pagamento </td>
+                                        <td> Status </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>01</td>
+                                        <td>Boleto</td>
+                                        <td><span class="status orange"> </span>
+                                            Entregue
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>02</td>
+                                        <td>Boleto</td>
+                                        <td><span class="status orange"> </span>
+                                            Entregue
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>03</td>
+                                        <td>Crédito</td>
+                                        <td><span class="status orange"> </span>
+                                            Entregue
+                                        </td>
+                                    </tr>
+
+
+                                    </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>04</td>
+                                        <td>Crédito</td>
+                                        <td><span class="status purple"> </span>
+                                            Aguardando aprovação
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>05</td>
+                                        <td>Pix</td>
+                                        <td><span class="status pink"> </span>
+                                            Em trânsito
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>06</td>
+                                        <td>Pix</td>
+                                        <td><span class="status orange"> </span>
+                                            Entregue
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>07</td>
+                                        <td>Pix</td>
+                                        <td><span class="status orange"> </span>
+                                            Entregue
+                                        </td>
+                                    </tr>
+
+                                  
 
 
 
-	<div class="row bodyRow" style="justify-content: space-around;">
-		<div class="col-2 navLateral">
-			<ul class="navbar-nav menuLateralTab">
-				<li class="nav-item"><a class="nav-link" aria-current="page"
-					href="#">Meu perfil</a>
-					<hr>
-				<li class="nav-item"><a class="nav-link" aria-current="page"
-					href="ServletPimpolhos">
-						<div class="row">
-							<img class="col-3" alt="" src="imgs/user (1).png" width="13%">
-							<span class="col-6"> Cliente</span>
-						</div>
-				</a></li>
-				<li class="nav-item"><a class="nav-link"
-					href="ServletCategoria">
-						<div class="row">
-							<img class="col-3" alt="" src="imgs/categories.png" width="13%">
-							<span class="col-6"> Categorias</span>
-						</div>
-				</a></li>
-				<li class="nav-item"><a class="nav-link" href="ServletProduto">
-						<div class="row">
-							<img class="col-3" alt="" src="imgs/produto.png" width="13%">
-							<span class="col-6"> Produtos</span>
-						</div>
-				</a></li>
-				<li class="nav-item"><a class="nav-link"
-					href="ServletFornecedor">
-						<div class="row">
-							<img class="col-3" alt="" src="imgs/fornecedor.png" width="13%">
-							<span class="col-6"> Fornecedores</span>
-						</div>
-				</a></li>
-				<li class="nav-item"><a class="nav-link" href="ServletPedido">
-						<div class="row">
-							<img class="col-3" alt="" src="imgs/pedido.png" width="13%">
-							<span class="col-6"> Pedido</span>
-						</div>
-				</a></li>
-				<li class="nav-item"><a class="nav-link" href="ServletMarca">
-						<div class="row">
-							<img class="col-3" alt="" src="imgs/etiqueta.png" width="13%">
-							<span class="col-6"> Marca</span>
-						</div>
-				</a></li>
-			</ul>
-		</div>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="customers">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Time</h3>
+                            <button> See all <span class="las la-arrow-right"></span></button>
+                        </div>
 
 
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table width="100%">
 
-		<div class="col-md-12 col-lg-9 conteudo">
-			<div class="table-responsive">
-				<table class="table table-hover">
-					<thead>
-						<tr>
-							<th>Cod_Cliente</th>
-							<th
-								style="word-wrap: break-word; min-width: 440px; max-width: 160px;">Nome</th>
-							<th
-								style="word-wrap: break-word; min-width: 440px; max-width: 160px;">CPF</th>
-							<th>Data de Nascimento</th>
-							<th>Email</th>
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach var="usuario" items="${listUser}">
-							<tr>
+                                    <div class="customer">
+                                        <div class="info">
+                                            <img src="imgs/kath.png" width="40px" height="40px" alt="">
+                                            <div>
+                                                <h4>Kathleen Fidelis</h4>
+                                                <small>Dev</small>
+                                            </div>
+                                        </div>
 
-								<form action="ServletPimpolhos" method="post">
-									<td><c:out value="${usuario.cod_cliente}" /> <input
-										type="hidden" name="cod_cliente"
-										value="${usuario.cod_cliente}" /></td>
-									<td><c:out value="${usuario.nome}" /></td>
-									<td><span class="cpf"><c:out value="${usuario.cpf}" /></span></td>
-									<td><c:out value="${usuario.nascimento}" /></td>
-									<td><c:out value="${usuario.email}" /></td>
-									
-									<td class="btnAcoes">
-										<button type="submit" name="option"
-											value="cartaoSelecionado">Atualizar</button>
-									</td>
-								</form>
-							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</div>
+                                        <div class="contact">
+                                            
+                                            <span class="las la-comment"></span>
+                                           
+                                        </div>
+                                    </div>
 
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
-	<script src="app.js"></script>
+                                    <div class="customer">
+                                        <div class="info">
+                                            <img src="imgs/isa.png" width="40px" height="40px" alt="">
+                                            <div>
+                                                <h4>Isabella Botasso</h4>
+                                                <small>Dev</small>
+                                            </div>
+                                        </div>
 
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-		crossorigin="anonymous"></script>
+                                        <div class="contact">
+                                            
+                                            <span class="las la-comment"></span>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="customer">
+                                        <div class="info">
+                                            <img src="imgs/kaique.png" width="40px" height="40px" alt="">
+                                            <div>
+                                                <h4>Kaique Araujo</h4>
+                                                <small>Dev</small>
+                                            </div>
+                                        </div>
+
+                                        <div class="contact">
+                                            
+                                            <span class="las la-comment"></span>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="customer">
+                                        <div class="info">
+                                            <img src="imgs/gabriel.png" width="40px" height="40px" alt="">
+                                            <div>
+                                                <h4>Gabriel Gonzaga</h4>
+                                                <small>Dev</small>
+                                            </div>
+                                        </div>
+
+                                        <div class="contact">
+                                           
+                                            <span class="las la-comment"></span>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="customer">
+                                        <div class="info">
+                                            <img src="imgs/mateus.png" width="40px" height="40px" alt="">
+                                            <div>
+                                                <h4>Mateus Reis</h4>
+                                                <small>Dev</small>
+                                            </div>
+                                        </div>
+
+                                        <div class="contact">
+                                            
+                                            <span class="las la-comment"></span>
+                                          
+                                        </div>
+                                    </div>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
 </body>
+
 </html>
