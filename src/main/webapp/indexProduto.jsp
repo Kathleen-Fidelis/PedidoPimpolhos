@@ -88,12 +88,15 @@
             </div>
         </div>
 
-    <form action="ServletProduto" method="post">
-		<button class="btn btn-secondary col-3 button" style=" font-weight: bold; background-color: #9ACCFF; border: none;" type="submit"  name="optionProduto" value="insertFormProduto"> Adicionar Produto</button>
-
-	</form>
     
-    <div class="tabela" style=" margin-top: 3%;margin-left: 20%">
+    
+    
+    
+    
+    <div class="tabela">
+    <form action="ServletProduto" method="post">
+		<button class="btn btn-secondary col-3 btnPage" style=" font-weight: bold; background-color: #9ACCFF; border: none;" type="submit"  name="optionProduto" value="insertFormProduto"> Adicionar Produto</button>
+	</form>
         <div class="col-md-12 col-lg-9 conteudo">
           <div class = "table-responsive">
             <table class="table table-hover">
@@ -111,7 +114,7 @@
                         <th>Categoria</th>
                         <th>Imagem</th>
                         <th>Marca</th>
-                              
+                        <th>Ações</th>        
                       
                     </tr>
                 </thead>
@@ -140,9 +143,29 @@
                                 <td><c:out value="${produto.nome_marca}"/></td>                       
                                </div>
                                
-                               <td class="btnAcoes" >
-                               		<button type="submit" class="btn btn-primary" name="optionProduto" value="deleteProduto">Deletar</button>
-									<button type="submit" class="btn btn-primary" name="optionProduto" value="updateFormProduto">Atualizar</button>
+                               <td  >
+                               			<!-- Button trigger modal -->
+									<button type="button" class="btn btn-primary btnPage" data-bs-toggle="modal" data-bs-target="#exampleModal-${produto.cod_produto}">Deletar</button>
+
+									<!-- Modal -->
+									<div  class="modal fade" id="exampleModal-${produto.cod_produto}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+									  <div class="modal-dialog">
+									    <div class="modal-content">
+									      <div class="modal-header">
+									        <h5 class="modal-title" >Deseja realmente deletar? </h5>
+									        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+									      </div>
+									      <div class="modal-footer">
+									        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+									        <button type="submit" name="optionProduto" value="deleteProduto">Deletar</button>
+									      </div>
+									    </div>
+									  </div>
+									</div>
+                               		
+                               		
+                               		
+									<button type="submit" class="btn btn-primary btnPage" name="optionProduto" value="updateFormProduto">Atualizar</button>
 							  </td>
 
                                

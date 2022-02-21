@@ -19,7 +19,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="index.jsp" class="active">
+                    <a href="index.jsp" >
                         <span class="icon"> Home </span></a>
                 </li>
                 
@@ -44,7 +44,7 @@
 
                 <li>
                     <a href="ServletFornecedor
-                    ">
+                     " class="active">
                         <img src="imgs/fornecedor.png" class="icon"><span class="icon "> Fornecedores </span></a>
                 </li>
                 <li>
@@ -89,12 +89,11 @@
 
 
 
-    <form action="ServletFornecedor" method="post">
-		<button class="btn btn-secondary col-3 button" style="font-weight: bold; background-color: #9ACCFF; border: none;" type="submit"  name="optionFornecedor" value="insertFormFornecedor"> Adicionar Fornecedor</button>
-
-	</form>
+	<div class="tabela">
 	
-	<div class="tabela" style=" margin-top: 3%;margin-left: 20%">
+	<form action="ServletFornecedor" method="post">
+		<button class="btn btn-secondary col-3 btnPage" style="font-weight: bold; background-color: #9ACCFF; border: none;" type="submit"  name="optionFornecedor" value="insertFormFornecedor"> Adicionar Fornecedor</button>
+	</form>
         <div class="col-md-12 col-lg-9 conteudo">
           	<div class = "table-responsive">
 	            <table class="table table-hover ">
@@ -116,8 +115,26 @@
 									<td><c:out value="${fornecedor.nome_fornecedor}"/></td>
 									
 									<td class="btnAcoes">
-										<button class="btn btn-primary" type="submit" name="optionFornecedor" value="deleteFornecedor">Deletar</button>
-										<button class="btn btn-primary" type="submit" name="optionFornecedor" value="updateFormFornecedor">Atualizar</button>
+											<!-- Button trigger modal -->
+										<button type="button" class="btn btn-primary btnPage" data-bs-toggle="modal" data-bs-target="#exampleModal-${fornecedor.cod_fornecedor}">Deletar</button>
+
+									<!-- Modal -->
+									<div  class="modal fade" id="exampleModal-${fornecedor.cod_fornecedor}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+									  <div class="modal-dialog">
+									    <div class="modal-content">
+									      <div class="modal-header">
+									        <h5 class="modal-title" >Deseja realmente deletar? </h5>
+									        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+									      </div>
+									      <div class="modal-footer">
+									        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+									        <button class="btn btn-primary" type="submit" name="optionFornecedor" value="deleteFornecedor">Deletar</button>
+									      </div>
+									    </div>
+									  </div>
+									</div>
+										
+										<button class="btn btn-primary btnPage" type="submit" name="optionFornecedor" value="updateFormFornecedor">Atualizar</button>
 									</td>
 								</form>
 							</tr>

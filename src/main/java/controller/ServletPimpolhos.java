@@ -56,9 +56,9 @@ public class ServletPimpolhos extends HttpServlet {
 ////			case ("updateUsuario"):
 ////				updateUser(request, response);
 ////			break;
-////			case ("deleteUsuario"):
-////				selectAllUsers(request, response);
-////			break;
+//			case ("cliente"):
+//				clientCount(request, response);
+//			break;
 			case ("cartaoSelecionado"):
 				System.out.println("Entrou no Switch");
 			selectAllDetalhesCliente (request, response);
@@ -67,6 +67,7 @@ public class ServletPimpolhos extends HttpServlet {
 			selectAllUsers(request, response);
 		}
 		
+	
 //	
 	}
 	
@@ -86,6 +87,9 @@ public class ServletPimpolhos extends HttpServlet {
 		request.setAttribute("listDetalhes",this.dao.recuperarDetalhesCliente(id));
 		request.getRequestDispatcher("indexDetalheCliente.jsp").forward(request, response);
 	}
+	
+	
+	
 
 	
 }

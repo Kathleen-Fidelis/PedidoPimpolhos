@@ -89,12 +89,13 @@
 
 	<div>
 	
-	<form action="ServletCategoria" method="post">
-		<button class="btn btn-secondary col-3 button" style=" font-weight: bold; background-color: #9ACCFF; border: none;" type="submit"  name="optionCategoria" value="insertFormCategoria"> Adicionar Categoria</button>
-	</form>
+	
 
-	<div class="tabela" style="margin-top: 3%;margin-left: 20%;">
-        <div class="col-md-12 col-lg-9 conteudo tabela">
+	<div class="tabela" >
+	<form action="ServletCategoria" method="post">
+		<button class="btn btn-primary col-3 btnPage" style=" font-weight: bold; background-color: #9ACCFF; border: none;" type="submit"  name="optionCategoria" value="insertFormCategoria"> Adicionar Categoria</button>
+	</form>
+        <div class="col-md-12 col-lg-9 conteudo">
 			<div class = "table-responsive">
 				<table class="table table-hover" >
 					<thead>
@@ -115,8 +116,27 @@
 									<td><c:out value="${categoria.nome_categoria}"/></td>
 									
 									<td class="btnAcoes">
-										<button class="btn btn-primary"  type="submit" name="optionCategoria" value="deleteCategoria">Deletar</button>
-										<button class="btn btn-primary"  type="submit" name="optionCategoria" value="updateFormCategoria">Atualizar</button>
+										<button type="button" class="btn btn-primary btnPage" data-bs-toggle="modal" data-bs-target="#exampleModal-${categoria.cod_categoria}">Deletar</button>
+
+										
+										<!-- Modal -->
+									<div  class="modal fade" id="exampleModal-${categoria.cod_categoria}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+									  <div class="modal-dialog">
+									    <div class="modal-content">
+									      <div class="modal-header">
+									        <h5 class="modal-title" >Deseja realmente deletar? </h5>
+									        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+									      </div>
+									      <div class="modal-footer">
+									        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+									        <button class="btn btn-primary" type="submit" name="optionCategoria" value="deleteCategoria">Deletar</button>
+									      </div>
+									    </div>
+									  </div>
+									</div>
+										
+										
+										<button class="btn btn-primary btnPage"  type="submit" name="optionCategoria" value="updateFormCategoria">Atualizar</button>
 									</td>
 								</form>
 							</tr>

@@ -24,7 +24,11 @@ td{
 	
 }
 
-.btn-primary{
+.button-atualizar{
+	background-color:#E6889A;
+}
+
+/*.btn-primary{
 	background-color: #9ACCFF;
 	border: none;
 }
@@ -33,7 +37,7 @@ td{
 .btn-primary:hover{
 	background-color: #9ACCFF;
 }
-
+*/
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
@@ -100,6 +104,17 @@ table{
     Color: rgb(0, 0, 0);
 }
 
+
+body {
+	background-color:#f1f5f9 !important; 
+}
+
+.tabela {
+	 margin-top: 16%;
+	 margin-left: 10%;
+}
+
+
 tbody{
     background-color: rgb(226, 226, 226);
 }
@@ -117,6 +132,23 @@ tbody{
 	margin-top:15%;
 	margin-left:20%;
 }
+
+
+.btn.btn-primary.btnPage {
+	font-weight: bold;
+    background-color: #9ACCFF;
+    border: none;
+    margin-bottom: 2%;
+}
+
+
+.btnPage {
+	font-weight: bold;
+    background-color: #9ACCFF;
+    border: none;
+    margin-bottom: 2%;
+}
+
 
 .select{
     width: 250px;
@@ -226,9 +258,9 @@ tbody{
         display: none;
     }
     
-    .conteudo{
+   /* .conteudo{
         margin-left: 24px;
-    }
+    }*/
    
 }
 
@@ -303,7 +335,7 @@ tbody{
 
 
 #nav-toggle:checked + .sidebar{
-    width: 70px;
+    width: 0px;
 }
 
 #nav-toggle:checked + .sidebar .sidebar-brand, 
@@ -329,8 +361,8 @@ tbody{
 }
 
 #nav-toggle:checked ~ .main-content .header-info{
-    width: calc(100% - 70px);
-    left: 70px;
+     width: 100%;
+    left: 0px;
 }
 
 .main-content{

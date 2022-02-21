@@ -102,11 +102,11 @@ public class ServletProduto extends HttpServlet {
 	private void insertProduto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		
 		String nomeBack = request.getParameter("nome");
-		Double precoBack = Double.parseDouble(request.getParameter("preco"));
+		String precoBack = request.getParameter("preco");
 		String sexoBack = request.getParameter("sexo");
 		String dimensaoBack = request.getParameter("dimensao");
 		String materialBack = request.getParameter("material");
-		Double pesoBack = Double.parseDouble(request.getParameter("peso"));
+		String pesoBack = request.getParameter("peso");
 		String conteudoBack = request.getParameter("conteudo");
 		Integer cod_fornecedorBack = Integer.parseInt(request.getParameter("cod_fornecedor"));
 		Integer cod_categoriaBack = Integer.parseInt(request.getParameter("cod_categoria"));
@@ -115,11 +115,11 @@ public class ServletProduto extends HttpServlet {
 		
 
 		
-		
-		
 		if ((nomeBack != null) && (precoBack != null) && (sexoBack != null) && (dimensaoBack != null) && (materialBack != null) && (pesoBack != null) && (conteudoBack != null) && (cod_fornecedorBack != null) && (cod_categoriaBack != null) && (img_produtoBack != null) && (cod_marcaBack != null)) {
 			if (!nomeBack.equals("")){
-				Produto produto = new Produto (nomeBack, precoBack, sexoBack, dimensaoBack, materialBack, pesoBack, conteudoBack, cod_fornecedorBack, cod_categoriaBack, img_produtoBack, cod_marcaBack);
+				Double preco2 = Double.parseDouble(precoBack.replace(",", "."));
+				Double peso2 = Double.parseDouble(pesoBack.replace(",", "."));
+				Produto produto = new Produto (nomeBack, preco2, sexoBack, dimensaoBack, materialBack, peso2, conteudoBack, cod_fornecedorBack, cod_categoriaBack, img_produtoBack, cod_marcaBack);
 				this.daoproduto.inserirProduto(produto);
 	 }
 		}
@@ -146,11 +146,11 @@ public class ServletProduto extends HttpServlet {
 		
 		Integer cod_produtoBack = Integer.parseInt(request.getParameter("cod_produto"));
 		String nomeBack = request.getParameter("nome");
-		Double precoBack = Double.parseDouble(request.getParameter("preco"));
+		String precoBack = request.getParameter("preco");
 		String sexoBack = request.getParameter("sexo");
 		String dimensaoBack = request.getParameter("dimensao");
 		String materialBack = request.getParameter("material");
-		Double pesoBack = Double.parseDouble(request.getParameter("peso"));
+		String pesoBack = request.getParameter("peso");
 		String conteudoBack = request.getParameter("conteudo");
 		Integer fornecedorBack = Integer.parseInt(request.getParameter("cod_fornecedor"));
 		Integer categoriaBack = Integer.parseInt(request.getParameter("cod_categoria"));
@@ -160,8 +160,10 @@ public class ServletProduto extends HttpServlet {
 		if ((nomeBack != null) && (precoBack != null) && (sexoBack != null) && (dimensaoBack != null)
 		&& (materialBack != null) && (pesoBack != null) && (conteudoBack != null) && (fornecedorBack != null) && (categoriaBack != null) && (img_produtoBack != null) && (cod_marcaBack != null)) {
 			if (!nomeBack.equals("")){
+				Double preco2 = Double.parseDouble(precoBack.replace(",", "."));
+				Double peso2 = Double.parseDouble(pesoBack.replace(",", "."));
 				Integer id = (cod_produtoBack);
-				Produto produto = new  Produto(nomeBack, precoBack, sexoBack, dimensaoBack, materialBack, pesoBack, conteudoBack, fornecedorBack, categoriaBack, img_produtoBack, cod_marcaBack);
+				Produto produto = new Produto (nomeBack, preco2, sexoBack, dimensaoBack, materialBack, peso2, conteudoBack, fornecedorBack, categoriaBack, img_produtoBack, cod_marcaBack);
 				produto.setCod_produto(id);
 				this.daoproduto.atualizarProduto(produto);
 			}

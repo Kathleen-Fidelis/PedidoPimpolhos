@@ -22,7 +22,9 @@ public class Usuario {
 	private String dddtelefone;
 	private String telefoneCliente;
 	private String tipoTelefone;
-	
+	private int qtdCliente;
+	private Integer qtdPedido;
+	private String qtdProduto;
 	
 
 
@@ -87,6 +89,57 @@ public class Usuario {
 	
 	
 
+
+
+
+
+
+
+
+
+//public Usuario(int qtdCliente, Integer qtdPedido, String qtdProduto) {
+//		super();
+//		this.qtdCliente = qtdCliente;
+//		this.qtdPedido = qtdPedido;
+//		this.qtdProduto = qtdProduto;
+//	}
+
+
+
+
+
+
+
+
+	public Usuario(int qtdCliente) {
+		super();
+		this.qtdCliente = qtdCliente;
+	}
+
+
+	
+
+
+
+
+
+
+	public Usuario(Integer qtdPedido) {
+		super();
+		this.qtdPedido = qtdPedido;
+	}
+
+
+
+
+
+
+
+
+	public Usuario(String qtdProduto) {
+		super();
+		this.qtdProduto = qtdProduto;
+	}
 
 
 
@@ -484,6 +537,109 @@ public class Usuario {
 		this.tipoTelefone = tipoTelefone;
 	}
 
+
+
+
+
+
+
+
+	public int getQtdCliente() {
+		return qtdCliente;
+	}
+
+
+
+
+
+
+
+
+	public void setQtdCliente(int qtdCliente) {
+		this.qtdCliente = qtdCliente;
+	}
+
+
+
+
+
+
+
+
+	public Integer getQtdPedido() {
+		return qtdPedido;
+	}
+
+
+
+
+
+
+
+
+	public void setQtdPedido(Integer qtdPedido) {
+		this.qtdPedido = qtdPedido;
+	}
+
+
+
+
+
+
+
+
+	public String getQtdProduto() {
+		return qtdProduto;
+	}
+
+
+
+
+
+
+
+
+	public void setQtdProduto(String qtdProduto) {
+		this.qtdProduto = qtdProduto;
+	}
+
+
+
+
+
+
+
+
+	@Override
+	public String toString() {
+		return ""+ this.qtdCliente;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+	
+
+
+
+
+
+
+
+
+	
 
 
 

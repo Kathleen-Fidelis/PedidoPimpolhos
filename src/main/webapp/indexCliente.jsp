@@ -26,7 +26,7 @@
 
                 <li>
                     <a href="ServletPimpolhos
-                    " class="active">
+                    " class="active" >
                         <img src="imgs/user (1).png" class="icon"><span class="icon "> Clientes</span></a>
                 </li>
 
@@ -90,7 +90,7 @@
 
 	
 
-	<div class="tabela" style=" margin-top: 16%;margin-left: 20%">
+	<div class="tabela" >
 		<div class="col-md-12 col-lg-9 conteudo ">
 			<div class="table-responsive">
 				<table class="table table-hover">
@@ -117,7 +117,7 @@
 									<td><c:out value="${usuario.email}" /></td>
 									
 									<td class="btnAcoes">
-										<button class="btn btn-primary" type="submit" name="option" value="cartaoSelecionado">Ver Detalhes</button>
+										<button class="btn btn-primary btnPage" type="submit" name="option" value="cartaoSelecionado">Ver Detalhes</button>
 									</td>
 								</form>
 							</tr>

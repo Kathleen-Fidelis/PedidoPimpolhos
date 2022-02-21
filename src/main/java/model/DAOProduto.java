@@ -184,5 +184,34 @@ public class DAOProduto {
 	
 	
 	
+	//Método de conta da home
+			public Usuario qtdProdutoTotal() {	
+			Conexao c = Conexao.getInstance();
+			Connection con = c.getConnection();
+			Usuario qtdTotalProduto = null;
+			
+			
+				try {
+					PreparedStatement p = con.prepareStatement("select count(cod_produto) as total from produto;");
+					ResultSet r = p.executeQuery();			
+					 r.next();
+					
+					
+					Integer qtdProduto = r.getInt("total");
+					qtdTotalProduto = new Usuario(qtdProduto);
+					qtdTotalProduto.setQtdCliente(qtdProduto);
+				
+						
+					
+					r.close();
+					p.close();
+					con.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				return qtdTotalProduto;
+			}
+	
 
 }

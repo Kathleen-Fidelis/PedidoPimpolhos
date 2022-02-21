@@ -86,7 +86,7 @@
             </div>
         </div>
         
-   <div class="tabela" style=" margin-top: 16%;margin-left: 20%">  
+   <div class="tabela">  
 
 	<div class="col-md-12 col-lg-9 conteudo">
 		  <form action="ServletFornecedor" method="post">
@@ -95,19 +95,19 @@
 						<div class="container col-10 input-marca">
 							<h2 style="margin: 30px 0px 50px 0px;">Cadastrar Fornecedor</h2>
 							<!--  <input style="border-radius: 5px; border: 1px solid gray; height: 30px; padding: 10px;" type="text" name="name" required/><br>-->
-							<label style="margin-right: 17px;">Nome do Fornecedor:<input style="border-radius: 5px; border: 1px solid gray; height: 30px; padding: 10px;" type="text" name="name" required/><br>
+							<label style="margin-right: 17px;">Nome do Fornecedor:<input id="mensagem" class="form-control input-select" type="text" name="name" required/><br>
 							
-							<button style="margin-top: 13px; width: 20%; " class="btn btn-secondary" type="submit" name="optionFornecedor" value="insertFornecedor">Salvar</button>
+							<button class="btn btn-primary btnPage" type="submit" name="optionFornecedor" value="insertFornecedor">Salvar</button>
 						</div>
 					</c:when>
 					<c:otherwise>
 						<div class="container col-10 input-marca">
 							<input type="hidden" name="cod_fornecedor" value="${fornecedor.cod_fornecedor}"/><br>
 							<h2 style="margin-bottom: 50px; ">Atualizar Fornecedor</h2>
-							<input id="mensagem" style="border-radius: 5px; border: 1px solid gray; height: 30px; padding: 10px; type="text" name="name" value="${fornecedor.nome_fornecedor}" required/><br>
+							<input id="mensagem" class="form-control input-select" type="text" name="name" value="${fornecedor.nome_fornecedor}" required/><br>
 							
 						
-							<button class="btn btn-secondary" type="submit" name="optionFornecedor" value="updateFornecedor">Atualizar</button>
+							<button class="btn btn-primary btnPage" type="submit" name="optionFornecedor" value="updateFornecedor">Atualizar</button>
 						</div>
 					</c:otherwise>
 				</c:choose>
