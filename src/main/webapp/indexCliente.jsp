@@ -19,7 +19,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="index.jsp" >
+                    <a href="home.jsp" >
                         <span class="icon"> Home </span></a>
                 </li>
                 
@@ -96,7 +96,7 @@
 				<table class="table table-hover">
 					<thead>
 						<tr>
-							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Cod_Cliente</th>
+							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Cod. Cliente</th>
 							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Nome</th>
 							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">CPF</th>
 							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Data de Nascimento</th>
@@ -117,7 +117,7 @@
 									<td><c:out value="${usuario.email}" /></td>
 									
 									<td class="btnAcoes">
-										<button class="btn btn-primary btnPage" type="submit" name="option" value="cartaoSelecionado">Ver Detalhes</button>
+										<button class="btn btn-primary btnPage" type="submit" name="option" value="cartaoSelecionado">Detalhes</button>
 									</td>
 								</form>
 							</tr>

@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 
 public class DAOMarca {
@@ -77,6 +78,7 @@ public class DAOMarca {
 			con.close();
 			
 		} catch (SQLException e) {
+			System.out.println("Não foi possível apagar essa marca");
 			e.printStackTrace();
 		}
 	}

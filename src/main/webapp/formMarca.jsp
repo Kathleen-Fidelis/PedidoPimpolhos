@@ -22,7 +22,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="index.jsp" class="active">
+                    <a href="home.jsp" class="active">
                         <span class="icon"> Home </span></a>
                 </li>
                 
@@ -101,7 +101,7 @@
 							<!--  <input style="border-radius: 5px; border: 1px solid gray; height: 30px; padding: 10px;" type="text" name="name" required/><br>-->
 							<label style="margin-right: 17px;">Nome da Marca:<input class="form-control input-select" type="text" name="name" required/><br>
 							
-							<button style="margin-top: 13px; width: 20%; " class="btn btn-primary btnPage" type="submit" name="optionMarca" value="insertMarca">Salvar</button>
+							<button class="btn btn-primary btnPage" type="submit" name="optionMarca" value="insertMarca">Salvar</button>
 						</div>
 					</c:when>
 					<c:otherwise>

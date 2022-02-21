@@ -19,7 +19,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="index.jsp" class="active">
+                    <a href="home.jsp" class="active">
                         <span class="icon"> Home </span></a>
                 </li>
                 

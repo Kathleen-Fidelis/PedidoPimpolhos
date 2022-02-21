@@ -27,7 +27,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="index.jsp" class="active">
+                    <a href="home.jsp" class="active">
                         <span class="icon"> Home </span></a>
                 </li>
                 
@@ -97,7 +97,7 @@
         <main>
 
 		<form action="ServletQuantidade" method="post" >
-		<!--  --><button type="submit" class="btn btn-warning mb-3" name="a" value="atualizar">Atualizar home</button>
+		<!--  --><button type="submit" class="btn btn-primary btnPage mb-3" name="a" value="atualizar">Atualizar home</button>
 		</form>
 
 
@@ -155,7 +155,7 @@
                     <div class="card">
                         <div class="card-header">
                             <h3> Pedidos Recentes</h3>
-                            <button> See all <span class="las la-arrow-right"></span></button>
+                            <button> Ver todos <span class="las la-arrow-right"></span></button>
                         </div>
 
 
@@ -241,7 +241,7 @@
                     <div class="card">
                         <div class="card-header">
                             <h3>Time</h3>
-                            <button> See all <span class="las la-arrow-right"></span></button>
+                            <button> Ver todos <span class="las la-arrow-right"></span></button>
                         </div>
 
 

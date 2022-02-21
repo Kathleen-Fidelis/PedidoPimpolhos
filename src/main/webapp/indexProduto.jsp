@@ -21,7 +21,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="index.jsp" >
+                    <a href="home.jsp" >
                         <span class="icon"> Home </span></a>
                 </li>
                 
@@ -102,7 +102,7 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>Cod_Produto</th>
+                        <th>Cod. Produto</th>
                         <th>Nome</th>
                         <th>Preço</th>
                         <th>Sexo</th>

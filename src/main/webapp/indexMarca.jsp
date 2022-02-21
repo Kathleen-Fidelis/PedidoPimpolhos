@@ -23,7 +23,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="index.jsp" >
+                    <a href="home.jsp" >
                         <span class="icon"> Home </span></a>
                 </li>
                 
@@ -134,8 +134,7 @@
 									    </div>
 									  </div>
 									</div>
-								
-								
+																
 								<button class="btn btn-primary btnPage" type="submit" name="optionMarca" value="updateFormMarca">Atualizar</button>
 							</td>
 						</form>	

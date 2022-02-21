@@ -88,7 +88,7 @@ public class ServletFornecedor extends HttpServlet {
 	}
 	
 	private void inserirFornecedor(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		String nomeFornecedorBack = request.getParameter("name");
+		String nomeFornecedorBack = request.getParameter("name").trim();
 		
 		
 		if ( nomeFornecedorBack != null) {

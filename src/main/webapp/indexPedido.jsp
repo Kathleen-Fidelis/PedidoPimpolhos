@@ -20,7 +20,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="index.jsp" >
+                    <a href="home.jsp" >
                         <span class="icon"> Home </span></a>
                 </li>
                 
@@ -121,7 +121,7 @@
 									<td><c:out value="${pedido.descricao_status_pedido}" /></td>
 									<td><c:out value="${pedido.valor_total}" /></td>
 									<td class="btnAcoes">
-										<button class="btn btn-primary" type="submit" name="optionPedido" value="detalhePedido">Ver Detalhes</button>
+										<button class="btn btn-primary btnPage" type="submit" name="optionPedido" value="detalhePedido">Detalhes</button>
 									</td>
 								</form>
 							</tr>

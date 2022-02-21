@@ -101,17 +101,17 @@ public class ServletProduto extends HttpServlet {
 	
 	private void insertProduto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		
-		String nomeBack = request.getParameter("nome");
-		String precoBack = request.getParameter("preco");
-		String sexoBack = request.getParameter("sexo");
-		String dimensaoBack = request.getParameter("dimensao");
-		String materialBack = request.getParameter("material");
-		String pesoBack = request.getParameter("peso");
-		String conteudoBack = request.getParameter("conteudo");
-		Integer cod_fornecedorBack = Integer.parseInt(request.getParameter("cod_fornecedor"));
-		Integer cod_categoriaBack = Integer.parseInt(request.getParameter("cod_categoria"));
-		String img_produtoBack = request.getParameter("img_produto");
-		Integer cod_marcaBack = Integer.parseInt(request.getParameter("cod_marca"));
+		String nomeBack = request.getParameter("nome").trim();
+		String precoBack = request.getParameter("preco").trim();
+		String sexoBack = request.getParameter("sexo").trim();
+		String dimensaoBack = request.getParameter("dimensao").trim();
+		String materialBack = request.getParameter("material").trim();
+		String pesoBack = request.getParameter("peso").trim();
+		String conteudoBack = request.getParameter("conteudo").trim();
+		Integer cod_fornecedorBack = Integer.parseInt(request.getParameter("cod_fornecedor").trim());
+		Integer cod_categoriaBack = Integer.parseInt(request.getParameter("cod_categoria").trim());
+		String img_produtoBack = request.getParameter("img_produto").trim();
+		Integer cod_marcaBack = Integer.parseInt(request.getParameter("cod_marca").trim());
 		
 
 		
