@@ -70,7 +70,7 @@ public class ServletMarca extends HttpServlet {
 	}
 	
 	private void insertMarca(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		String nomeBack = request.getParameter("name");
+		String nomeBack = request.getParameter("name").trim();
 		
 		
 		if (nomeBack != null) {
