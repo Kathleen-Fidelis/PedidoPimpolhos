@@ -19,7 +19,7 @@
 	            <div class=" row col-10">
 	                <div class="bloco1 col-4">
 	                    <img src="imgs/Logo.png" alt="">
-	                    <h5>Painel administrativo</h5>
+	                    <h5>Painel administrativos</h5>
 	                </div>
 	                <div class="bloco2 col-6">
 	                   <h2> <img src="imgs/userLogin.png" style="margin-right: 15px;"> Login</h2><br>
