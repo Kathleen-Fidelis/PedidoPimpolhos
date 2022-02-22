@@ -22,7 +22,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="index.jsp" >
+                    <a href="home.jsp" >
                         <span class="icon"> Home </span></a>
                 </li>
                 
@@ -90,11 +90,18 @@
         </div>
     
     
+<<<<<<< HEAD
 
 	<div class="tabela">
 	<form action="ServletMarca" method="post">
 		<button class="btn btn-primary col-3 btnPage" type="submit"  name="optionMarca" value="insertFormMarca"> Adicionar Marca</button>
     </form>
+=======
+	<div class="tabela">
+	<form action="ServletMarca" method="post">
+		<button class="btn btn-secondary col-3 btnPage" style=" font-weight: bold; background-color: #9ACCFF; border: none;" type="submit"  name="optionMarca" value="insertFormMarca"> Adicionar Marca</button>
+	</form>
+>>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
         <div class="col-md-12 col-lg-9 conteudo">
           <div class = "table-responsive">
             <table class="table table-hover ">
@@ -116,7 +123,29 @@
 							<td><c:out value="${marca.nome_marca}"/></td>
 							
 							<td class="btnAcoes">
+<<<<<<< HEAD
 								<button class="btn btn-primary btnPage" type="submit" name="optionMarca" value="deleteMarca">Deletar</button>
+=======
+								<!-- Button trigger modal -->
+									<button type="button" class="btn btn-primary btnPage" data-bs-toggle="modal" data-bs-target="#exampleModal-${marca.cod_marca}">Deletar</button>
+
+									<!-- Modal -->
+									<div  class="modal fade" id="exampleModal-${marca.cod_marca}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+									  <div class="modal-dialog">
+									    <div class="modal-content">
+									      <div class="modal-header">
+									        <h5 class="modal-title" >Deseja realmente deletar? </h5>
+									        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+									      </div>
+									      <div class="modal-footer">
+									        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+									        <button class="btn btn-primary" type="submit" name="optionMarca" value="deleteMarca">Deletar</button>
+									      </div>
+									    </div>
+									  </div>
+									</div>
+																
+>>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
 								<button class="btn btn-primary btnPage" type="submit" name="optionMarca" value="updateFormMarca">Atualizar</button>
 							</td>
 						</form>	

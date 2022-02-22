@@ -20,7 +20,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="index.jsp" class="active">
+                    <a href="home.jsp" class="active">
                         <span class="icon"> Home </span></a>
                 </li>
                 
@@ -89,7 +89,7 @@
         
         
         
-      <div class="tabela" style=" margin-top: 16%;margin-left: 20%">    
+      <div class="tabela">    
         <div class="col-md-12 col-lg-9 conteudo">
              <form action="ServletMarca" method="post">
 				<c:choose>
@@ -99,7 +99,11 @@
 							<!--  <input style="border-radius: 5px; border: 1px solid gray; height: 30px; padding: 10px;" type="text" name="name" required/><br>-->
 							<label style="margin-right: 17px;">Nome da Marca:<input class="form-control input-select" type="text" name="name" required/><br>
 							
+<<<<<<< HEAD
 							<button class="btn btn-primary btnPage"   type="submit" name="optionMarca" value="insertMarca">Salvar</button>
+=======
+							<button class="btn btn-primary btnPage" type="submit" name="optionMarca" value="insertMarca">Salvar</button>
+>>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
 						</div>
 					</c:when>
 					<c:otherwise>

@@ -178,7 +178,42 @@ public class DAO {
 		}
 		return listDetalhes;
 	}
+<<<<<<< HEAD
 //---------- PEDIDO ------------------------------------------------------------------
+=======
+	
+	
+	
+	//Método de conta da home
+	public Usuario qtdClienteTotal () {	
+	Conexao c = Conexao.getInstance();
+	Connection con = c.getConnection();
+	Usuario qtd = null;
+	
+	
+		try {
+			PreparedStatement p = con.prepareStatement("select count(cod_cliente) as total from cliente;");
+			ResultSet r = p.executeQuery();			
+			 r.next();
+			
+			
+			Integer qtdClientes = r.getInt("total");
+			qtd = new Usuario(qtdClientes);
+			qtd.setQtdCliente(qtdClientes);
+		
+				
+			
+			r.close();
+			p.close();
+			con.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return qtd;
+	}
+//  --------------------------------------------- PEDIDO ------------------------------------------------------------------
+>>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
 	
 	public ArrayList<Pedido> exibirPedido(){
 		Conexao c = Conexao.getInstance();
@@ -375,5 +410,35 @@ public class DAO {
 		}
 		return listaItemDetalhePedido;
 	}
+	
+	
+	//Método de conta da home
+		public Usuario qtdPedidoTotal () {	
+		Conexao c = Conexao.getInstance();
+		Connection con = c.getConnection();
+		Usuario qtdTotalPedido = null;
+		
+		
+			try {
+				PreparedStatement p = con.prepareStatement("select count(cod_pedido) as total from pedido;");
+				ResultSet r = p.executeQuery();			
+				 r.next();
+				
+				
+				Integer qtdPedido = r.getInt("total");
+				qtdTotalPedido = new Usuario(qtdPedido);
+				qtdTotalPedido.setQtdCliente(qtdPedido);
+			
+					
+				
+				r.close();
+				p.close();
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return qtdTotalPedido;
+		}
 	
 }

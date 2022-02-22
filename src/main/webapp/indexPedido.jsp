@@ -20,7 +20,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="index.jsp" >
+                    <a href="home.jsp" >
                         <span class="icon"> Home </span></a>
                 </li>
                 
@@ -89,7 +89,11 @@
 
 
 
+<<<<<<< HEAD
 	<div class="tabela">
+=======
+	<div class="tabela" >
+>>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
 		<div class="col-md-12 col-lg-9 conteudo">
 			<div class="table-responsive">
 				<table class="table table-hover">
@@ -121,7 +125,7 @@
 									<td><c:out value="${pedido.descricao_status_pedido}" /></td>
 									<td><c:out value="${pedido.valor_total}" /></td>
 									<td class="btnAcoes">
-										<button class="btn btn-primary" type="submit" name="optionPedido" value="detalhePedido">Ver Detalhes</button>
+										<button class="btn btn-primary btnPage" type="submit" name="optionPedido" value="detalhePedido">Detalhes</button>
 									</td>
 								</form>
 							</tr>

@@ -19,14 +19,14 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="index.jsp" >
+                    <a href="home.jsp" >
                         <span class="icon"> Home </span></a>
                 </li>
                 
 
                 <li>
                     <a href="ServletPimpolhos
-                    " class="active">
+                    " class="active" >
                         <img src="imgs/user (1).png" class="icon"><span class="icon "> Clientes</span></a>
                 </li>
 
@@ -90,13 +90,17 @@
 
 	
 
+<<<<<<< HEAD
 	<div class="tabela">
+=======
+	<div class="tabela" >
+>>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
 		<div class="col-md-12 col-lg-9 conteudo ">
 			<div class="table-responsive">
 				<table class="table table-hover">
 					<thead>
 						<tr>
-							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Cod_Cliente</th>
+							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Cod. Cliente</th>
 							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Nome</th>
 							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">CPF</th>
 							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Data de Nascimento</th>

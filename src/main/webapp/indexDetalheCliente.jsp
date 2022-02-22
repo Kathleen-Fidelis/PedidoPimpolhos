@@ -20,7 +20,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="" class="active">
+                    <a href="home.jsp" class="active">
                         <span class="icon"> Home </span></a>
                 </li>
                 
@@ -88,7 +88,11 @@
         </div>
 
 
+<<<<<<< HEAD
 <div class="tabela">
+=======
+<div class="tabela" >
+>>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
 	<div class="col-md-12 col-lg-9 conteudo">
 			<div class="table-responsive">
 				<table class="table table-hover">

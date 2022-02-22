@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.sql.SQLIntegrityConstraintViolationException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -71,13 +73,16 @@ public class ServletMarca extends HttpServlet {
 	
 	private void insertMarca(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		String nomeBack = request.getParameter("name").trim();
+<<<<<<< HEAD
 		
+=======
+>>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
 		
 		if (nomeBack != null) {
 			if (!nomeBack.equals("")){
 				Marca user1 = new Marca (nomeBack);
 				this.dao.inserirMarca(user1);
-	}
+			}
 		}
 		response.sendRedirect("ServletMarca");
 	}
@@ -90,10 +95,12 @@ public class ServletMarca extends HttpServlet {
 	
 	private void deleteMarca(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String idBack = request.getParameter("cod_marca");
-		if (idBack != null) {
-			Integer id = Integer.parseInt(idBack);
-			this.dao.deletarMarca(id);
-		}
+
+			if (idBack != null) {
+				Integer id = Integer.parseInt(idBack);
+				this.dao.deletarMarca(id);
+			}
+			
 		response.sendRedirect("ServletMarca");
 	}
 	
