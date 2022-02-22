@@ -166,6 +166,12 @@
 							
 							    
 								<button class="btn btn-primary btnPage" type="submit" name="optionProduto" value="insertProduto">Salvar</button>
+<<<<<<< HEAD
+=======
+=======
+								<button  class="btn btn-primary btnPage" type="submit" name="optionProduto" value="insertProduto">Salvar</button>
+>>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
+>>>>>>> branch 'kaique' of https://github.com/Kathleen-Fidelis/PedidoPimpolhos.git
 						</div>
 					</c:when>
 					<c:otherwise>
@@ -174,6 +180,7 @@
 						
 							<input class="form-control" type="hidden" name="cod_produto" value="${produto.cod_produto}"required/><br>
 							<label class="form-label" style="margin-right: 17px;">Nome:</label><input class="form-control" type="text" name="nome" value="${produto.nome}" required /><br>
+<<<<<<< HEAD
 						    
 						    
                         <div class="input-group mb-3">
@@ -181,6 +188,13 @@
 						     <span class="input-group-text col-1">R$</span>
 						    <input class="form-control" type="text" name="preco" value="${produto.preco}"/><br>
 								</div>
+=======
+<<<<<<< HEAD
+								<label class="form-label" style="margin-right: 23px;">Preço:</label><input class="form-control" type="text" name="preco" value="${produto.peso}"/><br>
+=======
+							<label class="form-label" style="margin-right: 23px;">Preço:</label><input class="form-control" type="text" name="preco" value="${produto.peso}"/><br>
+>>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
+>>>>>>> branch 'kaique' of https://github.com/Kathleen-Fidelis/PedidoPimpolhos.git
 								
 								<label class="form-label" style="margin-right: 32px;">Tipo de produto:</label>
 								<select class="form-select input-select" name="sexo">

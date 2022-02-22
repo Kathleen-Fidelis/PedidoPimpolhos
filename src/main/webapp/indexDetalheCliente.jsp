@@ -90,6 +90,12 @@
 
 
 <div class="tabela">
+<<<<<<< HEAD
+=======
+=======
+<div class="tabela" >
+>>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
+>>>>>>> branch 'kaique' of https://github.com/Kathleen-Fidelis/PedidoPimpolhos.git
 	<div class="col-md-12 col-lg-9 conteudo">
 			<div class="table-responsive">
 				<table class="table table-hover detalhesCliente">

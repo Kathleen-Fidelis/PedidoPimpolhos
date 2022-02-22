@@ -97,13 +97,50 @@
     <div class="tabela">
     <form action="ServletProduto" method="post">
 		<button class="btn btn-secondary col-3 btnPage" style=" font-weight: bold; background-color: #9ACCFF; border: none;" type="submit"  name="optionProduto" value="insertFormProduto"> Adicionar Produto</button>
+<<<<<<< HEAD
+=======
 	</form>
+<<<<<<< HEAD
+    
+    <div class="tabela">
+    <form action="ServletProduto" method="post">
+		<button class="btn btn-primary col-3 btnPage"  type="submit"  name="optionProduto" value="insertFormProduto"> Adicionar Produto</button>
+>>>>>>> branch 'kaique' of https://github.com/Kathleen-Fidelis/PedidoPimpolhos.git
+	</form>
+<<<<<<< HEAD
 	
+=======
+=======
+>>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
+>>>>>>> branch 'kaique' of https://github.com/Kathleen-Fidelis/PedidoPimpolhos.git
         <div class="col-md-12 col-lg-9 conteudo">
           <div class = "table-responsive">
             <table class="table table-hover tbproduto">
                 <thead>
+<<<<<<< HEAD
                 
+=======
+                    <tr>
+                        <th>Cod. Produto</th>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Sexo</th>
+                        <th>Dimensao</th>
+                        <th>Material</th> 
+                        <th>Peso</th>
+                        <th>Conteudo Produto</th>
+                        <th>Fornecedor</th>
+                        <th>Categoria</th>
+                        <th>Imagem</th>
+                        <th>Marca</th>
+<<<<<<< HEAD
+                         <th>Ações</th>     
+=======
+                        <th>Ações</th>        
+>>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
+                      
+                    </tr>
+>>>>>>> branch 'kaique' of https://github.com/Kathleen-Fidelis/PedidoPimpolhos.git
                 </thead>
                 <tbody>
                     <c:forEach var="produto" items="${listProduto}">
@@ -152,6 +189,10 @@
                                		
                                		
                                		
+<<<<<<< HEAD
+=======
+>>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
+>>>>>>> branch 'kaique' of https://github.com/Kathleen-Fidelis/PedidoPimpolhos.git
 									<button type="submit" class="btn btn-primary btnPage" name="optionProduto" value="updateFormProduto">Atualizar</button>
 							  </td>
 

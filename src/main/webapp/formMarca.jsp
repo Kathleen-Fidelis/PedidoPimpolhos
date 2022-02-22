@@ -100,6 +100,10 @@
 							<label style="margin-right: 17px;">Nome da Marca:<input class="form-control input-select" type="text" name="name" required/><br>
 							
 							<button class="btn btn-primary btnPage" type="submit" name="optionMarca" value="insertMarca">Salvar</button>
+<<<<<<< HEAD
+=======
+>>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
+>>>>>>> branch 'kaique' of https://github.com/Kathleen-Fidelis/PedidoPimpolhos.git
 						</div>
 					</c:when>
 					<c:otherwise>
