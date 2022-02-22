@@ -128,7 +128,7 @@
 									      </div>
 									      <div class="modal-footer">
 									        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-									        <button class="btn btn-primary" type="submit" name="optionFornecedor" value="deleteFornecedor">Deletar</button>
+									        <button class="btn btn-primary btnPage" type="submit" name="optionFornecedor" value="deleteFornecedor">Deletar</button>
 									      </div>
 									    </div>
 									  </div>

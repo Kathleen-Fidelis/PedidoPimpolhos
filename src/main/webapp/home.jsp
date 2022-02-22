@@ -89,7 +89,7 @@
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
                 <div>
                     <h4>Pimpolhos</h4>
-                    <small>Bebês Reborn</small>
+                    <a href="deslogar.jsp">Sair</a>
                 </div>
             </div>
         </div>
