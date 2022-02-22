@@ -178,9 +178,9 @@ public class DAO {
 		}
 		return listDetalhes;
 	}
-<<<<<<< HEAD
+
 //---------- PEDIDO ------------------------------------------------------------------
-=======
+
 	
 	
 	
@@ -213,7 +213,7 @@ public class DAO {
 		return qtd;
 	}
 //  --------------------------------------------- PEDIDO ------------------------------------------------------------------
->>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
+
 	
 	public ArrayList<Pedido> exibirPedido(){
 		Conexao c = Conexao.getInstance();
