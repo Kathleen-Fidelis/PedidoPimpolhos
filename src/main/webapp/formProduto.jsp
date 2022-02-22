@@ -21,7 +21,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="index.jsp" class="active">
+                    <a href="home.jsp" class="active">
                         <span class="icon"> Home </span></a>
                 </li>
                 
@@ -71,7 +71,8 @@
                 <label for="nav-toggle">
                     <span class="las "><img src="imgs/menu-aberto (1).png" ></span>
                 </label>
-                Dashboard
+                 Painel de  Controle
+
             </h2>
 
             <div class="search-wrapper">
@@ -83,7 +84,7 @@
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
                 <div>
                     <h4>Pimpolhos</h4>
-                    <small>Bebês Reborn</small>
+                 <a class="logout" href="deslogar.jsp">Sair</a>
                 </div>
             </div>
         </div>
@@ -103,7 +104,12 @@
 								<h2 style="margin: 30px 0px 50px 0px">Cadastrar Produto</h2>
 								
 								<label class="form-label" style="margin-right: 17px;">Nome:</label><input class="form-control" type="text" name="nome" required/><br>
-								<label class="form-label" style="margin-right: 23px;">Preço:</label><input class="form-control" type="text" name="preco"/><br>
+								  
+								  <div class="input-group mb-3">
+						    <label class="form-label col-12" style="margin-right: 23px;">Preço:</label>
+						     <span class="input-group-text col-1">R$</span>
+						    <input class="form-control preco2" type="text" name="preco" value="${produto.preco}" required/><br>
+								</div>
 								
 								<label class="form-label" style="margin-right: 32px;">Tipo de produto:</label>
 								<select class="form-select input-select" name="sexo">
@@ -113,10 +119,16 @@
                                 </select>
 								
 								
-								<label class="form-label" style="margin-right: 32px;">Dimensão:</label><input class="form-control" type="text" name="dimensao"/><br>
+								<label class="form-label" style="margin-right: 32px;">Dimensão:</label><input class="form-control dimensao" type="text" name="dimensao"required/><br>
 							    <label class="form-label" style="margin-right: 32px;">Material:</label><input class="form-control" type="text" name="material" required/><br>
-								<label class="form-label" style="margin-right: 23px;">Peso:</label><input class="form-control" type="text" name="peso"/><br>
-								<label class="form-label" style="margin-right: 32px;">Conteudo Produto:</label><input class="form-control" type="text" name="conteudo"/><br>
+							    
+								<div class="input-group mb-3">
+								<label class="form-label col-12" style="margin-right: 23px;">Peso:</label>
+								<span class="input-group-text col-1">Kg</span>
+								<input class="form-control peso2" type="text" name="peso" value="${produto.peso}"required/>
+								</div>
+								
+								<label class="form-label" style="margin-right: 32px;">Conteudo Produto:</label><input class="form-control" type="text" name="conteudo" required/><br>
 
 								
 	                        <!-- Fornecedor v -->
@@ -140,7 +152,7 @@
                             <!-- Fornecedor  ^ -->
 
 							<label class="form-label" style="margin-right: 32px;">Imagem:</label>
-							<input class="form-control input-select" type="text" name="img_produto" value="${produto.img_produto}"/>
+							<input class="form-control input-select" type="text" name="img_produto" value="${produto.img_produto}"required/>
 							
 							<!-- Marca  v -->
 							<label class="form-label" style="margin-right: 32px;">Marca:</label>	
@@ -160,9 +172,15 @@
 						<div class="container col-10 input-marca">
 							<h2 style="margin: 30px 0px 50px 0px">Atualizar Produto</h2>
 						
-							<input class="form-control" type="hidden" name="cod_produto" value="${produto.cod_produto}"/><br>
+							<input class="form-control" type="hidden" name="cod_produto" value="${produto.cod_produto}"required/><br>
 							<label class="form-label" style="margin-right: 17px;">Nome:</label><input class="form-control" type="text" name="nome" value="${produto.nome}" required /><br>
-								<label class="form-label" style="margin-right: 23px;">Preço:</label><input class="form-control" type="text" name="preco" value="${produto.peso}"/><br>
+						    
+						    
+                        <div class="input-group mb-3">
+						    <label class="form-label col-12" style="margin-right: 23px;">Preço:</label>
+						     <span class="input-group-text col-1">R$</span>
+						    <input class="form-control" type="text" name="preco" value="${produto.preco}"/><br>
+								</div>
 								
 								<label class="form-label" style="margin-right: 32px;">Tipo de produto:</label>
 								<select class="form-select input-select" name="sexo">
@@ -174,7 +192,13 @@
 								
 								<label class="form-label" style="margin-right: 32px;">Dimensão:</label><input class="form-control" type="text" name="dimensao" value="${produto.dimensao}"/>
 							    <label class="form-label" style="margin-right: 32px;">Material:</label><input class="form-control" type="text" name="material" value="${produto.material}" required/>
-								<label class="form-label" style="margin-right: 23px;">Peso:</label><input class="form-control" type="text" name="peso" value="${produto.peso}"/>
+								
+								<div class="input-group mb-3">
+								<label class="form-label col-12" style="margin-right: 23px;">Peso:</label>
+								<span class="input-group-text col-1">Kg</span>
+								<input class="form-control peso2" type="text" name="peso" value="${produto.peso}"/>
+								</div>
+								
 								<label class="form-label" style="margin-right: 32px;">Conteudo Produto:</label><input class="form-control" type="text" name="conteudo" value="${produto.conteudo_produto}"/>
 
 								
@@ -196,7 +220,7 @@
                                  <option value ="${categoria.cod_categoria}"> ${categoria.nome_categoria}</option>										
                                   </c:forEach>							
                                  </select>
-                            <!-- Fornecedor  ^ -->
+                            <!-- Categoria  ^ -->
 
 							<label class="form-label" style="margin-right: 32px;">Imagem:</label>
 							<input class="form-control input-select" type="text" name="img_produto" value="${produto.img_produto}"/>
@@ -217,8 +241,12 @@
             </form>
         </div>
          </div>
-     </div>
+    <script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+	<script src="app.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-        
+       
 </body>
 </html>

@@ -20,7 +20,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="index.jsp" >
+                    <a href="home.jsp" >
                         <span class="icon"> Home </span></a>
                 </li>
                 
@@ -70,7 +70,7 @@
                 <label for="nav-toggle">
                     <span class="las "><img src="imgs/menu-aberto (1).png" ></span>
                 </label>
-                Dashboard
+                Painel de Controle
             </h2>
 
             <div class="search-wrapper">
@@ -82,7 +82,7 @@
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
                 <div>
                     <h4>Pimpolhos</h4>
-                    <small>Bebês Reborn</small>
+                   <a class="logout" href="deslogar.jsp">Sair</a>
                 </div>
             </div>
         </div>
@@ -93,10 +93,9 @@
 
 	<div class="tabela">
 	<form action="ServletCategoria" method="post">
-		<button class="btn btn-primary col-3 btnPage" type="submit"  name="optionCategoria" value="insertFormCategoria"> Adicionar Categoria</button>
+		<button class="btn btn-primary col-3 btnPageReload" type="submit"  name="optionCategoria" value="insertFormCategoria"> Adicionar Categoria</button>
 	</form>
         <div class="col-md-12 col-lg-9 conteudo">
-        
 			<div class = "table-responsive">
 				<table class="table table-hover" >
 					<thead>
@@ -117,7 +116,26 @@
 									<td><c:out value="${categoria.nome_categoria}"/></td>
 									
 									<td class="btnAcoes">
-										<button class="btn btn-primary btnPage"  type="submit" name="optionCategoria" value="deleteCategoria">Deletar</button>
+										<button type="button" class="btn btn-primary btnPage" data-bs-toggle="modal" data-bs-target="#exampleModal-${categoria.cod_categoria}">Deletar</button>
+
+										
+										<!-- Modal -->
+									<div  class="modal fade" id="exampleModal-${categoria.cod_categoria}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+									  <div class="modal-dialog">
+									    <div class="modal-content">
+									      <div class="modal-header">
+									        <h5 class="modal-title" >Deseja realmente deletar? </h5>
+									        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+									      </div>
+									      <div class="modal-footer">
+									        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+									        <button class="btn btn-primary btnPageReload" type="submit" name="optionCategoria" value="deleteCategoria">Deletar</button>
+									      </div>
+									    </div>
+									  </div>
+									</div>
+										
+										
 										<button class="btn btn-primary btnPage"  type="submit" name="optionCategoria" value="updateFormCategoria">Atualizar</button>
 									</td>
 								</form>
@@ -130,6 +148,11 @@
 	</div>
 </div>
 
+<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+	<script src="app.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 

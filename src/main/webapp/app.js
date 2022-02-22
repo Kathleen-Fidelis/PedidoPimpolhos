@@ -1,13 +1,14 @@
 $(document).ready(function(){
-	$(".telefone, .celular").mask("(00) 0000-0000");
+	$(".telefone, .celular").mask("0000-0000");
 	$(".cpf").mask("000.000.000-00"); 
-	$(".preco").mask("0.000,00", {reverse: true}); 
-	$(".preco2").mask("R$ 000,00");
-	$(".preco3").mask("R$ 00,000");
+	$(".preco").mask("R$ 0.000,00", {reverse: false}); 
+	$(".preco2").mask(" 000,00");
+	$(".preco3").mask("R$ 00,00");
+	$(".preco4").mask("R$ 000,00");
 	$(".cep").mask("00000-000"); 
 	$(".dimensao").mask("00x00 cm"); 
-	$(".peso").mask("0.000,00", {reverse: true}); 
-	$(".peso2").mask("0.000,00 kg", {reverse: true});  
+	$(".pesoForm").mask("0.000 kg"); 
+	$(".peso2").mask("0.000");  
 	$(".cnpj").mask("00.000.000/0000-00", {reverse: true});  
 
 	 var $target = $("#mensagem");  	

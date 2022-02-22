@@ -19,7 +19,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="index.jsp" class="active">
+                    <a href="home.jsp" class="active">
                         <span class="icon"> Home </span></a>
                 </li>
                 
@@ -69,7 +69,7 @@
                 <label for="nav-toggle">
                     <span class="las "><img src="imgs/menu-aberto (1).png" ></span>
                 </label>
-                Dashboard
+                Painel de  Controle
             </h2>
 
             <div class="search-wrapper">
@@ -81,7 +81,7 @@
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
                 <div>
                     <h4>Pimpolhos</h4>
-                    <small>Bebês Reborn</small>
+                   <a class="logout" href="deslogar.jsp">Sair</a>
                 </div>
             </div>
         </div>

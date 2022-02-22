@@ -19,14 +19,14 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="index.jsp" >
+                    <a href="home.jsp" >
                         <span class="icon"> Home </span></a>
                 </li>
                 
 
                 <li>
                     <a href="ServletPimpolhos
-                    " class="active">
+                    " class="active" >
                         <img src="imgs/user (1).png" class="icon"><span class="icon "> Clientes</span></a>
                 </li>
 
@@ -69,7 +69,8 @@
                 <label for="nav-toggle">
                     <span class="las "><img src="imgs/menu-aberto (1).png" ></span>
                 </label>
-                Dashboard
+                 Painel de  Controle
+
             </h2>
 
             <div class="search-wrapper">
@@ -81,7 +82,7 @@
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
                 <div>
                     <h4>Pimpolhos</h4>
-                    <small>Bebês Reborn</small>
+                <a class="logout" href="deslogar.jsp">Sair</a>
                 </div>
             </div>
         </div>
@@ -90,17 +91,19 @@
 
 	
 
-	<div class="tabela">
+
+	<div class="tabela" >
 		<div class="col-md-12 col-lg-9 conteudo ">
 			<div class="table-responsive">
 				<table class="table table-hover">
 					<thead>
 						<tr>
-							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Cod_Cliente</th>
+							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Cod. Cliente</th>
 							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Nome</th>
 							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">CPF</th>
 							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Data de Nascimento</th>
 							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Email</th>
+							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Ações</th>
 						</tr>
 					</thead>
 					<tbody>

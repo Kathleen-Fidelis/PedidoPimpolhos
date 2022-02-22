@@ -98,26 +98,12 @@
     <form action="ServletProduto" method="post">
 		<button class="btn btn-secondary col-3 btnPage" style=" font-weight: bold; background-color: #9ACCFF; border: none;" type="submit"  name="optionProduto" value="insertFormProduto"> Adicionar Produto</button>
 	</form>
+	
         <div class="col-md-12 col-lg-9 conteudo">
           <div class = "table-responsive">
             <table class="table table-hover tbproduto">
                 <thead>
-                    <tr>
-                        <th>Cod. Produto</th>
-                        <th>Nome</th>
-                        <th>Preço</th>
-                        <th style="word-wrap: break-word;min-width: 186px;max-width: 160px;">Tipo de Produto</th>
-                        <th>Dimensão</th>
-                        <th>Material</th> 
-                        <th>Peso</th>
-                        <th>Conteudo Produto</th>
-                        <th>Fornecedor</th>
-                        <th>Categoria</th>
-                        <th>Imagem</th>
-                        <th>Marca</th>
-                        <th>Ações</th>     
-                      
-                    </tr>
+                
                 </thead>
                 <tbody>
                     <c:forEach var="produto" items="${listProduto}">

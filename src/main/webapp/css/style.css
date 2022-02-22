@@ -10,6 +10,12 @@
 	font-family: 'Comfortaa', cursive;
 }
 
+th{
+	 word-wrap: break-word;
+     min-width: 130px;
+     max-width: 160px;
+}
+
 td{
     background-color: white !important;
 }
@@ -34,9 +40,26 @@ body {
 }
 
 
+.button-atualizar{
+	background-color:#E6889A;
+}
+
+/*.btn-primary{
+	background-color: #9ACCFF;
+	border: none;
+}
 
 
+.btn-primary:hover{
+	background-color: #9ACCFF;
+}
+*/
 
+.logout{
+	margin-left: 74%;
+	color: #8390a2;
+	text-decoration: none;
+}
 
 
 input[type="number"]::-webkit-outer-spin-button,
@@ -104,6 +127,17 @@ table{
     Color: rgb(0, 0, 0);
 }
 
+
+body {
+	background-color:#f1f5f9 !important; 
+}
+
+.tabela {
+	 margin-top: 16%;
+	 margin-left: 10%;
+}
+
+
 tbody{
     background-color: rgb(226, 226, 226);
 }
@@ -117,19 +151,84 @@ tbody{
    
 }
 
+table.detalhesPedido tr td:last-child{
+	
+	display: flex;
+    height: 173px;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+	
+}
 
+table.detalhesCliente tr td:last-child{
+	display: flex;
+    height: 89px;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+	
+}
+
+table.dd tr td:last-child{
+	display: flex;
+    align-items: center;
+ 
+	
+}
+
+table.tbproduto tr td:last-child{
+	display: flex;
+    height: 100px;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+table.pedidotb tr td:last-child{
+	display: flex;
+    height: 60px;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+.btn.btn-primary.btnPageReload{
+	font-weight: bold;
+    background-color: #9ACCFF;
+    border: none;
+    
+}
 
 .btnPage {
 	font-weight: bold;
     background-color: #9ACCFF;
     border: none;
+   
 }
 
 .btn.btn-primary.btnPage {
 	font-weight: bold;
     background-color: #9ACCFF;
     border: none;
+     margin-left: 3%;
 }
+
+
+
+
+.btnPage {
+	font-weight: bold;
+    background-color: #9ACCFF;
+    border: none;
+    margin-bottom: 2%;
+}
+
 
 .select{
     width: 250px;
@@ -240,6 +339,10 @@ tbody{
     }
     
   
+   /* .conteudo{
+        margin-left: 24px;
+    }*/
+   
 }
 
 
@@ -361,6 +464,7 @@ tbody{
     top:0;
     z-index: 100;
     transition: width 300ms;
+    
 }
 
 
@@ -505,6 +609,7 @@ table{
 thead tr{
     border-top:1px solid #f0f0f0;
     border-bottom: 2px solid #f0f0f0;
+   
    
 }
 thead td{

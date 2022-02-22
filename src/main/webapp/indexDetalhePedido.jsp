@@ -20,7 +20,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="index.jsp" class="active">
+                    <a href="home.jsp" class="active">
                         <span class="icon"> Home </span></a>
                 </li>
                 
@@ -70,7 +70,7 @@
                 <label for="nav-toggle">
                     <span class="las "><img src="imgs/menu-aberto (1).png" ></span>
                 </label>
-                Dashboard
+                Painel de  Controle
             </h2>
 
             <div class="search-wrapper">
@@ -82,7 +82,7 @@
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
                 <div>
                     <h4>Pimpolhos</h4>
-                    <small>Bebês Reborn</small>
+                  <a class="logout" href="deslogar.jsp">Sair</a>
                 </div>
             </div>
         </div>
@@ -92,10 +92,10 @@
    <div class="tabela" style=" margin-top: 16%;margin-left: 20%">     
       <div class="col-md-12 col-lg-9 conteudo">
           <div class = "table-responsive">
-            <table class="table table-hover">
+            <table class="table table-hover detalhesPedido">
                 <thead>
                     <tr>
-                        <th>Cod. Pedido</th>    
+                        <th >Cod. Pedido</th>    
                         <th>Data pedido</th> 
                         <th>Nome cliente</th> 
                         <th>Cidade</th> 
@@ -106,8 +106,8 @@
                         <th>Bairro</th> 
                         <th>Ponto Referência</th> 
                         <th>Estado</th> 
-                        <th style="word-wrap: break-word;min-width: 122px;max-width: 160px;">Tipo de envio</th>
-                        <th style="word-wrap: break-word;min-width: 122px;max-width: 160px;">Valor do frete</th>
+                        <th>Tipo de envio</th>
+                        <th>Valor do frete</th>
                         <th>Status pedido</th> 
                         <th>Forma Pagamento</th> 
                         <th>Nome Produto</th> 
@@ -115,6 +115,7 @@
                         <th>Marca</th>  
                         <th>Quantidade</th> 
                         <th>Valor total</th> 
+                       
                     </tr>
                 </thead>
                 <tbody>
@@ -137,11 +138,11 @@
                                 <td ><c:out value="${pedido.ponto_referencia}"/></td>
                                 <td ><c:out value="${pedido.descricao_estado}"/></td>
                                 <td> <c:out value="${pedido.descricao_frete}"/></td>
-                                <td> <c:out value="${pedido.valor_frete}"/></td>
+                                <td class="preco3"> <c:out value="${pedido.valor_frete}"/></td>
                                 <td> <c:out value="${pedido.descricao_status_pedido}"/></td>
                                 <td> <c:out value="${pedido.descricao_forma_pagamento}"/></td>
                                 <td> <c:out value="${pedido.nome}"/></td>
-                                <td> <span class="preco"><c:out value="${pedido.preco}"/></td>
+                                <td> <span class="preco4"><c:out value="${pedido.preco}"/></td>
                                 <td> <c:out value="${pedido.nome_marca}"/></td>
                                 <td> <c:out value="${pedido.quantidade}"/></td>
                                 <td> <span class="preco"><c:out value="${pedido.valor_total}"/></td>
@@ -157,6 +158,13 @@
     </div>
     
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+	<script src="app.js" ></script> 
 </body>
 </html>

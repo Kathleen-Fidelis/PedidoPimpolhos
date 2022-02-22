@@ -20,7 +20,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="index.jsp" class="active">
+                    <a href="home.jsp" class="active">
                         <span class="icon"> Home </span></a>
                 </li>
                 
@@ -70,7 +70,7 @@
                 <label for="nav-toggle">
                     <span class="las "><img src="imgs/menu-aberto (1).png" ></span>
                 </label>
-                Dashboard
+                Painel de  Controle
             </h2>
 
             <div class="search-wrapper">
@@ -82,14 +82,14 @@
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
                 <div>
                     <h4>Pimpolhos</h4>
-                    <small>Bebês Reborn</small>
+                    <a class="logout" href="deslogar.jsp">Sair</a>
                 </div>
             </div>
         </div>
         
         
         
-      <div class="tabela" style=" margin-top: 16%;margin-left: 20%">    
+      <div class="tabela">    
         <div class="col-md-12 col-lg-9 conteudo">
              <form action="ServletMarca" method="post">
 				<c:choose>
@@ -99,7 +99,7 @@
 							<!--  <input style="border-radius: 5px; border: 1px solid gray; height: 30px; padding: 10px;" type="text" name="name" required/><br>-->
 							<label style="margin-right: 17px;">Nome da Marca:<input class="form-control input-select" type="text" name="name" required/><br>
 							
-							<button class="btn btn-primary btnPage"   type="submit" name="optionMarca" value="insertMarca">Salvar</button>
+							<button class="btn btn-primary btnPage" type="submit" name="optionMarca" value="insertMarca">Salvar</button>
 						</div>
 					</c:when>
 					<c:otherwise>

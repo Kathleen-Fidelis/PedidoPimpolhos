@@ -20,7 +20,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="" class="active">
+                    <a href="home.jsp" class="active">
                         <span class="icon"> Home </span></a>
                 </li>
                 
@@ -70,7 +70,7 @@
                 <label for="nav-toggle">
                     <span class="las "><img src="imgs/menu-aberto (1).png" ></span>
                 </label>
-                Dashboard
+                Painel de  Controle
             </h2>
 
             <div class="search-wrapper">
@@ -82,16 +82,17 @@
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
                 <div>
                     <h4>Pimpolhos</h4>
-                    <small>Bebês Reborn</small>
+                     <a class="logout" href="deslogar.jsp">Sair</a>
                 </div>
             </div>
         </div>
 
 
+
 <div class="tabela">
 	<div class="col-md-12 col-lg-9 conteudo">
 			<div class="table-responsive">
-				<table class="table table-hover">
+				<table class="table table-hover detalhesCliente">
 					<thead>
 						<tr>
 						    <th>#</th>
@@ -160,7 +161,6 @@
 		crossorigin="anonymous"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
-	<script src="app.js" ></script>
-		
+	<script src="app.js" ></script> 	
 </body>
 </html>

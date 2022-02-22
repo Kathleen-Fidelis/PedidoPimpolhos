@@ -90,7 +90,7 @@ public class ServletCategoria extends HttpServlet {
 	}
 	
 	private void inserirCategoria(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		String nomeCategoriaBack = request.getParameter("name");
+		String nomeCategoriaBack = request.getParameter("name").trim();
 		
 		
 		if ( nomeCategoriaBack != null) {

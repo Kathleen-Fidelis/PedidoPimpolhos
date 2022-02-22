@@ -85,25 +85,11 @@ public class DAOProduto {
 		Connection con = c.getConnection();
 		
 		try {
-			PreparedStatement a = con.prepareStatement("delete from favoritos where cod_produto = ?");
-		    a.setInt(1,cod_produto);
-		    System.out.println(a);
-		    a.executeUpdate();
-		    System.out.println("Comando executado");
-		    
-		    PreparedStatement b = con.prepareStatement("delete from estoque where cod_produto = ?");
-		    a.setInt(1,cod_produto);
-		    System.out.println(b);
-		    a.executeUpdate();
-		    System.out.println("Comando executado");
-		    
 			PreparedStatement p = con.prepareStatement("delete from produto where cod_produto = ?");
 			p.setInt(1,cod_produto);
 			System.out.println(p);
 			p.executeUpdate();
 			System.out.println("Comando executado");
-			a.close();
-			b.close();
 			p.close();
 			con.close();
 		} catch (SQLException e) {
@@ -183,6 +169,35 @@ public class DAOProduto {
 	}
 	
 	
+	
+	//Método de conta da home
+			public Usuario qtdProdutoTotal() {	
+			Conexao c = Conexao.getInstance();
+			Connection con = c.getConnection();
+			Usuario qtdTotalProduto = null;
+			
+			
+				try {
+					PreparedStatement p = con.prepareStatement("select count(cod_produto) as total from produto;");
+					ResultSet r = p.executeQuery();			
+					 r.next();
+					
+					
+					Integer qtdProduto = r.getInt("total");
+					qtdTotalProduto = new Usuario(qtdProduto);
+					qtdTotalProduto.setQtdCliente(qtdProduto);
+				
+						
+					
+					r.close();
+					p.close();
+					con.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				return qtdTotalProduto;
+			}
 	
 
 }

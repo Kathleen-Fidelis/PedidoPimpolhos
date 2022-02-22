@@ -20,7 +20,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="index.jsp" >
+                    <a href="home.jsp" >
                         <span class="icon"> Home </span></a>
                 </li>
                 
@@ -70,7 +70,7 @@
                 <label for="nav-toggle">
                     <span class="las "><img src="imgs/menu-aberto (1).png" ></span>
                 </label>
-                Dashboard
+                Painel de Controle
             </h2>
 
             <div class="search-wrapper">
@@ -82,17 +82,19 @@
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
                 <div>
                     <h4>Pimpolhos</h4>
-                    <small>Bebês Reborn</small>
+               <a class="logout" href="deslogar.jsp">Sair</a>
                 </div>
             </div>
         </div>
 
 
 
+
 	<div class="tabela">
+
 		<div class="col-md-12 col-lg-9 conteudo">
 			<div class="table-responsive">
-				<table class="table table-hover">
+				<table class="table table-hover pedidotb">
 					<thead>
 						<tr>
 							<th>Cod. Pedido</th>
@@ -100,9 +102,10 @@
 							<th style="word-wrap: break-word; min-width: 122px; max-width: 160px;">Data pedido</th>
 							<th style="word-wrap: break-word; min-width: 122px; max-width: 160px;">Quantidade</th>
 							<th style="word-wrap: break-word; min-width: 130px; max-width: 160px;">Tipo de envio</th>
-							<th style="word-wrap: break-word; min-width: 130px; max-width: 160px;">Valor do frete</th>
+							<th style="word-wrap: break-word; min-width: 130px; max-width: 160px;" >Valor do frete</th>
 							<th>Status pedido</th>
-							<th>Valor total</th>
+							<th >Valor total</th>
+							<th>Ações</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -117,11 +120,11 @@
 									<td><c:out value="${pedido.data_pedido}" /></td>
 									<td><c:out value="${pedido.quantidade}" /></td>
 									<td><c:out value="${pedido.descricao_frete}" /></td>
-									<td><c:out value="${pedido.valor_frete}" /></td>
+									<td class="preco3"><c:out value="${pedido.valor_frete}" /></td>
 									<td><c:out value="${pedido.descricao_status_pedido}" /></td>
-									<td><c:out value="${pedido.valor_total}" /></td>
-									<td class="btnAcoes">
-										<button class="btn btn-primary" type="submit" name="optionPedido" value="detalhePedido">Ver Detalhes</button>
+									<td class="preco4"><c:out value="${pedido.valor_total}" /></td>
+									<td class="tdLast">
+										<button class="btn btn-primary btnPageReload" type="submit" name="optionPedido" value="detalhePedido">Detalhes</button>
 									</td>
 								</form>
 							</tr>
@@ -138,5 +141,9 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 		crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+	<script src="app.js"></script> 	
+	
 </body>
 </html>
