@@ -39,17 +39,7 @@ body {
 	
 }
 
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-
-
-
-
-
-=======
->>>>>>> branch 'kaique' of https://github.com/Kathleen-Fidelis/PedidoPimpolhos.git
 .button-atualizar{
 	background-color:#E6889A;
 }
@@ -64,7 +54,6 @@ body {
 	background-color: #9ACCFF;
 }
 */
-<<<<<<< HEAD
 
 .logout{
 	margin-left: 74%;
@@ -72,9 +61,6 @@ body {
 	text-decoration: none;
 }
 
-=======
->>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
->>>>>>> branch 'kaique' of https://github.com/Kathleen-Fidelis/PedidoPimpolhos.git
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
@@ -357,10 +343,6 @@ table.pedidotb tr td:last-child{
         margin-left: 24px;
     }*/
    
-<<<<<<< HEAD
-=======
->>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
->>>>>>> branch 'kaique' of https://github.com/Kathleen-Fidelis/PedidoPimpolhos.git
 }
 
 
@@ -461,12 +443,6 @@ table.pedidotb tr td:last-child{
 
 #nav-toggle:checked ~ .main-content .header-info{
     width: 100%;
-<<<<<<< HEAD
-=======
-=======
-     width: 100%;
->>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
->>>>>>> branch 'kaique' of https://github.com/Kathleen-Fidelis/PedidoPimpolhos.git
     left: 0px;
 }
 

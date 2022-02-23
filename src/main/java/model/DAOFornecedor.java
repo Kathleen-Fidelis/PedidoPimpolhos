@@ -77,8 +77,6 @@ public class DAOFornecedor {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			e.addSuppressed(java.sql.SQLIntegrityConstraintViolationException
-z);
 		}
 	}
 	

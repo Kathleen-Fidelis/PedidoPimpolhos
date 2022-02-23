@@ -21,7 +21,6 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-<<<<<<< HEAD
                     <a href="home.jsp" >
                         <span class="icon"> Home </span></a>
                 </li>
@@ -36,30 +35,6 @@
  				<li>
                     <a href="ServletCategoria
                     " class="active">
-=======
-<<<<<<< HEAD
-                    <a href="index.jsp" >
-=======
-                    <a href="home.jsp" class="active">
->>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
-                        <span class="icon"> Home </span></a>
-                </li>
-                
-
-                <li>
-                    <a href="ServletPimpolhos
-                    " >
-                        <img src="imgs/user (1).png" class="icon"><span class="icon "> Clientes</span></a>
-                </li>
-
- 				<li>
-                    <a href="ServletCategoria
-<<<<<<< HEAD
-                    " class="active">
-=======
-                    ">
->>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
->>>>>>> branch 'kaique' of https://github.com/Kathleen-Fidelis/PedidoPimpolhos.git
                         <img src="imgs/categories.png" class="icon"><span class="icon "> Categorias </span></a>
                 </li>
                 
@@ -103,7 +78,6 @@
                 <span class="las la-search"></span>
                 <input type="search" placeholder="procure aqui" />
             </div>
-<<<<<<< HEAD
 
             <div class="user-wrapper">
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
@@ -116,22 +90,6 @@
         </div>
         
      <div class="tabela"> 
-<<<<<<< HEAD
-=======
-=======
-
-            <div class="user-wrapper">
-                <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
-                <div>
-                    <h4>Pimpolhos</h4>
-                    <small>Bebês Reborn</small>
-                </div>
-            </div>
-        </div>
-
-<div class="tabela">  
->>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
->>>>>>> branch 'kaique' of https://github.com/Kathleen-Fidelis/PedidoPimpolhos.git
 		<div class="col-md-12 col-lg-9 conteudo">
 		  	<form action="ServletCategoria" method="post">
 				<c:choose>
@@ -139,14 +97,8 @@
 						<div class="container col-10 input-marca">
 							<h2 style="margin: 30px 0px 50px 0px;">Cadastrar Categoria</h2>
 							<!--  <input style="border-radius: 5px; border: 1px solid gray; height: 30px; padding: 10px; type="text" name="name" required/><br>-->
-							<label style="margin-right: 17px;">Nome da Categoria:
+							<label style="margin-right: 17px;">Nome da Categoria:</label>
 							<input class="form-control input-select" type="text" name="name" required/><br>
-<<<<<<< HEAD
-=======
-=======
-							<input class="form-control input-select" style="border-radius: 5px; border: 1px solid gray; height: 30px; padding: 10px; type="text" name="name" required/><br>
->>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
->>>>>>> branch 'kaique' of https://github.com/Kathleen-Fidelis/PedidoPimpolhos.git
 							
 							<button class="btn btn-primary btnPage" type="submit" name="optionCategoria" value="insertCategoria">Salvar</button>
 						</div>
@@ -165,14 +117,8 @@
 			</form>
 		</div>
 		</div>
-<<<<<<< HEAD
-=======
-=======
-	</div>
->>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
->>>>>>> branch 'kaique' of https://github.com/Kathleen-Fidelis/PedidoPimpolhos.git
-		
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+		</div>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"> src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"</script>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
 <script src="app.js" ></script>

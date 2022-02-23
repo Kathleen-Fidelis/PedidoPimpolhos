@@ -95,15 +95,6 @@
 	<form action="ServletMarca" method="post">
 		<button class="btn btn-primary col-3 btnPageReload" type="submit"  name="optionMarca" value="insertFormMarca"> Adicionar Marca</button>
     </form>
-<<<<<<< HEAD
-=======
-=======
-	<div class="tabela">
-	<form action="ServletMarca" method="post">
-		<button class="btn btn-secondary col-3 btnPage" style=" font-weight: bold; background-color: #9ACCFF; border: none;" type="submit"  name="optionMarca" value="insertFormMarca"> Adicionar Marca</button>
-	</form>
->>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
->>>>>>> branch 'kaique' of https://github.com/Kathleen-Fidelis/PedidoPimpolhos.git
         <div class="col-md-12 col-lg-9 conteudo">
           <div class = "table-responsive">
             <table class="table table-hover ">
@@ -144,10 +135,6 @@
 									  </div>
 									</div>
 																
-<<<<<<< HEAD
-=======
->>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
->>>>>>> branch 'kaique' of https://github.com/Kathleen-Fidelis/PedidoPimpolhos.git
 								<button class="btn btn-primary btnPage" type="submit" name="optionMarca" value="updateFormMarca">Atualizar</button>
 							</td>
 						</form>	

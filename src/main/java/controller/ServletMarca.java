@@ -74,11 +74,6 @@ public class ServletMarca extends HttpServlet {
 	private void insertMarca(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		String nomeBack = request.getParameter("name").trim();
 		
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
->>>>>>> branch 'kaique' of https://github.com/Kathleen-Fidelis/PedidoPimpolhos.git
 		
 		if (nomeBack != null) {
 			if (!nomeBack.equals("")){

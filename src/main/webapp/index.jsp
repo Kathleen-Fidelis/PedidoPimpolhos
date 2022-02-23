@@ -49,7 +49,7 @@
                                         }
                                     }
                                 }else {
-                                    out.println("Não é  possivel logar");
+                                    out.println("Não é possivel logar");
                                 }
                            %>
 	

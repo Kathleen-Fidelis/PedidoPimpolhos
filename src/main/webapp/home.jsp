@@ -208,7 +208,7 @@
                                         <td>05</td>
                                         <td>Pix</td>
                                         <td><span class="status pink"> </span>
-                                            Em trânsito
+                                            Em transito
                                         </td>
                                     </tr>
 

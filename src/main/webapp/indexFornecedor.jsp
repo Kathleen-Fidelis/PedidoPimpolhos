@@ -19,15 +19,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-<<<<<<< HEAD
                     <a href="home.jsp">
-=======
-<<<<<<< HEAD
-                    <a href="index.jsp">
-=======
-                    <a href="home.jsp" >
->>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
->>>>>>> branch 'kaique' of https://github.com/Kathleen-Fidelis/PedidoPimpolhos.git
                         <span class="icon"> Home </span></a>
                 </li>
                 
@@ -53,12 +45,6 @@
                 <li>
                     <a href="ServletFornecedor
                     " class="active">
-<<<<<<< HEAD
-=======
-=======
-                     " class="active">
->>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
->>>>>>> branch 'kaique' of https://github.com/Kathleen-Fidelis/PedidoPimpolhos.git
                         <img src="imgs/fornecedor.png" class="icon"><span class="icon "> Fornecedores </span></a>
                 </li>
                 <li>
@@ -108,14 +94,6 @@
     <form action="ServletFornecedor" method="post">
 		<button class="btn btn-secondary col-3 btnPage"  type="submit"  name="optionFornecedor" value="insertFormFornecedor"> Adicionar Fornecedor</button>
     </form>
-<<<<<<< HEAD
-=======
-=======
-	<form action="ServletFornecedor" method="post">
-		<button class="btn btn-secondary col-3 btnPage" style="font-weight: bold; background-color: #9ACCFF; border: none;" type="submit"  name="optionFornecedor" value="insertFormFornecedor"> Adicionar Fornecedor</button>
-	</form>
->>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
->>>>>>> branch 'kaique' of https://github.com/Kathleen-Fidelis/PedidoPimpolhos.git
         <div class="col-md-12 col-lg-9 conteudo">
           	<div class = "table-responsive">
 	            <table class="table table-hover ">
@@ -156,10 +134,6 @@
 									  </div>
 									</div>
 										
-<<<<<<< HEAD
-=======
->>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4
->>>>>>> branch 'kaique' of https://github.com/Kathleen-Fidelis/PedidoPimpolhos.git
 										<button class="btn btn-primary btnPage" type="submit" name="optionFornecedor" value="updateFormFornecedor">Atualizar</button>
 									</td>
 								</form>
