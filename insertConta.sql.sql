@@ -1018,11 +1018,11 @@ values
 
 
 -- LOGIN
-insert into login (usuario, senha) values ("mateus", "pimpolhos");
-insert into login (usuario, senha) values ("kaique", "pimpolhos");
-insert into login (usuario, senha) values ("kathleen", "pimpolhos");
-insert into login (usuario, senha) values ("isabella", "pimpolhos");
-insert into login (usuario, senha) values ("gabriel", "pimpolhos");
+insert into login (nome , usuario, senha) values ("Mateus Reis","mateus", "pimpolhos");
+insert into login (nome , usuario, senha) values ("Kaique Araujo","kaique", "pimpolhos");
+insert into login (nome , usuario, senha) values ("Kathleen Fidelis","kathleen", "pimpolhos");
+insert into login (nome , usuario, senha) values ("Isabella Botasso","isabella", "pimpolhos");
+insert into login (nome , usuario, senha) values ("Gabriel Gonzaga","gabriel", "pimpolhos");
 
 
 
