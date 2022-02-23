@@ -105,7 +105,7 @@
             <div class="cards">
                 <div class="card-single">
                     <div>
-                        <h1>${quantidadeCliente}</h1>
+                        <h1 style="color:white">${quantidadeCliente}</h1>
                         <span>Clientes</span>
                     </div>
                     <div>
@@ -117,7 +117,7 @@
 
                 <div class="card-single">
                     <div>
-                        <h1>${quantidadePedido}</h1>
+                        <h1 style="color:white">${quantidadePedido}</h1>
                         <span>Pedidos</span>
                     </div>
                     <div>
@@ -128,7 +128,7 @@
 
                 <div class="card-single">
                     <div>
-                        <h1>${quantidadeProduto}</h1>
+                        <h1 style="color:white">${quantidadeProduto}</h1>
                         <span>Produtos</span>
                     </div>
                     <div>
@@ -139,11 +139,11 @@
 
                 <div class="card-single">
                     <div>
-                        <h1>5</h1>
+                        <h1 style="color:white">5</h1>
                         <span>Coladoradores</span>
                     </div>
                     <div>
-                        <span class="lab"><img src="imgs/colaboracao.png" class="icon-card" width="40px" height="40px" alt=""></span>
+                        <span class="las"><img src="imgs/trabalho-em-equipe.png" class="colab" width="40px" height="40px" alt=""></span>
                     </div>
                 </div>
             </div>
@@ -155,8 +155,7 @@
                     <div class="card">
                         <div class="card-header">
                             <h3> Pedidos Recentes</h3>
-                            <button> Ver todos <span class="las la-arrow-right"></span></button>
-                        </div>
+ 							<a href="indexPedido.jsp"><button> Ver todos <span class="las la-arrow-right"></span></button></a>                        </div>
 
 
                         <div class="card-body">
@@ -241,7 +240,6 @@
                     <div class="card">
                         <div class="card-header">
                             <h3>Time</h3>
-                            <button> Ver todos <span class="las la-arrow-right"></span></button>
                         </div>
 
 

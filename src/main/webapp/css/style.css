@@ -536,37 +536,38 @@ main{
 .card-single{
     display: flex;
     justify-content: space-between;
-    background:rgba(202, 202, 202, 0.568);
+    background:rgba(147 147 147 / 57%);
     padding: 2rem;
     border-radius: 2px;
 
 }
 
 
+
 .card-single div:last-child span{
     font-size: 3rem;
-    color: var(--main-color);
+    color:  #fff;
    
 }
 
 .card-single div:last-child span{
 
-    color:rgb(82, 82, 82);
+    color: #fff;
    
 }
 
 .card-single div:last-child span{
    
-    color:rgb(82, 82, 82);
+    color: #fff;
    
 }
 
 .card-single div:last-child h1{
-    color: rgb(82, 82, 82);
+    color:  #fff;
 }
 
 .card-single div:first-child span{
-    color: var(--text-grey);
+    color:  #fff;
 }
 
 .recent-grid{
@@ -698,6 +699,12 @@ color: var(--main-color)
 
     width: 20px;
     height: 20px;
+}
+
+.colab{
+	margin-bottom: 25px;
+	margin-right: 40px;
+
 }
 
 .icon-card{
