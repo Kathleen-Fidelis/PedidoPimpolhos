@@ -1,118 +1,97 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+       <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-<link rel="stylesheet" href="css/style.css" type="text/css">
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light ">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Pimpolhos</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <div class="col-12 navHamb">
-                    <ul class="navbar-nav menuLateralTab">
-                       <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">Meu perfil</a>
-                        </li>
-                        <hr>
-                        <li class="nav-item">
-                            <a class="nav-link clientes " aria-current="page" href="ServletPimpolhos">Clientes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link categorias" href="ServletCategoria">Categorias</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link produtos" href="ServletProduto">Produtos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fornecedores" href="ServletFornecedor">Fornecedores</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link pedidos" href="ServletPedido">Pedidos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link marcas" href="ServletMarca">Marcas</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="collapse navbar-collapse" id="navbarNav">
-
-            </div>
+<input type="checkbox" id="nav-toggle">
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2><span class="las "></span> <span>Pimpolhos</span></h2>
         </div>
-    </nav>
-    <div class="row bodyRow" style="justify-content:space-around;">
-        <div class="col-2 navLateral">
-            <ul class="navbar-nav menuLateralTab">
-               <li class="nav-item"><a class="nav-link" aria-current="page" href="#">Meu perfil</a>
-            	<hr>
-                <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="ServletPimpolhos">
-                            	<div class="row">
-                            		<img  class= "col-3" alt="" src="imgs/user (1).png" width="13%">
-                      				<span class="col-6"> Cliente</span>
-                     			</div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="ServletCategoria">
-                            	<div class="row">
-                            		<img  class= "col-3" alt="" src="imgs/categories.png" width="13%">
-                      				<span class="col-6"> Categorias</span>
-                     			</div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="ServletProduto">
-                            	<div class="row">
-                            		<img  class= "col-3" alt="" src="imgs/produto.png" width="13%">
-                      				<span class="col-6"> Produtos</span>
-                     			</div>
-                            </a>
-                        </li>
-                        <li class="nav-item" >
-                            <a class="nav-link" href="ServletFornecedor">
-                            	<div class="row" >
-                            		<img  class= "col-3" alt="" src="imgs/fornecedor.png" width="13%">
-                      				<span class="col-6"> Fornecedores</span>
-                     			</div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="ServletPedido">
-                            	<div class="row">
-                            		<img  class= "col-3" alt="" src="imgs/pedido.png" width="13%">
-                      				<span class="col-6"> Pedido</span>
-                     			</div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="ServletMarca">
-                            	<div class="row">
-                            		<img  class= "col-3" alt="" src="imgs/etiqueta.png" width="13%">
-                      				<span class="col-6"> Marca</span>
-                     			</div>
-                            </a>
+
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="home.jsp" class="active">
+                        <span class="icon"> Home </span></a>
+                </li>
+                
+
+                <li>
+                    <a href="ServletPimpolhos
+                    " >
+                        <img src="imgs/user (1).png" class="icon"><span class="icon "> Clientes</span></a>
+                </li>
+
+ 				<li>
+                    <a href="ServletCategoria
+                    ">
+                        <img src="imgs/categories.png" class="icon"><span class="icon "> Categorias </span></a>
+                </li>
+                
+                <li>
+                    <a href="ServletPedido
+                    ">
+                        <img src="imgs/pedido.png" class="icon"><span class="icon "> Pedidos </span></a>
+                </li>
+
+                <li>
+                    <a href="ServletFornecedor
+                    ">
+                        <img src="imgs/fornecedor.png" class="icon"><span class="icon "> Fornecedores </span></a>
+                </li>
+                <li>
+                    <a href="ServletMarca
+                    ">
+                        <img src="imgs/etiqueta.png" class="icon"><span class="icon "> Marcas </span></a>
+                </li>
+                <li>
+                    <a href="ServletProduto
+                    ">
+                        <img src="imgs/produto.png" class="icon"><span class="icon "> Produtos </span></a>
                 </li>
             </ul>
+
+        </div>
+    </div>
+
+
+    <div class="main-content">
+        <div class="header-info">
+            <h2>
+                <label for="nav-toggle">
+                    <span class="las "><img src="imgs/menu-aberto (1).png" ></span>
+                </label>
+                Dashboard
+            </h2>
+
+            <div class="search-wrapper">
+                <span class="las la-search"></span>
+                <input type="search" placeholder="procure aqui" />
+            </div>
+
+            <div class="user-wrapper">
+                <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
+                <div>
+                    <h4>Pimpolhos</h4>
+                    <small>Bebês Reborn</small>
+                </div>
+            </div>
         </div>
 
    
         
         
-        
+      <div class="tabela">  
         <div class="col-md 12 col-lg-9 conteudo">
             <form action="ServletProduto" method="post">
 
@@ -123,6 +102,7 @@
 						<div class="container col-10 input-marca" >
 								<h2 style="margin: 30px 0px 50px 0px">Cadastrar Produto</h2>
 								
+<<<<<<< HEAD:Modal e mask/src/main/webapp/formProduto.jsp
 								<label style="margin-right: 17px;">Nome:</label><input type="text" name="nome" required/><br>
 								<label style="margin-right: 23px;">Preço:</label><input class="preco" type="text" name="preco"/><br>
 								<label style="margin-right: 32px;">Sexo:</label><input type="text" name="sexo"/><br>
@@ -134,20 +114,71 @@
 								<label style="margin-right: 32px;">Categoria:</label><input name="cod_categoria" type="text" name="cod_categoria">
 								<label style="margin-right: 32px;">Imagem:</label><input type="text" name="img_produto"/><br>
 								<label style="margin-right: 32px;">Marca:</label><input type="text" name="cod_marca"/><br>
+=======
+								<label class="form-label" style="margin-right: 17px;">Nome:</label><input class="form-control" type="text" name="nome" required/><br>
+								<label class="form-label" style="margin-right: 23px;">Preço:</label><input class="form-control" type="text" name="preco"/><br>
+>>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4:src/main/webapp/formProduto.jsp
+								
+								<label class="form-label" style="margin-right: 32px;">Tipo de produto:</label>
+								<select class="form-select input-select" name="sexo">
+                                <option value="Menino">Bebe Reborn Menino</option>
+                                <option value="Menina">Bebe Reborn Menina</option>
+                                <option value="Acessório">Acessório</option>
+                                </select>
 								
 								
+								<label class="form-label" style="margin-right: 32px;">Dimensão:</label><input class="form-control" type="text" name="dimensao"/><br>
+							    <label class="form-label" style="margin-right: 32px;">Material:</label><input class="form-control" type="text" name="material" required/><br>
+								<label class="form-label" style="margin-right: 23px;">Peso:</label><input class="form-control" type="text" name="peso"/><br>
+								<label class="form-label" style="margin-right: 32px;">Conteudo Produto:</label><input class="form-control" type="text" name="conteudo"/><br>
+
 								
-							   
+	                        <!-- Fornecedor v -->
+							
+							<label class="form-label" style="margin-right: 32px;">Fornecedor:</label>
+							<select name="cod_fornecedor" class="form-select form-select-md input-select">
+                                 <c:forEach var="fornecedor" items="${listFornecedor}">  
+                                 <option value ="${fornecedor.cod_fornecedor}"> ${fornecedor.nome_fornecedor}</option>										
+                                  </c:forEach>							
+                                 </select>
+                                 
+							<!-- Fornecedor ^ -->
+							
+							<!-- Categoria v -->
+							<label class="form-label" style="margin-right: 32px;">Categoria:</label>
+							<select name="cod_categoria" class="form-select form-select-md input-select">
+                                 <c:forEach var="categoria" items="${listCategoria}">  
+                                 <option value ="${categoria.cod_categoria}"> ${categoria.nome_categoria}</option>										
+                                  </c:forEach>							
+                                 </select>
+                            <!-- Fornecedor  ^ -->
+
+							<label class="form-label" style="margin-right: 32px;">Imagem:</label>
+							<input class="form-control input-select" type="text" name="img_produto" value="${produto.img_produto}"/>
+							
+							<!-- Marca  v -->
+							<label class="form-label" style="margin-right: 32px;">Marca:</label>	
+							<select name="cod_marca" class="form-select form-select-md input-select">
+                                 <c:forEach var="marca" items="${listMarca}">  
+                                 <option value ="${marca.cod_marca}"> ${marca.nome_marca}</option>										
+                                  </c:forEach>							
+                                 </select>
+							<!-- Marca ^ -->
+							
+							
 							    
-							    
-							    
+<<<<<<< HEAD:Modal e mask/src/main/webapp/formProduto.jsp
 								<button style="margin-top: 13px; width: 20%;" class="btn btn-primary" type="submit" name="optionProduto" value="insertProduto">Salvar</button>
+=======
+								<button  class="btn btn-primary btnPage" type="submit" name="optionProduto" value="insertProduto">Salvar</button>
+>>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4:src/main/webapp/formProduto.jsp
 						</div>
 					</c:when>
 					<c:otherwise>
 						<div class="container col-10 input-marca">
 							<h2 style="margin: 30px 0px 50px 0px">Atualizar Produto</h2>
 						
+<<<<<<< HEAD:Modal e mask/src/main/webapp/formProduto.jsp
 							<input type="hidden" name="cod_produto" value="${produto.cod_produto}"/><br>
 							<label style="margin-right: 17px;">Nome:</label>
 							<input type="text" name="nome" value="${produto.nome}" required/><br>
@@ -171,16 +202,70 @@
 							<input type="text" name="img_produto" value="${produto.img_produto}"/><br>
 							<label style="margin-right: 32px;">Marca:</label>
 							<input type="text" name="cod_marca" value="${produto.cod_marca}"/><br>
+=======
+							<input class="form-control" type="hidden" name="cod_produto" value="${produto.cod_produto}"/><br>
+							<label class="form-label" style="margin-right: 17px;">Nome:</label><input class="form-control" type="text" name="nome" value="${produto.nome}" required /><br>
+							<label class="form-label" style="margin-right: 23px;">Preço:</label><input class="form-control" type="text" name="preco" value="${produto.peso}"/><br>
+								
+								<label class="form-label" style="margin-right: 32px;">Tipo de produto:</label>
+								<select class="form-select input-select" name="sexo">
+                                <option value="Menino">Bebe Reborn Menino</option>
+                                <option value="Menina">Bebe Reborn Menina</option>
+                                <option value="Acessório">Acessório</option>
+                                </select>
+								
+								
+								<label class="form-label" style="margin-right: 32px;">Dimensão:</label><input class="form-control" type="text" name="dimensao" value="${produto.dimensao}"/>
+							    <label class="form-label" style="margin-right: 32px;">Material:</label><input class="form-control" type="text" name="material" value="${produto.material}" required/>
+								<label class="form-label" style="margin-right: 23px;">Peso:</label><input class="form-control" type="text" name="peso" value="${produto.peso}"/>
+								<label class="form-label" style="margin-right: 32px;">Conteudo Produto:</label><input class="form-control" type="text" name="conteudo" value="${produto.conteudo_produto}"/>
+
+								
+	                        <!-- Fornecedor v -->
+>>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4:src/main/webapp/formProduto.jsp
 							
+							<label class="form-label" style="margin-right: 32px;">Fornecedor:</label>
+							<select name="cod_fornecedor" class="form-select form-select-md input-select">
+                                 <c:forEach var="fornecedor" items="${listFornecedor}">  
+                                 <option value ="${fornecedor.cod_fornecedor}"> ${fornecedor.nome_fornecedor}</option>										
+                                  </c:forEach>							
+                                 </select>
+                                 
+							<!-- Fornecedor ^ -->
 							
+							<!-- Categoria v -->
+							<label class="form-label" style="margin-right: 32px;">Categoria:</label>
+							<select name="cod_categoria" class="form-select form-select-md input-select">
+                                 <c:forEach var="categoria" items="${listCategoria}">  
+                                 <option value ="${categoria.cod_categoria}"> ${categoria.nome_categoria}</option>										
+                                  </c:forEach>							
+                                 </select>
+                            <!-- Categoria  ^ -->
+
+							<label class="form-label" style="margin-right: 32px;">Imagem:</label>
+							<input class="form-control input-select" type="text" name="img_produto" value="${produto.img_produto}"/>
+							
+							<!-- Marca  v -->
+							<label class="form-label" style="margin-right: 32px;">Marca:</label>	
+							<select name="cod_marca" class="form-select form-select-md input-select">
+                                 <c:forEach var="marca" items="${listMarca}">  
+                                 <option value ="${marca.cod_marca}"> ${marca.nome_marca}</option>										
+                                  </c:forEach>							
+                                 </select>
+							<!-- Marca ^ -->
 						
+<<<<<<< HEAD:Modal e mask/src/main/webapp/formProduto.jsp
 							<button class="btn btn-primary" type="submit" name="optionProduto" value="updateProduto">Atualizar</button>
+=======
+							<button class="btn btn-primary btnPage" type="submit" name="optionProduto" value="updateProduto">Atualizar</button>
+>>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4:src/main/webapp/formProduto.jsp
 						</div>
 					</c:otherwise>
 				</c:choose>
             </form>
         </div>
-        
+         </div>
+     
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

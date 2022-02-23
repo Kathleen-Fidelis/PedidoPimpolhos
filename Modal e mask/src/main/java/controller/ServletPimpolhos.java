@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.DAO;
 import model.Pedido;
+import model.Produto;
 import model.Usuario;
 
 /**
@@ -41,39 +44,52 @@ public class ServletPimpolhos extends HttpServlet {
 		String option = request.getParameter("option");
 		if (option == null) {
 			option = "Opção Invalida";
+	
+		}
+	switch(option) {
+////			case ("insertFormUsuario"):
+////				showInsertUser(request, response);
+////			break;
+////			case ("updateFormUsuario"):
+////				showUpdateUser(request, response);
+////			break;
+////			case ("updateUsuario"):
+////				updateUser(request, response);
+////			break;
+//			case ("cliente"):
+//				clientCount(request, response);
+//			break;
+			case ("cartaoSelecionado"):
+				System.out.println("Entrou no Switch");
+			selectAllDetalhesCliente (request, response);
+		break;
+		default:
+			selectAllUsers(request, response);
 		}
 		
-		switch(option) {
-//			case ("insertFormUsuario"):
-//				showInsertUser(request, response);
-//			break;
-//			case ("updateFormUsuario"):
-//				showUpdateUser(request, response);
-//			break;
-//			case ("updateUsuario"):
-//				updateUser(request, response);
-//			break;
-//			case ("deleteUsuario"):
-//				deleteUser(request, response);
-//			break;
-//			case ("insertUsuario"):
-//				insertUser(request, response);
-//			break;
-			default:
-				selectAllUsers(request, response);
-		}
-		
+	
 //	
 	}
 	
 // ---------------------------------------------- CLIENTE -----------------------------------------------------------------	
 
 
-	private void selectAllUsers(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		
+	private void selectAllUsers (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+	
 		request.setAttribute("listUser", this.dao.exibirUsuarios());
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		request.getRequestDispatcher("indexCliente.jsp").forward(request, response);
 	}
 	
+	private void selectAllDetalhesCliente(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		
+		Integer id = Integer.parseInt(request.getParameter("cod_cliente"));
+		System.out.println(id);
+		request.setAttribute("listDetalhes",this.dao.recuperarDetalhesCliente(id));
+		request.getRequestDispatcher("indexDetalheCliente.jsp").forward(request, response);
+	}
+	
+	
+	
 
+	
 }

@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.DAOCategoria;
+import model.DAOFornecedor;
+import model.DAOMarca;
 import model.DAOProduto;
 import model.Produto;
 
@@ -15,6 +18,11 @@ import model.Produto;
 public class ServletProduto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
       private DAOProduto daoproduto;
+      private DAOCategoria daocategoria;
+      private DAOFornecedor daofornecedor;
+      private DAOMarca      daomarca;
+      
+      
    /**
     * @see HttpServlet#HttpServlet()
     */
@@ -22,7 +30,10 @@ public class ServletProduto extends HttpServlet {
        super();
        // TODO Auto-generated constructor stub
        this.daoproduto = new DAOProduto();
-   }
+       this.daofornecedor = new DAOFornecedor();
+       this.daomarca = new DAOMarca();
+       this.daocategoria = new DAOCategoria();
+       }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -70,18 +81,27 @@ public class ServletProduto extends HttpServlet {
 	
 	
 	private void showInsertProduto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		request.setAttribute("listCategoria",daocategoria.exibirCategoria());
+		request.setAttribute("listFornecedor", daofornecedor.exibirFornecedor());
+	    request.setAttribute("listMarca", daomarca.exibirMarca());
 		request.getRequestDispatcher("formProduto.jsp").forward(request, response);
 	}
 	
 	private void showUpdateProduto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		request.setAttribute("listCategoria",daocategoria.exibirCategoria());
+		request.setAttribute("listMarca", daomarca.exibirMarca());
+		request.setAttribute("listFornecedor", daofornecedor.exibirFornecedor());
 		Integer id = Integer.parseInt(request.getParameter("cod_produto"));
 		Produto produto = this.daoproduto.recuperarProduto(id);
 		request.setAttribute("produto", produto);
 		request.getRequestDispatcher("formProduto.jsp").forward(request, response);
 	}
 	
+	
+	
 	private void insertProduto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		
+<<<<<<< HEAD:Modal e mask/src/main/java/controller/ServletProduto.java
 		String nomeBack = request.getParameter("nome");
 		String precoBack = request.getParameter("preco");
 		String sexoBack = request.getParameter("sexo");
@@ -93,10 +113,21 @@ public class ServletProduto extends HttpServlet {
 		Integer cod_categoriaBack = Integer.parseInt(request.getParameter("cod_categoria"));
 		String img_produtoBack = request.getParameter("img_produto");
 		Integer cod_marcaBack = Integer.parseInt(request.getParameter("cod_marca"));
+=======
+		String nomeBack = request.getParameter("nome").trim();
+		String precoBack = request.getParameter("preco").trim();
+		String sexoBack = request.getParameter("sexo").trim();
+		String dimensaoBack = request.getParameter("dimensao").trim();
+		String materialBack = request.getParameter("material").trim();
+		String pesoBack = request.getParameter("peso").trim();
+		String conteudoBack = request.getParameter("conteudo").trim();
+		Integer cod_fornecedorBack = Integer.parseInt(request.getParameter("cod_fornecedor").trim());
+		Integer cod_categoriaBack = Integer.parseInt(request.getParameter("cod_categoria").trim());
+		String img_produtoBack = request.getParameter("img_produto").trim();
+		Integer cod_marcaBack = Integer.parseInt(request.getParameter("cod_marca").trim());
+>>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4:src/main/java/controller/ServletProduto.java
 		
 
-		
-		
 		
 		if ((nomeBack != null) && (precoBack != null) && (sexoBack != null) && (dimensaoBack != null) && (materialBack != null) && (pesoBack != null) && (conteudoBack != null) && (cod_fornecedorBack != null) && (cod_categoriaBack != null) && (img_produtoBack != null) && (cod_marcaBack != null)) {
 			if (!nomeBack.equals("")){
@@ -134,7 +165,11 @@ public class ServletProduto extends HttpServlet {
 		String dimensaoBack = request.getParameter("dimensao");
 		String materialBack = request.getParameter("material");
 		String pesoBack = request.getParameter("peso");
+<<<<<<< HEAD:Modal e mask/src/main/java/controller/ServletProduto.java
 		String conteudoBack = request.getParameter("conteudo_produto");
+=======
+		String conteudoBack = request.getParameter("conteudo");
+>>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4:src/main/java/controller/ServletProduto.java
 		Integer fornecedorBack = Integer.parseInt(request.getParameter("cod_fornecedor"));
 		Integer categoriaBack = Integer.parseInt(request.getParameter("cod_categoria"));
 		String img_produtoBack = request.getParameter("img_produto");
@@ -146,8 +181,12 @@ public class ServletProduto extends HttpServlet {
 				Double preco2 = Double.parseDouble(precoBack.replace(",", "."));
 				Double peso2 = Double.parseDouble(pesoBack.replace(",", "."));
 				Integer id = (cod_produtoBack);
+<<<<<<< HEAD:Modal e mask/src/main/java/controller/ServletProduto.java
 				Produto produto = new Produto (nomeBack, preco2, sexoBack, dimensaoBack, materialBack, peso2, 
 						conteudoBack, fornecedorBack, categoriaBack, img_produtoBack, cod_marcaBack);
+=======
+				Produto produto = new Produto (nomeBack, preco2, sexoBack, dimensaoBack, materialBack, peso2, conteudoBack, fornecedorBack, categoriaBack, img_produtoBack, cod_marcaBack);
+>>>>>>> 8813d85e5b0681e08dd75f4965d096e84602e8c4:src/main/java/controller/ServletProduto.java
 				produto.setCod_produto(id);
 				this.daoproduto.atualizarProduto(produto);
 			}
