@@ -6,11 +6,11 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Pimpolhos ADM</title>
-<link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css" type="text/css">
+<link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css"
+	rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
-
 	<input type="checkbox" id="nav-toggle">
     <div class="sidebar">
         <div class="sidebar-brand">
@@ -20,7 +20,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="home.jsp" >
+                    <a href="home.jsp" class="active">
                         <span class="icon"> Home </span></a>
                 </li>
                 
@@ -39,7 +39,7 @@
                 
                 <li>
                     <a href="ServletPedido
-                    " class="active">
+                    ">
                         <img src="imgs/pedido.png" class="icon"><span class="icon "> Pedidos </span></a>
                 </li>
 
@@ -70,7 +70,7 @@
                 <label for="nav-toggle">
                     <span class="las "><img src="imgs/menu-aberto (1).png" ></span>
                 </label>
-                Painel de Controle
+                Painel de  Controle
             </h2>
 
             <div class="search-wrapper">
@@ -82,60 +82,78 @@
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
                 <div>
                     <h4>Pimpolhos</h4>
-               <a class="logout" href="deslogar.jsp">Sair</a>
+                     <a class="logout" href="deslogar.jsp">Sair</a>
                 </div>
             </div>
         </div>
 
 
 
-
-	<div class="tabela">
-
-		<div class="col-md-12 col-lg-9 conteudo">
+<div class="tabela">
+	<div class="col-md-12 col-lg-9 conteudo">
 			<div class="table-responsive">
-				<table class="table table-hover pedidotb">
+				<table class="table table-hover detalhesCliente">
 					<thead>
 						<tr>
-							<th>Cod. Pedido</th>
-							<th style="word-wrap: break-word; min-width: 130px; max-width: 160px;">Nome cliente</th>
-							<th style="word-wrap: break-word; min-width: 122px; max-width: 160px;">Data pedido</th>
-							<th style="word-wrap: break-word; min-width: 122px; max-width: 160px;">Quantidade</th>
-							<th style="word-wrap: break-word; min-width: 130px; max-width: 160px;">Tipo de envio</th>
-							<th style="word-wrap: break-word; min-width: 130px; max-width: 160px;" >Valor do frete</th>
-							<th>Status pedido</th>
-							<th >Valor total</th>
-							<th>Ações</th>
+						    <th>#</th>
+							<th>Nome</th>
+							<th>CPF</th>
+							<th>Data de Nascimento</th>
+							<th>Email</th>
+				            <th>Rua </th>
+				            <th>Nº</th>
+							<th>CEP</th>
+							<th>Complemento</th>
+							<th>Ponto de referencia</th>
+							<th>Bairro</th>
+							<th>Cidade </th>
+							<th>Estado</th>
+						    <th>Bandeira</th>
+						    <th>Titular do Cartão</th>
+						    <th>DDD</th>
+						    <th>Telefone</th>
+						    <th>Tipo do telefone</th>
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="pedido" items="${listaPedido}">
+					<c:forEach var="usuario" items="${listDetalhes}">
 							<tr>
-
-								<form action="ServletPedido" method="post">
-									<td><c:out value="${pedido.cod_pedido}" /> 
-										<input type="hidden" name="cod_pedido" value="${pedido.cod_pedido}" />
-									</td>
-									<td><c:out value="${pedido.nome_cliente}" /></td>
-									<td><c:out value="${pedido.data_pedido}" /></td>
-									<td><c:out value="${pedido.quantidade}" /></td>
-									<td><c:out value="${pedido.descricao_frete}" /></td>
-									<td class="preco3"><c:out value="${pedido.valor_frete}" /></td>
-									<td><c:out value="${pedido.descricao_status_pedido}" /></td>
-									<td class="preco4"><c:out value="${pedido.valor_total}" /></td>
-									<td class="tdLast">
-										<button class="btn btn-primary btnPageReload" type="submit" name="optionPedido" value="detalhePedido">Detalhes</button>
-									</td>
-								</form>
+                     
+                     
+                     
+								<form action="ServletPimpolhos" method="post">
+								
+									<td><c:out value="${usuario.cod_cliente}" /> 
+									<input type="hidden" name="cod_cliente" value="${usuario.cod_cliente}" /></td>
+									<td><c:out value="${usuario.nome}" /></td>
+									<td><span class="cpf"><c:out value="${usuario.cpf}" /></span></td>
+									<td><c:out value="${usuario.nascimento}" /></td>
+									<td><c:out value="${usuario.email}" /></td>
+									<td><c:out value="${usuario.rua}" /></td>
+									<td><c:out value="${usuario.numeroCasa}" /></td>
+									<td><span class="cep"><c:out value="${usuario.cep}" /></td>
+									<td><c:out value="${usuario.complemento}" /></td>
+									<td><c:out value="${usuario.pontoReferencia}" /></td>
+									<td><c:out value="${usuario.bairro}" /></td>
+									<td><c:out value="${usuario.cidade}" /></td>
+									<td><c:out value="${usuario.estado}" /></td>
+									<td><c:out value="${usuario.bandeira}" /></td>
+									<td><c:out value="${usuario.titularCartao}" /></td>
+									<td><c:out value="${usuario.dddtelefone}" /></td>
+									<td><span class="celular"><c:out value="${usuario.telefoneCliente}" /></td>
+							        <td><c:out value="${usuario.tipoTelefone}" /></td>
+								</form>	
+								
 							</tr>
-						</c:forEach>
+				</c:forEach>
 					</tbody>
 				</table>
 			</div>
 		</div>
-		</div>
+	</div>
 	</div>
 
+	
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -143,7 +161,6 @@
 		crossorigin="anonymous"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
-	<script src="app.js"></script> 	
-	
+	<script src="app.js" ></script> 	
 </body>
 </html>

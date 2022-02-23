@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -104,15 +104,15 @@
          <c:choose>
 			<c:when test="${ pedido == null }">
 			<div class="container mt-5 col-6" style="outline: 1px solid #d5d5d5; border-radius: 11px; padding: 16px;">
-				<label style="margin-right: 17px;">Frete:</label><input type="number" name="cod_frete"/><br>
+				<label style="margin-right: 17px;">Frete:</label><input type="text" name="cod_frete"/><br>
 				<label style="margin-right: 23px;">Endereco:</label><input type="text" name="cod_endereco"/><br>
-				<label style="margin-right: 32px;">Cliente:</label><input type="number" name="cod_cliente"/><br>
-			    <label style="margin-right: 32px;">Status:</label><input type="number" name="cod_status"/><br>
-			    <label style="margin-right: 32px;">Operação:</label><input type="number" name="cod_operacao"/><br>
-			    <label style="margin-right: 32px;">Forma Pagamento:</label><input type="number" name="cod_forma_pagamento"/><br>
+				<label style="margin-right: 32px;">Cliente:</label><input type="text" name="cod_cliente"/><br>
+			    <label style="margin-right: 32px;">Status:</label><input type="text" name="cod_status"/><br>
+			    <label style="margin-right: 32px;">Operação:</label><input type="text" name="cod_operacao"/><br>
+			    <label style="margin-right: 32px;">Forma Pagamento:</label><input type="text" name="cod_forma_pagamento"/><br>
 			    
 			    
-				<button style="margin-top: 13px;" class="btn btn-secondary" type="submit" name="optionPedido" value="insertPedido">Salvar</button>
+				<button class="btn btn-primary btnPage" type="submit" name="optionPedido" value="insertPedido">Salvar</button>
 				</div>
 			</c:when>
 			<c:otherwise>
@@ -131,7 +131,7 @@
 				<label style="margin-right: 32px;">Forma Pagamento:</label>
 				<input type="text" name="cod_forma_pagamento" value="${pedido.cod_forma_pagamento}"/><br>
 			
-				<button class="btn btn-secondary" type="submit" name="optionPedido" value="updatePedido">Atualizar</button>
+				<button class="btn btn-primary btnPage" type="submit" name="optionPedido" value="updatePedido">Atualizar</button>
 			</div>
 			</c:otherwise>
 		</c:choose>

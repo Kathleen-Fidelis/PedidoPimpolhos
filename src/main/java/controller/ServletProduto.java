@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.DAOCategoria;
+import model.DAOFornecedor;
+import model.DAOMarca;
 import model.DAOProduto;
 import model.Produto;
 
@@ -15,6 +18,11 @@ import model.Produto;
 public class ServletProduto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
       private DAOProduto daoproduto;
+      private DAOCategoria daocategoria;
+      private DAOFornecedor daofornecedor;
+      private DAOMarca      daomarca;
+      
+      
    /**
     * @see HttpServlet#HttpServlet()
     */
@@ -22,7 +30,10 @@ public class ServletProduto extends HttpServlet {
        super();
        // TODO Auto-generated constructor stub
        this.daoproduto = new DAOProduto();
-   }
+       this.daofornecedor = new DAOFornecedor();
+       this.daomarca = new DAOMarca();
+       this.daocategoria = new DAOCategoria();
+       }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -70,37 +81,46 @@ public class ServletProduto extends HttpServlet {
 	
 	
 	private void showInsertProduto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		request.setAttribute("listCategoria",daocategoria.exibirCategoria());
+		request.setAttribute("listFornecedor", daofornecedor.exibirFornecedor());
+	    request.setAttribute("listMarca", daomarca.exibirMarca());
 		request.getRequestDispatcher("formProduto.jsp").forward(request, response);
 	}
 	
 	private void showUpdateProduto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		request.setAttribute("listCategoria",daocategoria.exibirCategoria());
+		request.setAttribute("listMarca", daomarca.exibirMarca());
+		request.setAttribute("listFornecedor", daofornecedor.exibirFornecedor());
 		Integer id = Integer.parseInt(request.getParameter("cod_produto"));
+		System.out.println(id);
 		Produto produto = this.daoproduto.recuperarProduto(id);
 		request.setAttribute("produto", produto);
 		request.getRequestDispatcher("formProduto.jsp").forward(request, response);
 	}
 	
+	
+	
 	private void insertProduto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		
-		String nomeBack = request.getParameter("nome");
-		Double precoBack = Double.parseDouble(request.getParameter("preco"));
-		String sexoBack = request.getParameter("sexo");
-		String dimensaoBack = request.getParameter("dimensao");
-		String materialBack = request.getParameter("material");
-		Double pesoBack = Double.parseDouble(request.getParameter("peso"));
-		String conteudoBack = request.getParameter("conteudo");
-		Integer cod_fornecedorBack = Integer.parseInt(request.getParameter("cod_fornecedor"));
-		Integer cod_categoriaBack = Integer.parseInt(request.getParameter("cod_categoria"));
-		String img_produtoBack = request.getParameter("img_produto");
-		Integer cod_marcaBack = Integer.parseInt(request.getParameter("cod_marca"));
+		String nomeBack = request.getParameter("nome").trim();
+		String precoBack = request.getParameter("preco").trim();
+		String sexoBack = request.getParameter("sexo").trim();
+		String dimensaoBack = request.getParameter("dimensao").trim();
+		String materialBack = request.getParameter("material").trim();
+		String pesoBack = request.getParameter("peso").trim();
+		String conteudoBack = request.getParameter("conteudo").trim();
+		Integer cod_fornecedorBack = Integer.parseInt(request.getParameter("cod_fornecedor").trim());
+		Integer cod_categoriaBack = Integer.parseInt(request.getParameter("cod_categoria").trim());
+		String img_produtoBack = request.getParameter("img_produto").trim();
+		Integer cod_marcaBack = Integer.parseInt(request.getParameter("cod_marca").trim());
 		
 
 		
-		
-		
 		if ((nomeBack != null) && (precoBack != null) && (sexoBack != null) && (dimensaoBack != null) && (materialBack != null) && (pesoBack != null) && (conteudoBack != null) && (cod_fornecedorBack != null) && (cod_categoriaBack != null) && (img_produtoBack != null) && (cod_marcaBack != null)) {
 			if (!nomeBack.equals("")){
-				Produto produto = new Produto (nomeBack, precoBack, sexoBack, dimensaoBack, materialBack, pesoBack, conteudoBack, cod_fornecedorBack, cod_categoriaBack, img_produtoBack, cod_marcaBack);
+				Double preco2 = Double.parseDouble(precoBack.replace(",", "."));
+				Double peso2 = Double.parseDouble(pesoBack.replace(",", "."));
+				Produto produto = new Produto (nomeBack, preco2, sexoBack, dimensaoBack, materialBack, peso2, conteudoBack, cod_fornecedorBack, cod_categoriaBack, img_produtoBack, cod_marcaBack);
 				this.daoproduto.inserirProduto(produto);
 	 }
 		}
@@ -127,11 +147,11 @@ public class ServletProduto extends HttpServlet {
 		
 		Integer cod_produtoBack = Integer.parseInt(request.getParameter("cod_produto"));
 		String nomeBack = request.getParameter("nome");
-		Double precoBack = Double.parseDouble(request.getParameter("preco"));
+		String precoBack = request.getParameter("preco");
 		String sexoBack = request.getParameter("sexo");
 		String dimensaoBack = request.getParameter("dimensao");
 		String materialBack = request.getParameter("material");
-		Double pesoBack = Double.parseDouble(request.getParameter("peso"));
+		String pesoBack = request.getParameter("peso");
 		String conteudoBack = request.getParameter("conteudo");
 		Integer fornecedorBack = Integer.parseInt(request.getParameter("cod_fornecedor"));
 		Integer categoriaBack = Integer.parseInt(request.getParameter("cod_categoria"));
@@ -141,8 +161,11 @@ public class ServletProduto extends HttpServlet {
 		if ((nomeBack != null) && (precoBack != null) && (sexoBack != null) && (dimensaoBack != null)
 		&& (materialBack != null) && (pesoBack != null) && (conteudoBack != null) && (fornecedorBack != null) && (categoriaBack != null) && (img_produtoBack != null) && (cod_marcaBack != null)) {
 			if (!nomeBack.equals("")){
+				
+				Double preco2 = Double.parseDouble(precoBack.replace(",", "."));
+				Double peso2 = Double.parseDouble(pesoBack.replace(",", "."));
 				Integer id = (cod_produtoBack);
-				Produto produto = new  Produto(nomeBack, precoBack, sexoBack, dimensaoBack, materialBack, pesoBack, conteudoBack, fornecedorBack, categoriaBack, img_produtoBack, cod_marcaBack);
+				Produto produto = new Produto (nomeBack, preco2, sexoBack, dimensaoBack, materialBack, peso2, conteudoBack, fornecedorBack, categoriaBack, img_produtoBack, cod_marcaBack);
 				produto.setCod_produto(id);
 				this.daoproduto.atualizarProduto(produto);
 			}

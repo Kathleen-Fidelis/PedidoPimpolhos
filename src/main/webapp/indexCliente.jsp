@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +10,6 @@
 <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
-
 	<input type="checkbox" id="nav-toggle">
     <div class="sidebar">
         <div class="sidebar-brand">
@@ -27,7 +26,7 @@
 
                 <li>
                     <a href="ServletPimpolhos
-                    " >
+                    " class="active" >
                         <img src="imgs/user (1).png" class="icon"><span class="icon "> Clientes</span></a>
                 </li>
 
@@ -39,7 +38,7 @@
                 
                 <li>
                     <a href="ServletPedido
-                    " class="active">
+                    ">
                         <img src="imgs/pedido.png" class="icon"><span class="icon "> Pedidos </span></a>
                 </li>
 
@@ -70,7 +69,8 @@
                 <label for="nav-toggle">
                     <span class="las "><img src="imgs/menu-aberto (1).png" ></span>
                 </label>
-                Painel de Controle
+                 Painel de  Controle
+
             </h2>
 
             <div class="search-wrapper">
@@ -82,49 +82,45 @@
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
                 <div>
                     <h4>Pimpolhos</h4>
-               <a class="logout" href="deslogar.jsp">Sair</a>
+                <a class="logout" href="deslogar.jsp">Sair</a>
                 </div>
             </div>
         </div>
 
 
 
+	
 
-	<div class="tabela">
 
-		<div class="col-md-12 col-lg-9 conteudo">
+	<div class="tabela" >
+		<div class="col-md-12 col-lg-9 conteudo ">
 			<div class="table-responsive">
-				<table class="table table-hover pedidotb">
+				<table class="table table-hover">
 					<thead>
 						<tr>
-							<th>Cod. Pedido</th>
-							<th style="word-wrap: break-word; min-width: 130px; max-width: 160px;">Nome cliente</th>
-							<th style="word-wrap: break-word; min-width: 122px; max-width: 160px;">Data pedido</th>
-							<th style="word-wrap: break-word; min-width: 122px; max-width: 160px;">Quantidade</th>
-							<th style="word-wrap: break-word; min-width: 130px; max-width: 160px;">Tipo de envio</th>
-							<th style="word-wrap: break-word; min-width: 130px; max-width: 160px;" >Valor do frete</th>
-							<th>Status pedido</th>
-							<th >Valor total</th>
-							<th>Ações</th>
+							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Cod. Cliente</th>
+							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Nome</th>
+							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">CPF</th>
+							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Data de Nascimento</th>
+							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Email</th>
+							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Ações</th>
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="pedido" items="${listaPedido}">
+						<c:forEach var="usuario" items="${listUser}">
 							<tr>
 
-								<form action="ServletPedido" method="post">
-									<td><c:out value="${pedido.cod_pedido}" /> 
-										<input type="hidden" name="cod_pedido" value="${pedido.cod_pedido}" />
-									</td>
-									<td><c:out value="${pedido.nome_cliente}" /></td>
-									<td><c:out value="${pedido.data_pedido}" /></td>
-									<td><c:out value="${pedido.quantidade}" /></td>
-									<td><c:out value="${pedido.descricao_frete}" /></td>
-									<td class="preco3"><c:out value="${pedido.valor_frete}" /></td>
-									<td><c:out value="${pedido.descricao_status_pedido}" /></td>
-									<td class="preco4"><c:out value="${pedido.valor_total}" /></td>
-									<td class="tdLast">
-										<button class="btn btn-primary btnPageReload" type="submit" name="optionPedido" value="detalhePedido">Detalhes</button>
+								<form action="ServletPimpolhos" method="post">
+									<td><c:out value="${usuario.cod_cliente}" /> <input
+										type="hidden" name="cod_cliente"
+										value="${usuario.cod_cliente}" /></td>
+									<td><c:out value="${usuario.nome}" /></td>
+									<td><span class="cpf"><c:out value="${usuario.cpf}" /></span></td>
+									<td><span class="data"><c:out value="${usuario.nascimento}" /></td>
+									<td><c:out value="${usuario.email}" /></td>
+									
+									<td class="btnAcoes">
+										<button class="btn btn-primary btnPage" type="submit" name="option" value="cartaoSelecionado">Detalhes</button>
 									</td>
 								</form>
 							</tr>
@@ -133,17 +129,18 @@
 				</table>
 			</div>
 		</div>
-		</div>
 	</div>
+</div>
 
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+	<script src="app.js"></script>
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 		crossorigin="anonymous"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
-	<script src="app.js"></script> 	
-	
 </body>
 </html>
