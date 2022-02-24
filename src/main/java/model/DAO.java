@@ -218,12 +218,12 @@ public class DAO {
 			Connection con = c.getConnection();
 			ArrayList<Pedido> listaPedido = new ArrayList<Pedido>();
 			try {
-				PreparedStatement p = con.prepareStatement("select pedido.cod_pedido, c.nome_cliente, pedido.data_pedido, ip.quantidade, f.descricao_frete, f.valor_frete, sp.descricao_status_pedido, (ip.quantidade * p.preco) + f.valor_frete as valor_total from pedido\r\n"
+				PreparedStatement p = con.prepareStatement("select pedido.cod_pedido, c.nome_cliente, pedido.data_pedido, sp.descricao_status_pedido, (ip.quantidade * p.preco) + f.valor_frete as valor_total from pedido\r\n"
 						+ "inner join cliente c on c.cod_cliente = pedido.cod_cliente\r\n"
 						+ "inner join item_pedido ip on ip.cod_item_pedido = pedido.cod_item_pedido\r\n"
 						+ "inner join frete f on f.cod_frete = pedido.cod_frete \r\n"
 						+ "inner join status_pedido sp on sp.cod_status = pedido.cod_status\r\n"
-						+ "inner join produto p on p.cod_produto = ip.cod_produto ORDER BY cod_pedido ASC"
+						+ "inner join produto p on p.cod_produto = ip.cod_produto where ip.principal = 1 ORDER BY cod_pedido ASC"
 						+ "");
 				ResultSet r = p.executeQuery();			
 				
@@ -231,14 +231,11 @@ public class DAO {
 					Integer id = r.getInt("cod_pedido");
 					String nomeCliente = r.getString("nome_cliente");
 					Date data_pedido = r.getDate("data_pedido");
-					Integer quantidade = r.getInt("quantidade");
-					String frete= r.getString("descricao_frete");
-					String valor_frete = r.getString("valor_frete");
 					String status= r.getString("descricao_status_pedido");
 					Double valor_total = r.getDouble("valor_total");
 					//Boolean flagEND= r.getBoolean("flag_endereco");
 					
-					Pedido pedido = new Pedido(nomeCliente, data_pedido, quantidade, frete, valor_frete, status, valor_total);
+					Pedido pedido = new Pedido(nomeCliente, data_pedido, status, valor_total);
 					pedido.setCod_pedido(id);
 					listaPedido.add(pedido);
 				}

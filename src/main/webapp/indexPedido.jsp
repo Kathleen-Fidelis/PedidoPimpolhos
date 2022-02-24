@@ -92,18 +92,15 @@
 
 	<div class="tabela">
 
-		<div class="col-md-12 col-lg-9 conteudo">
+		<div class="col-md-12 col-lg-12 conteudo">
 			<div class="table-responsive">
 				<table class="table table-hover pedidotb">
 					<thead>
 						<tr>
-							<th>Cod. Pedido</th>
+							<th style="word-wrap: break-word; min-width: 50px; max-width: 160px;">Id</th>
 							<th style="word-wrap: break-word; min-width: 130px; max-width: 160px;">Nome cliente</th>
 							<th style="word-wrap: break-word; min-width: 122px; max-width: 160px;">Data pedido</th>
-							<th style="word-wrap: break-word; min-width: 122px; max-width: 160px;">Quantidade</th>
-							<th style="word-wrap: break-word; min-width: 130px; max-width: 160px;">Tipo de envio</th>
-							<th style="word-wrap: break-word; min-width: 130px; max-width: 160px;" >Valor do frete</th>
-							<th>Status pedido</th>
+							<th style="word-wrap: break-word; min-width: 135px; max-width: 180px;">Status pedido</th>
 							<th >Valor total</th>
 							<th>Ações</th>
 						</tr>
@@ -118,9 +115,6 @@
 									</td>
 									<td><c:out value="${pedido.nome_cliente}" /></td>
 									<td><c:out value="${pedido.data_pedido}" /></td>
-									<td><c:out value="${pedido.quantidade}" /></td>
-									<td><c:out value="${pedido.descricao_frete}" /></td>
-									<td class="preco3"><c:out value="${pedido.valor_frete}" /></td>
 									<td><c:out value="${pedido.descricao_status_pedido}" /></td>
 									<td class="preco4"><c:out value="${pedido.valor_total}" /></td>
 									<td class="tdLast">

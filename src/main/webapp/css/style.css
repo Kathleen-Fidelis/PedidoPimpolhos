@@ -26,7 +26,7 @@ body {
 
 .tabela {
 	 margin-top: 16%;
-	 margin-left: 10%;
+	 /*margin-left: 10%;*/
 }
 
 .btnAcoes button{
@@ -134,7 +134,7 @@ body {
 
 .tabela {
 	 margin-top: 16%;
-	 margin-left: 10%;
+	 /*margin-left: 10%;*/
 }
 
 
@@ -437,9 +437,9 @@ table.pedidotb tr td:last-child{
     display: none;
 }
 
-#nav-toggle:checked ~ .main-content {
+/*#nav-toggle:checked ~ .main-content {
     margin-left: 70px;
-}
+}*/
 
 #nav-toggle:checked ~ .main-content .header-info{
     width: 100%;
@@ -448,8 +448,8 @@ table.pedidotb tr td:last-child{
 
 .main-content{
     transition: margin-left 300ms;
-    margin-left: 345px;
-
+   	margin-left: 29%;
+    margin-right: 2%;
 }
 
 .header-info{
@@ -704,6 +704,30 @@ color: var(--main-color)
     margin-bottom: 25px;
 }
 
+
+/*ACCORDION*/
+.accordion-button.custom-accordion{
+	background-color: #e6889ac7;
+	color: white;
+	border-color: #e6889ac7;
+}
+
+
+
+/*@media only screen and (min-width: 1262px){
+	.main-content {
+        margin-left: 29%;
+    }
+}*/
+
+/*@media only screen and (min-width: 1200px){
+	.main-content {
+        margin-left: 4%;
+    }
+}*/
+
+
+
 @media only screen and (max-width: 1200px){
     .sidebar{
         width: 70px;
@@ -726,9 +750,7 @@ color: var(--main-color)
         display: none;
     }
     
-    .main-content {
-        margin-left: 70px;
-    }
+    
     
     .main-content header{
         width: calc(100% - 70px);

@@ -32,14 +32,10 @@ public class Pedido {
 	
 	
 	//Pedido
-	public Pedido(String nome_cliente, Date data_pedido, Integer quantidade, String descricao_frete, String valor_frete,
-			String descricao_status_pedido, Double valor_total) {
+	public Pedido(String nome_cliente, Date data_pedido, String descricao_status_pedido, Double valor_total) {
 		super();
 		this.nome_cliente = nome_cliente;
 		this.data_pedido = data_pedido;
-		this.quantidade = quantidade;
-		this.descricao_frete = descricao_frete;
-		this.valor_frete = valor_frete;
 		this.descricao_status_pedido = descricao_status_pedido;
 		this.valor_total = valor_total;
 	}
