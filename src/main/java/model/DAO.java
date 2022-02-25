@@ -431,4 +431,40 @@ public class DAO {
 				}
 				return qtdTotalPedido;
 			}
+			
+			
+			
+			
+			
+			
+			public ArrayList<Pedido> exibirPedidosRecentes(){
+				Conexao c = Conexao.getInstance();
+				Connection con = c.getConnection();
+				ArrayList<Pedido> listaPedidosRecentes = new ArrayList<Pedido>();
+				try {
+					PreparedStatement p = con.prepareStatement("select p.cod_pedido, fp.descricao_forma_pagamento, sp.descricao_status_pedido from pedido p \r\n"
+							+ "inner join forma_pagamento fp on fp.cod_forma_pagamento = p.cod_forma_pagamento \r\n"
+							+ "inner join status_pedido sp on sp.cod_status = p.cod_status \r\n"
+							+ "where data_pedido between str_to_date('2022-01-01', '%Y-%m-%d') and str_to_date('2022-01-05', '%Y-%m-%d')"
+							+ "");
+					ResultSet r = p.executeQuery();			
+					
+					while (r.next()) {
+						Integer id = r.getInt("cod_pedido");
+						String descricao_forma_pagamento = r.getString("descricao_forma_pagamento");
+						String status= r.getString("descricao_status_pedido");
+						
+						Pedido pedido = new Pedido(descricao_forma_pagamento, status);
+						pedido.setCod_pedido(id);
+						listaPedidosRecentes.add(pedido);
+					}
+					r.close();
+					p.close();
+					con.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				return listaPedidosRecentes;
+			}
 }

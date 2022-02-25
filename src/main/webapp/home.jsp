@@ -155,7 +155,7 @@
                     <div class="card">
                         <div class="card-header">
                             <h3> Pedidos Recentes</h3>
-                            <button> Ver todos <span class="las la-arrow-right"></span></button>
+                            <a href="ServletPedido"><button> Ver todos <span class="las la-arrow-right"></span></button></a>
                         </div>
 
 
@@ -169,69 +169,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>01</td>
-                                        <td>Boleto</td>
-                                        <td><span class="status orange"> </span>
-                                            Entregue
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>02</td>
-                                        <td>Boleto</td>
-                                        <td><span class="status orange"> </span>
-                                            Entregue
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>03</td>
-                                        <td>Crédito</td>
-                                        <td><span class="status orange"> </span>
-                                            Entregue
-                                        </td>
-                                    </tr>
-
-
-                                    </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>04</td>
-                                        <td>Crédito</td>
-                                        <td><span class="status purple"> </span>
-                                            Aguardando aprovação
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>05</td>
-                                        <td>Pix</td>
-                                        <td><span class="status pink"> </span>
-                                            Em transito
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>06</td>
-                                        <td>Pix</td>
-                                        <td><span class="status orange"> </span>
-                                            Entregue
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>07</td>
-                                        <td>Pix</td>
-                                        <td><span class="status orange"> </span>
-                                            Entregue
-                                        </td>
-                                    </tr>
-
-                                  
-
-
-
+                                	<c:forEach var="pedidoRecente" items="${listaPedidosRecentes}">
+	                                    <tr>
+	                                    	<form action="ServletQuantidade" method="post">
+		                                        <td><c:out value="${pedidoRecente.cod_pedido}"/>
+		                                        	<input type="hidden" name="cod_pedido" value="${pedidoRecente.cod_pedido}" />
+		                                        </td>
+		                                        <td><c:out value="${pedidoRecente.descricao_forma_pagamento}"/></td>
+		                                        <td><span class="status orange"> </span>
+		                                            <c:out value="${pedidoRecente.descricao_status_pedido}"/>
+		                                        </td>
+	                                    </tr>
+	                                 </c:forEach>
+								<tbody>
                             </table>
                         </div>
                     </div>

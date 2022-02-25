@@ -97,6 +97,16 @@ public class Pedido {
 		this.cod_produto = cod_produto;
 	}
 	
+	
+	
+
+	//tabela da home
+	public Pedido(String descricao_status_pedido, String descricao_forma_pagamento) {
+	super();
+	this.descricao_status_pedido = descricao_status_pedido;
+	this.descricao_forma_pagamento = descricao_forma_pagamento;
+}
+
 
 
 	public Integer getCod_pedido() {

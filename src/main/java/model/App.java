@@ -15,6 +15,8 @@ public class App {
 		System.out.println(maca.qtdClienteTotal());
 		System.out.println(maca.qtdPedidoTotal());
 		System.out.println(dao.qtdProdutoTotal());
+		System.out.println(maca.exibirPedidosRecentes());
+		
 		
 //		Produto laranja1 = new Produto("Will", "Japão", "melao@rd.com.br");
 //		maca.insert(laranja1);

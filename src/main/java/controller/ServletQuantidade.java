@@ -53,6 +53,7 @@ public class ServletQuantidade extends HttpServlet {
 			clientCount(request, response);
 			pedidoCount(request, response);
 			produtoCount(request, response);
+			pedidoList(request, response);
 			request.getRequestDispatcher("home.jsp").forward(request, response);
 		}
 		
@@ -95,6 +96,14 @@ public class ServletQuantidade extends HttpServlet {
 	private void pedidoCount(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		System.out.println(this.dao.qtdPedidoTotal());
 		request.setAttribute("quantidadePedido", this.dao.qtdPedidoTotal());
+		//request.getRequestDispatcher("index.jsp").forward(request, response);
+
+	}
+	
+	
+	private void pedidoList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		System.out.println(this.dao.exibirPedidosRecentes());
+		request.setAttribute("listaPedidosRecentes", this.dao.exibirPedidosRecentes());
 		//request.getRequestDispatcher("index.jsp").forward(request, response);
 
 	}
