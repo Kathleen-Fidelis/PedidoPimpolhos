@@ -290,7 +290,7 @@ public class DAO {
 			Connection con = c.getConnection();
 			ArrayList<Pedido> listaDetalhePedido = new ArrayList<Pedido>();
 			try {
-				PreparedStatement p = con.prepareStatement("select pedido.cod_pedido, pedido.data_pedido, c.nome_cliente, e.nome_cidade, e.cep, e.nome_rua, e.numero_casa, e.complemento, e.bairro, e.ponto_referencia, e2.descricao_estado, f.descricao_frete, f.valor_frete, sp.descricao_status_pedido, fp.descricao_forma_pagamento, p.nome, p.preco, m.nome_marca, ip.quantidade, (ip.quantidade * p.preco) + f.valor_frete as valor_total from pedido \r\n"
+				PreparedStatement p = con.prepareStatement("select pedido.cod_pedido, pedido.data_pedido, c.nome_cliente, e.nome_cidade, e.cep, e.nome_rua, e.numero_casa, e.complemento, e.bairro, e.ponto_referencia, e2.descricao_estado, f.descricao_frete, f.valor_frete, sp.descricao_status_pedido, fp.descricao_forma_pagamento, p.nome, p.preco, m.nome_marca, ip.quantidade, (ip.quantidade * p.preco) + f.valor_frete as valor_total, p.cod_produto from pedido \r\n"
 						+ "inner join cliente c on c.cod_cliente = pedido.cod_cliente \r\n"
 						+ "inner join endereco e on e.cod_endereco = pedido.cod_endereco \r\n"
 						+ "inner join estado e2 on e2.cod_estado = e.cod_estado \r\n"
@@ -325,8 +325,9 @@ public class DAO {
 					String nome_marca = r.getString("nome_marca");
 					Integer quantidade = r.getInt("quantidade");
 					Double valor_total = r.getDouble("valor_total");
+					Integer cod_produto = r.getInt("cod_produto");
 					//Boolean flagEND= r.getBoolean("flag_endereco");
-					Pedido pedido = new Pedido(data_pedido, nomeCliente, nome_cidade, cep, nome_rua, numero_casa, complemento, bairro, ponto_referencia, descricao_estado, frete, valor_frete, status, descricao_forma_pagamento, nome, preco, nome_marca, quantidade, valor_total);
+					Pedido pedido = new Pedido(data_pedido, nomeCliente, nome_cidade, cep, nome_rua, numero_casa, complemento, bairro, ponto_referencia, descricao_estado, frete, valor_frete, status, descricao_forma_pagamento, nome, preco, nome_marca, quantidade, valor_total, cod_produto);
 					pedido.setCod_pedido(id);
 					listaDetalhePedido.add(pedido);
 				}
@@ -348,7 +349,7 @@ public class DAO {
 			ArrayList<Pedido> listaItemDetalhePedido = new ArrayList<Pedido>();
 			
 			try {
-				PreparedStatement p = con.prepareStatement("select pedido.cod_pedido, pedido.data_pedido, c.nome_cliente, e.nome_cidade, e.cep, e.nome_rua, e.numero_casa, e.complemento, e.bairro, e.ponto_referencia, e2.descricao_estado, f.descricao_frete, f.valor_frete, sp.descricao_status_pedido, fp.descricao_forma_pagamento, p.nome, p.preco, m.nome_marca, ip.quantidade, (ip.quantidade * p.preco) + f.valor_frete as valor_total from pedido \r\n"
+				PreparedStatement p = con.prepareStatement("select pedido.cod_pedido, pedido.data_pedido, c.nome_cliente, e.nome_cidade, e.cep, e.nome_rua, e.numero_casa, e.complemento, e.bairro, e.ponto_referencia, e2.descricao_estado, f.descricao_frete, f.valor_frete, sp.descricao_status_pedido, fp.descricao_forma_pagamento, p.nome, p.preco, m.nome_marca, ip.quantidade, (ip.quantidade * p.preco) + f.valor_frete as valor_total, p.cod_produto from pedido \r\n"
 						+ "inner join cliente c on c.cod_cliente = pedido.cod_cliente \r\n"
 						+ "inner join endereco e on e.cod_endereco = pedido.cod_endereco \r\n"
 						+ "inner join estado e2 on e2.cod_estado = e.cod_estado \r\n"
@@ -385,8 +386,9 @@ public class DAO {
 					String nome_marca = r.getString("nome_marca");
 					Integer quantidade = r.getInt("quantidade");
 					Double valor_total = r.getDouble("valor_total");
+					Integer cod_produto = r.getInt("cod_produto");
 					//Boolean flagEND= r.getBoolean("flag_endereco");
-					Pedido itemPedido = new Pedido(data_pedido, nomeCliente, nome_cidade, cep, nome_rua, numero_casa, complemento, bairro, ponto_referencia, descricao_estado, frete, valor_frete, status, descricao_forma_pagamento, nome, preco, nome_marca, quantidade, valor_total);
+					Pedido itemPedido = new Pedido(data_pedido, nomeCliente, nome_cidade, cep, nome_rua, numero_casa, complemento, bairro, ponto_referencia, descricao_estado, frete, valor_frete, status, descricao_forma_pagamento, nome, preco, nome_marca, quantidade, valor_total, cod_produto);
 					itemPedido.setCod_pedido(id1);
 					listaItemDetalhePedido.add(itemPedido);
 				}

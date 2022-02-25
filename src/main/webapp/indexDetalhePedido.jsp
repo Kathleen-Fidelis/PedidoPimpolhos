@@ -93,15 +93,15 @@
 	<c:forEach var="pedido" items="${listaItemDetalhePedido}">  
 		 <form action="ServletPedido" method="post">
 	  			<div class="accordion-item">
-				    <h2 class="accordion-header" id="headingOne">
-				      <button class="accordion-button custom-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-				       	 Item #1
+				    <h2 class="accordion-header" id="heading-${pedido.cod_produto}">
+				      <button class="accordion-button custom-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-${pedido.cod_produto}" aria-expanded="true" aria-controls="collapse-${pedido.cod_produto}">
+				       	 Item pedido
 				      </button>
 				    </h2>
 	                    
-			<input type="hidden" name="cod_pedido" value="${pedido.cod_pedido}"/>
+			<input type="hidden" name="cod_pedido" value="${pedido.cod_produto}"/>
 	                                                  
-		    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+		    <div id="collapse-${pedido.cod_produto}" class="accordion-collapse collapse show" aria-labelledby="heading-${pedido.cod_produto}" data-bs-parent="#accordionExample">
 		      <div class="accordion-body">
 		      	<div style="display:flex;justify-content: space-between;">
 		      		<div>

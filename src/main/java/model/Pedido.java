@@ -28,6 +28,7 @@ public class Pedido {
 	private String nome_marca;
 	
 //	private Boolean flag_endereco;
+	private Integer cod_produto;
 	
 	
 	
@@ -41,38 +42,38 @@ public class Pedido {
 	}
 
 	
+	
+//	public Pedido(String nome_cliente, Date data_pedido, Integer quantidade, String descricao_frete, String valor_frete,
+//			String descricao_status_pedido, Double valor_total, String nome_cidade, String cep, String nome_rua,
+//			Integer numero_casa, String complemento, String bairro, String ponto_referencia, String descricao_estado,
+//			String descricao_forma_pagamento, String nome, Double preco, String nome_marca, Integer cod_produto) {
+//		super();
+//		this.nome_cliente = nome_cliente;
+//		this.data_pedido = data_pedido;
+//		this.quantidade = quantidade;
+//		this.descricao_frete = descricao_frete;
+//		this.valor_frete = valor_frete;
+//		this.descricao_status_pedido = descricao_status_pedido;
+//		this.valor_total = valor_total;
+//		this.nome_cidade = nome_cidade;
+//		this.cep = cep;
+//		this.nome_rua = nome_rua;
+//		this.numero_casa = numero_casa;
+//		this.complemento = complemento;
+//		this.bairro = bairro;
+//		this.ponto_referencia = ponto_referencia;
+//		this.descricao_estado = descricao_estado;
+//		this.descricao_forma_pagamento = descricao_forma_pagamento;
+//		this.nome = nome;
+//		this.preco = preco;
+//		this.nome_marca = nome_marca;
+//		}
+	
 	//Detalhe pedido
-	public Pedido(String nome_cliente, Date data_pedido, Integer quantidade, String descricao_frete, String valor_frete,
-			String descricao_status_pedido, Double valor_total, String nome_cidade, String cep, String nome_rua,
-			Integer numero_casa, String complemento, String bairro, String ponto_referencia, String descricao_estado,
-			String descricao_forma_pagamento, String nome, Double preco, String nome_marca) {
-		super();
-		this.nome_cliente = nome_cliente;
-		this.data_pedido = data_pedido;
-		this.quantidade = quantidade;
-		this.descricao_frete = descricao_frete;
-		this.valor_frete = valor_frete;
-		this.descricao_status_pedido = descricao_status_pedido;
-		this.valor_total = valor_total;
-		this.nome_cidade = nome_cidade;
-		this.cep = cep;
-		this.nome_rua = nome_rua;
-		this.numero_casa = numero_casa;
-		this.complemento = complemento;
-		this.bairro = bairro;
-		this.ponto_referencia = ponto_referencia;
-		this.descricao_estado = descricao_estado;
-		this.descricao_forma_pagamento = descricao_forma_pagamento;
-		this.nome = nome;
-		this.preco = preco;
-		this.nome_marca = nome_marca;
-	}
-	
-	
 	public Pedido(Date data_pedido, String nome_cliente, String nome_cidade, String cep, String nome_rua, Integer numero_casa, 
 			String complemento, String bairro, String ponto_referencia, String descricao_estado, String descricao_frete,
 			String valor_frete, String descricao_status_pedido, String descricao_forma_pagamento,  String nome, Double preco, 
-			String nome_marca, Integer quantidade,  Double valor_total) {
+			String nome_marca, Integer quantidade,  Double valor_total, Integer cod_produto) {
 		super();
 		this.data_pedido = data_pedido;
 		this.nome_cliente = nome_cliente;
@@ -93,6 +94,7 @@ public class Pedido {
 		this.nome_marca = nome_marca;
 		this.quantidade = quantidade;
 		this.valor_total = valor_total;
+		this.cod_produto = cod_produto;
 	}
 	
 
@@ -317,6 +319,17 @@ public class Pedido {
 	public void setNome_marca(String nome_marca) {
 		this.nome_marca = nome_marca;
 	}
+
+
+	public Integer getCod_produto() {
+		return cod_produto;
+	}
+
+
+	public void setCod_produto(Integer cod_produto) {
+		this.cod_produto = cod_produto;
+	}
+
 
 
 	

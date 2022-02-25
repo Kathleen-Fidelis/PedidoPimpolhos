@@ -712,6 +712,17 @@ color: var(--main-color)
 	border-color: #e6889ac7;
 }
 
+.accordion-button:not(.collapsed){
+	background-color: #e6889ac7;
+	box-shadow: none;
+}
+
+.accordion-button:focus{
+	background-color: #e6889ac7;
+	box-shadow: none;
+}
+
+
 
 
 /*@media only screen and (min-width: 1262px){
