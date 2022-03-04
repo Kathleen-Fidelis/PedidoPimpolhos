@@ -88,70 +88,146 @@
         </div>
 
 
+<div class="container detalhesClienteAccordionBg" style="
+    margin-top: 15%;">
+    <c:forEach var="cliente" items="${detalhesPrincipal}">  
+<form action="ServletPimpolhos" method="post">
+<div class="detalheClienteCabecalho row">
+<div class="col-12 maintitleDetails">Informações Principais de  <c:out value="${cliente.nome}"/></div>
+<div class= "col-6"> <span class="accordionInfoTitle">Id:</span> <span class="accordionInfoText"> <c:out value="${cliente.cod_cliente}"/></span> </div>
+<div class= "col-6"> <span class="accordionInfoTitle">Cpf:</span> <span class="accordionInfoText"><c:out value="${cliente.cpf}"/></span> </div>
+<div class= "col-6"> <span class="accordionInfoTitle">Email:</span> <span class="accordionInfoText"><c:out value="${cliente.email}"/></span> </div>
+<div class= "col-6"> <span class="accordionInfoTitle">Data de nascimento:</span><span class="accordionInfoText"> <c:out value="${cliente.nascimento}"/></span> </div>
 
-<div class="tabela">
-	<div class="col-md-12 col-lg-9 conteudo">
-			<div class="table-responsive">
-				<table class="table table-hover detalhesCliente">
-					<thead>
-						<tr>
-						    <th>#</th>
-							<th>Nome</th>
-							<th>CPF</th>
-							<th>Data de Nascimento</th>
-							<th>Email</th>
-				            <th>Rua </th>
-				            <th>Nº</th>
-							<th>CEP</th>
-							<th>Complemento</th>
-							<th>Ponto de referencia</th>
-							<th>Bairro</th>
-							<th>Cidade </th>
-							<th>Estado</th>
-						    <th>Bandeira</th>
-						    <th>Titular do Cartão</th>
-						    <th>DDD</th>
-						    <th>Telefone</th>
-						    <th>Tipo do telefone</th>
-						</tr>
-					</thead>
-					<tbody>
-					<c:forEach var="usuario" items="${listDetalhes}">
-							<tr>
-                     
-                     
-                     
-								<form action="ServletPimpolhos" method="post">
-								
-									<td><c:out value="${usuario.cod_cliente}" /> 
-									<input type="hidden" name="cod_cliente" value="${usuario.cod_cliente}" /></td>
-									<td><c:out value="${usuario.nome}" /></td>
-									<td><span class="cpf"><c:out value="${usuario.cpf}" /></span></td>
-									<td><c:out value="${usuario.nascimento}" /></td>
-									<td><c:out value="${usuario.email}" /></td>
-									<td><c:out value="${usuario.rua}" /></td>
-									<td><c:out value="${usuario.numeroCasa}" /></td>
-									<td><span class="cep"><c:out value="${usuario.cep}" /></td>
-									<td><c:out value="${usuario.complemento}" /></td>
-									<td><c:out value="${usuario.pontoReferencia}" /></td>
-									<td><c:out value="${usuario.bairro}" /></td>
-									<td><c:out value="${usuario.cidade}" /></td>
-									<td><c:out value="${usuario.estado}" /></td>
-									<td><c:out value="${usuario.bandeira}" /></td>
-									<td><c:out value="${usuario.titularCartao}" /></td>
-									<td><c:out value="${usuario.dddtelefone}" /></td>
-									<td><span class="celular"><c:out value="${usuario.telefoneCliente}" /></td>
-							        <td><c:out value="${usuario.tipoTelefone}" /></td>
-								</form>	
-								
-							</tr>
-				</c:forEach>
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</div>
-	</div>
+</form>
+  </c:forEach>
+
+
+
+</div>
+
+<div class="accordion" id="accordionExample">
+		<!-- INICIO ACCORDION ITEM ENDERECO -->
+	  			<div class="accordion-item">
+				    <h2 class="accordion-header" id="headingEndereco">
+				      <button class="accordion-button custom-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEndereco" aria-expanded="true" aria-controls="collapseEndereco">
+				       	 Endereços
+				      </button>
+				    </h2>
+	                    
+			<input type="hidden" name="cod_cliente" value="${cliente.cod_cliente}"/>
+	                                                  
+		    <div id="collapseEndereco" class="accordion-collapse collapse " aria-labelledby="headingEndereco" data-bs-parent="#accordionExample">
+		      <div class="accordion-body">
+		      
+		      		<div>
+		      		 <form action="ServletPimpolhos" method="post">
+		      		   <div class="row accordionContentSpace">
+		      		<c:forEach var="cliente" items="${listDetalhes}">  
+                      
+		                <div class="col-11 col-lg-5  clientDetails">
+				       <p><span class="accordionInfoTitle">Informações do Endereço</span></p>
+				        <p><span class="accordionInfoTitle"> Rua:</span> <span class="accordionInfoText"><c:out value="${cliente.rua}"/></span></p>
+				        <p><span class="accordionInfoTitle">Nº:</span> <span class="accordionInfoText"> <c:out value="${cliente.numeroCasa}"/></span></p>
+				        <p><span class="accordionInfoTitle">Complemento:</span> <span class="accordionInfoText"><c:out value="${cliente.complemento}"/></span></p>
+				        <p><span class="accordionInfoTitle">Ponto de Referencia:</span> <span class="accordionInfoText"><c:out value="${cliente.pontoReferencia}"/></span></p>
+				        <p><span class="accordionInfoTitle">Cep:</span><span class="accordionInfoText"> <c:out value="${cliente.cep}"/></span></p>
+				        <p><span class="accordionInfoTitle">Bairro:</span> <span class="accordionInfoText"><c:out value="${cliente.bairro}"/></span></p>
+			            <p><span class="accordionInfoTitle">Cidade:</span> <span class="accordionInfoText"><c:out value="${cliente.cidade}"/></span></p>
+			            <p><span class="accordionInfoTitle">Estado:</span><span class="accordionInfoText"> <c:out value="${cliente.estado}"/></span></p>
+				        </div>
+				       
+				          </c:forEach>
+				           </div>
+				         	</form>
+
+			        </div>
+		       
+		      </div>
+		    </div>
+	  	</div>
+	  	<!-- FINAL ACCORDION ITEM ENDERECO -->
+	  	
+	  	
+	  	<!-- INICIO ACCORDION ITEM Telefones -->
+	  		<div class="accordion-item">
+				    <h2 class="accordion-header" id="headingTelefone">
+				      <button class="accordion-button custom-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTelefone" aria-expanded="true" aria-controls="collapseTelefone">
+				       	 Telefones
+				      </button>
+				    </h2>
+	                    
+			<input type="hidden" name="cod_cliente" value="${cliente.cod_cliente}"/>
+	                                                  
+		    <div id="collapseTelefone" class="accordion-collapse collapse " aria-labelledby="headingTelefone" data-bs-parent="#accordionExample">
+		      <div class="accordion-body">
+		      
+		      		<div>
+		      		 <form action="ServletPimpolhos" method="post">
+		      		   <div class="row accordionContentSpace">
+		      		<c:forEach var="cliente" items="${listaTelefone}">  
+                      
+		                <div class="col-11 col-lg-5  clientDetails">
+				        <p><span class="accordionInfoTitle">Informações do Telefone</span></p>
+				        <p><span class="accordionInfoTitle">DDD:</span> <span class="accordionInfoText"><c:out value="${cliente.dddtelefone}"/></span></p>
+				        <p><span class="accordionInfoTitle">Número:</span><span class="accordionInfoText"> <c:out value="${cliente.telefoneCliente}"/></span></p>
+				        <p><span class="accordionInfoTitle">Tipo:</span> <span class="accordionInfoText"><c:out value="${cliente.tipoTelefone}"/></span></p>
+				        
+				        </div>
+				       
+				          </c:forEach>
+				           </div>
+				         	</form>
+
+			        </div>
+		       
+		      </div>
+		    </div>
+	  	</div>
+	  	<!-- FINAL ACCORDION ITEM TELEFONE -->
+	  	
+	  	
+	  	
+	  	  	<!-- INICIO ACCORDION ITEM CARTÃO -->
+	  		<div class="accordion-item">
+				    <h2 class="accordion-header" id="headingCard">
+				      <button class="accordion-button custom-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCard" aria-expanded="true" aria-controls="collapseCard">
+				       	 Cartões
+				      </button>
+				    </h2>
+	                    
+			<input type="hidden" name="cod_cliente" value="${cliente.cod_cliente}"/>
+	                                                  
+		    <div id="collapseCard" class="accordion-collapse collapse " aria-labelledby="headingCard data-bs-parent="#accordionExample">
+		      <div class="accordion-body">
+		      
+		      		<div>
+		      		 <form action="ServletPimpolhos" method="post">
+		      		   <div class="row accordionContentSpace">
+		      		<c:forEach var="cliente" items="${listaCartao}">  
+                      
+		                <div class="col-11 col-lg-5  clientDetails">
+				        <p><span class="accordionInfoTitle">Dados Cartão</span></p>
+				        <p><span class="accordionInfoTitle">Nome do Titular:</span> <span class="accordionInfoText"><c:out value="${cliente.titularCartao}"/></span></p>
+				        <p><span class="accordionInfoTitle">Número cartão:</span> <span class="accordionInfoText"><c:out value="${cliente.nCartao}"/></span></p>
+				        <p><span class="accordionInfoTitle">Validade:</span> <span class="accordionInfoText"><c:out value="${cliente.val}"/></span></p>
+				        <p><span class="accordionInfoTitle">Bandeira:</span> <span class="accordionInfoText"><c:out value="${cliente.bandeira}"/></span></p>
+				        
+				        </div>
+				       
+				          </c:forEach>
+				           </div>
+				         	</form>
+
+			        </div>
+		       
+		      </div>
+		    </div>
+	  	</div>
+	  	<!-- FINAL ACCORDION ITEM CARTAO -->
+ 
+</div>
+</div>
 
 	
 

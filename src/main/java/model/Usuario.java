@@ -17,6 +17,8 @@ public class Usuario {
 	private String bairro;
 	private String cidade;
 	private String estado;
+	private String nCartao;
+	private Date   val;
 	private String bandeira;
 	private String titularCartao;
 	private String dddtelefone;
@@ -39,28 +41,43 @@ public class Usuario {
 
 
 
-	public Usuario(String nome, String cpf, Date nascimento, String email, String rua, String numeroCasa, String cep,
-			String complemento, String pontoReferencia, String bairro, String cidade, String estado, String bandeira,
-			String titularCartao, String dddtelefone, String telefoneCliente, String tipoTelefone) {
+	public Usuario(Integer cod_cliente,String titularCartao, String nCartao, Date val, String bandeira ) {
 		super();
-		this.nome = nome;
-		this.cpf = cpf;
-		this.nascimento = nascimento;
-		this.email = email;
-		this.rua = rua;
-		this.numeroCasa = numeroCasa;
-		this.cep = cep;
-		this.complemento = complemento;
-		this.pontoReferencia = pontoReferencia;
-		this.bairro = bairro;
-		this.cidade = cidade;
-		this.estado = estado;
+		this.cod_cliente = cod_cliente;
+		this.nCartao = nCartao;
+		this.val = val;
 		this.bandeira = bandeira;
 		this.titularCartao = titularCartao;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	public Usuario(Integer cod_cliente, String dddtelefone, String telefoneCliente, String tipoTelefone) {
+		super();
+		this.cod_cliente = cod_cliente;
 		this.dddtelefone = dddtelefone;
 		this.telefoneCliente = telefoneCliente;
 		this.tipoTelefone = tipoTelefone;
 	}
+
+
+
+
+
+
+
 
 
 
@@ -103,6 +120,27 @@ public class Usuario {
 //		this.qtdPedido = qtdPedido;
 //		this.qtdProduto = qtdProduto;
 //	}
+
+
+
+
+
+
+// Endereco
+
+	public Usuario(String rua, String numeroCasa, String cep, String complemento, String pontoReferencia, String bairro,
+			String cidade, String estado) {
+		super();
+		this.rua = rua;
+		this.numeroCasa = numeroCasa;
+		this.cep = cep;
+		this.complemento = complemento;
+		this.pontoReferencia = pontoReferencia;
+		this.bairro = bairro;
+		this.cidade = cidade;
+		this.estado = estado;
+		
+	}
 
 
 
@@ -206,6 +244,42 @@ public class Usuario {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
+
+
+
+
+
+
+
+
+	public Date getVal() {
+		return val;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	public void setVal(Date val) {
+		this.val = val;
+	}
+
+
+
+
+
+
+
 
 
 
@@ -538,6 +612,27 @@ public class Usuario {
 	}
 
 
+	public String getnCartao() {
+		return nCartao;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	public void setnCartao(String nCartao) {
+		this.nCartao = nCartao;
+	}
 
 
 

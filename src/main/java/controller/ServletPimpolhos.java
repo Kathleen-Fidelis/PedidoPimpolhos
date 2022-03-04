@@ -84,7 +84,10 @@ public class ServletPimpolhos extends HttpServlet {
 		
 		Integer id = Integer.parseInt(request.getParameter("cod_cliente"));
 		System.out.println(id);
-		request.setAttribute("listDetalhes",this.dao.recuperarDetalhesCliente(id));
+        request.setAttribute("detalhesPrincipal",this.dao.recuperarInfoPrincipalCliente(id));
+		request.setAttribute("listaTelefone",this.dao.recuperarDetalhesClienteTelefone(id));
+		request.setAttribute("listaCartao",this.dao.recuperarDetalhesClienteCartao(id));
+		request.setAttribute("listDetalhes",this.dao.recuperarInfoEnderecoCliente(id));
 		request.getRequestDispatcher("indexDetalheCliente.jsp").forward(request, response);
 	}
 	
