@@ -18,9 +18,10 @@
 
         <div class="sidebar-menu">
             <ul>
-                <li>
-                    <a href="home.jsp" >
-                        <span class="icon"> Home </span></a>
+                  <li>
+                    <a href="home.jsp
+                    " >
+                        <img src="imgs/home.png" class="icon"><span class="icon "> Home </span></a>
                 </li>
                 
 
@@ -73,10 +74,7 @@
 
             </h2>
 
-            <div class="search-wrapper">
-                <span class="las la-search"></span>
-                <input type="search" placeholder="procure aqui" />
-            </div>
+          
 
             <div class="user-wrapper">
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">

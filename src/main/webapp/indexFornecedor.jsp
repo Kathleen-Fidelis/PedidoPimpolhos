@@ -18,9 +18,10 @@
 
         <div class="sidebar-menu">
             <ul>
-                <li>
-                    <a href="home.jsp">
-                        <span class="icon"> Home </span></a>
+                 <li>
+                    <a href="home.jsp
+                    " >
+                        <img src="imgs/home.png" class="icon"><span class="icon "> Home </span></a>
                 </li>
                 
 
@@ -69,19 +70,16 @@
                 <label for="nav-toggle">
                     <span class="las "><img src="imgs/menu-aberto (1).png" ></span>
                 </label>
-                Painel de  Controle
+                Painel de Controle
             </h2>
 
-            <div class="search-wrapper">
-                <span class="las la-search"></span>
-                <input type="search" placeholder="procure aqui" />
-            </div>
+           
 
             <div class="user-wrapper">
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
                 <div>
                     <h4>Pimpolhos</h4>
-             <a class="logout" href="deslogar.jsp">Sair</a>
+                   <a class="logout" href="deslogar.jsp">Sair</a>
                 </div>
             </div>
         </div>

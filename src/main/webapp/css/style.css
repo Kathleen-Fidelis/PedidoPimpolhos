@@ -30,11 +30,11 @@ body {
 }
 
 .btnAcoes button{
-	/*background-color: transparent 
+	background-color: transparent ;
 	margin-left: 10px;
 	border: none;
 	text-decoration: underline;
-	color: black !important;*/
+	color: black !important;
 	margin-left: 10px;
 	
 }
@@ -44,7 +44,7 @@ body {
 	background-color:#E6889A;
 }
 
-/*.btn-primary{
+.btn-primary{
 	background-color: #9ACCFF;
 	border: none;
 }
@@ -53,7 +53,7 @@ body {
 .btn-primary:hover{
 	background-color: #9ACCFF;
 }
-*/
+
 
 .logout{
 	margin-left: 74%;
@@ -111,7 +111,7 @@ ul .menuLateralTab  li a:visited{
 
 .navbar-light a.navbar-brand{
     color:#ffffff;
-    /* font-weight: bold; */
+    font-weight: bold;
 }
 
 .navbar-light a.navbar-brand:hover{
@@ -245,7 +245,7 @@ table.pedidotb tr td:last-child{
 
 
 
-.clientes::before{
+/* .clientes::before{
     content: "";
     background-image: url("imgs/user\ \(1\).png");
     background-size: 26px;
@@ -261,9 +261,9 @@ table.pedidotb tr td:last-child{
     height: 30px;
     width: 30px;
     background-repeat: no-repeat;
-}
+} */
 
-.produtos::before{
+/* .produtos::before{
     content: "";
     background-image: url("imgs/produto.png");
     background-size: 26px;
@@ -320,11 +320,11 @@ table.pedidotb tr td:last-child{
 	width: 100%;
 }
 
-/*@media (max-width: 991px) {
+@media (max-width: 991px) {
 	.tabela{
     	margin-left: 10%;
     }
-}*/
+}
 
 @media (min-width: 990px) {
     .navHamb{
@@ -339,11 +339,11 @@ table.pedidotb tr td:last-child{
     }
     
   
-   /* .conteudo{
+   .conteudo{
         margin-left: 24px;
-    }*/
+    }
    
-}
+} */
 
 
 
@@ -393,25 +393,32 @@ table.pedidotb tr td:last-child{
 .sidebar-menu a{
     padding-left: 1rem;
     display: block;
-    color: #fff;
-   text-decoration: none;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
 }
+
+
 
 .sidebar-menu a:hover{
     color: grey;
 }
 
+
+.sidebar-menu a span:first-child {
+    color: #fff;
+    padding-right: 1rem;
+}
+
+.sidebar-menu a span .active{
+  color: #E6889A;
+}
+ 
 .sidebar-menu a.active{
     background: #fff;
     padding-top: 1rem; 
     padding-bottom: 1rem;
-    color:var(--main-color);
+    color: #E6889A;
     border-radius: 30px 0px 0px 30px;
-}
-
-.sidebar-menu a span:first-child{
-   
-    padding-right: 1rem;
 }
 
 
@@ -423,7 +430,7 @@ table.pedidotb tr td:last-child{
 #nav-toggle:checked + .sidebar li  {
     padding-left: 1rem;
     text-align: center;
-    display: none;
+    /* display: none; */
 }
 
 #nav-toggle:checked + .sidebar li a  {
@@ -463,7 +470,7 @@ table.pedidotb tr td:last-child{
     width: calc(100% - 345px);
     top:0;
     z-index: 100;
-    transition: width 300ms;
+    transition: width 250ms;
     
 }
 
@@ -712,30 +719,37 @@ color: var(--main-color)
 }
 
 @media only screen and (max-width: 1200px){
-    .sidebar{
-        width: 70px;
+	
+	.sidebar{
+        
+    width: 345px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: #E6889A;
+    z-index: 100;
+    transition: left 300ms;
     }
+	   
+    
     
     .sidebar .sidebar-brand, 
     .sidebar li  {
         padding-left: 1rem;
-        text-align: center;
+       
     }
     
     .sidebar li a  {
         padding-left: 0rem;
+        
     }
     
     
     
-    .sidebar .sidebar-brand h2 span:last-child, 
-    .sidebar li a span:last-child{
-        display: none;
-    }
+   
     
-    .main-content {
-        margin-left: 70px;
-    }
+   
     
     .main-content header{
         width: calc(100% - 70px);
@@ -745,7 +759,7 @@ color: var(--main-color)
     
 }
 
-@media only screen and (max-width: 960px){
+@media only screen and (max-width: 960px) {
     .cards{
         grid-template-columns:repeat(3, 1fr) ;
     }
@@ -764,12 +778,16 @@ color: var(--main-color)
         grid-template-columns: 100%;
     }
 
-    .search-wrapper{
-        display: none;
-    }
+    
 
     .sidebar{
-        left: -100% !important;
+        left: -100%;
+    }
+    
+    .sidebar .sidebar-brand, 
+    .sidebar li  {
+        padding-left: 1rem;
+       
     }
 
 
@@ -780,7 +798,7 @@ color: var(--main-color)
 
     .header-info h2 label{
         display: inline-block;
-        background: var(--main-color);
+        background: #fff;
         padding-right: 0rem;
         margin-right: 1rem;
         height: 40px;
@@ -847,3 +865,4 @@ color: var(--main-color)
         grid-template-columns: 100% ;
     }
 }
+
