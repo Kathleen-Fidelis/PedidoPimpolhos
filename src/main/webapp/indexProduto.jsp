@@ -21,9 +21,10 @@
 
         <div class="sidebar-menu">
             <ul>
-                <li>
-                    <a href="home.jsp" >
-                        <span class="icon"> Home </span></a>
+                 <li>
+                    <a href="home.jsp
+                    " >
+                        <img src="imgs/home.png" class="icon"><span class="icon "> Home </span></a>
                 </li>
                 
 
@@ -56,8 +57,7 @@
                         <img src="imgs/etiqueta.png" class="icon"><span class="icon "> Marcas </span></a>
                 </li>
                 <li>
-                    <a href="ServletProduto
-                    " class="active">
+                    <a href="ServletProduto" class="active">
                         <img src="imgs/produto.png" class="icon"><span class="icon "> Produtos </span></a>
                 </li>
             </ul>
@@ -75,10 +75,6 @@
                 Painel de Controle
             </h2>
 
-            <div class="search-wrapper">
-                <span class="las la-search"></span>
-                <input type="search" placeholder="procure aqui" />
-            </div>
 
             <div class="user-wrapper">
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
@@ -103,7 +99,22 @@
           <div class = "table-responsive">
             <table class="table table-hover tbproduto">
                 <thead>
-                
+                	<tr>
+                        <th style="word-wrap: break-word; min-width: 50px; max-width: 160px;">Id</th>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Sexo</th>
+                        <th>Dimensão</th>
+                        <th>Material</th> 
+                        <th>Peso</th>
+                        <th>Conteúdo Produto</th>
+                        <th>Fornecedor</th>
+                        <th>Categoria</th>
+                        <th>Imagem</th>
+                        <th>Marca</th>
+                              
+                      
+                    </tr>
                 </thead>
                 <tbody>
                     <c:forEach var="produto" items="${listProduto}">

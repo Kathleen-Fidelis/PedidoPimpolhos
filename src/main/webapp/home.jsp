@@ -2,6 +2,8 @@
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     
+    
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,9 +28,10 @@
 
         <div class="sidebar-menu">
             <ul>
-                <li>
-                    <a href="home.jsp" class="active">
-                        <span class="icon"> Home </span></a>
+                 <li>
+                    <a href="home.jsp
+                    " class="active">
+                        <img src="imgs/home.png" class="icon"><span class="icon "> Home </span></a>
                 </li>
                 
 
@@ -80,10 +83,6 @@
                 Painel de  Controle
             </h2>
 
-            <div class="search-wrapper">
-                <span class="las la-search"></span>
-                <input type="search" placeholder="procure aqui" />
-            </div>
 
             <div class="user-wrapper">
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
@@ -105,7 +104,8 @@
             <div class="cards">
                 <div class="card-single">
                     <div>
-                        <h1>${quantidadeCliente}</h1>
+                        <h1 style="color:white"
+                        >${quantidadeCliente}</h1>
                         <span>Clientes</span>
                     </div>
                     <div>
@@ -117,7 +117,8 @@
 
                 <div class="card-single">
                     <div>
-                        <h1>${quantidadePedido}</h1>
+                        <h1 style="color:white"
+                        >${quantidadePedido}</h1>
                         <span>Pedidos</span>
                     </div>
                     <div>
@@ -128,7 +129,8 @@
 
                 <div class="card-single">
                     <div>
-                        <h1>${quantidadeProduto}</h1>
+                        <h1 style="color:white"
+                        >${quantidadeProduto}</h1>
                         <span>Produtos</span>
                     </div>
                     <div>
@@ -139,11 +141,12 @@
 
                 <div class="card-single">
                     <div>
-                        <h1>5</h1>
+                        <h1 style="color:white"
+                        >${quantidadeUsuario}</h1>
                         <span>Coladoradores</span>
                     </div>
                     <div>
-                        <span class="lab"><img src="imgs/colaboracao.png" class="icon-card" width="40px" height="40px" alt=""></span>
+                        <span class="las"><img src="imgs/trabalho-em-equipe.png" class="icon-card colab" width="40px" height="40px" alt=""></span>
                     </div>
                 </div>
             </div>

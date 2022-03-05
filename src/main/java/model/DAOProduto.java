@@ -171,10 +171,10 @@ public class DAOProduto {
 	
 	
 	//Método de conta da home
-			public Usuario qtdProdutoTotal() {	
+			public Produto qtdProdutoTotal() {	
 			Conexao c = Conexao.getInstance();
 			Connection con = c.getConnection();
-			Usuario qtdTotalProduto = null;
+			Produto qtdTotalProduto = null;
 			
 			
 				try {
@@ -184,8 +184,8 @@ public class DAOProduto {
 					
 					
 					Integer qtdProduto = r.getInt("total");
-					qtdTotalProduto = new Usuario(qtdProduto);
-					qtdTotalProduto.setQtdCliente(qtdProduto);
+					qtdTotalProduto = new Produto(qtdProduto);
+					qtdTotalProduto.setQtdProduto(qtdProduto);
 				
 						
 					

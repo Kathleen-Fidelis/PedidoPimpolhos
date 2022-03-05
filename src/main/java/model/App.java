@@ -7,6 +7,7 @@ public class App {
 		
 		DAO maca = new DAO();
 		DAOProduto dao = new DAOProduto();
+		DAOLoginCadastrar daoCadastro = new DAOLoginCadastrar();
 //		System.out.println(maca.exibirProduto());
 //		Produto laranja = new Produto("Bebê reborn teste", 499.90, "Feminino", "30x40", "Algodao", 1.500, "acompanha chupeta", 1, 1, "img21", 1);
 //		maca.inserirProduto(laranja);
@@ -16,6 +17,8 @@ public class App {
 		System.out.println(maca.qtdPedidoTotal());
 		System.out.println(dao.qtdProdutoTotal());
 		System.out.println(maca.exibirPedidosRecentes());
+		
+
 		
 		
 //		Produto laranja1 = new Produto("Will", "Japão", "melao@rd.com.br");

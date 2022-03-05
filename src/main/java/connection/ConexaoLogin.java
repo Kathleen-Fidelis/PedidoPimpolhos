@@ -16,7 +16,7 @@ public class ConexaoLogin {
     String pass="root";
     public Connection ConectaMySql(String banco) throws SQLException {
         try{
-            Class.forName("com.mysql.jdbc.Driver");            
+            Class.forName("com.mysql.cj.jdbc.Driver");            
             try{
                con=DriverManager.getConnection(url,user,pass);   
             } catch (SQLException ex) {

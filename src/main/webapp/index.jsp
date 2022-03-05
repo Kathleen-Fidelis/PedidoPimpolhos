@@ -23,7 +23,7 @@
 	                </div>
 	                <div class="bloco2 col-6">
 	                   <h2> <img src="imgs/userLogin.png" style="margin-right: 15px;"> Login</h2><br>
-	                    <p style="color: rgba(0, 0, 0, 0.63);">Insira seu login e senha:</p>
+	                    <p style="color: rgba(0, 0, 0, 0.63);">Insira seu login e senha ou <a href="indexCadastrar.jsp">cadastre-se</a></p>
 	                    <form class="form-sign">
 	                       
 	                        <div class="form-group">
@@ -34,25 +34,7 @@
 	                            <label>Senha:</label>
 	                            <input type="password" name="senha" id="txtpass" value="" class="form-control">
 	                        </div><br>
-	                        <%
-                               if (conexao != null) {
-                                    if ((request.getParameter("usuario") !=null) && (request.getParameter("senha") !=null)) {
-                                        String login, senha;
-                                        login = request.getParameter("usuario");
-                                        senha = request.getParameter("senha");
-                                        Statement st;
-                                        ResultSet rs;
-                                        st = conexao.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.TYPE_FORWARD_ONLY);
-                                        rs = st.executeQuery("select * from login where usuario ='"+login+"' and senha='"+senha+"'");
-                                        if(rs.next()){
-                                            response.sendRedirect("home.jsp");
-                                        }
-                                    }
-                                }else {
-                                    out.println("Não é possivel logar");
-                                }
-                           %>
-	
+	                      
 	                        <button type="submit" name="btnLog" value="Entrar" id="btnLog" class="btn btn-primary btn-block">Entrar</button>
 	                    </form>
 	                </div>

@@ -25,10 +25,10 @@ public class Pedido {
 	private String descricao_forma_pagamento;
 	private String nome;
 	private Double preco;
-	private String nome_marca;
-	
+	private String nome_marca;	
 //	private Boolean flag_endereco;
 	private Integer cod_produto;
+	private Integer qtdPedido;
 	
 	
 	
@@ -107,6 +107,11 @@ public class Pedido {
 	this.descricao_forma_pagamento = descricao_forma_pagamento;
 }
 
+	
+	public Pedido(Integer qtdPedido) {
+		super();
+		this.qtdPedido = qtdPedido;
+	}
 
 
 	public Integer getCod_pedido() {
@@ -338,6 +343,25 @@ public class Pedido {
 
 	public void setCod_produto(Integer cod_produto) {
 		this.cod_produto = cod_produto;
+	}
+
+
+
+	public Integer getQtdPedido() {
+		return qtdPedido;
+	}
+
+
+
+	public void setQtdPedido(Integer qtdPedido) {
+		this.qtdPedido = qtdPedido;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "" + qtdPedido;
 	}
 
 
