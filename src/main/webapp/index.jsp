@@ -10,7 +10,7 @@
         <title>Login</title>
     </head>
     <body>
-        <%
+           <%
         ConexaoLogin conn = new ConexaoLogin();
                     Connection conexao = conn.ConectaMySql("login");
         %>
@@ -19,23 +19,62 @@
 	            <div class=" row col-10">
 	                <div class="bloco1 col-4">
 	                    <img src="imgs/Logo.png" alt="">
-	                    <h5>Painel administrativos</h5>
+	                    <h5>Painel administrativo</h5>
 	                </div>
 	                <div class="bloco2 col-6">
 	                   <h2> <img src="imgs/userLogin.png" style="margin-right: 15px;"> Login</h2><br>
-	                    <p style="color: rgba(0, 0, 0, 0.63);">Insira seu login e senha ou <a href="indexCadastrar.jsp">cadastre-se</a></p>
-	                    <form class="form-sign">
+	                    <p style="color: rgba(0, 0, 0, 0.63);">Insira seu login e senha:</p>
+	                    <form class="form-sign" name="form" method="post" onsubmit="return validLogin();">
 	                       
 	                        <div class="form-group">
-	                            <label>Usuário:</label>
+	                            <label>Usuario:</label>
 	                            <input type="text" name="usuario" id="txtuser" value="" class="form-control">                              
-	                        </div><br>
+	                        </div>
+		                        
+	                       
 	                        <div class="form-group">
 	                            <label>Senha:</label>
 	                            <input type="password" name="senha" id="txtpass" value="" class="form-control">
-	                        </div><br>
-	                      
-	                        <button type="submit" name="btnLog" value="Entrar" id="btnLog" class="btn btn-primary btn-block">Entrar</button>
+	                        </div>
+	                        <div id="alertSenha" class="alert alert-danger collapse alertErro" role="alert">
+							  <img src="imgs/erro.png" style=" margin: 0px 8px;">Insira seu usuario ou senha!
+							</div>
+	                        <%
+	                        	String login, senha;
+	                        
+                               if (conexao != null) {
+                                    if ((request.getParameter("usuario") != null) && (request.getParameter("senha") !=null)) {
+                                        
+                                        login = request.getParameter("usuario");
+                                        senha = request.getParameter("senha");
+                                        Statement st;
+                                        ResultSet rs;
+                                        st = conexao.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.TYPE_FORWARD_ONLY);
+                                        rs = st.executeQuery("select * from login where usuario ='"+login+"' and senha='"+senha+"'");
+                                        if(rs.next()){
+                                            response.sendRedirect("home.jsp");
+                                        }
+                                    }
+                                }else {
+                                    out.println("Não é possivel logar");
+                                }
+	
+                           %>
+                           
+                           <script type="text/javascript">
+                           		function validLogin() {
+                           			if (document.form.usuario.value == "" || document.form.senha.value == "") {
+                           				$('#alertSenha').show('fade');
+                           				document.form.usuario.focus();
+                           				return false;
+                           				
+                           				}
+                           				
+									}
+                           				
+                           </script>
+	
+	                        <button type="submit" name="btnLog" value="Entrar" id="btnLogg" class="btn btn-primary btn-block">Entrar</button>
 	                    </form>
 	                </div>
 	            </div>

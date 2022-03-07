@@ -167,8 +167,8 @@
                                 <thead>
                                     <tr>
                                         <td> Pedido </td>
-                                        <td> Pagamento </td>
                                         <td> Status </td>
+                                        <td> Pagamento </td>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -192,9 +192,9 @@
 
                 <div class="customers">
                     <div class="card">
-                        <div class="card-header">
+                        <div class="card-header title-cadastro">
                             <h3>Time</h3>
-                            <button> Ver todos <span class="las la-arrow-right"></span></button>
+                            <a href="indexCadastrar.jsp"><h6>Cadastre-se</h6></a>
                         </div>
 
 

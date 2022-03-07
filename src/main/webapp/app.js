@@ -10,6 +10,7 @@ $(document).ready(function(){
 	$(".pesoForm").mask("0.000 kg"); 
 	$(".peso2").mask("0.000");  
 	$(".cnpj").mask("00.000.000/0000-00", {reverse: true});  
+	$(".cartao").mask("**** **** **** 0000");
 
 	 var $target = $("#mensagem");  	
 	$target.keydown(function(event){

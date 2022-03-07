@@ -1,9 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" import="java.sql.*"%>
  <%@page import="connection.ConexaoLogin"%>
+ 
 <!DOCTYPE html>
 <html>
 <head>
+	<link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/styleLogin1.css" type="text/css">
 <meta charset="ISO-8859-1">
 <title>Pagina de Cadastro de Usuarios</title>
 </head>
@@ -17,12 +22,12 @@
 	            <div class=" row col-10">
 	                <div class="bloco1 col-4">
 	                    <img src="imgs/Logo.png" alt="">
-	                    <h5>Painel administrativos</h5>
+	                    <h5>Painel administrativo</h5>
 	                </div>
 	                <div class="bloco2 col-6">
-	                   <h2> <img src="imgs/userLogin.png" style="margin-right: 15px;"> Login</h2><br>
-	                    <p style="color: rgba(0, 0, 0, 0.63);">Insira seu login e senha:</p>
-	                    <form class="form-sign">
+	                   <h2> <img src="imgs/userLogin.png" style="margin-right: 15px;"> Cadastro</h2><br>
+	                    <p style="color: rgba(0, 0, 0, 0.63);">Faça seu cadastro:</p>
+	                    <form class="form-sign" action="ServletCadastroLogin" method="post">
 
 	                        <div class="form-group">
                             <label>Nome Completo:</label>
@@ -38,7 +43,7 @@
                         </div>
                         <div class="form-group">
                             <label>Confirme Sua Senha:</label>
-                            <input type="password" name="senha" id="txtpass" value="" class="form-control">
+                            <input type="password" name="senha2" id="txtpass" value="" class="form-control">
                         </div>
 	                        <%
                                if (conexao != null) {
@@ -59,7 +64,7 @@
                                 }
                            %>
 
-	                        <button type="submit" name="btnLog" value="Entrar" id="btnLog" class="btn btn-primary btn-block">Cadastrar</button>
+	                        <button type="submit" name="optionLogin" value="insertUsuario" id="btnLog" class="btn btn-primary btn-block" style="margin-top: 6%;">Cadastrar</button>
 	                    </form>
 	                </div>
 	            </div>

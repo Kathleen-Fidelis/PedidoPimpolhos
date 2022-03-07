@@ -123,6 +123,9 @@
 									        <h5 class="modal-title" >Deseja realmente deletar? </h5>
 									        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 									      </div>
+									      <div class="modal-body">
+											 <c:out value="${categoria.nome_categoria}"/>     
+									      </div>
 									      <div class="modal-footer">
 									        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
 									        <button class="btn btn-primary btnPageReload" type="submit" name="optionCategoria" value="deleteCategoria">Deletar</button>

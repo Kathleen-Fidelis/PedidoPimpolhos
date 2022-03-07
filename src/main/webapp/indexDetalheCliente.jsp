@@ -204,7 +204,7 @@
 		                <div class="col-11 col-lg-5  clientDetails">
 				        <p><span class="accordionInfoTitle">Dados Cartão</span></p>
 				        <p><span class="accordionInfoTitle">Nome do Titular:</span> <span class="accordionInfoText"><c:out value="${cliente.titularCartao}"/></span></p>
-				        <p><span class="accordionInfoTitle">Número cartão:</span> <span class="accordionInfoText"><c:out value="${cliente.nCartao}"/></span></p>
+				        <p><span class="accordionInfoTitle">Número cartão:</span> <span class="accordionInfoText cartao"><c:out value="${cliente.nCartao}"/></span></p>
 				        <p><span class="accordionInfoTitle">Validade:</span> <span class="accordionInfoText"><c:out value="${cliente.val}"/></span></p>
 				        <p><span class="accordionInfoTitle">Bandeira:</span> <span class="accordionInfoText"><c:out value="${cliente.bandeira}"/></span></p>
 				        

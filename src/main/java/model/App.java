@@ -13,11 +13,12 @@ public class App {
 //		maca.inserirProduto(laranja);
 //		System.out.println(maca.exibirProduto());
 		
-		System.out.println(maca.qtdClienteTotal());
-		System.out.println(maca.qtdPedidoTotal());
-		System.out.println(dao.qtdProdutoTotal());
-		System.out.println(maca.exibirPedidosRecentes());
+//		System.out.println(maca.qtdClienteTotal());
+//		System.out.println(maca.qtdPedidoTotal());
+//		System.out.println(dao.qtdProdutoTotal());
+//		System.out.println(maca.exibirPedidosRecentes());
 		
+		System.out.println(daoCadastro.exibirUsuarioLogin());
 
 		
 		

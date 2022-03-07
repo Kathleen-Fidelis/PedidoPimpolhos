@@ -64,16 +64,16 @@ public class ServletCadastroLogin extends HttpServlet {
 		
 			if (nomeCompletoUsuarioBack != null && nomeUsuarioBack != null && senhaBack != null && senhaBack2 != null) {
 				if (!nomeCompletoUsuarioBack.equals("") && !nomeUsuarioBack.equals("") && !senhaBack.equals("") && !senhaBack2.equals("")){
-					if (senhaBack.equals(senhaBack2)) {
+					//if (senhaBack.equals(senhaBack2)) {
 						System.out.print("Senha correta");
 						UsuarioLogin usuario = new UsuarioLogin(nomeCompletoUsuarioBack ,nomeUsuarioBack , senhaBack );
 						//this.dao.conferencia(nomeCompletoUsuarioBack, nomeUsuarioBack, senhaBack2);
 						this.dao.inserirUsuario(usuario);
 					
-					}
+					//}
 				}
 			}
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("home.jsp");
 		
 	}	
 }

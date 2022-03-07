@@ -16,16 +16,16 @@ public class DAOLoginCadastrar {
 	}
 	
 	//criptografia
-	public String codificarSenha(String senha) {
-        return BCrypt.withDefaults().hashToString(12, senha.toCharArray());
-        
-    }
+//	public String codificarSenha(String senha) {
+//        return BCrypt.withDefaults().hashToString(12, senha.toCharArray());
+//        
+//    }
 	
 	//descriptografia
-	public boolean validarSenha(String senha, String senhaCrypto) {
-        BCrypt.Result response = BCrypt.verifyer().verify(senha.toCharArray(), senhaCrypto);
-        return response.verified;
-    }
+//	public boolean validarSenha(String senha, String senhaCrypto) {
+//        BCrypt.Result response = BCrypt.verifyer().verify(senha.toCharArray(), senhaCrypto);
+//        return response.verified;
+//    }
 
 
 	
@@ -37,7 +37,7 @@ public class DAOLoginCadastrar {
 			PreparedStatement p = con.prepareStatement("insert into login (nome , usuario , senha) VALUES (? , ? , ?)");
 			p.setString(1, usuario.getNome());
 			p.setString(2, usuario.getUsuario());
-			p.setString(3, codificarSenha(usuario.getSenha()));
+			p.setString(3, usuario.getSenha());
 		   
 			
 			System.out.println(p);
@@ -114,33 +114,33 @@ public class DAOLoginCadastrar {
 	
 
 	
-	public UsuarioLogin conferencia(String nome, String usuario, String senha) {
-		Conexao conexao = Conexao.getInstance();
-		Connection connection = conexao.getConnection();
-		
-		UsuarioLogin user = null;
-		try {
-			PreparedStatement preStat = connection.prepareStatement("select * from login where usuario = ? ");
-			preStat.setString(1, usuario);
-			ResultSet resultSet = preStat.executeQuery();
-			while(resultSet.next()) {
-				String nome1 = resultSet.getString("nome");
-				String usuario1 = resultSet.getString("usuario");
-				String senha1 = resultSet.getString("senha");
-				Integer id1 = resultSet.getInt("cod_usuario");
-				if (usuario.equals(usuario1) && this.validarSenha(senha, senha1)) {
-					user = new UsuarioLogin(nome1, usuario1, senha1);
-					user.setCod_usuario(id1);
-					return user;
-				} else{
-					System.out.println("usuario ou senha invalidos!");}
-				}
-			}catch (SQLException e) {
-
-				e.printStackTrace();
-			}
-		return user;
-		
-		}
+//	public UsuarioLogin conferencia(String nome, String usuario, String senha) {
+//		Conexao conexao = Conexao.getInstance();
+//		Connection connection = conexao.getConnection();
+//		
+//		UsuarioLogin user = null;
+//		try {
+//			PreparedStatement preStat = connection.prepareStatement("select * from login where usuario = ? ");
+//			preStat.setString(1, usuario);
+//			ResultSet resultSet = preStat.executeQuery();
+//			while(resultSet.next()) {
+//				String nome1 = resultSet.getString("nome");
+//				String usuario1 = resultSet.getString("usuario");
+//				String senha1 = resultSet.getString("senha");
+//				Integer id1 = resultSet.getInt("cod_usuario");
+//				if (usuario.equals(usuario1)) {
+//					user = new UsuarioLogin(nome1, usuario1, senha1);
+//					user.setCod_usuario(id1);
+//					return user;
+//				} else{
+//					System.out.println("usuario ou senha invalidos!");}
+//				}
+//			}catch (SQLException e) {
+//
+//				e.printStackTrace();
+//			}
+//		return user;
+//		
+//		}
 
 }

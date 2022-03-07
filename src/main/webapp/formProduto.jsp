@@ -188,10 +188,10 @@
 								
 								
 								<label class="form-label" style="margin-right: 32px;">Dimensão:</label><input class="form-control" type="text" name="dimensao" value="${produto.dimensao}"/>
-							    <label class="form-label" style="margin-right: 32px;">Material:</label><input class="form-control" type="text" name="material" value="${produto.material}" required/>
+							    <label class="form-label" style="margin-right: 32px; margin-top:3%">Material:</label><input class="form-control" type="text" name="material" value="${produto.material}" required/>
 								
 								<div class="input-group mb-3">
-								<label class="form-label col-12" style="margin-right: 23px;">Peso:</label>
+								<label class="form-label col-12" style="margin-right: 23px; margin-top:3%">Peso:</label>
 								<span class="input-group-text col-1">Kg</span>
 								<input class="form-control peso2" type="text" name="peso" value="${produto.peso}"/>
 								</div>
@@ -201,7 +201,7 @@
 								
 	                        <!-- Fornecedor v -->
 							
-							<label class="form-label" style="margin-right: 32px;">Fornecedor:</label>
+							<label class="form-label" style="margin-right: 32px; margin-top:3%">Fornecedor:</label>
 							<select name="cod_fornecedor" class="form-select form-select-md input-select">
                                  <c:forEach var="fornecedor" items="${listFornecedor}">  
                                  <option value ="${fornecedor.cod_fornecedor}"> ${fornecedor.nome_fornecedor}</option>										
