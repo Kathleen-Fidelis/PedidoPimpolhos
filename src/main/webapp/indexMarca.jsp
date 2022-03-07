@@ -81,7 +81,7 @@
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
                 <div>
                     <h4>Pimpolhos</h4>
-                <a class="logout" href="deslogar.jsp">Sair</a>
+                	<a class="logout" href="deslogar.jsp">Sair</a>
                 </div>
             </div>
         </div>
@@ -90,7 +90,7 @@
 
 	<div class="tabela">
 	<form action="ServletMarca" method="post">
-		<button class="btn btn-primary col-3 btnPageReload" type="submit"  name="optionMarca" value="insertFormMarca"> Adicionar Marca</button>
+		<button class="btn btn-primary btnPageReload" type="submit"  name="optionMarca" value="insertFormMarca"> Adicionar Marca</button>
     </form>
         <div class="col-md-12 col-lg-9 conteudo">
           <div class = "table-responsive">
