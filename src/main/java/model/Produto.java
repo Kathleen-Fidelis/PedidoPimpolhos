@@ -20,6 +20,7 @@ public class Produto {
 	private String img_produto;
 	private Integer  cod_marca;
 	private String nome_marca;
+	private Integer qtdProduto;
 	
 	
 	public Produto(String nome, Double preco, String sexo, String dimensao, 
@@ -64,7 +65,11 @@ public class Produto {
 	}
 
 
-
+	//contador da home
+	public Produto(Integer qtdProduto) {
+		super();
+		this.qtdProduto = qtdProduto;
+	}
 
 
 
@@ -284,6 +289,33 @@ public class Produto {
 
 
 
+	public Integer getQtdProduto() {
+		return qtdProduto;
+	}
+
+
+
+
+
+
+	public void setQtdProduto(Integer qtdProduto) {
+		this.qtdProduto = qtdProduto;
+	}
+
+
+
+
+
+
+	public void setPreco(Double preco) {
+		this.preco = preco;
+	}
+
+
+
+
+
+
 	public void setNome_marca(String nome_marca) {
 		this.nome_marca = nome_marca;
 	}
@@ -295,17 +327,28 @@ public class Produto {
 
 	@Override
 	public String toString() {
-		return "Produto [cod_produto=" + cod_produto + ", nome=" + nome + ", preco=" + preco + ", sexo=" + sexo
-				+ ", dimensao=" + dimensao + ", material=" + material + ", peso=" + peso + ", conteudo_produto="
-				+ conteudo_produto + ", cod_fornecedor=" + cod_fornecedor + ", cod_categoria=" + cod_categoria
-				+ ", img_produto=" + img_produto + ", cod_marca=" + cod_marca + "]";
+		return "" + qtdProduto;
 	}
 
 
 
 
-	
 
+
+//	@Override
+//	public String toString() {
+//		return "Produto [cod_produto=" + cod_produto + ", nome=" + nome + ", preco=" + preco + ", sexo=" + sexo
+//				+ ", dimensao=" + dimensao + ", material=" + material + ", peso=" + peso + ", conteudo_produto="
+//				+ conteudo_produto + ", cod_fornecedor=" + cod_fornecedor + ", cod_categoria=" + cod_categoria
+//				+ ", img_produto=" + img_produto + ", cod_marca=" + cod_marca + "]";
+//	}
+
+
+
+
+	
+	
+	
 
 
 

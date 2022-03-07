@@ -19,9 +19,10 @@
 
         <div class="sidebar-menu">
             <ul>
-                <li>
-                    <a href="home.jsp" class="active">
-                        <span class="icon"> Home </span></a>
+                 <li>
+                    <a href="home.jsp
+                    " >
+                        <img src="imgs/home.png" class="icon"><span class="icon "> Home </span></a>
                 </li>
                 
 
@@ -39,7 +40,7 @@
                 
                 <li>
                     <a href="ServletPedido
-                    ">
+                    " class="active">
                         <img src="imgs/pedido.png" class="icon"><span class="icon "> Pedidos </span></a>
                 </li>
 
@@ -73,10 +74,6 @@
                 Painel de  Controle
             </h2>
 
-            <div class="search-wrapper">
-                <span class="las la-search"></span>
-                <input type="search" placeholder="procure aqui" />
-            </div>
 
             <div class="user-wrapper">
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
@@ -88,74 +85,57 @@
         </div>
         
         
-        
-   <div class="tabela" style=" margin-top: 16%;margin-left: 20%">     
-      <div class="col-md-12 col-lg-9 conteudo">
-          <div class = "table-responsive">
-            <table class="table table-hover detalhesPedido">
-                <thead>
-                    <tr>
-                        <th >Cod. Pedido</th>    
-                        <th>Data pedido</th> 
-                        <th>Nome cliente</th> 
-                        <th>Cidade</th> 
-                        <th>CEP</th> 
-                        <th>Rua</th> 
-                        <th>Número</th> 
-                        <th>Complemento</th> 
-                        <th>Bairro</th> 
-                        <th>Ponto Referência</th> 
-                        <th>Estado</th> 
-                        <th>Tipo de envio</th>
-                        <th>Valor do frete</th>
-                        <th>Status pedido</th> 
-                        <th>Forma Pagamento</th> 
-                        <th>Nome Produto</th> 
-                        <th>Preço</th>
-                        <th>Marca</th>  
-                        <th>Quantidade</th> 
-                        <th>Valor total</th> 
-                       
-                    </tr>
-                </thead>
-                <tbody>
-                    <c:forEach var="pedido" items="${listaItemDetalhePedido}">
-                        <tr>
-                            
-                            <form action="ServletPedido" method="post">
-                                <td>
-                                    <c:out value="${pedido.cod_pedido}"/>
-                                    <input type="hidden" name="cod_pedido" value="${pedido.cod_pedido}"/>
-                                </td>
-                                <td> <c:out value="${pedido.data_pedido}"/></td>
-                                <td ><c:out value="${pedido.nome_cliente}"/></td>
-                                <td ><c:out value="${pedido.nome_cidade}"/></td>
-                                <td ><c:out value="${pedido.cep}"/></td>
-                                <td ><c:out value="${pedido.nome_rua}"/></td>
-                                <td ><c:out value="${pedido.numero_casa}"/></td>
-                                <td ><c:out value="${pedido.complemento}"/></td>
-                                <td ><c:out value="${pedido.bairro}"/></td>
-                                <td ><c:out value="${pedido.ponto_referencia}"/></td>
-                                <td ><c:out value="${pedido.descricao_estado}"/></td>
-                                <td> <c:out value="${pedido.descricao_frete}"/></td>
-                                <td class="preco3"> <c:out value="${pedido.valor_frete}"/></td>
-                                <td> <c:out value="${pedido.descricao_status_pedido}"/></td>
-                                <td> <c:out value="${pedido.descricao_forma_pagamento}"/></td>
-                                <td> <c:out value="${pedido.nome}"/></td>
-                                <td> <span class="preco4"><c:out value="${pedido.preco}"/></td>
-                                <td> <c:out value="${pedido.nome_marca}"/></td>
-                                <td> <c:out value="${pedido.quantidade}"/></td>
-                                <td> <span class="preco"><c:out value="${pedido.valor_total}"/></td>
-                            </form>
-                            
-                        </tr>
-                  </c:forEach>
-                </tbody>
-              </table>
-            </div>
-        </div>
-         </div>
-    </div>
+<!-- ACCORDION -->
+<div class="accordion" id="accordionExample" style="margin-top:17%">
+	<c:forEach var="pedido" items="${listaItemDetalhePedido}">  
+		 <form action="ServletPedido" method="post">
+	  			<div class="accordion-item">
+				    <h2 class="accordion-header" id="heading-${pedido.cod_produto}">
+				      <button class="accordion-button custom-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-${pedido.cod_produto}" aria-expanded="true" aria-controls="collapse-${pedido.cod_produto}">
+				       	 Item pedido
+				      </button>
+				    </h2>
+	                    
+			<input type="hidden" name="cod_pedido" value="${pedido.cod_produto}"/>
+	                                                  
+		    <div id="collapse-${pedido.cod_produto}" class="accordion-collapse collapse show" aria-labelledby="heading-${pedido.cod_produto}" data-bs-parent="#accordionExample">
+		      <div class="accordion-body">
+		      	<div style="display:flex;justify-content: space-between;">
+		      		<div>
+				        <p style="text-transform: uppercase"><strong>Informações do pedido</strong></p>
+				        <p><strong>Código pedido:</strong> <c:out value="${pedido.cod_pedido}"/></p>
+				        <p><strong>Data pedido:</strong> <c:out  value="${pedido.data_pedido}"/></p>
+				        <p><strong>Nome cliente:</strong> <c:out value="${pedido.nome_cliente}"/></p>
+				        <p><strong>Status pedido:</strong> <c:out value="${pedido.descricao_status_pedido}"/></p>
+				        <p><strong>Forma pagamento:</strong> <c:out value="${pedido.descricao_forma_pagamento}"/></p>
+				        <p><strong>Produto:</strong> <c:out value="${pedido.nome}"/></p>
+				        <p><strong>Preço:</strong> <span class="preco4"><c:out value="${pedido.preco}"/></p>
+				        <p><strong>Marca:</strong> <c:out value="${pedido.nome_marca}"/></p>
+				        <p><strong>Quantidade:</strong> <c:out value="${pedido.quantidade}"/></p>
+				        <p><strong>Valor total:</strong> <span class="preco"><c:out value="${pedido.valor_total}"/></p>
+			        </div>
+			        <div>
+			        	<p style="text-transform: uppercase"><strong>Informações da entrega</strong></p>
+				        <p><strong>Nome cidade:</strong> <c:out value="${pedido.nome_cidade}"/></p>
+				        <p><strong>CEP:</strong> <c:out value="${pedido.cep}"/></p>
+				        <p><strong>Nome rua:</strong> <c:out value="${pedido.nome_rua}"/></p>
+				        <p><strong>N° casa:</strong> <c:out value="${pedido.numero_casa}"/></p>
+				        <p><strong>Complemento:</strong> <c:out value="${pedido.complemento}"/></p>
+				        <p><strong>Bairro:</strong> <c:out value="${pedido.bairro}"/></p>
+				        <p><strong>Ponto referência:</strong> <c:out value="${pedido.ponto_referencia}"/></p>
+				        <p><strong>Estado:</strong> <c:out value="${pedido.descricao_estado}"/></p>
+				        <p><strong>Descrição frete:</strong> <c:out value="${pedido.descricao_frete}"/></p>
+				        <p><strong>Valor frete:</strong> <span class="preco3"><c:out value="${pedido.valor_frete}"/></p>
+			        </div>
+		        </div>
+		      </div>
+		    </div>
+	  	</div>
+  	</form>
+  </c:forEach>
+</div>
+
+  
     
 
 

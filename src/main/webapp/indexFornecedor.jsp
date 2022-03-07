@@ -19,8 +19,9 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="home.jsp">
-                        <span class="icon"> Home </span></a>
+                    <a href="home.jsp
+                    " >
+                        <img src="imgs/home.png" class="icon"><span class="icon "> Home </span></a>
                 </li>
                 
 
@@ -72,10 +73,6 @@
                 Painel de  Controle
             </h2>
 
-            <div class="search-wrapper">
-                <span class="las la-search"></span>
-                <input type="search" placeholder="procure aqui" />
-            </div>
 
             <div class="user-wrapper">
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
@@ -99,9 +96,9 @@
 	            <table class="table table-hover ">
 					<thead>
 						<tr>
-							<th>Cod. Fornecedor</th>
+							<th style="word-wrap: break-word; min-width: 50px; max-width: 160px;">Id</th>
 							<th>Nome Fornecedor</th>
-							<th style="text-align:center;">Ações</th>
+							<th >Ações</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -116,7 +113,7 @@
 									
 									<td class="btnAcoes">
 										<!-- Button trigger modal -->
-										<button type="button" class="btn btn-primary btnPage" data-bs-toggle="modal" data-bs-target="#exampleModal-${fornecedor.cod_fornecedor}">Deletar</button>
+										<button type="button" class="btn btn-primary btnPageReload" data-bs-toggle="modal" data-bs-target="#exampleModal-${fornecedor.cod_fornecedor}">Deletar</button>
 
 									<!-- Modal -->
 									<div  class="modal fade" id="exampleModal-${fornecedor.cod_fornecedor}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -126,6 +123,9 @@
 									        <h5 class="modal-title" >Deseja realmente deletar? </h5>
 									        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 									      </div>
+									      <div class="modal-body">
+											 <c:out value="${fornecedor.nome_fornecedor}"/>     
+									      </div>
 									      <div class="modal-footer">
 									        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
 									        <button class="btn btn-primary btnPageReload" type="submit" name="optionFornecedor" value="deleteFornecedor">Deletar</button>
@@ -134,7 +134,7 @@
 									  </div>
 									</div>
 										
-										<button class="btn btn-primary btnPage" type="submit" name="optionFornecedor" value="updateFormFornecedor">Atualizar</button>
+										<button class="btn btn-primary btnPageReload" type="submit" name="optionFornecedor" value="updateFormFornecedor">Atualizar</button>
 									</td>
 								</form>
 							</tr>

@@ -19,9 +19,10 @@
 
         <div class="sidebar-menu">
             <ul>
-                <li>
-                    <a href="home.jsp" >
-                        <span class="icon"> Home </span></a>
+               <li>
+                <a href="home.jsp
+                    " >
+                        <img src="imgs/home.png" class="icon"><span class="icon "> Home </span></a>
                 </li>
                 
 
@@ -73,11 +74,6 @@
                 Painel de Controle
             </h2>
 
-            <div class="search-wrapper">
-                <span class="las la-search"></span>
-                <input type="search" placeholder="procure aqui" />
-            </div>
-
             <div class="user-wrapper">
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
                 <div>
@@ -100,9 +96,9 @@
 				<table class="table table-hover" >
 					<thead>
 						<tr>
-							<th>Cod. Categoria</th>
+							<th>Id</th>
 							<th>Nome Categoria</th>
-							<th style="text-align:center;">Ações</th> 
+							<th >Ações</th> 
 						</tr>
 					</thead>
 					<tbody>
@@ -116,7 +112,7 @@
 									<td><c:out value="${categoria.nome_categoria}"/></td>
 									
 									<td class="btnAcoes">
-										<button type="button" class="btn btn-primary btnPage" data-bs-toggle="modal" data-bs-target="#exampleModal-${categoria.cod_categoria}">Deletar</button>
+										<button type="button" class="btn btn-primary btnPageReload" data-bs-toggle="modal" data-bs-target="#exampleModal-${categoria.cod_categoria}">Deletar</button>
 
 										
 										<!-- Modal -->
@@ -127,6 +123,9 @@
 									        <h5 class="modal-title" >Deseja realmente deletar? </h5>
 									        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 									      </div>
+									      <div class="modal-body">
+											 <c:out value="${categoria.nome_categoria}"/>     
+									      </div>
 									      <div class="modal-footer">
 									        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
 									        <button class="btn btn-primary btnPageReload" type="submit" name="optionCategoria" value="deleteCategoria">Deletar</button>
@@ -136,7 +135,7 @@
 									</div>
 										
 										
-										<button class="btn btn-primary btnPage"  type="submit" name="optionCategoria" value="updateFormCategoria">Atualizar</button>
+										<button class="btn btn-primary btnPageReload"  type="submit" name="optionCategoria" value="updateFormCategoria">Atualizar</button>
 									</td>
 								</form>
 							</tr>

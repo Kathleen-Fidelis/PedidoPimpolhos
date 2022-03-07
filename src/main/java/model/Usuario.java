@@ -17,6 +17,8 @@ public class Usuario {
 	private String bairro;
 	private String cidade;
 	private String estado;
+	private String nCartao;
+	private Date   val;
 	private String bandeira;
 	private String titularCartao;
 	private String dddtelefone;
@@ -28,35 +30,20 @@ public class Usuario {
 	
 
 
-
-
-
-
-
-
-
-
-
-
-
-	public Usuario(String nome, String cpf, Date nascimento, String email, String rua, String numeroCasa, String cep,
-			String complemento, String pontoReferencia, String bairro, String cidade, String estado, String bandeira,
-			String titularCartao, String dddtelefone, String telefoneCliente, String tipoTelefone) {
+	public Usuario(Integer cod_cliente,String titularCartao, String nCartao, Date val, String bandeira ) {
 		super();
-		this.nome = nome;
-		this.cpf = cpf;
-		this.nascimento = nascimento;
-		this.email = email;
-		this.rua = rua;
-		this.numeroCasa = numeroCasa;
-		this.cep = cep;
-		this.complemento = complemento;
-		this.pontoReferencia = pontoReferencia;
-		this.bairro = bairro;
-		this.cidade = cidade;
-		this.estado = estado;
+		this.cod_cliente = cod_cliente;
+		this.nCartao = nCartao;
+		this.val = val;
 		this.bandeira = bandeira;
 		this.titularCartao = titularCartao;
+	}
+
+
+
+	public Usuario(Integer cod_cliente, String dddtelefone, String telefoneCliente, String tipoTelefone) {
+		super();
+		this.cod_cliente = cod_cliente;
 		this.dddtelefone = dddtelefone;
 		this.telefoneCliente = telefoneCliente;
 		this.tipoTelefone = tipoTelefone;
@@ -64,17 +51,7 @@ public class Usuario {
 
 
 
-
-
-
-
-
 	// CLIENTE PADRÃO
-	
-	
-
-
-
 	public Usuario(String nome, String cpf, Date nascimento, String email) {
 		super();
 		this.nome = nome;
@@ -84,19 +61,6 @@ public class Usuario {
 	}
 
 	
-	
-	
-	
-	
-
-
-
-
-
-
-
-
-
 //public Usuario(int qtdCliente, Integer qtdPedido, String qtdProduto) {
 //		super();
 //		this.qtdCliente = qtdCliente;
@@ -109,6 +73,22 @@ public class Usuario {
 
 
 
+// Endereco
+
+	public Usuario(String rua, String numeroCasa, String cep, String complemento, String pontoReferencia, String bairro,
+			String cidade, String estado) {
+		super();
+		this.rua = rua;
+		this.numeroCasa = numeroCasa;
+		this.cep = cep;
+		this.complemento = complemento;
+		this.pontoReferencia = pontoReferencia;
+		this.bairro = bairro;
+		this.cidade = cidade;
+		this.estado = estado;
+		
+	}
+
 
 
 	public Usuario(int qtdCliente) {
@@ -118,22 +98,10 @@ public class Usuario {
 
 
 	
-
-
-
-
-
-
 	public Usuario(Integer qtdPedido) {
 		super();
 		this.qtdPedido = qtdPedido;
 	}
-
-
-
-
-
-
 
 
 	public Usuario(String qtdProduto) {
@@ -142,21 +110,9 @@ public class Usuario {
 	}
 
 
-
-
-
-
-
-
 	public Integer getCod_cliente() {
 		return cod_cliente;
 	}
-
-
-
-
-
-
 
 
 	public void setCod_cliente(Integer cod_cliente) {
@@ -164,21 +120,9 @@ public class Usuario {
 	}
 
 
-
-
-
-
-
-
 	public String getNome() {
 		return nome;
 	}
-
-
-
-
-
-
 
 
 	public void setNome(String nome) {
@@ -187,20 +131,9 @@ public class Usuario {
 
 
 
-
-
-
-
-
 	public String getCpf() {
 		return cpf;
 	}
-
-
-
-
-
-
 
 
 	public void setCpf(String cpf) {
@@ -209,8 +142,15 @@ public class Usuario {
 
 
 
+	public Date getVal() {
+		return val;
+	}
 
 
+
+	public void setVal(Date val) {
+		this.val = val;
+	}
 
 
 
@@ -220,19 +160,9 @@ public class Usuario {
 
 
 
-
-
-
-
-
 	public void setNascimento(Date nascimento) {
 		this.nascimento = nascimento;
 	}
-
-
-
-
-
 
 
 
@@ -242,19 +172,9 @@ public class Usuario {
 
 
 
-
-
-
-
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-
-
-
-
 
 
 
@@ -263,32 +183,14 @@ public class Usuario {
 	}
 
 
-
-
-
-
-
-
 	public void setRua(String rua) {
 		this.rua = rua;
 	}
 
 
-
-
-
-
-
-
 	public String getNumeroCasa() {
 		return numeroCasa;
 	}
-
-
-
-
-
-
 
 
 	public void setNumeroCasa(String numeroCasa) {
@@ -297,30 +199,14 @@ public class Usuario {
 
 
 
-
-
-
-
-
 	public String getCep() {
 		return cep;
 	}
 
 
-
-
-
-
-
-
 	public void setCep(String cep) {
 		this.cep = cep;
 	}
-
-
-
-
-
 
 
 
@@ -330,19 +216,9 @@ public class Usuario {
 
 
 
-
-
-
-
-
 	public void setComplemento(String complemento) {
 		this.complemento = complemento;
 	}
-
-
-
-
-
 
 
 
@@ -352,19 +228,9 @@ public class Usuario {
 
 
 
-
-
-
-
-
 	public void setPontoReferencia(String pontoReferencia) {
 		this.pontoReferencia = pontoReferencia;
 	}
-
-
-
-
-
 
 
 
@@ -374,30 +240,14 @@ public class Usuario {
 
 
 
-
-
-
-
-
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
 	}
 
 
-
-
-
-
-
-
 	public String getCidade() {
 		return cidade;
 	}
-
-
-
-
-
 
 
 
@@ -407,20 +257,9 @@ public class Usuario {
 
 
 
-
-
-
-
-
 	public String getEstado() {
 		return estado;
 	}
-
-
-
-
-
-
 
 
 	public void setEstado(String estado) {
@@ -428,32 +267,14 @@ public class Usuario {
 	}
 
 
-
-
-
-
-
-
 	public String getBandeira() {
 		return bandeira;
 	}
 
 
-
-
-
-
-
-
 	public void setBandeira(String bandeira) {
 		this.bandeira = bandeira;
 	}
-
-
-
-
-
-
 
 
 	public String getTitularCartao() {
@@ -462,20 +283,9 @@ public class Usuario {
 
 
 
-
-
-
-
-
 	public void setTitularCartao(String titularCartao) {
 		this.titularCartao = titularCartao;
 	}
-
-
-
-
-
-
 
 
 	public String getDddtelefone() {
@@ -483,20 +293,9 @@ public class Usuario {
 	}
 
 
-
-
-
-
-
-
 	public void setDddtelefone(String dddtelefone) {
 		this.dddtelefone = dddtelefone;
 	}
-
-
-
-
-
 
 
 
@@ -506,20 +305,9 @@ public class Usuario {
 
 
 
-
-
-
-
-
 	public void setTelefoneCliente(String telefoneCliente) {
 		this.telefoneCliente = telefoneCliente;
 	}
-
-
-
-
-
-
 
 
 	public String getTipoTelefone() {
@@ -528,16 +316,20 @@ public class Usuario {
 
 
 
-
-
-
-
-
 	public void setTipoTelefone(String tipoTelefone) {
 		this.tipoTelefone = tipoTelefone;
 	}
 
 
+	public String getnCartao() {
+		return nCartao;
+	}
+
+
+
+	public void setnCartao(String nCartao) {
+		this.nCartao = nCartao;
+	}
 
 
 
@@ -594,18 +386,9 @@ public class Usuario {
 
 
 
-
-
-
-
-
 	public void setQtdProduto(String qtdProduto) {
 		this.qtdProduto = qtdProduto;
 	}
-
-
-
-
 
 
 
@@ -617,38 +400,4 @@ public class Usuario {
 
 
 
-
-
-
-
-
-
-
-
-
-	
-
-
-
-	
-
-
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-
-	
-
 }
-

@@ -18,9 +18,10 @@
 
         <div class="sidebar-menu">
             <ul>
-                <li>
-                    <a href="home.jsp" >
-                        <span class="icon"> Home </span></a>
+               <li>
+                    <a href="home.jsp
+                    " >
+                        <img src="imgs/home.png" class="icon"><span class="icon "> Home </span></a>
                 </li>
                 
 
@@ -73,10 +74,6 @@
 
             </h2>
 
-            <div class="search-wrapper">
-                <span class="las la-search"></span>
-                <input type="search" placeholder="procure aqui" />
-            </div>
 
             <div class="user-wrapper">
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
@@ -98,12 +95,12 @@
 				<table class="table table-hover">
 					<thead>
 						<tr>
-							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Cod. Cliente</th>
-							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Nome</th>
-							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">CPF</th>
-							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Data de Nascimento</th>
-							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Email</th>
-							<th style="word-wrap: break-word; min-width: 160px; max-width: 160px;">Ações</th>
+							<th style="word-wrap: break-word; min-width: 50px; max-width: 160px;">Id</th>
+							<th style="word-wrap: break-word; min-width: 130px; max-width: 160px;">Nome</th>
+							<th style="word-wrap: break-word; min-width: 176px; max-width: 160px;">CPF</th>
+							<th style="word-wrap: break-word; min-width: 211px; max-width: 160px;">Data de Nascimento</th>
+							<th style="word-wrap: break-word; min-width: 130px; max-width: 160px;">Email</th>
+							<th style="word-wrap: break-word; min-width: 135px; max-width: 180px;">Ações</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -119,8 +116,8 @@
 									<td><span class="data"><c:out value="${usuario.nascimento}" /></td>
 									<td><c:out value="${usuario.email}" /></td>
 									
-									<td class="btnAcoes">
-										<button class="btn btn-primary btnPage" type="submit" name="option" value="cartaoSelecionado">Detalhes</button>
+									<td class="tdLast">
+										<button class="btn btn-primary btnPageReload" type="submit" name="option" value="cartaoSelecionado">Detalhes</button>
 									</td>
 								</form>
 							</tr>
