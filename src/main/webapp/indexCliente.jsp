@@ -98,7 +98,7 @@
 							<th style="word-wrap: break-word; min-width: 50px; max-width: 160px;">Id</th>
 							<th style="word-wrap: break-word; min-width: 130px; max-width: 160px;">Nome</th>
 							<th style="word-wrap: break-word; min-width: 176px; max-width: 160px;">CPF</th>
-							<th style="word-wrap: break-word; min-width: 211px; max-width: 160px;">Data de Nascimento</th>
+						
 							<th style="word-wrap: break-word; min-width: 130px; max-width: 160px;">Email</th>
 							<th style="word-wrap: break-word; min-width: 135px; max-width: 180px;">Ações</th>
 						</tr>
@@ -113,7 +113,6 @@
 										value="${usuario.cod_cliente}" /></td>
 									<td><c:out value="${usuario.nome}" /></td>
 									<td><span class="cpf"><c:out value="${usuario.cpf}" /></span></td>
-									<td><span class="data"><c:out value="${usuario.nascimento}" /></td>
 									<td><c:out value="${usuario.email}" /></td>
 									
 									<td class="tdLast">

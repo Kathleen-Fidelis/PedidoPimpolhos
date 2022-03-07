@@ -429,7 +429,7 @@ table.pedidotb tr td:last-child{
 #nav-toggle:checked + .sidebar li  {
     padding-left: 1rem;
     text-align: center;
-    display: none;
+
 }
 
 #nav-toggle:checked + .sidebar li a  {
@@ -977,4 +977,28 @@ color: var(--main-color)
     h4{
     	font-size:16px;
     }
+}
+
+@media (max-width: 1600px){
+   div.tabela{
+   margin-top:12%;
+   }
+}
+
+@media (max-width: 1020px){
+   div.tabela{
+   margin-top:13%;
+   }
+}
+
+@media (max-width: 931px){
+   div.tabela{
+   margin-top:15%;
+   }
+}
+
+@media (max-width: 894px){
+   div.tabela{
+   margin-top:24%;
+   }
 }

@@ -63,7 +63,7 @@
         </div>
     </div>
 
-
+ 
     <div class="main-content">
         <div class="header-info">
             <h2>
@@ -86,10 +86,10 @@
 
 
 
-	<div class="tabela">
+	  <div class="tabela">
 	
     <form action="ServletFornecedor" method="post">
-		<button class="btn btn-secondary col-3 btnPage"  type="submit"  name="optionFornecedor" value="insertFormFornecedor"> Adicionar Fornecedor</button>
+		<button class="btn btn-primary btnPageReload"  type="submit"  name="optionFornecedor" value="insertFormFornecedor"> Adicionar Fornecedor</button>
     </form>
         <div class="col-md-12 col-lg-9 conteudo">
           	<div class = "table-responsive">
@@ -112,10 +112,10 @@
 									<td><c:out value="${fornecedor.nome_fornecedor}"/></td>
 									
 									<td class="btnAcoes">
-										<!-- Button trigger modal -->
+									
 										<button type="button" class="btn btn-primary btnPageReload" data-bs-toggle="modal" data-bs-target="#exampleModal-${fornecedor.cod_fornecedor}">Deletar</button>
 
-									<!-- Modal -->
+									
 									<div  class="modal fade" id="exampleModal-${fornecedor.cod_fornecedor}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 									  <div class="modal-dialog">
 									    <div class="modal-content">
@@ -144,7 +144,7 @@
 			</div>
 		</div>
 	</div>
-
+	</div>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>

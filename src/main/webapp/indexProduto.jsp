@@ -6,7 +6,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pimpolhos ADM</title>
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css" type="text/css">
@@ -84,9 +86,10 @@
                 </div>
             </div>
         </div>
-
+        
+<div class="tabela">
      <form action="ServletProduto" method="post">
-		<button class="btn btn-secondary col-3 btnPage btn-cadastro-produto" style=" font-weight: bold; background-color: #9ACCFF; border: none;" type="submit"  name="optionProduto" value="insertFormProduto"> Adicionar Produto</button>
+		<button class="btn btn-secondary  btnPage btnPageReload" type="submit"  name="optionProduto" value="insertFormProduto"> Adicionar Produto</button>
 	</form>
     
     <div class="accordion accordion-produto" id="accordionExample">
@@ -131,7 +134,7 @@
 		        
 		        <div class="row btn-atualizar-deletar">
 		         <!-- Button trigger modal -->
-		         				<div class="col-3 btn-deletar">
+		         				<div class="col-4 col-md-3 btn-deletar">
 									<button type="button" class="btn btn-primary btnPage" data-bs-toggle="modal" data-bs-target="#exampleModal-${produto.cod_produto}">Deletar</button>
 								</div>
 								
@@ -155,7 +158,7 @@
 									</div>
                                		
                                		
-                               	<div class="col-3 btn-atualizar">	
+                               	<div class="col-4  col-md-3 btn-atualizar">	
 									<button type="submit" class="btn btn-primary btnPage" name="optionProduto" value="updateFormProduto">Atualizar</button>
 								<div>	
 					</div>
@@ -167,91 +170,10 @@
   	</form>
   </c:forEach>
 </div>
+</div>
     
     
-  <!--    <div class="tabela">
-    <form action="ServletProduto" method="post">
-		<button class="btn btn-secondary col-3 btnPage" style=" font-weight: bold; background-color: #9ACCFF; border: none;" type="submit"  name="optionProduto" value="insertFormProduto"> Adicionar Produto</button>
-	</form>
-	
-        <div class="col-md-12 col-lg-9 conteudo">
-          <div class = "table-responsive">
-            <table class="table table-hover tbproduto">
-                <thead>
-                	<tr>
-                        <th style="word-wrap: break-word; min-width: 50px; max-width: 160px;">Id</th>
-                        <th>Nome</th>
-                        <th>Preço</th>
-                        <th>Sexo</th>
-                        <th>Dimensão</th>
-                        <th>Material</th> 
-                        <th>Peso</th>  
-                        <th>Fornecedor</th>
-                        <th>Categoria</th>  
-                        <th>Marca</th>
-                              
-                      
-                    </tr>
-                </thead>
-                <tbody>
-                    <c:forEach var="produto" items="${listProduto}">
-                        <tr>
-                            
-                            <form action="ServletProduto" method="post">
-                                <td>
-                                    <c:out value="${produto.cod_produto}"/>
-                                    <input type="hidden" name="cod_produto" value="${produto.cod_produto}"/>
-                                </td>
-                              
-                                <td ><c:out value="${produto.nome}"/></td>
-                                <td class="preco4"><c:out value="${produto.preco}"/></td>
-                                <td><c:out value="${produto.sexo}"/></td>
-                                <td><c:out value="${produto.dimensao}"/></td>
-                                <td><c:out value="${produto.material}"/></td>
-                                <td class="pesoForm"><c:out value="${produto.peso}"/></td>
-
-
-                               
-                                <td><c:out value="${produto.nome_fornecedor}"/></td>
-                                <td><c:out value="${produto.nome_categoria}"/></td>      
-                                <td><c:out value="${produto.nome_marca}"/></td>                       
-                               </div>
-                               
-                               <td class="tdLast">
-                      	            <!-- Button trigger modal -->
-									<!--<button type="button" class="btn btn-primary btnPage" data-bs-toggle="modal" data-bs-target="#exampleModal-${produto.cod_produto}">Deletar</button>
-
-									<!-- Modal -->
-									<!--  <div  class="modal fade" id="exampleModal-${produto.cod_produto}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-									  <div class="modal-dialog">
-									    <div class="modal-content">
-									      <div class="modal-header">
-									        <h5 class="modal-title" >Deseja realmente deletar? </h5>
-									        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-									      </div>
-									      <div class="modal-footer">
-									        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-									        <button class="btn btn-primary btnPageReload" type="submit" name="optionProduto" value="deleteProduto">Deletar</button>
-									      </div>
-									    </div>
-									  </div>
-									</div>
-                               		
-                               		
-                               		
-									<button type="submit" class="btn btn-primary btnPage" name="optionProduto" value="updateFormProduto">Atualizar</button>
-							  </td>
-
-                               
-                            </form>
-                        </tr>
-                    </c:forEach>
-                </tbody>
-              </table>
-            </div>
-        </div>
-         </div>
-    </div>-->
+  
     </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script

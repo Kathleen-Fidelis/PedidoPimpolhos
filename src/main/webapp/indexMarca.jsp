@@ -90,7 +90,7 @@
 
 	<div class="tabela">
 	<form action="ServletMarca" method="post">
-		<button class="btn btn-primary col-3 btnPageReload" type="submit"  name="optionMarca" value="insertFormMarca"> Adicionar Marca</button>
+		<button class="btn btn-primary  btnPageReload" type="submit"  name="optionMarca" value="insertFormMarca"> Adicionar Marca</button>
     </form>
         <div class="col-md-12 col-lg-9 conteudo">
           <div class = "table-responsive">
