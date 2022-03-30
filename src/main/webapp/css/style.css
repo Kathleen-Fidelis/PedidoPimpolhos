@@ -30,7 +30,7 @@ body {
 }
 
 .btnAcoes button{
-	background-color: transparent; 
+
 	margin-left: 10px;
 	border: none;
 	/*text-decoration: underline;
@@ -999,6 +999,6 @@ color: var(--main-color)
 
 @media (max-width: 894px){
    div.tabela{
-   margin-top:24%;
+   margin-top:23%;
    }
 }
