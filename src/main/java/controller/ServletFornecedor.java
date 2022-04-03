@@ -96,6 +96,13 @@ public class ServletFornecedor extends HttpServlet {
 				Fornecedor fornecedor1 = new Fornecedor (nomeFornecedorBack);
 				this.dao.inserirFornecedor(fornecedor1);
 	}
+			
+		}
+		try {
+			Thread.sleep(2000);
+		}
+		catch(InterruptedException ex){
+			ex.printStackTrace();
 		}
 		response.sendRedirect("ServletFornecedor");
 	}

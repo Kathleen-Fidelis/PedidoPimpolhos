@@ -99,6 +99,12 @@ public class ServletCategoria extends HttpServlet {
 				this.dao.inserirCategoria(categoria1);
 	}
 		}
+		try {
+			Thread.sleep(2000);
+		}
+		catch(InterruptedException ex){
+			ex.printStackTrace();
+		}
 		response.sendRedirect("ServletCategoria");
 	}
 	
@@ -131,7 +137,12 @@ public class ServletCategoria extends HttpServlet {
 				this.dao.atualizarCategoria(categoria);
 			}
 		}
-	
+		try {
+			Thread.sleep(2000);
+		}
+		catch(InterruptedException ex){
+			ex.printStackTrace();
+		}
 		response.sendRedirect("ServletCategoria");
 	}
 	

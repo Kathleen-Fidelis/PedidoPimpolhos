@@ -73,6 +73,12 @@ public class ServletCadastroLogin extends HttpServlet {
 					//}
 				}
 			}
+			try {
+				Thread.sleep(2000);
+			}
+			catch(InterruptedException ex){
+				ex.printStackTrace();
+			}
 			response.sendRedirect("home.jsp");
 		
 	}	
