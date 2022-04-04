@@ -97,7 +97,7 @@
 							<!--  <input style="border-radius: 5px; border: 1px solid gray; height: 30px; padding: 10px;" type="text" name="name" required/><br>-->
 							<label style="margin-right: 17px;">Nome da Marca:<input class="form-control input-select" type="text" name="name" required/><br>
 							
-							<button class="btn btn-primary btnPage" type="submit" name="optionMarca" value="insertMarca">Salvar</button>
+							<button class="btn btn-primary btnPage" id="ToastSuccess1" type="submit" id="ToastSuccess4" name="optionMarca" value="insertMarca">Salvar</button>
 						</div>
 					</c:when>
 					<c:otherwise>
@@ -107,7 +107,7 @@
 							<input id="mensagem" class="form-control input-select" type="text" name="name" value="${marca.nome_marca}" required/><br>
 							
 						
-							<button class="btn btn-primary btnPage" type="submit" name="optionMarca" value="updateMarca">Atualizar</button>
+							<button class="btn btn-primary btnPage" type="submit" id="supplierToast4" name="optionMarca" value="updateMarca">Atualizar</button>
 						</div>
 					</c:otherwise>
 				</c:choose>
@@ -131,11 +131,12 @@
 	     }
 		
 		//jQuery for Toast Message on bellow:
-        document.getElementById('supplierToast3').addEventListener('submit', function(){
+        document.getElementById('ToastSuccess1').addEventListener('submit', function(){
             toastr.success('Marca salvo com sucesso!')
             )}
-        document.getElementById('supplierToast').addEventListener('submit', function(){
+        document.getElementById('supplierToast4').addEventListener('submit', function(){
             toastr.success('Marca Alterado com sucesso!')
+            )}
 	</script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

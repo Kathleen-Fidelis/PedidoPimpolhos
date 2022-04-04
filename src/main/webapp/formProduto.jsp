@@ -163,7 +163,7 @@
 							
 							
 							    
-								<button class="btn btn-primary btnPage" type="submit" name="optionProduto" value="insertProduto">Salvar</button>
+								<button class="btn btn-primary btnPage" type="submit" name="optionProduto" id="supplierToast6"  value="insertProduto">Salvar</button>
 						</div>
 					</c:when>
 					<c:otherwise>
@@ -232,7 +232,7 @@
                                  </select>
 							<!-- Marca ^ -->
 						
-							<button class="btn btn-primary btnPage" type="submit" name="optionProduto" value="updateProduto">Atualizar</button>
+							<button class="btn btn-primary btnPage" type="submit" name="optionProduto" id="supplierToast5" value="updateProduto">Atualizar</button>
 						</div>
 					</c:otherwise>
 				</c:choose>
@@ -255,10 +255,10 @@
 	     }
 		
 		//jQuery for Toast Message on bellow:
-        document.getElementById('supplierToast4').addEventListener('submit', function(){
+        document.getElementById('supplierToast6').addEventListener('submit', function(){
             toastr.success('Produto salvo com sucesso!')
             )}
-        document.getElementById('supplierToast').addEventListener('submit', function(){
+        document.getElementById('supplierToast5').addEventListener('submit', function(){
             toastr.success('Produto Alterado com sucesso!')
 	</script>
     <script

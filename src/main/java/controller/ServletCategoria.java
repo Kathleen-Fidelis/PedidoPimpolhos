@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -120,6 +121,17 @@ public class ServletCategoria extends HttpServlet {
 			Integer id = Integer.parseInt(idBack);
 			this.dao.deletarCategoria(id);
 		}
+		try {
+			Thread.sleep(1500);
+			
+		} 
+		
+		catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+
 		response.sendRedirect("ServletCategoria");
 	}
 	

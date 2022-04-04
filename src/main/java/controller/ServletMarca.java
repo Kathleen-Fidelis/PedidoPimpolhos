@@ -103,7 +103,16 @@ public class ServletMarca extends HttpServlet {
 				Integer id = Integer.parseInt(idBack);
 				this.dao.deletarMarca(id);
 			}
+			try {
+				Thread.sleep(1500);
+				
+			} 
 			
+			catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		
 		response.sendRedirect("ServletMarca");
 	}
 	
