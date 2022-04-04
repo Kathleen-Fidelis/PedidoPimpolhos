@@ -84,57 +84,80 @@
             </div>
         </div>
         
-        
+ <div class="col-12 detalhesClienteAccordionBg" style="
+    margin-top: 15%;">   
+     <c:forEach var="pedido" items="${DetalhePedido}">  
+		<form action="ServletPimpolhos" method="post">
+		
+			<div class="detalheClienteCabecalho  row rowGutter">
+			<div class="col-12 maintitleDetails"> Pedido nº: <c:out value="${pedido.cod_pedido}"/></div>
+			<div class="detalheClienteCabecalho rowCentralized">
+			
+			<div class="col-6">
+			
+			<div class= "col-11 pedidoInfo"> <span class="accordionInfoTitle">Id do Cliente:</span> <span class="accordionInfoText"> <c:out value="${pedido.cod_cliente}"/></span> </div>
+			<div class= "col-11 pedidoInfo"> <span class="accordionInfoTitle">Endereço:</span> <span class="accordionInfoText"><c:out value="${pedido.nome_rua}"/></span> </div>
+			<div class= "col-11 pedidoInfo"> <span class="accordionInfoTitle">Complemento:</span><span class="accordionInfoText"> <c:out value="${pedido.complemento}"/></span> </div>
+			<div class= "col-11 pedidoInfo"> <span class="accordionInfoTitle">Bairro:</span><span class="accordionInfoText"> <c:out value="${pedido.bairro}"/></span> </div>
+			<div class= "col-11 pedidoInfo"> <span class="accordionInfoTitle">Cidade:</span><span class="accordionInfoText"> <c:out value="${pedido.nome_cidade}"/></span> </div>
+			<div class= "col-11 pedidoInfo"> <span class="accordionInfoTitle">Data do Pedido:</span><span class="accordionInfoText"> <c:out value="${pedido.data_pedido}"/></span> </div>
+			<div class= "col-11 pedidoInfo"> <span class="accordionInfoTitle">Forma de Pagamento:</span><span class="accordionInfoText"> <c:out value="${pedido.descricao_forma_pagamento}"/></span> </div>
+			<div class= "col-11 pedidoInfo"> <span class="accordionInfoTitle">Quantidade de itens:</span><span class="accordionInfoText"> <c:out value="${pedido.quantidade}"/></span> </div>
+			</div>
+			
+			<div class="col-5">
+			
+			<div class= "col-11 pedidoInfo"> <span class="accordionInfoTitle">Cliente:</span> <span class="accordionInfoText"> <c:out value="${pedido.nome_cliente}"/></span> </div>
+			<div class= "col-11 pedidoInfo"> <span class="accordionInfoTitle">Nº:</span> <span class="accordionInfoText"><c:out value="${pedido.numero_casa}"/></span> </div>
+			<div class= "col-11 pedidoInfo"> <span class="accordionInfoTitle">Ponto de Referencia:</span><span class="accordionInfoText"> <c:out value="${pedido.ponto_referencia}"/></span> </div>
+			<div class= "col-11 pedidoInfo"> <span class="accordionInfoTitle">CEP:</span><span class="accordionInfoText"> <c:out value="${pedido.cep}"/></span> </div>
+			<div class= "col-11 pedidoInfo"> <span class="accordionInfoTitle">UF:</span><span class="accordionInfoText"> <c:out value="${pedido.descricao_estado}"/></span> </div>
+		    <div class= "col-11 pedidoInfo"> <span class="accordionInfoTitle">Status:</span><span class="accordionInfoText"> <c:out value="${pedido.descricao_status_pedido}"/></span> </div>
+			<div class= "col-11 pedidoInfo"> <span class="accordionInfoTitle">Tipo de Frete:</span><span class="accordionInfoText"> <c:out value="${pedido.descricao_frete}"/></span> </div>
+			<div class= "col-11 pedidoInfo"> <span class="accordionInfoTitle">Valor total:</span><span class="accordionInfoText"> <c:out value="${pedido.valor_total}"/></span> </div>
+	     	</div>
+	     	
+	     	
+	     	</div>
+	     	</div>
+	     	
+		</form>
+  </c:forEach>
+    
+    
 <!-- ACCORDION -->
-<div class="accordion" id="accordionExample" style="margin-top:17%">
-	<c:forEach var="pedido" items="${listaItemDetalhePedido}">  
-		 <form action="ServletPedido" method="post">
+<div class="accordion" id="accordionExample">
 	  			<div class="accordion-item">
-				    <h2 class="accordion-header" id="heading-${pedido.cod_produto}">
-				      <button class="accordion-button custom-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-${pedido.cod_produto}" aria-expanded="true" aria-controls="collapse-${pedido.cod_produto}">
-				       	 Item pedido
+				    <h2 class="accordion-header" id="heading-">
+				      <button class="accordion-button custom-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCard" aria-expanded="true" aria-controls="collapseCard">
+				       	 Itens do Pedido
 				      </button>
 				    </h2>
 	                    
 			<input type="hidden" name="cod_pedido" value="${pedido.cod_produto}"/>
 	                                                  
-		    <div id="collapse-${pedido.cod_produto}" class="accordion-collapse collapse show" aria-labelledby="heading-${pedido.cod_produto}" data-bs-parent="#accordionExample">
+		      <div id="collapseCard" class="accordion-collapse collapse " aria-labelledby="headingCard data-bs-parent="#accordionExample">
 		      <div class="accordion-body">
-		      	<div style="display:flex;justify-content: space-between;">
 		      		<div>
-				        <p style="text-transform: uppercase"><strong>Informações do pedido</strong></p>
-				        <p><strong>Código pedido:</strong> <c:out value="${pedido.cod_pedido}"/></p>
-				        <p><strong>Data pedido:</strong> <c:out  value="${pedido.data_pedido}"/></p>
-				        <p><strong>Nome cliente:</strong> <c:out value="${pedido.nome_cliente}"/></p>
-				        <p><strong>Status pedido:</strong> <c:out value="${pedido.descricao_status_pedido}"/></p>
-				        <p><strong>Forma pagamento:</strong> <c:out value="${pedido.descricao_forma_pagamento}"/></p>
-				        <p><strong>Produto:</strong> <c:out value="${pedido.nome}"/></p>
-				        <p><strong>Preço:</strong> <span class="preco4"><c:out value="${pedido.preco}"/></p>
-				        <p><strong>Marca:</strong> <c:out value="${pedido.nome_marca}"/></p>
-				        <p><strong>Quantidade:</strong> <c:out value="${pedido.quantidade}"/></p>
-				        <p><strong>Valor total:</strong> <span class="preco"><c:out value="${pedido.valor_total}"/></p>
-			        </div>
-			        <div>
-			        	<p style="text-transform: uppercase"><strong>Informações da entrega</strong></p>
-				        <p><strong>Nome cidade:</strong> <c:out value="${pedido.nome_cidade}"/></p>
-				        <p><strong>CEP:</strong> <c:out value="${pedido.cep}"/></p>
-				        <p><strong>Nome rua:</strong> <c:out value="${pedido.nome_rua}"/></p>
-				        <p><strong>N° casa:</strong> <c:out value="${pedido.numero_casa}"/></p>
-				        <p><strong>Complemento:</strong> <c:out value="${pedido.complemento}"/></p>
-				        <p><strong>Bairro:</strong> <c:out value="${pedido.bairro}"/></p>
-				        <p><strong>Ponto referência:</strong> <c:out value="${pedido.ponto_referencia}"/></p>
-				        <p><strong>Estado:</strong> <c:out value="${pedido.descricao_estado}"/></p>
-				        <p><strong>Descrição frete:</strong> <c:out value="${pedido.descricao_frete}"/></p>
-				        <p><strong>Valor frete:</strong> <span class="preco3"><c:out value="${pedido.valor_frete}"/></p>
-			        </div>
-		        </div>
-		      </div>
-		    </div>
-	  	</div>
-  	</form>
-  </c:forEach>
+				       <form action="ServletPedido" method="post">
+		      		   <div class="row accordionContentSpace">
+		      		<c:forEach var="pedido" items="${listaItemDetalhePedido}">
+				<div class="col-11 col-lg-5  clientDetails">
+				        <p><span class="accordionInfoTitle">Produto:</span> <span class="accordionInfoText"><c:out value="${pedido.nome}"/></span></p>
+				        <p><span class="accordionInfoTitle">Preço unitario:</span> <span class="accordionInfoText preco4 "><c:out value="${pedido.preco}"/></span></p>
+				        <p><span class="accordionInfoTitle">Marca:</span> <span class="accordionInfoText"><c:out value="${pedido.nome_marca}"/></span></p>
+				        <p><span class="accordionInfoTitle">Quantidade:</span> <span class="accordionInfoText"><c:out value="${pedido.quantidade}"/></span></p>
+				          <p><span class="accordionInfoTitle">Valor Total:</span> <span class="accordionInfoText"><c:out value="${pedido.valor_total}"/></span></p>
+				        
+				        </div>
+	  	  </c:forEach>
+	  	  </div>
+	  	             </form>
 </div>
-
+</div>
+</div>
+</div>
+</div>
   
     
 

@@ -728,7 +728,6 @@ color: var(--main-color)
 .detalhesClienteAccordionBg {
 	border-radius: 6px;
 	background-color: white;
-    width: 98%;
     padding-bottom: 1%;
     padding-top: 1%;
     outline: 1px solid #e6e6e6;
@@ -749,6 +748,7 @@ color: var(--main-color)
 }
 .maintitleDetails{
 	font-size: 24px;
+	margin-bottom: 2%;
 }
 .clientDetails {
 	outline: #d6d6d6 solid 1px;
@@ -815,6 +815,26 @@ color: var(--main-color)
 	color:#808080;
 }
 
+.rowCentralized{
+	-bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+    justify-content: space-between;
+    outline: 1px solid #80808063;
+    border-radius: 9px;
+}
+.detalheClienteCabecalho.row{
+	--bs-gutter-x: 0;
+   
+}
+
+.pedidoInfo{
+	margin-bottom:1%;
+}
 @media only screen and (max-width: 1200px){
 	
 	.sidebar{
@@ -956,6 +976,9 @@ color: var(--main-color)
         margin-left: 0rem !important;
     }
 }
+
+
+
 
 @media only screen and (max-width: 560px){
     .cards{
