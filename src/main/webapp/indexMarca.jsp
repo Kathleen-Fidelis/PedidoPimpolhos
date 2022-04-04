@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
     <title>Marca</title>
 </head>
@@ -89,7 +90,7 @@
     
 
 	<div class="tabela">
-	<form action="ServletMarca" method="post">
+	<form action="ServletMarca" method="post" id="tabela">
 		<button class="btn btn-primary  btnPageReload" type="submit"  name="optionMarca" value="insertFormMarca"> Adicionar Marca</button>
     </form>
         <div class="col-md-12 col-lg-9 conteudo">
@@ -147,7 +148,17 @@
         </div>
          </div>
     </div>
-    
+    	<script>
+		let listSupplier = document.querySelectorAll('.tabela')
+	   	let elements = Array.from(listSupplier)
+	    console.log(elements)
+	    
+	     for (var i = 0; i < elements.length; i++) {
+		    elements[i].addEventListener('submit', function(){
+		        toastr.success('Fornecedor excluído com sucesso!');
+		    })
+	     }
+	</script>
     
     
 

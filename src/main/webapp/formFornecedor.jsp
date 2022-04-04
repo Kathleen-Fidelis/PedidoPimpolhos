@@ -86,7 +86,7 @@
    <div class="tabela">  
 
 	<div class="col-md-12 col-lg-9 conteudo">
-		  <form action="ServletFornecedor" method="post" id="">
+		  <form action="ServletFornecedor" method="post" id="supplierToast5">
 				<c:choose>
 					<c:when test="${ fornecedor == null }">
 						<div class="container col-10 input-marca">
@@ -94,7 +94,7 @@
 							<!--  <input style="border-radius: 5px; border: 1px solid gray; height: 30px; padding: 10px;" type="text" name="name" required/><br>-->
 							<label style="margin-right: 17px;">Nome do Fornecedor:<input id="mensagem" class="form-control input-select" type="text" name="name" required/><br>
 							
-							<button class="btn btn-primary btnPage" type="submit" id="supplierToast5" name="optionFornecedor" value="insertFornecedor">Salvar</button>
+							<button class="btn btn-primary btnPage" type="submit"  name="optionFornecedor" value="insertFornecedor">Salvar</button>
 						</div>
 					</c:when>
 					<c:otherwise>
@@ -104,7 +104,7 @@
 							<input id="mensagem" class="form-control input-select" type="text" name="name" value="${fornecedor.nome_fornecedor}" required/><br>
 							
 						
-							<button class="btn btn-primary btnPage" type="submit" id="supplierToast5" name="optionFornecedor" value="updateFornecedor">Atualizar</button>
+							<button class="btn btn-primary btnPage" type="submit"  name="optionFornecedor" value="updateFornecedor">Atualizar</button>
 						</div>
 					</c:otherwise>
 				</c:choose>
@@ -117,23 +117,13 @@
  	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
  	<!-- End: jQuery for Toast Message -->
          <script type="text/javascript"> 
-		let listSupplier = document.querySelectorAll('.tabela')
-	   	let elements = Array.from(listSupplier)
-	    console.log(elements)
-	    
-	     for (var i = 0; i < elements.length; i++) {
-		    elements[i].addEventListener('submit', function(){
-		        toastr.success('Fornecedor excluído com sucesso!');
-		    })
-	     }
-		
+	
 		//jQuery for Toast Message on bellow:
         document.getElementById('supplierToast5').addEventListener('submit', function(){
             toastr.success('Fornecedor salvo com sucesso!')
             )}
-        document.getElementById('supplierToast6').addEventListener('submit', function(){
-            toastr.success('Fornecedor Atualizado com sucesso!')
-        	)}
+        </script>
+        
 	
 	
 	

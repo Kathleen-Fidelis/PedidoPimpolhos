@@ -89,7 +89,7 @@
         
       <div class="tabela">    
         <div class="col-md-12 col-lg-9 conteudo">
-             <form action="ServletMarca" method="post" id="supplierToast3">
+             <form action="ServletMarca" method="post" id="ToastSuccess1">
 				<c:choose>
 					<c:when test="${marca == null }">
 						<div class="container col-10 input-marca"">
@@ -97,7 +97,7 @@
 							<!--  <input style="border-radius: 5px; border: 1px solid gray; height: 30px; padding: 10px;" type="text" name="name" required/><br>-->
 							<label style="margin-right: 17px;">Nome da Marca:<input class="form-control input-select" type="text" name="name" required/><br>
 							
-							<button class="btn btn-primary btnPage" id="ToastSuccess1" type="submit" id="ToastSuccess4" name="optionMarca" value="insertMarca">Salvar</button>
+							<button class="btn btn-primary btnPage" type="submit" id="ToastSuccess4" name="optionMarca" value="insertMarca">Salvar</button>
 						</div>
 					</c:when>
 					<c:otherwise>
@@ -107,7 +107,7 @@
 							<input id="mensagem" class="form-control input-select" type="text" name="name" value="${marca.nome_marca}" required/><br>
 							
 						
-							<button class="btn btn-primary btnPage" type="submit" id="supplierToast4" name="optionMarca" value="updateMarca">Atualizar</button>
+							<button class="btn btn-primary btnPage" type="submit" name="optionMarca" value="updateMarca">Atualizar</button>
 						</div>
 					</c:otherwise>
 				</c:choose>
@@ -120,23 +120,12 @@
  	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
  	<!-- End: jQuery for Toast Message -->
          <script type="text/javascript"> 
-		let listSupplier = document.querySelectorAll('.tabela')
-	   	let elements = Array.from(listSupplier)
-	    console.log(elements)
-	    
-	     for (var i = 0; i < elements.length; i++) {
-		    elements[i].addEventListener('submit', function(){
-		        toastr.success('Marca excluído com sucesso!');
-		    })
-	     }
 		
 		//jQuery for Toast Message on bellow:
         document.getElementById('ToastSuccess1').addEventListener('submit', function(){
             toastr.success('Marca salvo com sucesso!')
             )}
-        document.getElementById('supplierToast4').addEventListener('submit', function(){
-            toastr.success('Marca Alterado com sucesso!')
-            )}
+        
 	</script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

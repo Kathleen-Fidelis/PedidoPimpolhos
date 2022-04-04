@@ -11,6 +11,7 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pimpolhos ADM</title>
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/>
 <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
@@ -88,7 +89,7 @@
         </div>
         
 <div class="tabela">
-     <form action="ServletProduto" method="post">
+     <form action="ServletProduto" method="post" id="tabela">
 		<button class="btn btn-secondary  btnPage btnPageReload" type="submit"  name="optionProduto" value="insertFormProduto"> Adicionar Produto</button>
 	</form>
     
@@ -172,7 +173,17 @@
 </div>
 </div>
     
-    
+    <script>
+		let listSupplier = document.querySelectorAll('.tabela')
+	   	let elements = Array.from(listSupplier)
+	    console.log(elements)
+	    
+	     for (var i = 0; i < elements.length; i++) {
+		    elements[i].addEventListener('submit', function(){
+		        toastr.success('Produto excluído com sucesso!');
+		    })
+	     }
+	</script>
   
     </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
