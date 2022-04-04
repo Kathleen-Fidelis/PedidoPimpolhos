@@ -52,6 +52,9 @@ public class ServletMarca extends HttpServlet {
 			case ("insertMarca"):
 				insertMarca(request, response);
 			break;
+			case ("sair"):
+				Sair(request, response);
+			break;
 			default:
 				selectAllMarca(request, response);
 		}
@@ -138,6 +141,8 @@ public class ServletMarca extends HttpServlet {
 		response.sendRedirect("ServletMarca");
 	}
 	
-	
+	private void Sair(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		response.sendRedirect("deslogar.jsp");
+	}
 	
 }

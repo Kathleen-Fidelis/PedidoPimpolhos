@@ -60,7 +60,9 @@ public class ServletQuantidade extends HttpServlet {
 			usuarioCount(request, response);
 			request.getRequestDispatcher("home.jsp").forward(request, response);
 		}
-		
+		if (btn.equals("sair")) {
+			Sair(request, response);
+		}
 		
 	}
 	
@@ -127,5 +129,7 @@ public class ServletQuantidade extends HttpServlet {
 		//request.getRequestDispatcher("index.jsp").forward(request, response);
 
 	}
-	
+	private void Sair(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		response.sendRedirect("deslogar.jsp");
+	}
 }

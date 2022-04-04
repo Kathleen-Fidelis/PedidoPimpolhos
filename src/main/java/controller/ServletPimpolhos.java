@@ -63,6 +63,9 @@ public class ServletPimpolhos extends HttpServlet {
 				System.out.println("Entrou no Switch");
 			selectAllDetalhesCliente (request, response);
 		break;
+			case ("sair"):
+				Sair(request, response);
+			break; 
 		default:
 			selectAllUsers(request, response);
 		}
@@ -94,6 +97,8 @@ public class ServletPimpolhos extends HttpServlet {
 	
 	
 
-
+	private void Sair(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		response.sendRedirect("deslogar.jsp");
+	}
 	
 }

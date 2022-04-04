@@ -72,6 +72,9 @@ public class ServletProduto extends HttpServlet {
 			case ("insertProduto"):
 				insertProduto(request, response);
 			break;
+			case ("sair"):
+				Sair(request, response);
+			break;
 			default:
 				selectAllProdutos(request, response);
 		}
@@ -193,5 +196,8 @@ public class ServletProduto extends HttpServlet {
 			ex.printStackTrace();
 		}
 		response.sendRedirect("ServletProduto");
+	}
+	private void Sair(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		response.sendRedirect("deslogar.jsp");
 	}
 }

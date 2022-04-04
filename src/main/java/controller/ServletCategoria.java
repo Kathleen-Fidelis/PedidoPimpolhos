@@ -66,6 +66,9 @@ public class ServletCategoria extends HttpServlet {
 			case ("insertCategoria"):
 				inserirCategoria(request, response);
 			break;
+			case ("sair"):
+				Sair(request, response);
+			break;
 			default:
 				selectAllCategoria(request, response);
 		}
@@ -157,7 +160,9 @@ public class ServletCategoria extends HttpServlet {
 		}
 		response.sendRedirect("ServletCategoria");
 	}
-	
+	private void Sair(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		response.sendRedirect("deslogar.jsp");
+	}
 	
 	
 }

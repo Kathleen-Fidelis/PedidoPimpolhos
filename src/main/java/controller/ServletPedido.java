@@ -46,6 +46,9 @@ public class ServletPedido extends HttpServlet {
 		case ("detalhePedido"):
 			selectAllDetalhePedido(request, response);
 		break;
+		case ("sair"):
+			Sair(request, response);
+		break;
 //		case ("updateFormPedido"):
 //			showUpdatePedido(request, response);
 //		break;
@@ -78,5 +81,7 @@ public class ServletPedido extends HttpServlet {
 		request.getRequestDispatcher("indexDetalhePedido.jsp").forward(request, response);
 	}
 
-
+	private void Sair(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		response.sendRedirect("deslogar.jsp");
+	}
 }

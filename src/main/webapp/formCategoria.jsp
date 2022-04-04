@@ -81,7 +81,7 @@
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
                 <div>
                     <h4>Pimpolhos</h4>
-                    <a class="logout" href="deslogar.jsp">Sair</a>
+                    <a class="logout" href="deslogar.jsp" name="sair">Sair</a>
                     
                 </div>
             </div>
@@ -98,7 +98,7 @@
 							<label style="margin-right: 17px;">Nome da Categoria:</label>
 							<input class="form-control input-select" type="text" name="name" required/><br>
 							
-							<button class="btn btn-primary btnPage" type="submit" id="supplierToast2" name="optionCategoria" value="insertCategoria">Salvar</button>
+							<button class="btn btn-primary btnPage" type="submit"  name="optionCategoria" value="insertCategoria">Salvar</button>
 						</div>
 					</c:when>
 					<c:otherwise>
@@ -108,7 +108,7 @@
 							<input id="mensagem" class="form-control input-select" type="text" name="name" value="${categoria.nome_categoria}" required/><br>
 							
 						
-							<button class="btn btn-primary btnPage" type="submit" id="supplierToast" name="optionCategoria" value="updateCategoria">Atualizar</button>
+							<button class="btn btn-primary btnPage" type="submit"  name="optionCategoria" value="updateCategoria">Atualizar</button>
 						</div>
 					</c:otherwise>
 				</c:choose>
@@ -116,6 +116,13 @@
 		</div>
 		</div>
 		</div>
+		
+		<% String usuario = (String) session.getAttribute("usuario");
+		
+		if(usuario == null){
+			response.sendRedirect("index.jsp");
+		}
+		%>
 		         <!-- Begin: jQuery for Toast Message -->
  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
@@ -135,9 +142,6 @@
         document.getElementById('supplierToast').addEventListener('submit', function(){
             toastr.success('Categoria salva com sucesso!')
             )}
-        document.getElementById('supplierToast2').addEventListener('submit', function(){
-            toastr.success('Categoria Atualizada com sucesso!')
-        	)}
 	</script>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"> src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"</script>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

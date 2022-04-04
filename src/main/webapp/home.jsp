@@ -88,7 +88,7 @@
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
                 <div>
                     <h4>Pimpolhos</h4>
-                   <a class="logout" href="deslogar.jsp">Sair</a>
+                   <a class="logout" href="deslogar.jsp" name="sair">Sair</a>
                 </div>
             </div>
         </div>

@@ -51,6 +51,9 @@ public class ServletCadastroLogin extends HttpServlet {
 			case ("insertUsuario"):
 				inserirUsuarios(request, response);
 			break;
+			case ("sair"):
+				Sair(request, response);
+			break;
 		}
 	}
  
@@ -82,4 +85,7 @@ public class ServletCadastroLogin extends HttpServlet {
 			response.sendRedirect("home.jsp");
 		
 	}	
+	private void Sair(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		response.sendRedirect("deslogar.jsp");
+	}
 }

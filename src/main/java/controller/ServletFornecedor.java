@@ -67,6 +67,9 @@ public class ServletFornecedor extends HttpServlet {
 			case ("insertFornecedor"):
 				inserirFornecedor(request, response);
 			break;
+			case ("sair"):
+				Sair(request, response);
+			break;
 			default:
 				selectAllFornecedores(request, response);
 		}
@@ -150,6 +153,8 @@ public class ServletFornecedor extends HttpServlet {
 		response.sendRedirect("ServletFornecedor");
 	}
 	
-	
+	private void Sair(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		response.sendRedirect("deslogar.jsp");
+	}
 	
 }
