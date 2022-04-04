@@ -1,8 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.sql.SQLIntegrityConstraintViolationException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,7 +32,7 @@ public class ServletMarca extends HttpServlet {
 		
 		String optionMarca = request.getParameter("optionMarca");
 		if (optionMarca == null) {
-			optionMarca = "Opção Invalida";
+			optionMarca = "Opï¿½ï¿½o Invalida";
 		}
 		switch(optionMarca) {
 			case ("insertFormMarca"):

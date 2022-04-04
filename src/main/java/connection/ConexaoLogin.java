@@ -12,8 +12,8 @@ public class ConexaoLogin {
       
     Connection con;
     String url="jdbc:mysql://localhost:3306/pimpolhos";
-    String user="root";
-    String pass="root";
+    String user="mateus";
+    String pass="M.teus2512";
     public Connection ConectaMySql(String banco) throws SQLException {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");            
@@ -24,7 +24,7 @@ public class ConexaoLogin {
             }
                        
         } catch (ClassNotFoundException ex){
-            System.out.printf("Driver não encontrado");
+            System.out.printf("Driver nï¿½o encontrado");
         }
         return con;
     }

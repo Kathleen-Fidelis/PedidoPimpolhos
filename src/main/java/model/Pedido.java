@@ -1,13 +1,13 @@
 package model;
 
-import java.util.Date;
+
 
 public class Pedido {
 
 	private Integer cod_pedido;
 	//private Integer cod_detalhe;
 	private String nome_cliente;
-	private Date data_pedido;
+	private String data_pedido;
 	private Integer quantidade;
 	private String descricao_frete;
 	private String valor_frete;
@@ -33,7 +33,7 @@ public class Pedido {
 	
 	
 	//Pedido
-	public Pedido(String nome_cliente, Date data_pedido, String descricao_status_pedido, Double valor_total) {
+	public Pedido(String nome_cliente, String data_pedido, String descricao_status_pedido, Double valor_total) {
 		super();
 		this.nome_cliente = nome_cliente;
 		this.data_pedido = data_pedido;
@@ -43,7 +43,7 @@ public class Pedido {
 
 	
 	
-//	public Pedido(String nome_cliente, Date data_pedido, Integer quantidade, String descricao_frete, String valor_frete,
+//	public Pedido(String nome_cliente, String data_pedido, Integer quantidade, String descricao_frete, String valor_frete,
 //			String descricao_status_pedido, Double valor_total, String nome_cidade, String cep, String nome_rua,
 //			Integer numero_casa, String complemento, String bairro, String ponto_referencia, String descricao_estado,
 //			String descricao_forma_pagamento, String nome, Double preco, String nome_marca, Integer cod_produto) {
@@ -70,7 +70,7 @@ public class Pedido {
 //		}
 	
 	//Detalhe pedido
-	public Pedido(Date data_pedido, String nome_cliente, String nome_cidade, String cep, String nome_rua, Integer numero_casa, 
+	public Pedido(String data_pedido, String nome_cliente, String nome_cidade, String cep, String nome_rua, Integer numero_casa, 
 			String complemento, String bairro, String ponto_referencia, String descricao_estado, String descricao_frete,
 			String valor_frete, String descricao_status_pedido, String descricao_forma_pagamento,  String nome, Double preco, 
 			String nome_marca, Integer quantidade,  Double valor_total, Integer cod_produto) {
@@ -145,13 +145,13 @@ public class Pedido {
 
 
 
-	public Date getData_pedido() {
+	public String getData_pedido() {
 		return data_pedido;
 	}
 
 
 
-	public void setData_pedido(Date data_pedido) {
+	public void setData_pedido(String data_pedido) {
 		this.data_pedido = data_pedido;
 	}
 

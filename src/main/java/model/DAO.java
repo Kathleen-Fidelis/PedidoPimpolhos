@@ -1,7 +1,6 @@
 package model;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -27,7 +26,7 @@ public class DAO {
 				Integer id = r.getInt("cod_cliente");
 				String nome = r.getString("nome_cliente");
 				String cpf = r.getString("cpf");
-			     Date data = r.getDate("data_nasc");
+			     String data = r.getString("data_nasc");
 				String email = r.getString("email");
 				Usuario usuario = new Usuario(nome, cpf, data, email);
 				usuario.setCod_cliente(id);
@@ -61,7 +60,7 @@ public class DAO {
 				 Integer cliente = r.getInt("cod_cliente");
 				 String titularCartao = r.getString("nome_titular");
 				 String numeroCartao = r.getString("numero_cartao");
-				 Date validade  = r.getDate	("validade");
+				 String validade  = r.getString	("validade");
 			     String bandeira = r.getString("descricao_bandeira");
 			     
 			     Usuario detalheclienteCartao = new Usuario(cliente, titularCartao, numeroCartao, validade, bandeira);
@@ -171,7 +170,7 @@ public class DAO {
 				 Integer clienteCod = r.getInt("cod_cliente");
 				 String nomecliente = r.getString("nome_cliente");
 				 String cpf = r.getString("cpf");
-				 Date nasc  = r.getDate	("data_nasc");
+				 String nasc  = r.getString	("data_nasc");
 				 String email = r.getString("email") ;
 			     
 			     Usuario infoClientePrincipal = new Usuario(nomecliente, cpf, nasc, email); 
@@ -189,7 +188,7 @@ public class DAO {
 	}
 	
 	
-	//Método de conta da home
+	//Mï¿½todo de conta da home
 		public Usuario qtdClienteTotal () {	
 		Conexao c = Conexao.getInstance();
 		Connection con = c.getConnection();
@@ -240,7 +239,7 @@ public class DAO {
 				while (r.next()) {
 					Integer id = r.getInt("cod_pedido");
 					String nomeCliente = r.getString("nome_cliente");
-					Date data_pedido = r.getDate("data_pedido");
+					String data_pedido = r.getString("data_pedido");
 					String status= r.getString("descricao_status_pedido");
 					Double valor_total = r.getDouble("valor_total");
 					//Boolean flagEND= r.getBoolean("flag_endereco");
@@ -273,7 +272,7 @@ public class DAO {
 //				while (r.next()) {
 //					Integer id1 = r.getInt("cod_pedido");
 //					String nomeCliente = r.getString("nome_cliente");
-//					Date data_pedido = r.getDate("data_pedido");
+//					String data_pedido = r.getString("data_pedido");
 //					Integer quantidade = r.getInt("quantidade");
 //					String frete= r.getString("descricao_frete");
 //					String valor_frete = r.getString("valor_frete");
@@ -316,7 +315,7 @@ public class DAO {
 				
 				while (r.next()) {
 					Integer id = r.getInt("cod_pedido");
-					Date data_pedido = r.getDate("data_pedido");
+					String data_pedido = r.getString("data_pedido");
 					String nomeCliente = r.getString("nome_cliente");
 					String nome_cidade = r.getString("nome_cidade");
 					String cep = r.getString("cep");
@@ -377,7 +376,7 @@ public class DAO {
 				
 				while (r.next()) {
 					Integer id1 = r.getInt("cod_pedido");
-					Date data_pedido = r.getDate("data_pedido");
+					String data_pedido = r.getString("data_pedido");
 					String nomeCliente = r.getString("nome_cliente");
 					String nome_cidade = r.getString("nome_cidade");
 					String cep = r.getString("cep");
@@ -413,7 +412,7 @@ public class DAO {
 		}
 		
 		
-		//Método de conta da home
+		//Mï¿½todo de conta da home
 			public Pedido qtdPedidoTotal () {	
 			Conexao c = Conexao.getInstance();
 			Connection con = c.getConnection();
@@ -455,7 +454,7 @@ public class DAO {
 					PreparedStatement p = con.prepareStatement("select p.cod_pedido, fp.descricao_forma_pagamento, sp.descricao_status_pedido from pedido p \r\n"
 							+ "inner join forma_pagamento fp on fp.cod_forma_pagamento = p.cod_forma_pagamento \r\n"
 							+ "inner join status_pedido sp on sp.cod_status = p.cod_status \r\n"
-							+ "where data_pedido between str_to_date('2022-01-01', '%Y-%m-%d') and str_to_date('2022-01-05', '%Y-%m-%d')"
+							+ "where data_pedido between str_to_String('2022-01-01', '%Y-%m-%d') and str_to_String('2022-01-05', '%Y-%m-%d')"
 							+ "");
 					ResultSet r = p.executeQuery();			
 					

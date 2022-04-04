@@ -91,9 +91,9 @@
 			<div class="detalheClienteCabecalho row">
 			<div class="col-12 maintitleDetails">Informações Principais de  <c:out value="${cliente.nome}"/></div>
 			<div class= "col-6"> <span class="accordionInfoTitle">Id:</span> <span class="accordionInfoText"> <c:out value="${cliente.cod_cliente}"/></span> </div>
-			<div class= "col-6"> <span class="accordionInfoTitle">Cpf:</span> <span class="accordionInfoText"><c:out value="${cliente.cpf}"/></span> </div>
+			<div class= "col-6"> <span class="accordionInfoTitle">Cpf:</span> <span class="accordionInfoText cpf"><c:out value="${cliente.cpf}"/></span> </div>
 			<div class= "col-6"> <span class="accordionInfoTitle">Email:</span> <span class="accordionInfoText"><c:out value="${cliente.email}"/></span> </div>
-			<div class= "col-6"> <span class="accordionInfoTitle">Data de nascimento:</span><span class="accordionInfoText"> <c:out value="${cliente.nascimento}"/></span> </div>
+			<div class= "col-6"> <span class="accordionInfoTitle">Data de nascimento:</span><span class="accordionInfoText data"> <c:out  value="${cliente.nascimento}"/></span> </div>
 		</form>
   </c:forEach>
 
@@ -126,7 +126,7 @@
 				        <p><span class="accordionInfoTitle">Nº:</span> <span class="accordionInfoText"> <c:out value="${cliente.numeroCasa}"/></span></p>
 				        <p><span class="accordionInfoTitle">Complemento:</span> <span class="accordionInfoText"><c:out value="${cliente.complemento}"/></span></p>
 				        <p><span class="accordionInfoTitle">Ponto de Referencia:</span> <span class="accordionInfoText"><c:out value="${cliente.pontoReferencia}"/></span></p>
-				        <p><span class="accordionInfoTitle">Cep:</span><span class="accordionInfoText"> <c:out value="${cliente.cep}"/></span></p>
+				        <p><span class="accordionInfoTitle">Cep:</span><span class="accordionInfoText cep"> <c:out value="${cliente.cep}"/></span></p>
 				        <p><span class="accordionInfoTitle">Bairro:</span> <span class="accordionInfoText"><c:out value="${cliente.bairro}"/></span></p>
 			            <p><span class="accordionInfoTitle">Cidade:</span> <span class="accordionInfoText"><c:out value="${cliente.cidade}"/></span></p>
 			            <p><span class="accordionInfoTitle">Estado:</span><span class="accordionInfoText"> <c:out value="${cliente.estado}"/></span></p>
@@ -165,7 +165,7 @@
 		                <div class="col-11 col-lg-5  clientDetails">
 				        <p><span class="accordionInfoTitle">Informações do Telefone</span></p>
 				        <p><span class="accordionInfoTitle">DDD:</span> <span class="accordionInfoText"><c:out value="${cliente.dddtelefone}"/></span></p>
-				        <p><span class="accordionInfoTitle">Número:</span><span class="accordionInfoText"> <c:out value="${cliente.telefoneCliente}"/></span></p>
+				        <p><span class="accordionInfoTitle">Número:</span><span class="accordionInfoText celular"> <c:out value="${cliente.telefoneCliente}"/></span></p>
 				        <p><span class="accordionInfoTitle">Tipo:</span> <span class="accordionInfoText"><c:out value="${cliente.tipoTelefone}"/></span></p>
 
 				        </div>
@@ -205,7 +205,7 @@
 				        <p><span class="accordionInfoTitle">Dados Cartão</span></p>
 				        <p><span class="accordionInfoTitle">Nome do Titular:</span> <span class="accordionInfoText"><c:out value="${cliente.titularCartao}"/></span></p>
 				        <p><span class="accordionInfoTitle">Número cartão:</span> <span class="accordionInfoText cartao"><c:out value="${cliente.nCartao}"/></span></p>
-				        <p><span class="accordionInfoTitle">Validade:</span> <span class="accordionInfoText"><c:out value="${cliente.val}"/></span></p>
+				        <p><span class="accordionInfoTitle">Validade:</span> <span class="accordionInfoText dataCart"><c:out value="${cliente.val}"/></span></p>
 				        <p><span class="accordionInfoTitle">Bandeira:</span> <span class="accordionInfoText"><c:out value="${cliente.bandeira}"/></span></p>
 				        
 				        </div>

@@ -60,7 +60,7 @@ create table cliente
   cod_cliente smallint not null auto_increment,
   nome_cliente varchar(50) not null,
   cpf varchar(11) not null,
-  data_nasc DATE not null,
+  data_nasc varchar(8) not null,
   email varchar(50) not null,
   senha varchar(50) not null,
   primary key (cod_cliente), 
@@ -194,7 +194,7 @@ create table cartao
 	cod_forma_pagamento tinyint not null,
 	numero_cartao varchar(20) not null,
 	nome_titular varchar(50) not null,
-	validade date not null,
+	validade varchar(4) not null,
 	cod_seguranca varchar(4) not null, 
 	cod_bandeira tinyint not null,
 	cod_cliente smallint not null,
@@ -212,8 +212,8 @@ create table boleto
 	cod_forma_pagamento tinyint not null,
 	valor decimal(7, 2) not null,
 	cod_barras varchar(50) not null,
-	data_vencimento date not null,
-	data_emissao date not null,
+	data_vencimento varchar(8) not null,
+	data_emissao varchar(8) not null,
 	beneficiario varchar(50) not null,
 	emissor varchar(50) not null,
 	primary key (cod_operacao, cod_forma_pagamento),
@@ -232,7 +232,7 @@ create table pix
 	foreign key (cod_forma_pagamento) references tipo_pagamento (cod_forma_pagamento)
 );
 
- 
+
 create table item_pedido
 (
 	cod_item_pedido smallint not null,
@@ -244,7 +244,7 @@ create table item_pedido
 	primary key (cod_item_pedido, cod_produto),
 	-- foreign key (cod_pedido) references pedido(cod_pedido),
 	foreign key (cod_produto) references produto(cod_produto)
-	
+
 );
 
 
@@ -258,7 +258,7 @@ create table pedido
 	cod_operacao smallint not null,
 	cod_forma_pagamento tinyint not null,
 	-- valor_total decimal(7, 2) not null,
-	data_pedido date not null,
+	data_pedido varchar(8) not null,
 	cod_item_pedido smallint not null,
 	primary key (cod_pedido),
 	foreign key (cod_frete) references frete (cod_frete),
@@ -321,7 +321,7 @@ create table nf_e
 	cod_pedido smallint not null,
 	numero_nf bigint not null,
 	chave_acesso varchar(44) not null,
-	data_emissao date not null,
+	data_emissao varchar(8) not null,
 	valor_total_nf decimal(7,2)  not null,
 	valor_total_produtos  decimal(7,2) not null,
 	coo_nota int not null,
