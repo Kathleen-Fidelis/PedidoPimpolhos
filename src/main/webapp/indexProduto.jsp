@@ -24,7 +24,7 @@
         <div class="sidebar-menu">
             <ul>
                  <li>
-                    <a href="home.jsp
+                    <a href="ServletQuantidade
                     " >
                         <img src="imgs/home.png" class="icon"><span class="icon "> Home </span></a>
                 </li>
@@ -98,7 +98,7 @@
 	  			<div class="accordion-item">
 				    <h2 class="accordion-header" id="heading-${produto.cod_produto}">
 				      <button class="accordion-button custom-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-${produto.cod_produto}" aria-expanded="true" aria-controls="collapse-${produto.cod_produto}">
-				       	 Produto <c:out value="${produto.cod_produto}"/>
+				       	 Produto <c:out value="${produto.nome}"/>
 				      </button>
 				    </h2>
 	                    
@@ -113,11 +113,11 @@
 				        
 				        <p><strong>Código pedido:</strong> <c:out value="${produto.cod_produto}"/></p>
 				        <p><strong>Nome:</strong> <c:out  value="${produto.nome}"/></p>
-				        <p><strong>Preço:</strong> <c:out value="${produto.preco}"/></p>
+				        <p><strong>Preço:</strong><span class="preco4"> <c:out value="${produto.preco}"/></span></p>
 				        <p><strong>Sexo:</strong> <c:out value="${produto.sexo}"/></p>
 				        <p><strong>Dimensão:</strong> <c:out value="${produto.dimensao}"/></p>
 				        <p><strong>Material:</strong> <c:out value="${produto.material}"/></p>
-				        <p><strong>Peso:</strong> <span class="preco4"><c:out value="${produto.peso}"/></p>
+				        <p><strong>Peso:</strong> <span class="pesoForm"><c:out value="${produto.peso}"/></span></p>
 				        
 				        
 				     </div>

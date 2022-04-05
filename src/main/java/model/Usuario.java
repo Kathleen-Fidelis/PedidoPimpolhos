@@ -1,13 +1,13 @@
 package model;
 
-import java.util.Date;
+
 
 public class Usuario {
 
 	private Integer cod_cliente;
 	private String  nome;
 	private String  cpf;
-	private Date  nascimento;
+	private String  nascimento;
 	private String  email;
 	private String  rua;
 	private String numeroCasa;
@@ -18,7 +18,7 @@ public class Usuario {
 	private String cidade;
 	private String estado;
 	private String nCartao;
-	private Date   val;
+	private String   val;
 	private String bandeira;
 	private String titularCartao;
 	private String dddtelefone;
@@ -30,7 +30,7 @@ public class Usuario {
 	
 
 
-	public Usuario(Integer cod_cliente,String titularCartao, String nCartao, Date val, String bandeira ) {
+	public Usuario(Integer cod_cliente,String titularCartao, String nCartao, String val, String bandeira ) {
 		super();
 		this.cod_cliente = cod_cliente;
 		this.nCartao = nCartao;
@@ -52,7 +52,7 @@ public class Usuario {
 
 
 	// CLIENTE PADRÃO
-	public Usuario(String nome, String cpf, Date nascimento, String email) {
+	public Usuario(String nome, String cpf, String nascimento, String email) {
 		super();
 		this.nome = nome;
 		this.cpf = cpf;
@@ -142,25 +142,25 @@ public class Usuario {
 
 
 
-	public Date getVal() {
+	public String getVal() {
 		return val;
 	}
 
 
 
-	public void setVal(Date val) {
+	public void setVal(String val) {
 		this.val = val;
 	}
 
 
 
-	public Date getNascimento() {
+	public String getNascimento() {
 		return nascimento;
 	}
 
 
 
-	public void setNascimento(Date nascimento) {
+	public void setNascimento(String nascimento) {
 		this.nascimento = nascimento;
 	}
 

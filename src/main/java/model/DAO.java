@@ -27,7 +27,7 @@ public class DAO {
 				Integer id = r.getInt("cod_cliente");
 				String nome = r.getString("nome_cliente");
 				String cpf = r.getString("cpf");
-			     Date data = r.getDate("data_nasc");
+				String data = r.getString("data_nasc");
 				String email = r.getString("email");
 				Usuario usuario = new Usuario(nome, cpf, data, email);
 				usuario.setCod_cliente(id);
@@ -61,7 +61,7 @@ public class DAO {
 				 Integer cliente = r.getInt("cod_cliente");
 				 String titularCartao = r.getString("nome_titular");
 				 String numeroCartao = r.getString("numero_cartao");
-				 Date validade  = r.getDate	("validade");
+				 String validade = r.getString ("validade");
 			     String bandeira = r.getString("descricao_bandeira");
 			     
 			     Usuario detalheclienteCartao = new Usuario(cliente, titularCartao, numeroCartao, validade, bandeira);
@@ -171,7 +171,7 @@ public class DAO {
 				 Integer clienteCod = r.getInt("cod_cliente");
 				 String nomecliente = r.getString("nome_cliente");
 				 String cpf = r.getString("cpf");
-				 Date nasc  = r.getDate	("data_nasc");
+				 String nasc = r.getString ("data_nasc");
 				 String email = r.getString("email") ;
 			     
 			     Usuario infoClientePrincipal = new Usuario(nomecliente, cpf, nasc, email); 
@@ -228,22 +228,24 @@ public class DAO {
 			Connection con = c.getConnection();
 			ArrayList<Pedido> listaPedido = new ArrayList<Pedido>();
 			try {
-				PreparedStatement p = con.prepareStatement("select pedido.cod_pedido, c.nome_cliente, pedido.data_pedido, sp.descricao_status_pedido, (ip.quantidade * p.preco) + f.valor_frete as valor_total from pedido\r\n"
+				PreparedStatement p = con.prepareStatement("select pedido.cod_pedido, c.nome_cliente, pedido.data_pedido, sp.descricao_status_pedido, sum(ip.quantidade * p.preco + f.valor_frete) as valor_total  from pedido\r\n"
 						+ "inner join cliente c on c.cod_cliente = pedido.cod_cliente\r\n"
 						+ "inner join item_pedido ip on ip.cod_item_pedido = pedido.cod_item_pedido\r\n"
-						+ "inner join frete f on f.cod_frete = pedido.cod_frete \r\n"
+						+ "inner join frete f on f.cod_frete = pedido.cod_frete\r\n"
 						+ "inner join status_pedido sp on sp.cod_status = pedido.cod_status\r\n"
-						+ "inner join produto p on p.cod_produto = ip.cod_produto where ip.principal = 1 ORDER BY cod_pedido ASC"
+						+ "inner join produto p on p.cod_produto = ip.cod_produto \r\n"
+						+ "group by pedido.cod_pedido, c.nome_cliente, pedido.data_pedido, sp.descricao_status_pedido\r\n"
+						+ "ORDER BY cod_pedido ASC"
 						+ "");
 				ResultSet r = p.executeQuery();			
 				
 				while (r.next()) {
 					Integer id = r.getInt("cod_pedido");
 					String nomeCliente = r.getString("nome_cliente");
-					Date data_pedido = r.getDate("data_pedido");
+					String data_pedido = r.getString("data_pedido");
 					String status= r.getString("descricao_status_pedido");
 					Double valor_total = r.getDouble("valor_total");
-					//Boolean flagEND= r.getBoolean("flag_endereco");
+					
 					
 					Pedido pedido = new Pedido(nomeCliente, data_pedido, status, valor_total);
 					pedido.setCod_pedido(id);
@@ -333,7 +335,7 @@ public class DAO {
 					Integer id1 = r.getInt("cod_pedido");
 					Integer idCliente = r.getInt("cod_cliente");
 					String nomeCliente = r.getString("nome_cliente");
-					Date data_pedido = r.getDate("data_pedido");
+					String data_pedido = r.getString("data_pedido");
 		
 					String nome_cidade = r.getString("nome_cidade");
 					String cep = r.getString("cep");
@@ -454,7 +456,7 @@ public class DAO {
 					PreparedStatement p = con.prepareStatement("select p.cod_pedido, fp.descricao_forma_pagamento, sp.descricao_status_pedido from pedido p \r\n"
 							+ "inner join forma_pagamento fp on fp.cod_forma_pagamento = p.cod_forma_pagamento \r\n"
 							+ "inner join status_pedido sp on sp.cod_status = p.cod_status \r\n"
-							+ "where data_pedido between str_to_date('2022-01-01', '%Y-%m-%d') and str_to_date('2022-01-05', '%Y-%m-%d')"
+							+ "where data_pedido between str_to_String('2022-01-01', '%Y-%m-%d') and str_to_String('2022-01-05', '%Y-%m-%d')"
 							+ "");
 					ResultSet r = p.executeQuery();			
 					

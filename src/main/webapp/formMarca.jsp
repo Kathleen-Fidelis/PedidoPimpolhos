@@ -20,7 +20,7 @@
         <div class="sidebar-menu">
             <ul>
                <li>
-                    <a href="home.jsp
+                    <a href="ServletQuantidade
                     " >
                         <img src="imgs/home.png" class="icon"><span class="icon "> Home </span></a>
                 </li>

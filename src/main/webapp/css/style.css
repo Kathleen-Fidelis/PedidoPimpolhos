@@ -849,7 +849,23 @@ color: var(--main-color)
     transition: left 300ms;
     }
 	   
+    .main-content{
+   	margin-left:11px;
+   }
     
+    .header-info{
+    	left: 0px;
+    	width: 100%;
+    }
+    
+    #nav-toggle:checked ~  .header-info { 
+		width: 100%; 
+		left: 0px; 
+	} 
+
+	#nav-toggle:checked ~ .main-content {
+    margin-left: 11px;
+} 
     
     .sidebar .sidebar-brand, 
     .sidebar li  {
@@ -887,6 +903,10 @@ color: var(--main-color)
 }
 
 @media only screen and (max-width: 768px){
+      .sidebar{
+        left: -100%;
+    }
+    
     .cards{
         grid-template-columns:repeat(2, 1fr) ;
     }
@@ -927,6 +947,10 @@ color: var(--main-color)
         justify-content: center !important;
         
     }
+    .main-content{
+        width: 100%;
+        margin-left: 0rem;
+    }
 
     .header-info h2 span{
         text-align: center;
@@ -953,6 +977,16 @@ color: var(--main-color)
         width: 345px;
     }
 
+
+ td{
+    	font-size: 1.3rem;
+    }
+
+    .table-responsive{
+    	width: 100%;
+    	overflow-y: hidden;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
 
     
     #nav-toggle:checked + .sidebar.sidebar-brand, 
