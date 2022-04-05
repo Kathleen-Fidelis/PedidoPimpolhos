@@ -10,6 +10,8 @@
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
  <link rel="stylesheet" href="css/style.css" type="text/css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/>
+ 
 </head>
 <body>
 
@@ -90,7 +92,7 @@
 	
 
 	<div class="tabela">
-	<form action="ServletCategoria" method="post">
+	<form action="ServletCategoria" method="post" id="tabela">
 		<button class="btn btn-primary col-3 btnPageReload" type="submit"  name="optionCategoria" value="insertFormCategoria"> Adicionar Categoria</button>
 	</form>
         <div class="col-md-12 col-lg-9 conteudo">
@@ -148,7 +150,22 @@
 	</div>
 	</div>
 </div>
-
+<!-- Begin: jQuery for Toast Message -->
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+ 	<!-- End: jQuery for Toast Message -->
+         <script type="text/javascript">
+	
+		let listSupplier = document.querySelectorAll('.tabela')
+	   	let elements = Array.from(listSupplier)
+	    console.log(elements)
+	    
+	     for (var i = 0; i < elements.length; i++) {
+		    elements[i].addEventListener('submit', function(){
+		        toastr.success('Categoria excluída com sucesso!');
+		    })
+	     }
+	</script>
 <script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script

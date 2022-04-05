@@ -8,6 +8,7 @@
 <title>Pimpolhos ADM</title>
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/>
 </head>
 <body>
 <input type="checkbox" id="nav-toggle">
@@ -88,7 +89,7 @@
 
 	  <div class="tabela">
 	
-    <form action="ServletFornecedor" method="post">
+    <form action="ServletFornecedor" method="post" >
 		<button class="btn btn-primary btnPageReload"  type="submit"  name="optionFornecedor" value="insertFormFornecedor"> Adicionar Fornecedor</button>
     </form>
         <div class="col-md-12 col-lg-9 conteudo">
@@ -104,7 +105,7 @@
 					<tbody>
 						<c:forEach var="fornecedor" items="${listFornecedor}">
 							<tr>
-								<form action="ServletFornecedor" method="post">
+								<form action="ServletFornecedor" method="post" id="tabela">
 									<td>
 										<c:out value="${fornecedor.cod_fornecedor}"/>
 										<input type="hidden" name="cod_fornecedor" value="${fornecedor.cod_fornecedor}"/>
@@ -145,6 +146,22 @@
 		</div>
 	</div>
 	</div>
+	<!-- Begin: jQuery for Toast Message -->
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+ 	<!-- End: jQuery for Toast Message -->
+         <script type="text/javascript">
+	
+		let listSupplier = document.querySelectorAll('.tabela')
+	   	let elements = Array.from(listSupplier)
+	    console.log(elements)
+	    
+	     for (var i = 0; i < elements.length; i++) {
+		    elements[i].addEventListener('submit', function(){
+		        toastr.success('Fornecedor excluído com sucesso!');
+		    })
+	     }
+	</script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>
