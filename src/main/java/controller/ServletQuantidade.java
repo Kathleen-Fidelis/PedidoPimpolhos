@@ -44,22 +44,22 @@ public class ServletQuantidade extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String btn = request.getParameter("a");
-
-		if (btn == null) {
-			btn = "Opção Invalida";
-	
-		}
-
-		
-		if(btn.equals("atualizar")) {
+//		String btn = request.getParameter("a");
+//
+//		if (btn == null) {
+//			btn = "Opção Invalida";
+//	
+//		}
+//
+//		
+//		if(btn.equals("atualizar")) {
 			clientCount(request, response);
 			pedidoCount(request, response);
 			produtoCount(request, response);
 			pedidoList(request, response);
 			usuarioCount(request, response);
 			request.getRequestDispatcher("home.jsp").forward(request, response);
-		}
+//		}
 		
 		
 	}

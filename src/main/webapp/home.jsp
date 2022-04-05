@@ -95,9 +95,9 @@
 
         <main>
 
-		<form action="ServletQuantidade" method="post" >
-		<!--  --><button type="submit" class="btn btn-primary btnPageReload mb-3" name="a" value="atualizar">Atualizar home</button>
-		</form>
+		<!--<form action="ServletQuantidade" method="post" >
+		  <button type="submit" class="btn btn-primary btnPageReload mb-3" name="a" value="atualizar">Atualizar home</button>
+		</form>-->
 
 
 

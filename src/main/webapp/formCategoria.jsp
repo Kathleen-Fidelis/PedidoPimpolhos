@@ -11,6 +11,7 @@
 	 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	 <link rel="stylesheet" href="css/style.css" type="text/css">
+	 <link rel="stylesheet" href="css/toast.css" type="text/css">
 	<link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -23,7 +24,7 @@
         <div class="sidebar-menu">
             <ul>
                  <li>
-                    <a href="home.jsp
+                    <a href="ServletQuantidade
                     " class="active">
                         <img src="imgs/home.png" class="icon"><span class="icon "> Home </span></a>
                 </li>
