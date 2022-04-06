@@ -8,6 +8,7 @@
 <title>Pimpolhos ADM</title>
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/>
 </head>
 <body>
 
@@ -88,7 +89,7 @@
 	
 
 	<div class="tabela">
-	<form action="ServletCategoria" method="post">
+	<form action="ServletCategoria" method="post" >
 		<button class="btn btn-primary col-3 btnPageReload" type="submit"  name="optionCategoria" value="insertFormCategoria"> Adicionar Categoria</button>
 	</form>
         <div class="col-md-12 col-lg-9 conteudo">
@@ -128,14 +129,14 @@
 									      </div>
 									      <div class="modal-footer">
 									        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-									        <button class="btn btn-primary btnPageReload" type="submit" name="optionCategoria" value="deleteCategoria">Deletar</button>
+									        <button class="btn btn-primary btnPageReload" id="delete" type="submit" name="optionCategoria" value="deleteCategoria">Deletar</button>
 									      </div>
 									    </div>
 									  </div>
 									</div>
 										
 										
-										<button class="btn btn-primary btnPageReload"  type="submit" name="optionCategoria" value="updateFormCategoria">Atualizar</button>
+										<button  id="teste" class="btn btn-primary btnPageReload"  type="submit"  name="optionCategoria" value="updateFormCategoria">Atualizar</button>
 									</td>
 								</form>
 							</tr>

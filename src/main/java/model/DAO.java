@@ -456,7 +456,7 @@ public class DAO {
 					PreparedStatement p = con.prepareStatement("select p.cod_pedido, fp.descricao_forma_pagamento, sp.descricao_status_pedido from pedido p \r\n"
 							+ "inner join forma_pagamento fp on fp.cod_forma_pagamento = p.cod_forma_pagamento \r\n"
 							+ "inner join status_pedido sp on sp.cod_status = p.cod_status \r\n"
-							+ "where data_pedido between str_to_String('2022-01-01', '%Y-%m-%d') and str_to_String('2022-01-05', '%Y-%m-%d')"
+							+ "where data_pedido between ('10012022') and ('16012023')"
 							+ "");
 					ResultSet r = p.executeQuery();			
 					

@@ -81,6 +81,12 @@ public class ServletMarca extends HttpServlet {
 				this.dao.inserirMarca(user1);
 			}
 		}
+		try {
+			Thread.sleep(2000);
+		}
+		catch(InterruptedException ex){
+			ex.printStackTrace();
+		}
 		response.sendRedirect("ServletMarca");
 	}
 	
@@ -96,6 +102,14 @@ public class ServletMarca extends HttpServlet {
 			if (idBack != null) {
 				Integer id = Integer.parseInt(idBack);
 				this.dao.deletarMarca(id);
+			}
+			try {
+				Thread.sleep(2000);
+			}
+			catch(InterruptedException ex){
+				ex.printStackTrace();
+
+
 			}
 			
 		response.sendRedirect("ServletMarca");
@@ -113,6 +127,12 @@ public class ServletMarca extends HttpServlet {
 				marca.setCod_marca(id);
 				this.dao.atualizarMarca(marca);
 			}
+			}
+		try {
+			Thread.sleep(2000);
+		}
+		catch(InterruptedException ex){
+			ex.printStackTrace();
 		}
 		response.sendRedirect("ServletMarca");
 	}

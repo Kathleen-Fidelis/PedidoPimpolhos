@@ -100,7 +100,7 @@
 			<div class= "col-11 pedidoInfo"> <span class="accordionInfoTitle">Complemento:</span><span class="accordionInfoText"> <c:out value="${pedido.complemento}"/></span> </div>
 			<div class= "col-11 pedidoInfo"> <span class="accordionInfoTitle">Bairro:</span><span class="accordionInfoText"> <c:out value="${pedido.bairro}"/></span> </div>
 			<div class= "col-11 pedidoInfo"> <span class="accordionInfoTitle">Cidade:</span><span class="accordionInfoText"> <c:out value="${pedido.nome_cidade}"/></span> </div>
-			<div class= "col-11 pedidoInfo"> <span class="accordionInfoTitle">Data do Pedido:</span><span class="accordionInfoText data"> <c:out value="${pedido.data_pedido}"/></span> </div>
+			<div class= "col-11 pedidoInfo"> <span class="accordionInfoTitle">Data do Pedido:</span><span class="accordionInfoText data">  <c:out value="${pedido.data_pedido}"/></span> </div>
 			<div class= "col-11 pedidoInfo"> <span class="accordionInfoTitle">Forma de Pagamento:</span><span class="accordionInfoText"> <c:out value="${pedido.descricao_forma_pagamento}"/></span> </div>
 			<div class= "col-11 pedidoInfo"> <span class="accordionInfoTitle">Quantidade de itens:</span><span class="accordionInfoText"> <c:out value="${pedido.quantidade}"/></span> </div>
 			</div>

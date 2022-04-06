@@ -12,6 +12,7 @@
 <title>Pimpolhos ADM</title>
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/>
 </head>
 <body>
 
@@ -94,7 +95,7 @@
     
     <div class="accordion accordion-produto" id="accordionExample">
 	<c:forEach var="produto" items="${listProduto}">  
-		 <form action="ServletProduto" method="post">
+		 <form action="ServletProduto" method="post" id="tabela">
 	  			<div class="accordion-item">
 				    <h2 class="accordion-header" id="heading-${produto.cod_produto}">
 				      <button class="accordion-button custom-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-${produto.cod_produto}" aria-expanded="true" aria-controls="collapse-${produto.cod_produto}">
@@ -175,6 +176,8 @@
     
   
     </div>
+    
+   
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
