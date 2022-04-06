@@ -72,9 +72,6 @@ public class ServletProduto extends HttpServlet {
 			case ("insertProduto"):
 				insertProduto(request, response);
 			break;
-			case ("sair"):
-				Sair(request, response);
-			break;
 			default:
 				selectAllProdutos(request, response);
 		}
@@ -132,6 +129,8 @@ public class ServletProduto extends HttpServlet {
 		}
 		catch(InterruptedException ex){
 			ex.printStackTrace();
+
+
 		}
 		response.sendRedirect("ServletProduto");
 	}
@@ -149,15 +148,12 @@ public class ServletProduto extends HttpServlet {
 			this.daoproduto.deletarProduto(id);
 		}
 		try {
-			Thread.sleep(1500);
-			
-		} 
-		
-		catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Thread.sleep(2000);
 		}
-	
+		catch(InterruptedException ex){
+			ex.printStackTrace();
+
+		}
 		response.sendRedirect("ServletProduto");
 	}
 	
@@ -188,16 +184,15 @@ public class ServletProduto extends HttpServlet {
 				produto.setCod_produto(id);
 				this.daoproduto.atualizarProduto(produto);
 			}
-		}
-		try {
-			Thread.sleep(2000);
-		}
-		catch(InterruptedException ex){
-			ex.printStackTrace();
+			try {
+				Thread.sleep(2000);
+			}
+			catch(InterruptedException ex){
+				ex.printStackTrace();
+
+
+			}
 		}
 		response.sendRedirect("ServletProduto");
-	}
-	private void Sair(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		response.sendRedirect("deslogar.jsp");
 	}
 }

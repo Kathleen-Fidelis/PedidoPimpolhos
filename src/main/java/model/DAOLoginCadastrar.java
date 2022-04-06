@@ -90,7 +90,7 @@ public class DAOLoginCadastrar {
 	
 	
 		try {
-			PreparedStatement p = con.prepareStatement("select count(cod_usuario) as total from login;");
+			PreparedStatement p = con.prepareStatement("select count(usuario) as total from login");
 			ResultSet r = p.executeQuery();			
 			 r.next();
 			

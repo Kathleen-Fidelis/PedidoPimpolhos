@@ -129,7 +129,7 @@
 									      </div>
 									      <div class="modal-footer">
 									        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-									        <button class="btn btn-primary btnPageReload" type="submit" name="optionCategoria" value="deleteCategoria">Deletar</button>
+									        <button class="btn btn-primary btnPageReload" href="ServletFornecedor" name="optionCategoria" value="deleteCategoria">Deletar</button>
 									      </div>
 									    </div>
 									  </div>

@@ -7,8 +7,8 @@
 <meta charset="ISO-8859-1">
 <title>Pimpolhos ADM</title>
 <link rel="stylesheet" href="css/style.css" type="text/css">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/>
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/>
 </head>
 <body>
  	<input type="checkbox" id="nav-toggle">
@@ -20,7 +20,7 @@
         <div class="sidebar-menu">
             <ul>
                <li>
-                    <a href="home.jsp
+                    <a href="ServletQuantidade
                     " >
                         <img src="imgs/home.png" class="icon"><span class="icon "> Home </span></a>
                 </li>
@@ -86,7 +86,7 @@
    <div class="tabela">  
 
 	<div class="col-md-12 col-lg-9 conteudo">
-		  <form action="ServletFornecedor" method="post" id="supplierToast5">
+		  <form action="ServletFornecedor" method="post" id="tabela">
 				<c:choose>
 					<c:when test="${ fornecedor == null }">
 						<div class="container col-10 input-marca">
@@ -94,7 +94,7 @@
 							<!--  <input style="border-radius: 5px; border: 1px solid gray; height: 30px; padding: 10px;" type="text" name="name" required/><br>-->
 							<label style="margin-right: 17px;">Nome do Fornecedor:<input id="mensagem" class="form-control input-select" type="text" name="name" required/><br>
 							
-							<button class="btn btn-primary btnPage" type="submit"  name="optionFornecedor" value="insertFornecedor">Salvar</button>
+							<button class="btn btn-primary btnPage" type="submit" name="optionFornecedor" value="insertFornecedor">Salvar</button>
 						</div>
 					</c:when>
 					<c:otherwise>
@@ -104,7 +104,7 @@
 							<input id="mensagem" class="form-control input-select" type="text" name="name" value="${fornecedor.nome_fornecedor}" required/><br>
 							
 						
-							<button class="btn btn-primary btnPage" type="submit"  name="optionFornecedor" value="updateFornecedor">Atualizar</button>
+							<button class="btn btn-primary btnPage" type="submit" name="optionFornecedor" value="updateFornecedor">Atualizar</button>
 						</div>
 					</c:otherwise>
 				</c:choose>
@@ -112,19 +112,25 @@
 	</div>
 	</div>
 </div>
-	         <!-- Begin: jQuery for Toast Message -->
+	<!-- Begin: jQuery for Toast Message -->
  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
  	<!-- End: jQuery for Toast Message -->
-         <script type="text/javascript"> 
+
+
+
+         <script type="text/javascript">
 	
-		//jQuery for Toast Message on bellow:
-        document.getElementById('supplierToast5').addEventListener('submit', function(){
-            toastr.success('Fornecedor salvo com sucesso!')
-            )}
-        </script>
-        
-	
+		let listSupplier = document.querySelectorAll('.tabela')
+	   	let elements = Array.from(listSupplier)
+	    console.log(elements)
+	    
+	     for (var i = 0; i < elements.length; i++) {
+		    elements[i].addEventListener('submit', function(){
+		        toastr.success('Fornecedor salvo com sucesso!');
+		    })
+	     }
+	</script>
 	
 	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

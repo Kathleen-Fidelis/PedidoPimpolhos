@@ -46,9 +46,6 @@ public class ServletPedido extends HttpServlet {
 		case ("detalhePedido"):
 			selectAllDetalhePedido(request, response);
 		break;
-		case ("sair"):
-			Sair(request, response);
-		break;
 //		case ("updateFormPedido"):
 //			showUpdatePedido(request, response);
 //		break;
@@ -77,11 +74,10 @@ public class ServletPedido extends HttpServlet {
 
 	private void selectAllDetalhePedido(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		Integer id = Integer.parseInt(request.getParameter("cod_pedido"));
-		request.setAttribute("listaItemDetalhePedido", this.dao.recuperarDetalhePedido(id));
+		request.setAttribute("listaItemDetalhePedido", this.dao.recuperarItemPedido(id));
+		request.setAttribute("DetalhePedido", this.dao.recuperarDetalhePedido(id));
 		request.getRequestDispatcher("indexDetalhePedido.jsp").forward(request, response);
 	}
 
-	private void Sair(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		response.sendRedirect("deslogar.jsp");
-	}
+
 }

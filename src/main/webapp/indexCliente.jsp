@@ -19,7 +19,7 @@
         <div class="sidebar-menu">
             <ul>
                <li>
-                    <a href="home.jsp
+                    <a href="ServletQuantidade
                     " >
                         <img src="imgs/home.png" class="icon"><span class="icon "> Home </span></a>
                 </li>
@@ -79,7 +79,7 @@
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
                 <div>
                     <h4>Pimpolhos</h4>
-                <a class="logout" href="deslogar.jsp" name="sair">Sair</a>
+                <a class="logout" href="deslogar.jsp">Sair</a>
                 </div>
             </div>
         </div>

@@ -67,9 +67,6 @@ public class ServletFornecedor extends HttpServlet {
 			case ("insertFornecedor"):
 				inserirFornecedor(request, response);
 			break;
-			case ("sair"):
-				Sair(request, response);
-			break;
 			default:
 				selectAllFornecedores(request, response);
 		}
@@ -99,7 +96,6 @@ public class ServletFornecedor extends HttpServlet {
 				Fornecedor fornecedor1 = new Fornecedor (nomeFornecedorBack);
 				this.dao.inserirFornecedor(fornecedor1);
 	}
-			
 		}
 		try {
 			Thread.sleep(2000);
@@ -107,6 +103,8 @@ public class ServletFornecedor extends HttpServlet {
 		catch(InterruptedException ex){
 			ex.printStackTrace();
 		}
+
+		
 		response.sendRedirect("ServletFornecedor");
 	}
 	
@@ -123,15 +121,11 @@ public class ServletFornecedor extends HttpServlet {
 			this.dao.deletarFornecedor(id);
 		}
 		try {
-			Thread.sleep(1500);
-			
-		} 
-		
-		catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Thread.sleep(2000);
 		}
-	
+		catch(InterruptedException ex){
+			ex.printStackTrace();
+		}
 		response.sendRedirect("ServletFornecedor");
 	}
 	
@@ -149,12 +143,17 @@ public class ServletFornecedor extends HttpServlet {
 				this.dao.atualizarFornecedor(fornecedor);
 			}
 		}
-	
+		try {
+			Thread.sleep(2000);
+		}
+		catch(InterruptedException ex){
+			ex.printStackTrace();
+
+
+		}
 		response.sendRedirect("ServletFornecedor");
 	}
 	
-	private void Sair(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		response.sendRedirect("deslogar.jsp");
-	}
+	
 	
 }

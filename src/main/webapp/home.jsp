@@ -29,7 +29,7 @@
         <div class="sidebar-menu">
             <ul>
                  <li>
-                    <a href="home.jsp
+                    <a href="ServletQuantidade
                     " class="active">
                         <img src="imgs/home.png" class="icon"><span class="icon "> Home </span></a>
                 </li>
@@ -88,16 +88,14 @@
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
                 <div>
                     <h4>Pimpolhos</h4>
-                   <a class="logout" href="deslogar.jsp" name="sair">Sair</a>
+                   <a class="logout" href="deslogar.jsp">Sair</a>
                 </div>
             </div>
         </div>
 
         <main>
 
-		<form action="ServletQuantidade" method="post" >
-		<!--  --><button type="submit" class="btn btn-primary btnPageReload mb-3" name="a" value="atualizar">Atualizar home</button>
-		</form>
+	
 
 
 

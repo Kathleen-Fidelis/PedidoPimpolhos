@@ -8,8 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/>
     <title>Marca</title>
 </head>
 <body>
@@ -23,7 +23,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="home.jsp
+                    <a href="ServletQuantidade
                     " >
                         <img src="imgs/home.png" class="icon"><span class="icon "> Home </span></a>
                 </li>
@@ -82,7 +82,7 @@
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
                 <div>
                     <h4>Pimpolhos</h4>
-               <a class="logout" href="deslogar.jsp" name="sair">Sair</a>
+                <a class="logout" href="deslogar.jsp">Sair</a>
                 </div>
             </div>
         </div>
@@ -90,7 +90,7 @@
     
 
 	<div class="tabela">
-	<form action="ServletMarca" method="post" id="tabela">
+	<form action="ServletMarca" method="post">
 		<button class="btn btn-primary  btnPageReload" type="submit"  name="optionMarca" value="insertFormMarca"> Adicionar Marca</button>
     </form>
         <div class="col-md-12 col-lg-9 conteudo">
@@ -106,7 +106,7 @@
                 <tbody>
 				<c:forEach var="marca" items="${listMarca}">
 					<tr>
-						<form action="ServletMarca" method="post"> 
+						<form action="ServletMarca" method="post" id="tabela">> 
 							<td>
 								<c:out value="${marca.cod_marca}"/>
 								<input type="hidden" name="cod_marca" value="${marca.cod_marca}"/>
@@ -148,18 +148,9 @@
         </div>
          </div>
     </div>
-    	<script>
-		let listSupplier = document.querySelectorAll('.tabela')
-	   	let elements = Array.from(listSupplier)
-	    console.log(elements)
-	    
-	     for (var i = 0; i < elements.length; i++) {
-		    elements[i].addEventListener('submit', function(){
-		        toastr.success('Fornecedor excluído com sucesso!');
-		    })
-	     }
-	</script>
     
+		
+	
     
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

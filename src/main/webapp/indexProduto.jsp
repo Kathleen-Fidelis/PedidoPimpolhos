@@ -11,8 +11,8 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pimpolhos ADM</title>
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/>
 <link rel="stylesheet" href="css/style.css" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/>
 </head>
 <body>
 
@@ -25,7 +25,7 @@
         <div class="sidebar-menu">
             <ul>
                  <li>
-                    <a href="home.jsp
+                    <a href="ServletQuantidade
                     " >
                         <img src="imgs/home.png" class="icon"><span class="icon "> Home </span></a>
                 </li>
@@ -83,23 +83,23 @@
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
                 <div>
                     <h4>Pimpolhos</h4>
-            <a class="logout" href="deslogar.jsp" name="sair">Sair</a>
+            <a class="logout" href="deslogar.jsp">Sair</a>
                 </div>
             </div>
         </div>
         
 <div class="tabela">
-     <form action="ServletProduto" method="post" id="tabela">
+     <form action="ServletProduto" method="post">
 		<button class="btn btn-secondary  btnPage btnPageReload" type="submit"  name="optionProduto" value="insertFormProduto"> Adicionar Produto</button>
 	</form>
     
     <div class="accordion accordion-produto" id="accordionExample">
 	<c:forEach var="produto" items="${listProduto}">  
-		 <form action="ServletProduto" method="post">
+		 <form action="ServletProduto" method="post" id="tabela">
 	  			<div class="accordion-item">
 				    <h2 class="accordion-header" id="heading-${produto.cod_produto}">
 				      <button class="accordion-button custom-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-${produto.cod_produto}" aria-expanded="true" aria-controls="collapse-${produto.cod_produto}">
-				       	 Produto <c:out value="${produto.cod_produto}"/>
+				       	 Produto <c:out value="${produto.nome}"/>
 				      </button>
 				    </h2>
 	                    
@@ -114,11 +114,11 @@
 				        
 				        <p><strong>Código pedido:</strong> <c:out value="${produto.cod_produto}"/></p>
 				        <p><strong>Nome:</strong> <c:out  value="${produto.nome}"/></p>
-				        <p><strong>Preço:</strong> <c:out value="${produto.preco}"/></p>
+				        <p><strong>Preço:</strong><span class="preco4"> <c:out value="${produto.preco}"/></span></p>
 				        <p><strong>Sexo:</strong> <c:out value="${produto.sexo}"/></p>
 				        <p><strong>Dimensão:</strong> <c:out value="${produto.dimensao}"/></p>
 				        <p><strong>Material:</strong> <c:out value="${produto.material}"/></p>
-				        <p><strong>Peso:</strong> <span class="preco4"><c:out value="${produto.peso}"/></p>
+				        <p><strong>Peso:</strong> <span class="pesoForm"><c:out value="${produto.peso}"/></span></p>
 				        
 				        
 				     </div>
@@ -173,19 +173,11 @@
 </div>
 </div>
     
-    <script>
-		let listSupplier = document.querySelectorAll('.tabela')
-	   	let elements = Array.from(listSupplier)
-	    console.log(elements)
-	    
-	     for (var i = 0; i < elements.length; i++) {
-		    elements[i].addEventListener('submit', function(){
-		        toastr.success('Produto excluído com sucesso!');
-		    })
-	     }
-	</script>
+    
   
     </div>
+    
+   
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

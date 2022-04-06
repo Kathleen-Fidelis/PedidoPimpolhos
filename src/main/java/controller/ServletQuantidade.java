@@ -44,54 +44,27 @@ public class ServletQuantidade extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String btn = request.getParameter("a");
-
-		if (btn == null) {
-			btn = "Opção Invalida";
-	
-		}
+//		String btn = request.getParameter("a");
+//
+//		if (btn == null) {
+//			btn = "Opï¿½ï¿½o Invalida";
+//	
+//		}
 
 		
-		if(btn.equals("atualizar")) {
+		//if(btn.equals("atualizar")) {
 			clientCount(request, response);
 			pedidoCount(request, response);
 			produtoCount(request, response);
 			pedidoList(request, response);
 			usuarioCount(request, response);
 			request.getRequestDispatcher("home.jsp").forward(request, response);
-		}
-		if (btn.equals("sair")) {
-			Sair(request, response);
-		}
+		//}
+		
 		
 	}
 	
-	
-//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		String btn = request.getParameter("a");
-//		
-//
-//		
-//		if(btn.equals("atualizar")) {
-//			request.setAttribute("quantidadeCliente",dao.qtdClienteTotal());
-//			request.setAttribute("quantidadePedido",dao.qtdPedidoTotal());
-//			request.setAttribute("quantidadeProduto",daoProduto.qtdProdutoTotal());
-//			
-//		}
-//
-//		request.getRequestDispatcher("index.jsp").forward(request, response);
-//		
-//		
-//		
-//	}
 
-
-	
-	
-	
-	
-	
-	
 	private void clientCount(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		System.out.println(this.dao.qtdClienteTotal());
 		request.setAttribute("quantidadeCliente", this.dao.qtdClienteTotal());
@@ -129,7 +102,5 @@ public class ServletQuantidade extends HttpServlet {
 		//request.getRequestDispatcher("index.jsp").forward(request, response);
 
 	}
-	private void Sair(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		response.sendRedirect("deslogar.jsp");
-	}
+	
 }
