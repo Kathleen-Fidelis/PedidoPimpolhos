@@ -51,11 +51,7 @@ public class Usuario {
 
 
 
-<<<<<<< HEAD
-	// CLIENTE PADRÔøΩO
-=======
-	// CLIENTE PADR√O
->>>>>>> 4eb01abef5416853072a52110b70c903a3d8d346
+	// CLIENTE PADR√ÉO
 	public Usuario(String nome, String cpf, String nascimento, String email) {
 		super();
 		this.nome = nome;

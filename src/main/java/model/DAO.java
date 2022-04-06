@@ -26,11 +26,7 @@ public class DAO {
 				Integer id = r.getInt("cod_cliente");
 				String nome = r.getString("nome_cliente");
 				String cpf = r.getString("cpf");
-<<<<<<< HEAD
-			     String data = r.getString("data_nasc");
-=======
 				String data = r.getString("data_nasc");
->>>>>>> 4eb01abef5416853072a52110b70c903a3d8d346
 				String email = r.getString("email");
 				Usuario usuario = new Usuario(nome, cpf, data, email);
 				usuario.setCod_cliente(id);
@@ -64,11 +60,7 @@ public class DAO {
 				 Integer cliente = r.getInt("cod_cliente");
 				 String titularCartao = r.getString("nome_titular");
 				 String numeroCartao = r.getString("numero_cartao");
-<<<<<<< HEAD
-				 String validade  = r.getString	("validade");
-=======
 				 String validade = r.getString ("validade");
->>>>>>> 4eb01abef5416853072a52110b70c903a3d8d346
 			     String bandeira = r.getString("descricao_bandeira");
 			     
 			     Usuario detalheclienteCartao = new Usuario(cliente, titularCartao, numeroCartao, validade, bandeira);
@@ -178,11 +170,7 @@ public class DAO {
 				 Integer clienteCod = r.getInt("cod_cliente");
 				 String nomecliente = r.getString("nome_cliente");
 				 String cpf = r.getString("cpf");
-<<<<<<< HEAD
-				 String nasc  = r.getString	("data_nasc");
-=======
 				 String nasc = r.getString ("data_nasc");
->>>>>>> 4eb01abef5416853072a52110b70c903a3d8d346
 				 String email = r.getString("email") ;
 			     
 			     Usuario infoClientePrincipal = new Usuario(nomecliente, cpf, nasc, email); 
@@ -200,7 +188,7 @@ public class DAO {
 	}
 	
 	
-	//Mï¿½todo de conta da home
+	//MÃ©todo de conta da home
 		public Usuario qtdClienteTotal () {	
 		Conexao c = Conexao.getInstance();
 		Connection con = c.getConnection();
@@ -286,7 +274,7 @@ public class DAO {
 //				while (r.next()) {
 //					Integer id1 = r.getInt("cod_pedido");
 //					String nomeCliente = r.getString("nome_cliente");
-//					String data_pedido = r.getString("data_pedido");
+//					Date data_pedido = r.getDate("data_pedido");
 //					Integer quantidade = r.getInt("quantidade");
 //					String frete= r.getString("descricao_frete");
 //					String valor_frete = r.getString("valor_frete");
@@ -307,7 +295,7 @@ public class DAO {
 //		}
 		
 		
-//		Detalhe do Pedido Padrão
+//		Detalhe do Pedido PadrÃ£o
 	
 		
 		
@@ -342,14 +330,9 @@ public class DAO {
 				
 				
 				while (r.next()) {
-<<<<<<< HEAD
-					Integer id = r.getInt("cod_pedido");
-					String data_pedido = r.getString("data_pedido");
-=======
 					
 					Integer id1 = r.getInt("cod_pedido");
 					Integer idCliente = r.getInt("cod_cliente");
->>>>>>> 4eb01abef5416853072a52110b70c903a3d8d346
 					String nomeCliente = r.getString("nome_cliente");
 					String data_pedido = r.getString("data_pedido");
 		
@@ -404,23 +387,6 @@ public class DAO {
 				ResultSet r = p.executeQuery();			
 				while (r.next()) {
 					Integer id1 = r.getInt("cod_pedido");
-<<<<<<< HEAD
-					String data_pedido = r.getString("data_pedido");
-					String nomeCliente = r.getString("nome_cliente");
-					String nome_cidade = r.getString("nome_cidade");
-					String cep = r.getString("cep");
-					String nome_rua = r.getString("nome_rua");
-					Integer numero_casa = r.getInt("numero_casa");
-					String complemento = r.getString("complemento");
-					String bairro = r.getString("bairro");
-					String ponto_referencia = r.getString("ponto_referencia");
-					String descricao_estado = r.getString("descricao_estado");
-					String frete= r.getString("descricao_frete");
-					String valor_frete = r.getString("valor_frete");
-					String status= r.getString("descricao_status_pedido");
-					String descricao_forma_pagamento = r.getString("descricao_forma_pagamento");
-=======
->>>>>>> 4eb01abef5416853072a52110b70c903a3d8d346
 					String nome = r.getString("nome");
 					Double preco = r.getDouble("preco");
 					String nome_marca = r.getString("nome_marca");
@@ -443,15 +409,11 @@ public class DAO {
 		}
 		
 		
-<<<<<<< HEAD
-		//Mï¿½todo de conta da home
-=======
 		
 		
-//      Fim Detalhe Pedido Padrão
+//      Fim Detalhe Pedido PadrÃ£o
 		
-		//Método de conta da home
->>>>>>> 4eb01abef5416853072a52110b70c903a3d8d346
+		//MÃ©todo de conta da home
 			public Pedido qtdPedidoTotal () {	
 			Conexao c = Conexao.getInstance();
 			Connection con = c.getConnection();
@@ -493,11 +455,7 @@ public class DAO {
 					PreparedStatement p = con.prepareStatement("select p.cod_pedido, fp.descricao_forma_pagamento, sp.descricao_status_pedido from pedido p \r\n"
 							+ "inner join forma_pagamento fp on fp.cod_forma_pagamento = p.cod_forma_pagamento \r\n"
 							+ "inner join status_pedido sp on sp.cod_status = p.cod_status \r\n"
-<<<<<<< HEAD
-							+ "where data_pedido between str_to_String('2022-01-01', '%Y-%m-%d') and str_to_String('2022-01-05', '%Y-%m-%d')"
-=======
 							+ "where data_pedido between ('10012022') and ('16012023')"
->>>>>>> 4eb01abef5416853072a52110b70c903a3d8d346
 							+ "");
 					ResultSet r = p.executeQuery();			
 					
