@@ -12,8 +12,8 @@ public class ConexaoLogin {
       
     Connection con;
     String url="jdbc:mysql://localhost:3306/pimpolhos";
-    String user="mateus";
-    String pass="M.teus2512";
+    String user="admin";
+    String pass="@Kathleen123";
     public Connection ConectaMySql(String banco) throws SQLException {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");            

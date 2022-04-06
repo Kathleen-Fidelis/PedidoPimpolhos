@@ -124,6 +124,14 @@ public class ServletProduto extends HttpServlet {
 				this.daoproduto.inserirProduto(produto);
 	 }
 		}
+		try {
+			Thread.sleep(2000);
+		}
+		catch(InterruptedException ex){
+			ex.printStackTrace();
+
+
+		}
 		response.sendRedirect("ServletProduto");
 	}
 	
@@ -138,6 +146,13 @@ public class ServletProduto extends HttpServlet {
 		if (idBack != null) {
 			Integer id = Integer.parseInt(idBack);
 			this.daoproduto.deletarProduto(id);
+		}
+		try {
+			Thread.sleep(2000);
+		}
+		catch(InterruptedException ex){
+			ex.printStackTrace();
+
 		}
 		response.sendRedirect("ServletProduto");
 	}
@@ -168,6 +183,14 @@ public class ServletProduto extends HttpServlet {
 				Produto produto = new Produto (nomeBack, preco2, sexoBack, dimensaoBack, materialBack, peso2, conteudoBack, fornecedorBack, categoriaBack, img_produtoBack, cod_marcaBack);
 				produto.setCod_produto(id);
 				this.daoproduto.atualizarProduto(produto);
+			}
+			try {
+				Thread.sleep(2000);
+			}
+			catch(InterruptedException ex){
+				ex.printStackTrace();
+
+
 			}
 		}
 		response.sendRedirect("ServletProduto");

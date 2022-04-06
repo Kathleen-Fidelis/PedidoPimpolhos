@@ -728,7 +728,6 @@ color: var(--main-color)
 .detalhesClienteAccordionBg {
 	border-radius: 6px;
 	background-color: white;
-    width: 98%;
     padding-bottom: 1%;
     padding-top: 1%;
     outline: 1px solid #e6e6e6;
@@ -749,6 +748,7 @@ color: var(--main-color)
 }
 .maintitleDetails{
 	font-size: 24px;
+	margin-bottom: 2%;
 }
 .clientDetails {
 	outline: #d6d6d6 solid 1px;
@@ -815,6 +815,26 @@ color: var(--main-color)
 	color:#808080;
 }
 
+.rowCentralized{
+	-bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+    justify-content: space-between;
+    outline: 1px solid #80808063;
+    border-radius: 9px;
+}
+.detalheClienteCabecalho.row{
+	--bs-gutter-x: 0;
+   
+}
+
+.pedidoInfo{
+	margin-bottom:1%;
+}
 @media only screen and (max-width: 1200px){
 	
 	.sidebar{
@@ -829,7 +849,23 @@ color: var(--main-color)
     transition: left 300ms;
     }
 	   
+    .main-content{
+   	margin-left:11px;
+   }
     
+    .header-info{
+    	left: 0px;
+    	width: 100%;
+    }
+    
+    #nav-toggle:checked ~  .header-info { 
+		width: 100%; 
+		left: 0px; 
+	} 
+
+	#nav-toggle:checked ~ .main-content {
+    margin-left: 11px;
+} 
     
     .sidebar .sidebar-brand, 
     .sidebar li  {
@@ -867,6 +903,10 @@ color: var(--main-color)
 }
 
 @media only screen and (max-width: 768px){
+      .sidebar{
+        left: -100%;
+    }
+    
     .cards{
         grid-template-columns:repeat(2, 1fr) ;
     }
@@ -907,6 +947,10 @@ color: var(--main-color)
         justify-content: center !important;
         
     }
+    .main-content{
+        width: 100%;
+        margin-left: 0rem;
+    }
 
     .header-info h2 span{
         text-align: center;
@@ -934,6 +978,16 @@ color: var(--main-color)
     }
 
 
+ td{
+    	font-size: 1.3rem;
+    }
+
+    .table-responsive{
+    	width: 100%;
+    	overflow-y: hidden;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+
     
     #nav-toggle:checked + .sidebar.sidebar-brand, 
     #nav-toggle:checked +  .sidebar li  {
@@ -956,6 +1010,9 @@ color: var(--main-color)
         margin-left: 0rem !important;
     }
 }
+
+
+
 
 @media only screen and (max-width: 560px){
     .cards{
