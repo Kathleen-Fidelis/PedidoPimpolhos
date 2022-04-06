@@ -9,7 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css" type="text/css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/>
     <title>Marca</title>
 </head>
 <body>
@@ -23,7 +22,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="ServletQuantidade
+                    <a href="home.jsp
                     " >
                         <img src="imgs/home.png" class="icon"><span class="icon "> Home </span></a>
                 </li>
@@ -55,7 +54,11 @@
                 <li>
                     <a href="ServletMarca
                     " class="active">
-                        <img src="imgs/etiqueta.png" class="icon"><span class="icon "> Marcas </span></a>
+                        <img src="imgs/etiqueta.png" class="icon"><span class="icon "> Marcas </span>
+                        
+                       
+                        
+                        </a>
                 </li>
                 <li>
                     <a href="ServletProduto
@@ -82,10 +85,18 @@
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
                 <div>
                     <h4>Pimpolhos</h4>
-                <a class="logout" href="deslogar.jsp">Sair</a>
+                    <form action="ServletMarca" method="post">
+                    	<button type="submit" class="logout" name="optionMarca" value="sair">Sair</button>
+                    </form>
+                    
+                    
+	                    
                 </div>
             </div>
         </div>
+
+
+
     
     
 
@@ -98,6 +109,7 @@
             <table class="table table-hover ">
                 <thead>
                 
+                
                        <th style="word-wrap: break-word; min-width: 50px; max-width: 160px;">Id</th>
                         <th>Marca</th>
                         <th>Ações</th>
@@ -106,7 +118,7 @@
                 <tbody>
 				<c:forEach var="marca" items="${listMarca}">
 					<tr>
-						<form action="ServletMarca" method="post" id="tabela">> 
+						<form action="ServletMarca" method="post"> 
 							<td>
 								<c:out value="${marca.cod_marca}"/>
 								<input type="hidden" name="cod_marca" value="${marca.cod_marca}"/>
@@ -149,8 +161,7 @@
          </div>
     </div>
     
-		
-	
+    
     
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
