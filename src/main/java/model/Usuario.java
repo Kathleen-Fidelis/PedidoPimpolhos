@@ -1,6 +1,6 @@
 package model;
 
-import java.util.Date;
+
 
 public class Usuario {
 
@@ -51,7 +51,11 @@ public class Usuario {
 
 
 
+<<<<<<< HEAD
 	// CLIENTE PADRï¿½O
+=======
+	// CLIENTE PADRÃO
+>>>>>>> 4eb01abef5416853072a52110b70c903a3d8d346
 	public Usuario(String nome, String cpf, String nascimento, String email) {
 		super();
 		this.nome = nome;

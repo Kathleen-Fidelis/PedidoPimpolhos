@@ -8,6 +8,7 @@
 <title>Pimpolhos ADM</title>
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/>
 </head>
 <body>
 <input type="checkbox" id="nav-toggle">
@@ -19,7 +20,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="home.jsp
+                    <a href="ServletQuantidade
                     " >
                         <img src="imgs/home.png" class="icon"><span class="icon "> Home </span></a>
                 </li>
@@ -104,7 +105,7 @@
 					<tbody>
 						<c:forEach var="fornecedor" items="${listFornecedor}">
 							<tr>
-								<form action="ServletFornecedor" method="post">
+								<form action="ServletFornecedor" method="post" id="tabela">
 									<td>
 										<c:out value="${fornecedor.cod_fornecedor}"/>
 										<input type="hidden" name="cod_fornecedor" value="${fornecedor.cod_fornecedor}"/>
@@ -145,6 +146,7 @@
 		</div>
 	</div>
 	</div>
+	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>

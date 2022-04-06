@@ -29,7 +29,7 @@
         <div class="sidebar-menu">
             <ul>
                  <li>
-                    <a href="home.jsp
+                    <a href="ServletQuantidade
                     " class="active">
                         <img src="imgs/home.png" class="icon"><span class="icon "> Home </span></a>
                 </li>
@@ -95,9 +95,7 @@
 
         <main>
 
-		<form action="ServletQuantidade" method="post" >
-		<!--  --><button type="submit" class="btn btn-primary btnPageReload mb-3" name="a" value="atualizar">Atualizar home</button>
-		</form>
+	
 
 
 

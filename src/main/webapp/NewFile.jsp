@@ -9,163 +9,90 @@
 <meta charset="ISO-8859-1">
 <title>Pimpolhos ADM</title>
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css" type="text/css">
+<link rel="stylesheet" href="css/NewFile.css" type="text/css">
 </head>
 <body>
 
-	<input type="checkbox" id="nav-toggle">
-    <div class="sidebar">
-        <div class="sidebar-brand">
-            <h2><span class="las "></span> <span>Pimpolhos</span></h2>
-        </div>
 
-        <div class="sidebar-menu">
-            <ul>
-                <li>
-                    <a href="home.jsp" >
-                        <span class="icon"> Home </span></a>
-                </li>
-                
+<table role="table">
+  <thead role="rowgroup">
+    <tr role="row">
+      <th role="columnheader">First Name</th>
+      <th role="columnheader">Last Name</th>
+      <th role="columnheader">Job Title</th>
+      <th role="columnheader">Favorite Color</th>
+      <th role="columnheader">Wars or Trek?</th>
+      <th role="columnheader">Secret Alias</th>
+      <th role="columnheader">Date of Birth</th>
+      <th role="columnheader">Dream Vacation City</th>
+      <th role="columnheader">GPA</th>
+      <th role="columnheader">Arbitrary Data</th>
+    </tr>
+  </thead>
+  <tbody role="rowgroup">
+    <tr role="row">
+      <td role="cell">James</td>
+      <td role="cell">Matman</td>
+      <td role="cell">Chief Sandwich Eater</td>
+      <td role="cell">Lettuce Green</td>
+      <td role="cell">Trek</td>
+      <td role="cell">Digby Green</td>
+      <td role="cell">January 13, 1979</td>
+      <td role="cell">Gotham City</td>
+      <td role="cell">3.1</td>
+      <td role="cell">RBX-12</td>
+    </tr>
+    <tr role="row">
+      <td role="cell">The</td>
+      <td role="cell">Tick</td>
+      <td role="cell">Crimefighter Sorta</td>
+      <td role="cell">Blue</td>
+      <td role="cell">Wars</td>
+      <td role="cell">John Smith</td>
+      <td role="cell">July 19, 1968</td>
+      <td role="cell">Athens</td>
+      <td role="cell">N/A</td>
+      <td role="cell">Edlund, Ben (July 1996).</td>
+    </tr>
+    <tr role="row">
+      <td role="cell">Jokey</td>
+      <td role="cell">Smurf</td>
+      <td role="cell">Giving Exploding Presents</td>
+      <td role="cell">Smurflow</td>
+      <td role="cell">Smurf</td>
+      <td role="cell">Smurflane Smurfmutt</td>
+      <td role="cell">Smurfuary Smurfteenth, 1945</td>
+      <td role="cell">New Smurf City</td>
+      <td role="cell">4.Smurf</td>
+      <td role="cell">One</td>
+    </tr>
+    <tr role="row">
+      <td role="cell">Cindy</td>
+      <td role="cell">Beyler</td>
+      <td role="cell">Sales Representative</td>
+      <td role="cell">Red</td>
+      <td role="cell">Wars</td>
+      <td role="cell">Lori Quivey</td>
+      <td role="cell">July 5, 1956</td>
+      <td role="cell">Paris</td>
+      <td role="cell">3.4</td>
+      <td role="cell">3451</td>
+    </tr>
+    <tr role="row">
+      <td role="cell">Captain</td>
+      <td role="cell">Cool</td>
+      <td role="cell">Tree Crusher</td>
+      <td role="cell">Blue</td>
+      <td role="cell">Wars</td>
+      <td role="cell">Steve 42nd</td>
+      <td role="cell">December 13, 1982</td>
+      <td role="cell">Las Vegas</td>
+      <td role="cell">1.9</td>
+      <td role="cell">Under the couch</td>
+    </tr>
+  </tbody>
+</table>
 
-                <li>
-                    <a href="ServletPimpolhos
-                    " >
-                        <img src="imgs/user (1).png" class="icon"><span class="icon "> Clientes</span></a>
-                </li>
-
- 				<li>
-                    <a href="ServletCategoria
-                    ">
-                        <img src="imgs/categories.png" class="icon"><span class="icon "> Categorias </span></a>
-                </li>
-                
-                <li>
-                    <a href="ServletPedido
-                    ">
-                        <img src="imgs/pedido.png" class="icon"><span class="icon "> Pedidos </span></a>
-                </li>
-
-                <li>
-                    <a href="ServletFornecedor
-                    ">
-                        <img src="imgs/fornecedor.png" class="icon"><span class="icon "> Fornecedores </span></a>
-                </li>
-                <li>
-                    <a href="ServletMarca
-                    ">
-                        <img src="imgs/etiqueta.png" class="icon"><span class="icon "> Marcas </span></a>
-                </li>
-                <li>
-                    <a href="ServletProduto
-                    " class="active">
-                        <img src="imgs/produto.png" class="icon"><span class="icon "> Produtos </span></a>
-                </li>
-            </ul>
-
-        </div>
-    </div>
-
-
-    <div class="main-content">
-        <div class="header-info">
-            <h2>
-                <label for="nav-toggle">
-                    <span class="las "><img src="imgs/menu-aberto (1).png" ></span>
-                </label>
-                Painel de Controle
-            </h2>
-
-            <div class="search-wrapper">
-                <span class="las la-search"></span>
-                <input type="search" placeholder="procure aqui" />
-            </div>
-
-            <div class="user-wrapper">
-                <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
-                <div>
-                    <h4>Pimpolhos</h4>
-            <a class="logout" href="deslogar.jsp">Sair</a>
-                </div>
-            </div>
-        </div>
-
-    
-    
-    
-    
-    
-    <div class="tabela">
-    <form action="ServletProduto" method="post">
-		<button class="btn btn-secondary col-3 btnPage" style=" font-weight: bold; background-color: #9ACCFF; border: none;" type="submit"  name="optionProduto" value="insertFormProduto"> Adicionar Produto</button>
-	</form>
-	
-        <div class="col-md-12 col-lg-9 conteudo">
-          <div class = "table-responsive">
-            <table class="table table-hover tbproduto">
-                <thead>
-                
-                </thead>
-                <tbody>
-                    <c:forEach var="produto" items="${listProduto}">
-                        <tr>
-                            
-                            <form action="ServletProduto" method="post">
-                                <td>
-                                    <c:out value="${produto.cod_produto}"/>
-                                    <input type="hidden" name="cod_produto" value="${produto.cod_produto}"/>
-                                </td>
-                              
-                                <td ><c:out value="${produto.nome}"/></td>
-                                <td class="preco4"><c:out value="${produto.preco}"/></td>
-                                <td><c:out value="${produto.sexo}"/></td>
-                                <td><c:out value="${produto.dimensao}"/></td>
-                                <td><c:out value="${produto.material}"/></td>
-                                <td class="pesoForm"><c:out value="${produto.peso}"/></td>
-
-
-                                <td style="word-wrap: break-word;min-width: 440px;max-width: 160px;"><c:out value="${produto.conteudo_produto}"/></td>    
-                                <td><c:out value="${produto.nome_fornecedor}"/></td>
-                                <td><c:out value="${produto.nome_categoria}"/></td>  
-                                <td><c:out value="${produto.img_produto}"/></td>    
-                                <td><c:out value="${produto.nome_marca}"/></td>                       
-                               </div>
-                               
-                               <td class="tdLast">
-                      	            <!-- Button trigger modal -->
-									<button type="button" class="btn btn-primary btnPage" data-bs-toggle="modal" data-bs-target="#exampleModal-${produto.cod_produto}">Deletar</button>
-
-									<!-- Modal -->
-									<div  class="modal fade" id="exampleModal-${produto.cod_produto}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-									  <div class="modal-dialog">
-									    <div class="modal-content">
-									      <div class="modal-header">
-									        <h5 class="modal-title" >Deseja realmente deletar? </h5>
-									        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-									      </div>
-									      <div class="modal-footer">
-									        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-									        <button class="btn btn-primary btnPageReload" type="submit" name="optionProduto" value="deleteProduto">Deletar</button>
-									      </div>
-									    </div>
-									  </div>
-									</div>
-                               		
-                               		
-                               		
-									<button type="submit" class="btn btn-primary btnPage" name="optionProduto" value="updateFormProduto">Atualizar</button>
-							  </td>
-
-                               
-                            </form>
-                        </tr>
-                    </c:forEach>
-                </tbody>
-              </table>
-            </div>
-        </div>
-         </div>
-    </div>
-    </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

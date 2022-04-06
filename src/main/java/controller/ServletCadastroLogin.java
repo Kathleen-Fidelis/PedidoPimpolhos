@@ -73,7 +73,7 @@ public class ServletCadastroLogin extends HttpServlet {
 					//}
 				}
 			}
-			response.sendRedirect("home.jsp");
+			response.sendRedirect("ServletQuantidade");
 		
 	}	
 }

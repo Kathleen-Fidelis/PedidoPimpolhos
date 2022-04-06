@@ -52,7 +52,7 @@
                                         st = conexao.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.TYPE_FORWARD_ONLY);
                                         rs = st.executeQuery("select * from login where usuario ='"+login+"' and senha='"+senha+"'");
                                         if(rs.next()){
-                                            response.sendRedirect("home.jsp");
+                                            response.sendRedirect("ServletQuantidade");
                                         }
                                     }
                                 }else {

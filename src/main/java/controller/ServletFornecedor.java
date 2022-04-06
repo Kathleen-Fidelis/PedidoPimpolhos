@@ -97,6 +97,14 @@ public class ServletFornecedor extends HttpServlet {
 				this.dao.inserirFornecedor(fornecedor1);
 	}
 		}
+		try {
+			Thread.sleep(2000);
+		}
+		catch(InterruptedException ex){
+			ex.printStackTrace();
+		}
+
+		
 		response.sendRedirect("ServletFornecedor");
 	}
 	
@@ -111,6 +119,12 @@ public class ServletFornecedor extends HttpServlet {
 		if (idBack != null) {
 			Integer id = Integer.parseInt(idBack);
 			this.dao.deletarFornecedor(id);
+		}
+		try {
+			Thread.sleep(2000);
+		}
+		catch(InterruptedException ex){
+			ex.printStackTrace();
 		}
 		response.sendRedirect("ServletFornecedor");
 	}
@@ -129,7 +143,14 @@ public class ServletFornecedor extends HttpServlet {
 				this.dao.atualizarFornecedor(fornecedor);
 			}
 		}
-	
+		try {
+			Thread.sleep(2000);
+		}
+		catch(InterruptedException ex){
+			ex.printStackTrace();
+
+
+		}
 		response.sendRedirect("ServletFornecedor");
 	}
 	
