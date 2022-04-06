@@ -112,11 +112,7 @@
 										<input type="hidden" name="cod_pedido" value="${pedido.cod_pedido}" />
 									</td>
 									<td><c:out value="${pedido.nome_cliente}" /></td>
-<<<<<<< HEAD
-									<td class="data" ><c:out value="${pedido.data_pedido}" /></td>
-=======
 									<td class="data"><c:out value="${pedido.data_pedido}" /></td>
->>>>>>> 4eb01abef5416853072a52110b70c903a3d8d346
 									<td><c:out value="${pedido.descricao_status_pedido}" /></td>
 									<td class="preco4"><c:out value="${pedido.valor_total}" /></td>
 									<td class="tdLast">
