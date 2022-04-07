@@ -116,9 +116,6 @@
  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
  	<!-- End: jQuery for Toast Message -->
-
-
-
          <script type="text/javascript">
 	
 		let listSupplier = document.querySelectorAll('.tabela')

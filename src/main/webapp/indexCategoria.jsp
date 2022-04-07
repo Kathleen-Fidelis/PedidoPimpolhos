@@ -89,7 +89,7 @@
 	
 
 	<div class="tabela">
-	<form action="ServletCategoria" method="post" >
+	<form action="ServletCategoria" method="post">
 		<button class="btn btn-primary col-3 btnPageReload" type="submit"  name="optionCategoria" value="insertFormCategoria"> Adicionar Categoria</button>
 	</form>
         <div class="col-md-12 col-lg-9 conteudo">
@@ -105,7 +105,7 @@
 					<tbody>
 						<c:forEach var="categoria" items="${listCategoria}">
 							<tr>
-								<form action="ServletCategoria" method="post">
+								<form action="ServletCategoria" method="post" id="tabela">
 									<td>
 										<c:out value="${categoria.cod_categoria}"/>
 										<input type="hidden" name="cod_categoria" value="${categoria.cod_categoria}"/>
@@ -136,7 +136,7 @@
 									</div>
 										
 										
-										<button  id="teste" class="btn btn-primary btnPageReload"  type="submit"  name="optionCategoria" value="updateFormCategoria">Atualizar</button>
+										<button  id="teste" class="btn btn-primary btnPageReload"  href="ServletCategoria"  name="optionCategoria" value="updateFormCategoria">Atualizar</button>
 									</td>
 								</form>
 							</tr>
@@ -147,7 +147,25 @@
 	</div>
 	</div>
 </div>
+<!-- Begin: jQuery for Toast Message -->
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+ 	<!-- End: jQuery for Toast Message -->
 
+  <script type="text/javascript">
+	
+		let listSupplier = document.querySelectorAll('.tabela')
+	   	let elements = Array.from(listSupplier)
+	    console.log(elements)
+	    
+	     for (var i = 0; i < elements.length; i++) {
+		    elements[i].addEventListener('submit', function(){
+		        toastr.success('Categoria excluida com sucesso!');
+		    })
+	     }
+	</script>
+
+       
 <script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script

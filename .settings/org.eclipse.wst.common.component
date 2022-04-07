@@ -11,7 +11,7 @@
                 
         <property name="context-root" value="Pimpolhos"/>
                 
-        <property name="java-output-path" value="/Pimpolhos/build/classes"/>
+        <property name="java-output-path" value="/Pimpolhos/target/classes"/>
             
     </wb-module>
     

@@ -90,8 +90,8 @@
     
 
 	<div class="tabela">
-	<form action="ServletMarca" method="post">
-		<button class="btn btn-primary  btnPageReload" type="submit"  name="optionMarca" value="insertFormMarca"> Adicionar Marca</button>
+	<form action="ServletMarca" method="post" >
+		<button class="btn btn-primary  btnPageReload" href="ServletMarca"  name="optionMarca" value="insertFormMarca"> Adicionar Marca</button>
     </form>
         <div class="col-md-12 col-lg-9 conteudo">
           <div class = "table-responsive">
@@ -136,7 +136,7 @@
 									  </div>
 									</div>
 																
-								<button class="btn btn-primary btnPageReload" type="submit" name="optionMarca" value="updateFormMarca">Atualizar</button>
+								<button class="btn btn-primary btnPageReload" href="ServletMarca" name="optionMarca" value="updateFormMarca">Atualizar</button>
 							</td>
 						</form>	
 
@@ -149,7 +149,22 @@
          </div>
     </div>
     
-		
+		<!-- Begin: jQuery for Toast Message -->
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+ 	<!-- End: jQuery for Toast Message -->
+	<script type="text/javascript">
+	
+		let listSupplier = document.querySelectorAll('.tabela')
+	   	let elements = Array.from(listSupplier)
+	    console.log(elements)
+	    
+	     for (var i = 0; i < elements.length; i++) {
+		    elements[i].addEventListener('submit', function(){
+		        toastr.success('Marca excluida com sucesso!');
+		    })
+	     }
+	</script>
 	
     
 

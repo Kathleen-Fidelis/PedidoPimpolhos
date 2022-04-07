@@ -27,7 +27,7 @@
 	                <div class="bloco2 col-6">
 	                   <h2> <img src="imgs/userLogin.png" style="margin-right: 15px;"> Cadastro</h2><br>
 	                    <p style="color: rgba(0, 0, 0, 0.63);">Faça seu cadastro:</p>
-	                    <form class="form-sign" action="ServletCadastroLogin" method="post">
+	                    <form class="form-sign" action="ServletCadastroLogin" method="post" id="tabela">
 
 	                        <div class="form-group">
                             <label>Nome Completo:</label>
@@ -70,7 +70,22 @@
 	            </div>
 	        </div>
 	    </div>
-
+       <!-- Begin: jQuery for Toast Message -->
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+ 	<!-- End: jQuery for Toast Message -->
+         <script type="text/javascript">
+	
+		let listSupplier = document.querySelectorAll('.tabela')
+	   	let elements = Array.from(listSupplier)
+	    console.log(elements)
+	    
+	     for (var i = 0; i < elements.length; i++) {
+		    elements[i].addEventListener('submit', function(){
+		        toastr.success('Usuario Cadastrado com Sucesso!');
+		    })
+	     }
+	</script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
