@@ -65,6 +65,7 @@
                            %>
 
 	                        <button type="submit" name="optionLogin" value="insertUsuario" id="btnLog" class="btn btn-primary btn-block" style="margin-top: 6%;">Cadastrar</button>
+	                        <p style="color:red;"> ${requestScope.message}</p>
 	                    </form>
 	                </div>
 	            </div>

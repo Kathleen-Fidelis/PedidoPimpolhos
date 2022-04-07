@@ -10,10 +10,7 @@
         <title>Login</title>
     </head>
     <body>
-           <%
-        ConexaoLogin conn = new ConexaoLogin();
-                    Connection conexao = conn.ConectaMySql("login");
-        %>
+        
 	       <div class="container-fluid">
 	        <div class="col-12 display">
 	            <div class=" row col-10">
@@ -24,7 +21,7 @@
 	                <div class="bloco2 col-6">
 	                   <h2> <img src="imgs/userLogin.png" style="margin-right: 15px;"> Login</h2><br>
 	                    <p style="color: rgba(0, 0, 0, 0.63);">Insira seu login e senha:</p>
-	                    <form class="form-sign" name="form" method="post" onsubmit="return validLogin();">
+	                    <form action="ServletLogin2" class="form-sign" name="form" method="post" onsubmit="return validLogin();">
 	                       
 	                        <div class="form-group">
 	                            <label>Usuario:</label>
@@ -37,29 +34,10 @@
 	                            <input type="password" name="senha" id="txtpass" value="" class="form-control">
 	                        </div>
 	                        <div id="alertSenha" class="alert alert-danger collapse alertErro" role="alert">
-							  <img src="imgs/erro.png" style=" margin: 0px 8px;">Insira seu usuario ou senha!
+							  <img src="imgs/erro.png" style=" margin: 0px 8px;">Insira seu usuário ou senha!
 							</div>
-	                        <%
-	                        	String login, senha;
+							<p style="color:red;"> ${requestScope.message}</p>
 	                        
-                               if (conexao != null) {
-                                    if ((request.getParameter("usuario") != null) && (request.getParameter("senha") !=null)) {
-                                        
-                                        login = request.getParameter("usuario");
-                                        senha = request.getParameter("senha");
-                                        Statement st;
-                                        ResultSet rs;
-                                        st = conexao.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.TYPE_FORWARD_ONLY);
-                                        rs = st.executeQuery("select * from login where usuario ='"+login+"' and senha='"+senha+"'");
-                                        if(rs.next()){
-                                            response.sendRedirect("ServletQuantidade");
-                                        }
-                                    }
-                                }else {
-                                    out.println("Não é possivel logar");
-                                }
-	
-                           %>
                            
                            <script type="text/javascript">
                            		function validLogin() {
@@ -74,7 +52,7 @@
                            				
                            </script>
 	
-	                        <button type="submit" name="btnLog" value="Entrar" id="btnLogg" class="btn btn-primary btn-block">Entrar</button>
+	                        <button type="submit" name="optionLogin" value="Entrar" id="btnLogg" class="btn btn-primary btn-block">Entrar</button>
 	                    </form>
 	                </div>
 	            </div>
