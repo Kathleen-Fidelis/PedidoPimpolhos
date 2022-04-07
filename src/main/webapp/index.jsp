@@ -10,7 +10,7 @@
         <title>Login</title>
     </head>
     <body>
-           
+        
 	       <div class="container-fluid">
 	        <div class="col-12 display">
 	            <div class=" row col-10">
@@ -21,8 +21,8 @@
 	                <div class="bloco2 col-6">
 	                   <h2> <img src="imgs/userLogin.png" style="margin-right: 15px;"> Login</h2><br>
 	                    <p style="color: rgba(0, 0, 0, 0.63);">Insira seu login e senha:</p>
-	                    <form class="form-sign" name="form" action="LoginController" method="post" onsubmit="return validLogin();">
-	                    	                       
+	                    <form action="ServletLogin2" class="form-sign" name="form" method="post" onsubmit="return validLogin();">
+	                       
 	                        <div class="form-group">
 	                            <label>Usuario:</label>
 	                            <input type="text" name="usuario" id="txtuser" value="" class="form-control">                              
@@ -34,8 +34,9 @@
 	                            <input type="password" name="senha" id="txtpass" value="" class="form-control">
 	                        </div>
 	                        <div id="alertSenha" class="alert alert-danger collapse alertErro" role="alert">
-							  <img src="imgs/erro.png" style=" margin: 0px 8px;">Insira seu usuario ou senha!
+							  <img src="imgs/erro.png" style=" margin: 0px 8px;">Insira seu usuário ou senha!
 							</div>
+							<p style="color:red;"> ${requestScope.message}</p>
 	                        
                            
                            <script type="text/javascript">
@@ -51,7 +52,7 @@
                            				
                            </script>
 	
-	                        <button type="submit"  role="button" id="btnLogg" class="btn btn-primary btn-block">Entrar</button>
+	                        <button type="submit" name="optionLogin" value="Entrar" id="btnLogg" class="btn btn-primary btn-block">Entrar</button>
 	                    </form>
 	                </div>
 	            </div>

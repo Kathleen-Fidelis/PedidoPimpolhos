@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+    pageEncoding="ISO-8859-1"%>  
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -75,12 +76,23 @@
                 Painel de  Controle
             </h2>
 
+		<% String usuario = (String) session.getAttribute("usuario");
+		
+			if(usuario == null){
+				response.sendRedirect("index.jsp");
+			}
+		%>
 
             <div class="user-wrapper">
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
                 <div>
                     <h4>Pimpolhos</h4>
-                    <a class="logout" href="deslogar.jsp">Sair</a>
+                    <form action="ServletMarca" method="post">
+                    	<button type="submit" class="logout" name="optionMarca" value="sair">Sair</button>
+                    </form>
+                    
+                    
+	                    
                 </div>
             </div>
         </div>

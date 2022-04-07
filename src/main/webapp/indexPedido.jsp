@@ -72,15 +72,26 @@
                 <label for="nav-toggle">
                     <span class="las "><img src="imgs/menu-aberto (1).png" ></span>
                 </label>
-                Painel de Controle
+                Painel de  Controle
             </h2>
 
+		<% String usuario = (String) session.getAttribute("usuario");
+		
+			if(usuario == null){
+				response.sendRedirect("index.jsp");
+			}
+		%>
 
             <div class="user-wrapper">
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
                 <div>
                     <h4>Pimpolhos</h4>
-               <a class="logout" href="deslogar.jsp">Sair</a>
+                    <form action="ServletPedido" method="post">
+                    	<button type="submit" class="logout" name="optionPedido" value="sair">Sair</button>
+                    </form>
+                    
+                    
+	                    
                 </div>
             </div>
         </div>
@@ -112,7 +123,7 @@
 										<input type="hidden" name="cod_pedido" value="${pedido.cod_pedido}" />
 									</td>
 									<td><c:out value="${pedido.nome_cliente}" /></td>
-									<td class="data"><c:out value="${pedido.data_pedido}" /></td>
+									<td class="data" ><c:out value="${pedido.data_pedido}" /></td>
 									<td><c:out value="${pedido.descricao_status_pedido}" /></td>
 									<td class="preco4"><c:out value="${pedido.valor_total}" /></td>
 									<td class="tdLast">

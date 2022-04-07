@@ -188,7 +188,7 @@ public class DAO {
 	}
 	
 	
-	//Método de conta da home
+	//M�todo de conta da home
 		public Usuario qtdClienteTotal () {	
 		Conexao c = Conexao.getInstance();
 		Connection con = c.getConnection();
@@ -274,7 +274,7 @@ public class DAO {
 //				while (r.next()) {
 //					Integer id1 = r.getInt("cod_pedido");
 //					String nomeCliente = r.getString("nome_cliente");
-//					Date data_pedido = r.getDate("data_pedido");
+//					String data_pedido = r.getString("data_pedido");
 //					Integer quantidade = r.getInt("quantidade");
 //					String frete= r.getString("descricao_frete");
 //					String valor_frete = r.getString("valor_frete");
@@ -295,7 +295,7 @@ public class DAO {
 //		}
 		
 		
-//		Detalhe do Pedido Padrão
+//		Detalhe do Pedido Padr�o
 	
 		
 		

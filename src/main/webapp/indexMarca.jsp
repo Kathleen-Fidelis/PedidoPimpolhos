@@ -80,6 +80,12 @@
                 Painel de  Controle
             </h2>
 
+		<% String usuario = (String) session.getAttribute("usuario");
+		
+			if(usuario == null){
+				response.sendRedirect("index.jsp");
+			}
+		%>
 
             <div class="user-wrapper">
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">

@@ -526,6 +526,11 @@ table.pedidotb tr td:last-child{
     margin-top: -10px !important;
 }
 
+.user-wrapper button{
+	    background-color: transparent;
+    	border: none;
+}
+
 main{
     margin-top: 85px;
     padding: 2rem 1.5rem;

@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
 	$(".telefone, .celular").mask("0000-0000");
 	$(".cpf").mask("000.000.000-00"); 

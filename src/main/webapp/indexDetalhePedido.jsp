@@ -74,18 +74,28 @@
                 Painel de  Controle
             </h2>
 
+		<% String usuario = (String) session.getAttribute("usuario");
+		
+			if(usuario == null){
+				response.sendRedirect("index.jsp");
+			}
+		%>
 
             <div class="user-wrapper">
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
                 <div>
                     <h4>Pimpolhos</h4>
-                  <a class="logout" href="deslogar.jsp">Sair</a>
+                    <form action="ServletPedido" method="post">
+                    	<button type="submit" class="logout" name="optionPedido" value="sair">Sair</button>
+                    </form>
+                    
+                    
+	                    
                 </div>
             </div>
         </div>
         
- <div class="col-12 detalhesClienteAccordionBg" style="
-    margin-top: 15%;">   
+ <div class="col-12 detalhesClienteAccordionBg" style="margin-top: 15%;">   
      <c:forEach var="pedido" items="${DetalhePedido}">  
 		<form action="ServletPimpolhos" method="post">
 		

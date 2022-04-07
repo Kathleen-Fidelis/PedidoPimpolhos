@@ -51,7 +51,7 @@ public class Usuario {
 
 
 
-	// CLIENTE PADRÃO
+	// CLIENTE PADR�O
 	public Usuario(String nome, String cpf, String nascimento, String email) {
 		super();
 		this.nome = nome;
