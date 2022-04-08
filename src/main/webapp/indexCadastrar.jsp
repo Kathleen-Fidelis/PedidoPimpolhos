@@ -45,24 +45,8 @@
                             <label>Confirme Sua Senha:</label>
                             <input type="password" name="senha2" id="txtpass" value="" class="form-control">
                         </div>
-	                        <%
-                               if (conexao != null) {
-                                    if ((request.getParameter("usuario") !=null) && (request.getParameter("senha") !=null)) {
-                                        String login, senha;
-                                        login = request.getParameter("usuario");
-                                        senha = request.getParameter("senha");
-                                        Statement st;
-                                        ResultSet rs;
-                                        st = conexao.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.TYPE_FORWARD_ONLY);
-                                        rs = st.executeQuery("select * from login where usuario ='"+login+"' and senha='"+senha+"'");
-                                        if(rs.next()){
-                                            response.sendRedirect("home.jsp");
-                                        }
-                                    }
-                                }else {
-                                    out.println("Não é possivel logar");
-                                }
-                           %>
+	                       
+	                       
 
 	                        <button type="submit" name="optionLogin" value="insertUsuario" id="btnLog" class="btn btn-primary btn-block" style="margin-top: 6%;">Cadastrar</button>
 	                        <p style="color:red;"> ${requestScope.message}</p>

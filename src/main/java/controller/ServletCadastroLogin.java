@@ -123,10 +123,13 @@ public class ServletCadastroLogin extends HttpServlet {
 				if (!nomeCompletoUsuarioBack.equals("") && !nomeUsuarioBack.equals("") && !senhaBack.equals("") && !senhaBack2.equals("")){
 					if (senhaBack.equals(senhaBack2)) {
 						System.out.print("Senha correta");
-						UsuarioLogin usuario = new UsuarioLogin(nomeCompletoUsuarioBack ,nomeUsuarioBack , senhaBack );
+						UsuarioLogin usuario = new UsuarioLogin(nomeCompletoUsuarioBack ,nomeUsuarioBack , this.dao.codificarSenha(senhaBack) );
 						this.dao.conferencia(nomeCompletoUsuarioBack, nomeUsuarioBack, senhaBack2);
 						this.dao.inserirUsuario(usuario);
-					
+						
+//						String message="Cadastro efetuado com sucesso";
+//						request.setAttribute("message", message);
+//						request.getRequestDispatcher("ServletQuantidade").forward(request, response);
 					}else {
 						String message="Senhas não correspondem";
 						request.setAttribute("message", message);

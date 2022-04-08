@@ -6,6 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Pimpolhos ADM</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css"
 	rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css" type="text/css">
@@ -91,15 +92,10 @@
 			<div class="detalheClienteCabecalho row">
 			<div class="col-12 maintitleDetails">Informações Principais de  <c:out value="${cliente.nome}"/></div>
 			<div class= "col-6"> <span class="accordionInfoTitle">Id:</span> <span class="accordionInfoText"> <c:out value="${cliente.cod_cliente}"/></span> </div>
-<<<<<<< HEAD
-			<div class= "col-6"> <span class="accordionInfoTitle">Cpf:</span> <span class="accordionInfoText cpf"><c:out value="${cliente.cpf}"/></span> </div>
-			<div class= "col-6"> <span class="accordionInfoTitle">Email:</span> <span class="accordionInfoText"><c:out value="${cliente.email}"/></span> </div>
-			<div class= "col-6"> <span class="accordionInfoTitle">Data de nascimento:</span><span class="accordionInfoText data"> <c:out  value="${cliente.nascimento}"/></span> </div>
-=======
 			<div class= "col-6"> <span class="accordionInfoTitle">Cpf:</span> <span class="accordionInfoText cpf""><c:out value="${cliente.cpf}"/></span> </div>
 			<div class= "col-6"> <span class="accordionInfoTitle">Email:</span> <span class="accordionInfoText"><c:out value="${cliente.email}"/></span> </div>
 			<div class= "col-6"> <span class="accordionInfoTitle">Data de nascimento:</span><span class="accordionInfoText data"> <c:out value="${cliente.nascimento}"/></span> </div>
->>>>>>> 4eb01abef5416853072a52110b70c903a3d8d346
+
 		</form>
   </c:forEach>
 

@@ -16,16 +16,16 @@ public class DAOLoginCadastrar {
 	}
 	
 	//criptografia
-//	public String codificarSenha(String senha) {
-//        return BCrypt.withDefaults().hashToString(12, senha.toCharArray());
-//        
-//    }
+	public String codificarSenha(String senha) {
+       return BCrypt.withDefaults().hashToString(12, senha.toCharArray());
+        
+    }
 	
 	//descriptografia
-//	public boolean validarSenha(String senha, String senhaCrypto) {
-//        BCrypt.Result response = BCrypt.verifyer().verify(senha.toCharArray(), senhaCrypto);
-//        return response.verified;
-//    }
+	public boolean validarSenha(String senha, String senhaCrypto) {
+        BCrypt.Result response = BCrypt.verifyer().verify(senha.toCharArray(), senhaCrypto);
+        return response.verified;
+    }
 
 
 	

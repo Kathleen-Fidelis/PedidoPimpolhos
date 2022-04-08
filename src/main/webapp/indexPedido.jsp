@@ -6,6 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Pimpolhos ADM</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
@@ -112,11 +113,9 @@
 										<input type="hidden" name="cod_pedido" value="${pedido.cod_pedido}" />
 									</td>
 									<td><c:out value="${pedido.nome_cliente}" /></td>
-<<<<<<< HEAD
-									<td class="data" ><c:out value="${pedido.data_pedido}" /></td>
-=======
+
 									<td class="data"><c:out value="${pedido.data_pedido}" /></td>
->>>>>>> 4eb01abef5416853072a52110b70c903a3d8d346
+
 									<td><c:out value="${pedido.descricao_status_pedido}" /></td>
 									<td class="preco4"><c:out value="${pedido.valor_total}" /></td>
 									<td class="tdLast">

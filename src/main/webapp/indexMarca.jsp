@@ -106,7 +106,7 @@
                 <tbody>
 				<c:forEach var="marca" items="${listMarca}">
 					<tr>
-						<form action="ServletMarca" method="post" id="tabela">> 
+						<form action="ServletMarca" method="post" id="tabela">
 							<td>
 								<c:out value="${marca.cod_marca}"/>
 								<input type="hidden" name="cod_marca" value="${marca.cod_marca}"/>

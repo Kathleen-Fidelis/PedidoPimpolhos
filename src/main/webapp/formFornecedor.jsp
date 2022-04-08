@@ -6,6 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Pimpolhos ADM</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/style.css" type="text/css">
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/>
