@@ -5,6 +5,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
          <link rel="stylesheet" href="css/styleLogin.css">
         <title>Login</title>
@@ -13,15 +14,16 @@
         
 	       <div class="container-fluid">
 	        <div class="col-12 display">
-	            <div class=" row col-10">
-	                <div class="bloco1 col-4">
+	            <div class=" row blocos col-lg-8">
+	                <div class="bloco1 col-12 col-lg-5">
 	                    <img src="imgs/Logo.png" alt="">
-	                    <h5>Painel administrativo</h5>
+	                    <h3>Painel administrativo</h3>
+	                    
 	                </div>
-	                <div class="bloco2 col-6">
+	                <div class="bloco2 col-12 col-lg-7">
 	                   <h2> <img src="imgs/userLogin.png" style="margin-right: 15px;"> Login</h2><br>
 	                    <p style="color: rgba(0, 0, 0, 0.63);">Insira seu login e senha:</p>
-	                    <form action="ServletLogin2" class="form-sign" name="form" method="post" onsubmit="return validLogin();">
+	                    <form action="ServletLogin2" class="form-sign formLogin" name="form" method="post" onsubmit="return validLogin();">
 	                       
 	                        <div class="form-group">
 	                            <label>Usuario:</label>

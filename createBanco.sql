@@ -232,7 +232,7 @@ create table pix
 	foreign key (cod_forma_pagamento) references tipo_pagamento (cod_forma_pagamento)
 );
 
-
+ 
 create table item_pedido
 (
 	cod_item_pedido smallint not null,
@@ -244,7 +244,7 @@ create table item_pedido
 	primary key (cod_item_pedido, cod_produto),
 	-- foreign key (cod_pedido) references pedido(cod_pedido),
 	foreign key (cod_produto) references produto(cod_produto)
-
+	
 );
 
 
@@ -343,9 +343,11 @@ create table nf_e
 
 create table login
 (
+	cod_usuario smallint not null auto_increment,
+	nome varchar(50) not null,
 	usuario varchar(45) not null,
-	senha varchar(20) not null,
-	primary key (usuario)
+	senha varchar(100) not null,
+	primary key (cod_usuario)
 );
 
 
