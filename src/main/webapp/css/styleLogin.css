@@ -79,7 +79,7 @@ display2{
 }
 
 
-@media (max-width: 768px){
+@media (max-width: 1198px){
 	.bloco1{
 		height: 20%;
 	    border-radius: 10px 10px 0px 0px;
@@ -122,6 +122,10 @@ display2{
 	.formLogin input{
 		font-size: 22px;
 	}
+	
+	.display {
+	    margin-top: 7%;
+	}
 }
 
 @media (max-width: 425px){
@@ -133,6 +137,10 @@ display2{
 	.bloco1 h3 {
     	font-weight: bold;
     	font-size: 21px;
+	}
+	
+		.display {
+	    	margin-top: 3%;
 	}
 	
 }

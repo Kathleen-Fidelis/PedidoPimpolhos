@@ -11,7 +11,8 @@
   <link rel="stylesheet" href="./css/styleLogin1.css" type="text/css">
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pagina de Cadastro de Usuarios</title>
+<link rel="icon" href="imgs/favicon.png" />
+<title>Cadastro de Usuarios</title>
 </head>
 <body>
  <%
@@ -20,15 +21,15 @@
         %>
 	       <div class="container-fluid">
 	        <div class="col-12 display">
-	            <div class=" row col-10">
-	                <div class="bloco1 col-4">
+	            <div class=" row blocos col-xl-8">
+	                <div class="bloco1 col-12 col-xl-5">
 	                    <img src="imgs/Logo.png" alt="">
-	                    <h5>Painel administrativo</h5>
+	                    <h3>Painel administrativo</h3>
 	                </div>
-	                <div class="bloco2 col-6">
+	                <div class="bloco2 col-12 col-xl-7">
 	                   <h2> <img src="imgs/userLogin.png" style="margin-right: 15px;"> Cadastro</h2><br>
 	                    <p style="color: rgba(0, 0, 0, 0.63);">Faça seu cadastro:</p>
-	                    <form class="form-sign" action="ServletCadastroLogin" method="post">
+	                    <form class="col-12 col-xl-10 form-sign formCadastrar" action="ServletCadastroLogin" method="post">
 
 	                        <div class="form-group">
                             <label>Nome Completo:</label>
@@ -65,7 +66,7 @@
                                 }
                            %>
 
-	                        <button type="submit" name="optionLogin" value="insertUsuario" id="btnLog" class="btn btn-primary btn-block" style="margin-top: 6%;">Cadastrar</button>
+	                        <button type="submit" name="optionLogin" value="insertUsuario" id="btnLog" class="btn btn-primary btn-block" ">Cadastrar</button>
 	                        <p style="color:red;"> ${requestScope.message}</p>
 	                    </form>
 	                </div>

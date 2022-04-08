@@ -6,8 +6,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Pimpolhos ADM</title>
+<link rel="icon" href="imgs/favicon.png" />
+<title>Fornecedor</title>
 
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css" type="text/css">
