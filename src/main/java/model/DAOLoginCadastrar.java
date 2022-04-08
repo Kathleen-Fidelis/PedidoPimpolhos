@@ -21,11 +21,7 @@ public class DAOLoginCadastrar {
         
     }
 	
-	//descriptografia
-	public boolean validarSenha(String senha, String senhaCrypto) {
-        BCrypt.Result response = BCrypt.verifyer().verify(senha.toCharArray(), senhaCrypto);
-        return response.verified;
-    }
+	
 
 
 	
@@ -37,7 +33,7 @@ public class DAOLoginCadastrar {
 			PreparedStatement p = con.prepareStatement("insert into login (nome , usuario , senha) VALUES (? , ? , ?)");
 			p.setString(1, usuario.getNome());
 			p.setString(2, usuario.getUsuario());
-			p.setString(3, usuario.getSenha());
+			p.setString(3, codificarSenha(usuario.getSenha()));
 		   
 			
 			System.out.println(p);
@@ -112,9 +108,13 @@ public class DAOLoginCadastrar {
 	}
 	
 	
+	public boolean validarSenha(String senha, String senhaCrypto) { 
+		BCrypt.Result response = BCrypt.verifyer().verify(senha.toCharArray(), senhaCrypto); 
+		return response.verified; 
+	} 
 
 	
-	public UsuarioLogin conferencia(String nome, String usuario, String senha) {
+	public UsuarioLogin conferencia(String usuario, String senha) {
 		Conexao conexao = Conexao.getInstance();
 		Connection connection = conexao.getConnection();
 		
@@ -124,12 +124,11 @@ public class DAOLoginCadastrar {
 			preStat.setString(1, usuario);
 			ResultSet resultSet = preStat.executeQuery();
 			while(resultSet.next()) {
-				String nome1 = resultSet.getString("nome");
 				String usuario1 = resultSet.getString("usuario");
 				String senha1 = resultSet.getString("senha");
 				Integer id1 = resultSet.getInt("cod_usuario");
-				if (usuario.equals(usuario1)) {
-					user = new UsuarioLogin(nome1, usuario1, senha1);
+				if (usuario.equals(usuario1) && this.validarSenha(senha, senha1)) {
+					user = new UsuarioLogin(usuario1, senha1);
 					user.setCod_usuario(id1);
 					return user;
 				} else{
@@ -143,54 +142,33 @@ public class DAOLoginCadastrar {
 		
 		}
 	
+
 	
-	public boolean conferenciaUsuario(UsuarioLogin user) {
-		Conexao conexao = Conexao.getInstance();
-		Connection connection = conexao.getConnection();
-		
-		boolean status = false;
-		
-		
-	String sql = "select * from login where usuario = ? and senha = ?";
-	//String sql = "select * from USER_ADM where  = ?  OR NOME =? AND SENHA =?";
-		PreparedStatement ps;
-		try {
-		ps = connection.prepareStatement(sql);
-		ps.setString(1, user.getUsuario());
-		ps.setString(2, user.getSenha());
-		//ps.setString(3, user.getNome());
-		
-		ResultSet rs = ps.executeQuery();
-		status = rs.next();
-		
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return status;
-		}
-	
-	
-//	public void logar(String usuario, String senha) {
+//	public boolean conferenciaUsuario(UsuarioLogin user) {
 //		Conexao conexao = Conexao.getInstance();
 //		Connection connection = conexao.getConnection();
 //		
+//		boolean status = false;
+//		
+//		
+//	String sql = "select * from login where usuario = ? and senha = ?";
+//	//String sql = "select * from USER_ADM where  = ?  OR NOME =? AND SENHA =?";
+//		PreparedStatement ps;
 //		try {
-//		if (conexao != null) {
-//            
-//                PreparedStatement st = connection.prepareStatement("select * from login where usuario = ? and senha= ?");
-//                st.setString(1, usuario);
-//                st.setString(2, senha);
-//                ResultSet resultSet = st.executeQuery();
-//
-//                resultSet.next();   
-//            
-//        }else {
-//            System.out.println("Não é possivel logar");
-//        }
-//		}catch(SQLException e){
+//		ps = connection.prepareStatement(sql);
+//		ps.setString(1, user.getUsuario());
+//		ps.setString(2, user.getSenha());
+//		//ps.setString(3, user.getNome());
+//		
+//		ResultSet rs = ps.executeQuery();
+//		status = rs.next();
+//		
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
-//	}
+//		return status;
+//		}
+	
 
 }
