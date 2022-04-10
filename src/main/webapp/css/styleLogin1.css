@@ -1,0 +1,76 @@
+@charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+
+*{
+    padding: 0px;
+    margin: 0px;
+    max-width: 100%;
+
+}
+
+
+
+
+.display {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 55px;
+    font-family: 'Comfortaa', cursive;
+}
+
+
+
+.bloco1{
+    background-color: rgb(230, 136, 154);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 450px;
+    border-radius: 10px 0px 0pc 10px;
+    color: #fff;
+
+    box-shadow: -5px -1px 1em 0px rgb(50 50 50 / 53%);
+
+
+}
+
+.bloco2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 450px;
+    border-radius: 0px 10px 10px 0px;
+
+    box-shadow: 5px -1px 1em 0px rgb(50 50 50 / 53%);
+
+}
+
+.bloco2 input{
+    background-color: rgba(50, 50, 50, 0.11);
+    border: none;
+    border-radius: 3px;
+        height: 26px;
+}
+
+.bloco2 button{
+    width: 65%;
+    height: 13%;
+    margin-left: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #45f562;
+    border: none;
+    font-size: 17px;
+    border-radius: 20px;
+
+
+}
+
+.bloco2 button:hover{
+    background-color: #3ace53;
+}
+
+
