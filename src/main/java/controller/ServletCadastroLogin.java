@@ -64,14 +64,27 @@ public class ServletCadastroLogin extends HttpServlet {
 		
 			if (nomeCompletoUsuarioBack != null && nomeUsuarioBack != null && senhaBack != null && senhaBack2 != null) {
 				if (!nomeCompletoUsuarioBack.equals("") && !nomeUsuarioBack.equals("") && !senhaBack.equals("") && !senhaBack2.equals("")){
-					//if (senhaBack.equals(senhaBack2)) {
+					if (senhaBack.equals(senhaBack2)) {
 						System.out.print("Senha correta");
 						UsuarioLogin usuario = new UsuarioLogin(nomeCompletoUsuarioBack ,nomeUsuarioBack , senhaBack );
-						//this.dao.conferencia(nomeCompletoUsuarioBack, nomeUsuarioBack, senhaBack2);
+						this.dao.conferencia(nomeCompletoUsuarioBack, nomeUsuarioBack, senhaBack2);
 						this.dao.inserirUsuario(usuario);
-					
-					//}
+						
+						String message1="Cadastro efetuado com sucesso";
+						request.setAttribute("message", message1);
+						request.getRequestDispatcher("ServletQuantidade").forward(request, response);
+					}else {
+						String message="Senhas não correspondem";
+						request.setAttribute("message", message);
+						request.getRequestDispatcher("indexCadastrar.jsp").forward(request, response);
+					}
 				}
+			}
+			try {
+				Thread.sleep(5000);
+			}
+			catch(InterruptedException ex){
+				ex.printStackTrace();
 			}
 			response.sendRedirect("ServletQuantidade");
 		

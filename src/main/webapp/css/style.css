@@ -957,6 +957,9 @@ color: var(--main-color)
         padding-right: 0rem;
     }
 
+.RealStyle{
+	width:41px;
+}
     .header-info h2{
         font-size: .1.1rem;
     }

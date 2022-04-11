@@ -6,6 +6,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Pimpolhos ADM</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maxinum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/>
@@ -90,7 +94,7 @@
 
 	<div class="tabela">
 	<form action="ServletCategoria" method="post">
-		<button class="btn btn-primary col-3 btnPageReload" type="submit"  name="optionCategoria" value="insertFormCategoria"> Adicionar Categoria</button>
+		<button class="btn btn-primary col-3 btnPageReload" href="ServletCategoria"  name="optionCategoria" value="insertFormCategoria"> Adicionar Categoria</button>
 	</form>
         <div class="col-md-12 col-lg-9 conteudo">
 			<div class = "table-responsive">
@@ -154,7 +158,7 @@
 
   <script type="text/javascript">
 	
-		let listSupplier = document.querySelectorAll('.tabela')
+		let listSupplier = document.querySelectorAll('#tabela')
 	   	let elements = Array.from(listSupplier)
 	    console.log(elements)
 	    

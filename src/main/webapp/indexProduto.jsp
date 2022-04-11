@@ -7,8 +7,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
- <meta http-equiv="X-UA-Compatible" content="IE=edge">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maxinum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pimpolhos ADM</title>
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css" type="text/css">
@@ -182,7 +183,7 @@
  	<!-- End: jQuery for Toast Message -->
 	<script type="text/javascript">
 	
-		let listSupplier = document.querySelectorAll('.tabela')
+		let listSupplier = document.querySelectorAll('#tabela')
 	   	let elements = Array.from(listSupplier)
 	    console.log(elements)
 	    

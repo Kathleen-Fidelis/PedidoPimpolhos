@@ -155,7 +155,7 @@
  	<!-- End: jQuery for Toast Message -->
 	<script type="text/javascript">
 	
-		let listSupplier = document.querySelectorAll('.tabela')
+		let listSupplier = document.querySelectorAll('#tabela')
 	   	let elements = Array.from(listSupplier)
 	    console.log(elements)
 	    
