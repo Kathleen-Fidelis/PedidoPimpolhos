@@ -93,26 +93,25 @@
 		<button class="btn btn-primary btnPageReload"  type="submit"  name="optionFornecedor" value="insertFormFornecedor"> Adicionar Fornecedor</button>
     </form>
         <div class="col-md-12 col-lg-9 conteudo">
-          	<div class = "table-responsive">
 	            <table class="table table-hover ">
 					<thead>
 						<tr>
-							<th style="word-wrap: break-word; min-width: 50px; max-width: 160px;">Id</th>
-							<th>Nome Fornecedor</th>
-							<th >Ações</th>
+							<th scope="col">ID</th>
+							 <th scope="col">Fornecedor</th>
+							 <th scope="col">Ações</th>
 						</tr>
 					</thead>
 					<tbody>
 						<c:forEach var="fornecedor" items="${listFornecedor}">
 							<tr>
 								<form action="ServletFornecedor" method="post" id="tabela">
-									<td>
+									<td data-label="ID">
 										<c:out value="${fornecedor.cod_fornecedor}"/>
 										<input type="hidden" name="cod_fornecedor" value="${fornecedor.cod_fornecedor}"/>
 									</td>
-									<td><c:out value="${fornecedor.nome_fornecedor}"/></td>
+									<td data-label="Fornecedor"><c:out value="${fornecedor.nome_fornecedor}"/></td>
 									
-									<td class="btnAcoes">
+									<td data-label="Ações" class="btnAcoes">
 									
 										<button type="button" class="btn btn-primary btnPageReload" data-bs-toggle="modal" data-bs-target="#exampleModal-${fornecedor.cod_fornecedor}">Deletar</button>
 
@@ -142,7 +141,6 @@
 						</c:forEach>
 					</tbody>
 				</table>
-			</div>
 		</div>
 	</div>
 	</div>

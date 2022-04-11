@@ -91,16 +91,14 @@
 
 	<div class="tabela" >
 		<div class="col-md-12 col-lg-9 conteudo ">
-			<div class="table-responsive">
 				<table class="table table-hover">
 					<thead>
 						<tr>
-							<th style="word-wrap: break-word; min-width: 50px; max-width: 160px;">Id</th>
-							<th style="word-wrap: break-word; min-width: 130px; max-width: 160px;">Nome</th>
-							<th style="word-wrap: break-word; min-width: 176px; max-width: 160px;">CPF</th>
-						
-							<th style="word-wrap: break-word; min-width: 130px; max-width: 160px;">Email</th>
-							<th style="word-wrap: break-word; min-width: 135px; max-width: 180px;">Ações</th>
+							<th scope="col">ID</th>
+							 <th scope="col">Nome</th>
+							 <th scope="col">CPF</th>
+						     <th scope="col">Email</th>
+							 <th scope="col">Ações</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -108,14 +106,14 @@
 							<tr>
 
 								<form action="ServletPimpolhos" method="post">
-									<td><c:out value="${usuario.cod_cliente}" /> <input
+									<td data-label="ID"><c:out value="${usuario.cod_cliente}" /> <input
 										type="hidden" name="cod_cliente"
 										value="${usuario.cod_cliente}" /></td>
-									<td><c:out value="${usuario.nome}" /></td>
-									<td><span class="cpf"><c:out value="${usuario.cpf}" /></span></td>
-									<td><c:out value="${usuario.email}" /></td>
+									<td data-label="Nome Cliente"><c:out value="${usuario.nome}" /></td>
+									<td data-label="CPF" class="cpf"><c:out value="${usuario.cpf}" /></span></td>
+									<td data-label="Email"><c:out value="${usuario.email}" /></td>
 									
-									<td class="tdLast">
+									<td data-label="Ações">
 										<button class="btn btn-primary btnPageReload" type="submit" name="option" value="cartaoSelecionado">Detalhes</button>
 									</td>
 								</form>
@@ -123,7 +121,6 @@
 						</c:forEach>
 					</tbody>
 				</table>
-			</div>
 		</div>
 	</div>
 </div>

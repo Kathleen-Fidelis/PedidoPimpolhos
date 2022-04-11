@@ -94,26 +94,25 @@
 		<button class="btn btn-primary  btnPageReload" type="submit"  name="optionMarca" value="insertFormMarca"> Adicionar Marca</button>
     </form>
         <div class="col-md-12 col-lg-9 conteudo">
-          <div class = "table-responsive">
             <table class="table table-hover ">
                 <thead>
                 
-                       <th style="word-wrap: break-word; min-width: 50px; max-width: 160px;">Id</th>
-                        <th>Marca</th>
-                        <th>Ações</th>
+                      <th scope="col">ID</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
 				<c:forEach var="marca" items="${listMarca}">
 					<tr>
-						<form action="ServletMarca" method="post" id="tabela">> 
-							<td>
+						<form action="ServletMarca" method="post" id="tabela">
+							<td data-label="ID">
 								<c:out value="${marca.cod_marca}"/>
 								<input type="hidden" name="cod_marca" value="${marca.cod_marca}"/>
 							</td>
-							<td><c:out value="${marca.nome_marca}"/></td>
+							<td data-label="Marca"><c:out value="${marca.nome_marca}"/></td>
 							
-							<td class="btnAcoes">
+							<td data-label= "Ações" class="btnAcoes">
 								<!-- Button trigger modal -->
 									<button type="button" class="btn btn-primary btnPageReload" data-bs-toggle="modal" data-bs-target="#exampleModal-${marca.cod_marca}">Deletar</button>
 
@@ -144,7 +143,6 @@
 				</c:forEach>
 			</tbody>
               </table>
-            </div>
         </div>
          </div>
     </div>

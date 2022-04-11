@@ -90,29 +90,29 @@
 
 	<div class="tabela">
 	<form action="ServletCategoria" method="post" >
-		<button class="btn btn-primary col-3 btnPageReload" type="submit"  name="optionCategoria" value="insertFormCategoria"> Adicionar Categoria</button>
+		<button class="btn btn-primary  btnPageReload" type="submit"  name="optionCategoria" value="insertFormCategoria"> Adicionar Categoria</button>
 	</form>
         <div class="col-md-12 col-lg-9 conteudo">
 			<div class = "table-responsive">
 				<table class="table table-hover" >
 					<thead>
 						<tr>
-							<th>Id</th>
-							<th>Nome Categoria</th>
-							<th >Ações</th> 
+							<th scope="col">ID</th>
+							<th scope="col">Nome Categoria</th>
+							<th scope="col">Ações</th> 
 						</tr>
 					</thead>
 					<tbody>
 						<c:forEach var="categoria" items="${listCategoria}">
 							<tr>
 								<form action="ServletCategoria" method="post">
-									<td>
+									<td data-label="ID">
 										<c:out value="${categoria.cod_categoria}"/>
 										<input type="hidden" name="cod_categoria" value="${categoria.cod_categoria}"/>
 									</td>
-									<td><c:out value="${categoria.nome_categoria}"/></td>
+									<td data-label="Categoria"><c:out value="${categoria.nome_categoria}"/></td>
 									
-									<td class="btnAcoes">
+									<td data-label="Ações" class="btnAcoes">
 										<button type="button" class="btn btn-primary btnPageReload" data-bs-toggle="modal" data-bs-target="#exampleModal-${categoria.cod_categoria}">Deletar</button>
 
 										
