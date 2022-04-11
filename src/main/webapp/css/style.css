@@ -1020,6 +1020,22 @@ table td {
 data-label{
 	font-weight:bold;
 }
+
+@media only screen and (max-width: 455px){
+	.header-info{
+	display:flex;
+	justify-content:flex-end;
+	padding-right:65px;
+	}
+
+}
+
+@media only screen and (max-width: 768px){
+
+	.info-detalhe-cliente{
+	width: 100%;
+	}
+}
 @media screen and (max-width: 841px) {
   table thead {
     border: none;
