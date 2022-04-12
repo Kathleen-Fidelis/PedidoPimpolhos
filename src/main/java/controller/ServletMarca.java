@@ -50,6 +50,9 @@ public class ServletMarca extends HttpServlet {
 			case ("insertMarca"):
 				insertMarca(request, response);
 			break;
+			case ("sair"):
+				sair(request, response);
+			break;
 			default:
 				selectAllMarca(request, response);
 		}
@@ -79,6 +82,12 @@ public class ServletMarca extends HttpServlet {
 				this.dao.inserirMarca(user1);
 			}
 		}
+		try {
+			Thread.sleep(2000);
+		}
+		catch(InterruptedException ex){
+			ex.printStackTrace();
+		}
 		response.sendRedirect("ServletMarca");
 	}
 	
@@ -94,6 +103,14 @@ public class ServletMarca extends HttpServlet {
 			if (idBack != null) {
 				Integer id = Integer.parseInt(idBack);
 				this.dao.deletarMarca(id);
+			}
+			try {
+				Thread.sleep(2000);
+			}
+			catch(InterruptedException ex){
+				ex.printStackTrace();
+
+
 			}
 			
 		response.sendRedirect("ServletMarca");
@@ -111,10 +128,18 @@ public class ServletMarca extends HttpServlet {
 				marca.setCod_marca(id);
 				this.dao.atualizarMarca(marca);
 			}
+			}
+		try {
+			Thread.sleep(2000);
+		}
+		catch(InterruptedException ex){
+			ex.printStackTrace();
 		}
 		response.sendRedirect("ServletMarca");
 	}
 	
-	
+	private void sair(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		response.sendRedirect("deslogar.jsp");
+	}
 	
 }

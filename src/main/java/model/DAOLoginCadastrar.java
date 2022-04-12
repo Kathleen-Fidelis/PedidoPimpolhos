@@ -82,7 +82,7 @@ public class DAOLoginCadastrar {
 	}
 	
 	
-	//M�todo de conta da home
+	//M�todo de conta da home
 	public UsuarioLogin qtdUsuarioTotal () {	
 	Conexao c = Conexao.getInstance();
 	Connection con = c.getConnection();
@@ -90,7 +90,7 @@ public class DAOLoginCadastrar {
 	
 	
 		try {
-			PreparedStatement p = con.prepareStatement("select count(cod_usuario) as total from login;");
+			PreparedStatement p = con.prepareStatement("select count(usuario) as total from login");
 			ResultSet r = p.executeQuery();			
 			 r.next();
 			
@@ -114,33 +114,83 @@ public class DAOLoginCadastrar {
 	
 
 	
-//	public UsuarioLogin conferencia(String nome, String usuario, String senha) {
+	public UsuarioLogin conferencia(String nome, String usuario, String senha) {
+		Conexao conexao = Conexao.getInstance();
+		Connection connection = conexao.getConnection();
+		
+		UsuarioLogin user = null;
+		try {
+			PreparedStatement preStat = connection.prepareStatement("select * from login where usuario = ? ");
+			preStat.setString(1, usuario);
+			ResultSet resultSet = preStat.executeQuery();
+			while(resultSet.next()) {
+				String nome1 = resultSet.getString("nome");
+				String usuario1 = resultSet.getString("usuario");
+				String senha1 = resultSet.getString("senha");
+				Integer id1 = resultSet.getInt("cod_usuario");
+				if (usuario.equals(usuario1)) {
+					user = new UsuarioLogin(nome1, usuario1, senha1);
+					user.setCod_usuario(id1);
+					return user;
+				} else{
+					System.out.println("usuario ou senha invalidos!");}
+				}
+			}catch (SQLException e) {
+
+				e.printStackTrace();
+			}
+		return user;
+		
+		}
+	
+	
+	public boolean conferenciaUsuario(UsuarioLogin user) {
+		Conexao conexao = Conexao.getInstance();
+		Connection connection = conexao.getConnection();
+		
+		boolean status = false;
+		
+		
+	String sql = "select * from login where usuario = ? and senha = ?";
+	//String sql = "select * from USER_ADM where  = ?  OR NOME =? AND SENHA =?";
+		PreparedStatement ps;
+		try {
+		ps = connection.prepareStatement(sql);
+		ps.setString(1, user.getUsuario());
+		ps.setString(2, user.getSenha());
+		//ps.setString(3, user.getNome());
+		
+		ResultSet rs = ps.executeQuery();
+		status = rs.next();
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return status;
+		}
+	
+	
+//	public void logar(String usuario, String senha) {
 //		Conexao conexao = Conexao.getInstance();
 //		Connection connection = conexao.getConnection();
 //		
-//		UsuarioLogin user = null;
 //		try {
-//			PreparedStatement preStat = connection.prepareStatement("select * from login where usuario = ? ");
-//			preStat.setString(1, usuario);
-//			ResultSet resultSet = preStat.executeQuery();
-//			while(resultSet.next()) {
-//				String nome1 = resultSet.getString("nome");
-//				String usuario1 = resultSet.getString("usuario");
-//				String senha1 = resultSet.getString("senha");
-//				Integer id1 = resultSet.getInt("cod_usuario");
-//				if (usuario.equals(usuario1)) {
-//					user = new UsuarioLogin(nome1, usuario1, senha1);
-//					user.setCod_usuario(id1);
-//					return user;
-//				} else{
-//					System.out.println("usuario ou senha invalidos!");}
-//				}
-//			}catch (SQLException e) {
+//		if (conexao != null) {
+//            
+//                PreparedStatement st = connection.prepareStatement("select * from login where usuario = ? and senha= ?");
+//                st.setString(1, usuario);
+//                st.setString(2, senha);
+//                ResultSet resultSet = st.executeQuery();
 //
-//				e.printStackTrace();
-//			}
-//		return user;
-//		
+//                resultSet.next();   
+//            
+//        }else {
+//            System.out.println("Não é possivel logar");
+//        }
+//		}catch(SQLException e){
+//			e.printStackTrace();
 //		}
+//	}
 
 }

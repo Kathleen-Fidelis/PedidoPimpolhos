@@ -24,6 +24,10 @@ public class UsuarioLogin {
 		this.qtdUsuario = qtdUsuario;
 	}
 	
+	public UsuarioLogin() {
+		
+	}
+	
 	
 	public String getNome() {
 		return nome;

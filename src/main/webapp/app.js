@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
 	$(".telefone, .celular").mask("0000-0000");
 	$(".cpf").mask("000.000.000-00"); 
@@ -11,7 +12,7 @@ $(document).ready(function(){
 	$(".peso2").mask("0.000");  
 	$(".cnpj").mask("00.000.000/0000-00", {reverse: true});  
 	$(".cartao").mask("**** **** **** 0000");
-	$(".data").mask("00/00/0000");
+    $(".data").mask("00/00/0000");
 	$(".dataCart").mask("00/00");
 
 	 var $target = $("#mensagem");  	

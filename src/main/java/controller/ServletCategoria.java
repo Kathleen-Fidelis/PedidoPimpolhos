@@ -47,7 +47,7 @@ public class ServletCategoria extends HttpServlet {
 		
 		String optionCategoria = request.getParameter("optionCategoria");
 		if (optionCategoria == null) {
-			optionCategoria = "Opção Invalida";
+			optionCategoria = "Opï¿½ï¿½o Invalida";
 		}
 		switch(optionCategoria) {
 			case ("insertFormCategoria"):
@@ -64,6 +64,9 @@ public class ServletCategoria extends HttpServlet {
 			break;
 			case ("insertCategoria"):
 				inserirCategoria(request, response);
+			break;
+			case ("sair"):
+				sair(request, response);
 			break;
 			default:
 				selectAllCategoria(request, response);
@@ -98,6 +101,16 @@ public class ServletCategoria extends HttpServlet {
 				Categoria categoria1 = new Categoria (nomeCategoriaBack);
 				this.dao.inserirCategoria(categoria1);
 	}
+			
+		}
+		try {
+			Thread.sleep(2000);
+		}
+		catch(InterruptedException ex){
+			ex.printStackTrace();
+
+
+	
 		}
 		response.sendRedirect("ServletCategoria");
 	}
@@ -113,6 +126,12 @@ public class ServletCategoria extends HttpServlet {
 		if (idBack != null) {
 			Integer id = Integer.parseInt(idBack);
 			this.dao.deletarCategoria(id);
+		}
+		try {
+			Thread.sleep(2000);
+		}
+		catch(InterruptedException ex){
+			ex.printStackTrace();
 		}
 		response.sendRedirect("ServletCategoria");
 	}
@@ -131,10 +150,21 @@ public class ServletCategoria extends HttpServlet {
 				this.dao.atualizarCategoria(categoria);
 			}
 		}
+		try {
+			Thread.sleep(2000);
+		}
+		catch(InterruptedException ex){
+			ex.printStackTrace();
+
+
+		}
 	
 		response.sendRedirect("ServletCategoria");
 	}
 	
+	private void sair(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		response.sendRedirect("deslogar.jsp");
+	}
 	
 	
 }
