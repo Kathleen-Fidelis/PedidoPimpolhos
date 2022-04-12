@@ -82,7 +82,7 @@ public class DAOLoginCadastrar {
 	}
 	
 	
-	//M�todo de conta da home
+	//M�todo de conta da home
 	public UsuarioLogin qtdUsuarioTotal () {	
 	Conexao c = Conexao.getInstance();
 	Connection con = c.getConnection();
@@ -142,6 +142,8 @@ public class DAOLoginCadastrar {
 		return user;
 		
 		}
+	
+	
 	public boolean conferenciaUsuario(UsuarioLogin user) {
 		Conexao conexao = Conexao.getInstance();
 		Connection connection = conexao.getConnection();
@@ -167,4 +169,28 @@ public class DAOLoginCadastrar {
 		}
 		return status;
 		}
+	
+	
+//	public void logar(String usuario, String senha) {
+//		Conexao conexao = Conexao.getInstance();
+//		Connection connection = conexao.getConnection();
+//		
+//		try {
+//		if (conexao != null) {
+//            
+//                PreparedStatement st = connection.prepareStatement("select * from login where usuario = ? and senha= ?");
+//                st.setString(1, usuario);
+//                st.setString(2, senha);
+//                ResultSet resultSet = st.executeQuery();
+//
+//                resultSet.next();   
+//            
+//        }else {
+//            System.out.println("Não é possivel logar");
+//        }
+//		}catch(SQLException e){
+//			e.printStackTrace();
+//		}
+//	}
+
 }

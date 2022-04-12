@@ -39,9 +39,9 @@ public class Pedido {
 		this.valor_total = valor_total;
 	}
 
-	
 
 	
+
 	
 	
 	public Pedido(Integer cod_cliente ,String nome_cliente, String data_pedido, String descricao_frete,

@@ -1,13 +1,11 @@
 package controller;
 import java.io.IOException;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.DAO;
-import model.Pedido;
 /**
  * Servlet implementation class ServletPedido
  */
@@ -39,7 +37,7 @@ public class ServletPedido extends HttpServlet {
 		String optionPedido = request.getParameter("optionPedido");
 		
 		if (optionPedido == null) {
-			optionPedido = "Opção Invalida";
+			optionPedido = "Opï¿½ï¿½o Invalida";
 		}
 		
 		switch(optionPedido) {
@@ -58,6 +56,9 @@ public class ServletPedido extends HttpServlet {
 //		case ("insertPedido"):
 //			insertPedido(request, response);
 //		break;
+		case ("sair"):
+			sair(request, response);
+		break;
 		default:
 			selectAllPedido(request, response);
 		}
@@ -77,6 +78,10 @@ public class ServletPedido extends HttpServlet {
 		request.setAttribute("listaItemDetalhePedido", this.dao.recuperarItemPedido(id));
 		request.setAttribute("DetalhePedido", this.dao.recuperarDetalhePedido(id));
 		request.getRequestDispatcher("indexDetalhePedido.jsp").forward(request, response);
+	}
+	
+	private void sair(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		response.sendRedirect("deslogar.jsp");
 	}
 
 

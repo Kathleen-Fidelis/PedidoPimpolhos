@@ -5,12 +5,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maxinum-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="imgs/favicon.png" />
+<title>Cadastro Produto</title>
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css" type="text/css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/>
@@ -71,22 +70,32 @@
     </div>
 
 
-    <div class="main-content">
+   <div class="main-content">
         <div class="header-info">
             <h2>
                 <label for="nav-toggle">
                     <span class="las "><img src="imgs/menu-aberto (1).png" ></span>
                 </label>
-                 Painel de  Controle
-
+                Painel de  Controle
             </h2>
 
+		<% String usuario = (String) session.getAttribute("usuario");
+		
+			if(usuario == null){
+				response.sendRedirect("index.jsp");
+			}
+		%>
 
             <div class="user-wrapper">
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
                 <div>
                     <h4>Pimpolhos</h4>
-                 <a class="logout" href="deslogar.jsp">Sair</a>
+                    <form action="ServletProduto" method="post">
+                    	<button type="submit" class="logout" name="optionProduto" value="sair">Sair</button>
+                    </form>
+                    
+                    
+	                    
                 </div>
             </div>
         </div>
@@ -109,8 +118,8 @@
 								  
 								  <div class="input-group mb-3">
 						    <label class="form-label col-12" style="margin-right: 23px;">Preço:</label>
-						     <span class="input-group-text col-1 RealStyle">R$</span>
-						    <input class="form-control preco3" type="text" name="preco" value="${produto.preco}" required/><br>
+						     <span class="input-group-text col-1">R$</span>
+						    <input class="form-control preco2" type="text" name="preco" value="${produto.preco}" required/><br>
 								</div>
 								
 								<label class="form-label" style="margin-right: 32px;">Tipo de produto:</label>
@@ -180,8 +189,8 @@
 						    
                         <div class="input-group mb-3">
 						    <label class="form-label col-12" style="margin-right: 23px;">Preço:</label>
-						     <span class="input-group-text col-1 RealStyle">R$</span>
-						    <input class="form-control preco2" type="text" name="preco" value="${produto.preco}"/><br>
+						     <span class="input-group-text col-1">R$</span>
+						    <input class="form-control" type="text" name="preco" value="${produto.preco}"/><br>
 								</div>
 								
 								<label class="form-label" style="margin-right: 32px;">Tipo de produto:</label>
@@ -192,7 +201,7 @@
                                 </select>
 								
 								
-								<label class="form-label" style="margin-right: 32px;">Dimensão:</label><input class="form-control dimensao" type="text" name="dimensao" value="${produto.dimensao}"/>
+								<label class="form-label" style="margin-right: 32px;">Dimensão:</label><input class="form-control" type="text" name="dimensao" value="${produto.dimensao}"/>
 							    <label class="form-label" style="margin-right: 32px; margin-top:3%">Material:</label><input class="form-control" type="text" name="material" value="${produto.material}" required/>
 								
 								<div class="input-group mb-3">

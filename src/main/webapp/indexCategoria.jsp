@@ -4,12 +4,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Pimpolhos ADM</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maxinum-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="imgs/favicon.png" />
+<title>Categorias</title>
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/>
@@ -76,14 +75,26 @@
                 <label for="nav-toggle">
                     <span class="las "><img src="imgs/menu-aberto (1).png" ></span>
                 </label>
-                Painel de Controle
+                Painel de  Controle
             </h2>
+
+		<% String usuario = (String) session.getAttribute("usuario");
+		
+			if(usuario == null){
+				response.sendRedirect("index.jsp");
+			}
+		%>
 
             <div class="user-wrapper">
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
                 <div>
                     <h4>Pimpolhos</h4>
-                   <a class="logout" href="deslogar.jsp">Sair</a>
+                    <form action="ServletCategoria" method="post">
+                    	<button type="submit" class="logout" name="optionCategoria" value="sair">Sair</button>
+                    </form>
+                    
+                    
+	                    
                 </div>
             </div>
         </div>
@@ -93,30 +104,30 @@
 	
 
 	<div class="tabela">
-	<form action="ServletCategoria" method="post">
-		<button class="btn btn-primary col-3 btnPageReload" href="ServletCategoria"  name="optionCategoria" value="insertFormCategoria"> Adicionar Categoria</button>
+	<form action="ServletCategoria" method="post" >
+		<button class="btn btn-primary btnPageReload" type="submit"  name="optionCategoria" value="insertFormCategoria"> Adicionar Categoria</button>
 	</form>
         <div class="col-md-12 col-lg-9 conteudo">
 			<div class = "table-responsive">
 				<table class="table table-hover" >
 					<thead>
 						<tr>
-							<th>Id</th>
-							<th>Nome Categoria</th>
-							<th >Ações</th> 
+							<th scope="col">ID</th>
+							<th scope="col">Nome Categoria</th>
+							<th scope="col">Ações</th> 
 						</tr>
 					</thead>
 					<tbody>
 						<c:forEach var="categoria" items="${listCategoria}">
 							<tr>
 								<form action="ServletCategoria" method="post" id="tabela">
-									<td>
+									<td data-label="ID">
 										<c:out value="${categoria.cod_categoria}"/>
 										<input type="hidden" name="cod_categoria" value="${categoria.cod_categoria}"/>
 									</td>
-									<td><c:out value="${categoria.nome_categoria}"/></td>
+									<td data-label="Categoria"><c:out value="${categoria.nome_categoria}"/></td>
 									
-									<td class="btnAcoes">
+									<td data-label="Ações" class="btnAcoes">
 										<button type="button" class="btn btn-primary btnPageReload" data-bs-toggle="modal" data-bs-target="#exampleModal-${categoria.cod_categoria}">Deletar</button>
 
 										
@@ -140,7 +151,7 @@
 									</div>
 										
 										
-										<button  id="teste" class="btn btn-primary btnPageReload"  href="ServletCategoria"  name="optionCategoria" value="updateFormCategoria">Atualizar</button>
+										<button  id="teste" class="btn btn-primary btnPageReload"  type="submit"  name="optionCategoria" value="updateFormCategoria">Atualizar</button>
 									</td>
 								</form>
 							</tr>
@@ -151,6 +162,7 @@
 	</div>
 	</div>
 </div>
+
 <!-- Begin: jQuery for Toast Message -->
  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
@@ -158,7 +170,7 @@
 
   <script type="text/javascript">
 	
-		let listSupplier = document.querySelectorAll('#tabela')
+		let listSupplier = document.querySelectorAll('.tabela')
 	   	let elements = Array.from(listSupplier)
 	    console.log(elements)
 	    
@@ -169,7 +181,6 @@
 	     }
 	</script>
 
-       
 <script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script
