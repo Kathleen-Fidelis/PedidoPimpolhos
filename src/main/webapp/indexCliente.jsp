@@ -4,7 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="imgs/favicon.png" />
 <title>Clientes</title>
@@ -21,8 +22,7 @@
         <div class="sidebar-menu">
             <ul>
                <li>
-                    <a href="home.jsp
-                    " >
+                    <a href="ServletQuantidade" >
                         <img src="imgs/home.png" class="icon"><span class="icon "> Home </span></a>
                 </li>
                 
@@ -110,27 +110,25 @@
 				<table class="table table-hover">
 					<thead>
 						<tr>
-							<th style="word-wrap: break-word; min-width: 50px; max-width: 160px;">Id</th>
-							<th style="word-wrap: break-word; min-width: 130px; max-width: 160px;">Nome</th>
-							<th style="word-wrap: break-word; min-width: 176px; max-width: 160px;">CPF</th>
-						
-							<th style="word-wrap: break-word; min-width: 130px; max-width: 160px;">Email</th>
-							<th style="word-wrap: break-word; min-width: 135px; max-width: 180px;">Ações</th>
-						</tr>
+							<th scope="col">ID</th>
+							 <th scope="col">Nome</th>
+							 <th scope="col">CPF</th>
+						     <th scope="col">Email</th>
+							 <th scope="col">Ações</th>
 					</thead>
 					<tbody>
 						<c:forEach var="usuario" items="${listUser}">
 							<tr>
 
 								<form action="ServletPimpolhos" method="post">
-									<td><c:out value="${usuario.cod_cliente}" /> <input
+									<td data-label="ID"><c:out value="${usuario.cod_cliente}" /><input
 										type="hidden" name="cod_cliente"
 										value="${usuario.cod_cliente}" /></td>
-									<td><c:out value="${usuario.nome}" /></td>
-									<td><span class="cpf"><c:out value="${usuario.cpf}" /></span></td>
-									<td><c:out value="${usuario.email}" /></td>
+									<td data-label="Nome Cliente"><c:out value="${usuario.nome}" /></td>
+									<td data-label="CPF" class="cpf"><c:out value="${usuario.cpf}" /></span></td>
+									<td data-label="Email"><c:out value="${usuario.email}" /></td>
 									
-									<td class="tdLast">
+									<td data-label="Ações">
 										<button class="btn btn-primary btnPageReload" type="submit" name="option" value="cartaoSelecionado">Detalhes</button>
 									</td>
 								</form>

@@ -176,20 +176,20 @@
                             <table  class="dd"width="100%">
                                 <thead>
                                     <tr>
-                                        <td> Pedido </td>
-                                        <td> Status </td>
-                                        <td> Pagamento </td>
+                                         <th scope="col">Pedido </td>
+                                        <th scope="col">Status </td>
+                                        <th scope="col">Pagamento </td>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 	<c:forEach var="pedidoRecente" items="${listaPedidosRecentes}">
 	                                    <tr>
 	                                    	<form action="ServletQuantidade" method="post">
-		                                        <td><c:out value="${pedidoRecente.cod_pedido}"/>
+		                                        <td data-label="Pedido"><c:out value="${pedidoRecente.cod_pedido}"/>
 		                                        	<input type="hidden" name="cod_pedido" value="${pedidoRecente.cod_pedido}" />
 		                                        </td>
-		                                        <td><c:out value="${pedidoRecente.descricao_forma_pagamento}"/></td>
-		                                        <td><span class="status orange"> </span>
+		                                         <td data-label="Status"><c:out value="${pedidoRecente.descricao_forma_pagamento}"/></td>
+		                                        <td data-label="Pagamento" >
 		                                            <c:out value="${pedidoRecente.descricao_status_pedido}"/>
 		                                        </td>
 	                                    </tr>

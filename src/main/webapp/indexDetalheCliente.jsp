@@ -103,10 +103,10 @@
 		<form action="ServletPimpolhos" method="post">
 			<div class="detalheClienteCabecalho row">
 			<div class="col-12 maintitleDetails">Informações Principais de  <c:out value="${cliente.nome}"/></div>
-			<div class= "col-6"> <span class="accordionInfoTitle">Id:</span> <span class="accordionInfoText"> <c:out value="${cliente.cod_cliente}"/></span> </div>
-			<div class= "col-6"> <span class="accordionInfoTitle">Cpf:</span> <span class="accordionInfoText cpf"><c:out value="${cliente.cpf}"/></span> </div>
-			<div class= "col-6"> <span class="accordionInfoTitle">Email:</span> <span class="accordionInfoText"><c:out value="${cliente.email}"/></span> </div>
-			<div class= "col-6"> <span class="accordionInfoTitle">Data de nascimento:</span><span class="accordionInfoText data"> <c:out  value="${cliente.nascimento}"/></span> </div>
+			<div class= "col-6 info-detalhe-cliente"> <span class="accordionInfoTitle">Id:</span> <span class="accordionInfoText"> <c:out value="${cliente.cod_cliente}"/></span> </div>
+			<div class= "col-6 info-detalhe-cliente"> <span class="accordionInfoTitle">Cpf:</span> <span class="accordionInfoText cpf"><c:out value="${cliente.cpf}"/></span> </div>
+			<div class= "col-6 info-detalhe-cliente"> <span class="accordionInfoTitle">Email:</span> <span class="accordionInfoText"><c:out value="${cliente.email}"/></span> </div>
+			<div class= "col-6 info-detalhe-cliente"> <span class="accordionInfoTitle">Data de nascimento:</span><span class="accordionInfoText data"> <c:out  value="${cliente.nascimento}"/></span> </div>
 
 		</form>
   </c:forEach>
