@@ -91,7 +91,7 @@
 
 	<div class="tabela">
 	<form action="ServletMarca" method="post">
-		<button class="btn btn-primary  btnPageReload" type="submit"  name="optionMarca" value="insertFormMarca"> Adicionar Marca</button>
+		<button class="btn btn-primary  btnPageReload" href="ServletMarca"  name="optionMarca" value="insertFormMarca"> Adicionar Marca</button>
     </form>
         <div class="col-md-12 col-lg-9 conteudo">
             <table class="table table-hover ">
@@ -129,7 +129,7 @@
 									      </div>
 									      <div class="modal-footer">
 									        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-									        <button class="btn btn-primary btnPageReload" type="submit" name="optionMarca" value="deleteMarca">Deletar</button>
+									        <button class="btn btn-primary btnPageReload" href="ServletMarca" name="optionMarca" value="deleteMarca">Deletar</button>
 									      </div>
 									    </div>
 									  </div>
@@ -147,7 +147,22 @@
          </div>
     </div>
     
-		
+		<!-- Begin: jQuery for Toast Message -->
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+ 	<!-- End: jQuery for Toast Message -->
+	<script type="text/javascript">
+	
+		let listSupplier = document.querySelectorAll('.tabela')
+	   	let elements = Array.from(listSupplier)
+	    console.log(elements)
+	    
+	     for (var i = 0; i < elements.length; i++) {
+		    elements[i].addEventListener('submit', function(){
+		        toastr.success('Marca excluida com sucesso!');
+		    })
+	     }
+	</script>
 	
     
 

@@ -180,7 +180,7 @@
                         <div class="input-group mb-3">
 						    <label class="form-label col-12" style="margin-right: 23px;">Preço:</label>
 						     <span class="input-group-text col-1">R$</span>
-						    <input class="form-control" type="text" name="preco" value="${produto.preco}"/><br>
+						    <input class="form-control preco2" type="text" name="preco" value="${produto.preco}"/><br>
 								</div>
 								
 								<label class="form-label" style="margin-right: 32px;">Tipo de produto:</label>
@@ -191,7 +191,7 @@
                                 </select>
 								
 								
-								<label class="form-label" style="margin-right: 32px;">Dimensão:</label><input class="form-control" type="text" name="dimensao" value="${produto.dimensao}"/>
+								<label class="form-label dimensao" style="margin-right: 32px;">Dimensão:</label><input class="form-control" type="text" name="dimensao" value="${produto.dimensao}"/>
 							    <label class="form-label" style="margin-right: 32px; margin-top:3%">Material:</label><input class="form-control" type="text" name="material" value="${produto.material}" required/>
 								
 								<div class="input-group mb-3">

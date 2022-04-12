@@ -39,23 +39,23 @@
 					</h2>
 					<br>
 					<p style="color: rgba(0, 0, 0, 0.63);">Faça seu cadastro:</p>
-					<form class="form-sign" action="ServletCadastroLogin" method="post">
+					<form class="form-sign" action="ServletCadastroLogin" method="post" id="tabela">
 
 						<div class="form-group">
 							<label>Nome Completo:</label> <input type="text" name="nome"
-								id="txtuser" value="" class="form-control">
+								id="txtuser" value="" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>Usuário:</label> <input type="text" name="usuario"
-								id="txtuser" value="" class="form-control">
+								id="txtuser" value="" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>Senha:</label> <input type="password" name="senha"
-								id="txtpass" value="" class="form-control">
+								id="txtpass" value="" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>Confirme Sua Senha:</label> <input type="password"
-								name="senha2" id="txtpass" value="" class="form-control">
+								name="senha2" id="txtpass" value="" class="form-control" required>
 						</div>
 						<%
 						if (conexao != null) {
@@ -84,7 +84,22 @@
 			</div>
 		</div>
 	</div>
-
+<!-- Begin: jQuery for Toast Message -->
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+ 	<!-- End: jQuery for Toast Message -->
+         <script type="text/javascript">
+	
+		let listSupplier = document.querySelectorAll('.tabela')
+	   	let elements = Array.from(listSupplier)
+	    console.log(elements)
+	    
+	     for (var i = 0; i < elements.length; i++) {
+		    elements[i].addEventListener('submit', function(){
+		        toastr.success('Usuario Cadastrado com Sucesso!');
+		    })
+	     }
+	</script>
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
 		crossorigin="anonymous"></script>
