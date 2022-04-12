@@ -1,8 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.sql.SQLIntegrityConstraintViolationException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,7 +32,7 @@ public class ServletMarca extends HttpServlet {
 		
 		String optionMarca = request.getParameter("optionMarca");
 		if (optionMarca == null) {
-			optionMarca = "Opção Invalida";
+			optionMarca = "Opï¿½ï¿½o Invalida";
 		}
 		switch(optionMarca) {
 			case ("insertFormMarca"):
@@ -51,6 +49,9 @@ public class ServletMarca extends HttpServlet {
 			break;
 			case ("insertMarca"):
 				insertMarca(request, response);
+			break;
+			case ("sair"):
+				sair(request, response);
 			break;
 			default:
 				selectAllMarca(request, response);
@@ -137,6 +138,8 @@ public class ServletMarca extends HttpServlet {
 		response.sendRedirect("ServletMarca");
 	}
 	
-	
+	private void sair(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		response.sendRedirect("deslogar.jsp");
+	}
 	
 }

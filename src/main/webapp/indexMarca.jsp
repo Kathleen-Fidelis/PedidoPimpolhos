@@ -9,12 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css" type="text/css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/> 
+	<link rel="icon" href="imgs/favicon.png" />
     <title>Marca</title>
 </head>
 <body>
     
-    <input type="checkbox" id="nav-toggle">
+   <input type="checkbox" id="nav-toggle">
     <div class="sidebar">
         <div class="sidebar-brand">
             <h2><span class="las "></span> <span>Pimpolhos</span></h2>
@@ -68,24 +69,35 @@
     </div>
 
 
-    <div class="main-content">
-        <div class="header-info">
-            <h2>
-                <label for="nav-toggle">
-                    <span class="las "><img src="imgs/menu-aberto (1).png" ></span>
-                </label>
-                Painel de  Controle
-            </h2>
+	   <div class="main-content">
+<div class="header-info">
+<h2>
+<label for="nav-toggle">
+<span class="las "><img src="imgs/menu-aberto (1).png" ></span>
+</label>
+Painel de Controle
+</h2>
+
+<% String usuario = (String) session.getAttribute("usuario");
+
+if(usuario == null){
+response.sendRedirect("index.jsp");
+}
+%>
+
+<div class="user-wrapper">
+<img src="imgs/carrinho.png" width="40px" height="40px" alt="">
+<div>
+<h4>Pimpolhos</h4>
+<form action="ServletMarca" method="post">
+<button type="submit" class="logout" name="optionMarca" value="sair">Sair</button>
+</form>
 
 
-            <div class="user-wrapper">
-                <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
-                <div>
-                    <h4>Pimpolhos</h4>
-                <a class="logout" href="deslogar.jsp">Sair</a>
-                </div>
-            </div>
-        </div>
+
+</div>
+</div>
+</div> 
     
     
 
@@ -167,6 +179,5 @@
     
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
 </body>
 </html>

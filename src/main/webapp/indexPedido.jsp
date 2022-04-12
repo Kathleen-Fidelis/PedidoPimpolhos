@@ -4,10 +4,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Pimpolhos ADM</title>
+<meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1, maxinum-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="imgs/favicon.png" />
+<title>Pedidos</title>
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
@@ -74,15 +76,26 @@
                 <label for="nav-toggle">
                     <span class="las "><img src="imgs/menu-aberto (1).png" ></span>
                 </label>
-                Painel de Controle
+                Painel de  Controle
             </h2>
 
+		<% String usuario = (String) session.getAttribute("usuario");
+		
+			if(usuario == null){
+				response.sendRedirect("index.jsp");
+			}
+		%>
 
             <div class="user-wrapper">
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
                 <div>
                     <h4>Pimpolhos</h4>
-               <a class="logout" href="deslogar.jsp">Sair</a>
+                    <form action="ServletPedido" method="post">
+                    	<button type="submit" class="logout" name="optionPedido" value="sair">Sair</button>
+                    </form>
+                    
+                    
+	                    
                 </div>
             </div>
         </div>
@@ -124,6 +137,7 @@
 						</c:forEach>
 					</tbody>
 				</table>
+			</div>
 		</div>
 		</div>
 	</div>

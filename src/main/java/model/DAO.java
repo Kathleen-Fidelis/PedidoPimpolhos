@@ -1,7 +1,6 @@
 package model;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -189,7 +188,7 @@ public class DAO {
 	}
 	
 	
-	//Método de conta da home
+	//Mï¿½todo de conta da home
 		public Usuario qtdClienteTotal () {	
 		Conexao c = Conexao.getInstance();
 		Connection con = c.getConnection();
@@ -275,7 +274,7 @@ public class DAO {
 //				while (r.next()) {
 //					Integer id1 = r.getInt("cod_pedido");
 //					String nomeCliente = r.getString("nome_cliente");
-//					Date data_pedido = r.getDate("data_pedido");
+//					String data_pedido = r.getString("data_pedido");
 //					Integer quantidade = r.getInt("quantidade");
 //					String frete= r.getString("descricao_frete");
 //					String valor_frete = r.getString("valor_frete");
@@ -296,7 +295,7 @@ public class DAO {
 //		}
 		
 		
-//		Detalhe do Pedido Padrão
+//		Detalhe do Pedido Padrï¿½o
 	
 		
 		
@@ -412,9 +411,9 @@ public class DAO {
 		
 		
 		
-//      Fim Detalhe Pedido Padrão
+//      Fim Detalhe Pedido PadrÃ£o
 		
-		//Método de conta da home
+		//MÃ©todo de conta da home
 			public Pedido qtdPedidoTotal () {	
 			Conexao c = Conexao.getInstance();
 			Connection con = c.getConnection();

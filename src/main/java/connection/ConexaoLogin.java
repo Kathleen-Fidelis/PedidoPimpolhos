@@ -24,7 +24,7 @@ public class ConexaoLogin {
             }
                        
         } catch (ClassNotFoundException ex){
-            System.out.printf("Driver não encontrado");
+            System.out.printf("Driver nï¿½o encontrado");
         }
         return con;
     }

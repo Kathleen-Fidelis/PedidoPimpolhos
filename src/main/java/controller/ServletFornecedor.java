@@ -49,7 +49,7 @@ public class ServletFornecedor extends HttpServlet {
 		
 		String optionFornecedor = request.getParameter("optionFornecedor");
 		if (optionFornecedor == null) {
-			optionFornecedor = "Opção Invalida";
+			optionFornecedor = "Opï¿½ï¿½o Invalida";
 		}
 		switch(optionFornecedor) {
 			case ("insertFormFornecedor"):
@@ -66,6 +66,9 @@ public class ServletFornecedor extends HttpServlet {
 			break;
 			case ("insertFornecedor"):
 				inserirFornecedor(request, response);
+			break;
+			case ("sair"):
+				sair(request, response);
 			break;
 			default:
 				selectAllFornecedores(request, response);
@@ -154,6 +157,8 @@ public class ServletFornecedor extends HttpServlet {
 		response.sendRedirect("ServletFornecedor");
 	}
 	
-	
+	private void sair(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		response.sendRedirect("deslogar.jsp");
+	}
 	
 }
