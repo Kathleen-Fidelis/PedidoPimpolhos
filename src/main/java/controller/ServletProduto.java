@@ -54,7 +54,7 @@ public class ServletProduto extends HttpServlet {
 		
 		String optionProduto = request.getParameter("optionProduto");
 		if (optionProduto == null) {
-			optionProduto = "Opção Invalida";
+			optionProduto = "Opï¿½ï¿½o Invalida";
 		}
 		switch(optionProduto) {
 			case ("insertFormProduto"):
@@ -71,6 +71,9 @@ public class ServletProduto extends HttpServlet {
 			break;
 			case ("insertProduto"):
 				insertProduto(request, response);
+			break;
+			case ("sair"):
+				sair(request, response);
 			break;
 			default:
 				selectAllProdutos(request, response);
@@ -194,5 +197,9 @@ public class ServletProduto extends HttpServlet {
 			}
 		}
 		response.sendRedirect("ServletProduto");
+	}
+	
+	private void sair(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		response.sendRedirect("deslogar.jsp");
 	}
 }

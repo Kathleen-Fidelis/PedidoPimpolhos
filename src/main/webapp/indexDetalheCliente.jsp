@@ -5,8 +5,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Pimpolhos ADM</title>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css"
 	rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css" type="text/css">
@@ -75,12 +76,23 @@
                 Painel de  Controle
             </h2>
 
+		<% String usuario = (String) session.getAttribute("usuario");
+		
+			if(usuario == null){
+				response.sendRedirect("index.jsp");
+			}
+		%>
 
             <div class="user-wrapper">
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
                 <div>
                     <h4>Pimpolhos</h4>
-                     <a class="logout" href="deslogar.jsp">Sair</a>
+                    <form action="ServletMarca" method="post">
+                    	<button type="submit" class="logout" name="optionMarca" value="sair">Sair</button>
+                    </form>
+                    
+                    
+	                    
                 </div>
             </div>
         </div>
@@ -91,10 +103,10 @@
 		<form action="ServletPimpolhos" method="post">
 			<div class="detalheClienteCabecalho row">
 			<div class="col-12 maintitleDetails">Informações Principais de  <c:out value="${cliente.nome}"/></div>
-			<div class= "col-6"> <span class="accordionInfoTitle">Id:</span> <span class="accordionInfoText"> <c:out value="${cliente.cod_cliente}"/></span> </div>
-			<div class= "col-6"> <span class="accordionInfoTitle">Cpf:</span> <span class="accordionInfoText cpf""><c:out value="${cliente.cpf}"/></span> </div>
-			<div class= "col-6"> <span class="accordionInfoTitle">Email:</span> <span class="accordionInfoText"><c:out value="${cliente.email}"/></span> </div>
-			<div class= "col-6"> <span class="accordionInfoTitle">Data de nascimento:</span><span class="accordionInfoText data"> <c:out value="${cliente.nascimento}"/></span> </div>
+			<div class= "col-6 info-detalhe-cliente"> <span class="accordionInfoTitle">Id:</span> <span class="accordionInfoText"> <c:out value="${cliente.cod_cliente}"/></span> </div>
+			<div class= "col-6 info-detalhe-cliente"> <span class="accordionInfoTitle">Cpf:</span> <span class="accordionInfoText cpf"><c:out value="${cliente.cpf}"/></span> </div>
+			<div class= "col-6 info-detalhe-cliente"> <span class="accordionInfoTitle">Email:</span> <span class="accordionInfoText"><c:out value="${cliente.email}"/></span> </div>
+			<div class= "col-6 info-detalhe-cliente"> <span class="accordionInfoTitle">Data de nascimento:</span><span class="accordionInfoText data"> <c:out  value="${cliente.nascimento}"/></span> </div>
 
 		</form>
   </c:forEach>

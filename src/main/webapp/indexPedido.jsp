@@ -5,8 +5,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Pimpolhos ADM</title>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maxinum-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="imgs/favicon.png" />
+<title>Pedidos</title>
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
@@ -73,15 +76,26 @@
                 <label for="nav-toggle">
                     <span class="las "><img src="imgs/menu-aberto (1).png" ></span>
                 </label>
-                Painel de Controle
+                Painel de  Controle
             </h2>
 
+		<% String usuario = (String) session.getAttribute("usuario");
+		
+			if(usuario == null){
+				response.sendRedirect("index.jsp");
+			}
+		%>
 
             <div class="user-wrapper">
                 <img src="imgs/carrinho.png" width="40px" height="40px" alt="">
                 <div>
                     <h4>Pimpolhos</h4>
-               <a class="logout" href="deslogar.jsp">Sair</a>
+                    <form action="ServletPedido" method="post">
+                    	<button type="submit" class="logout" name="optionPedido" value="sair">Sair</button>
+                    </form>
+                    
+                    
+	                    
                 </div>
             </div>
         </div>
@@ -92,16 +106,15 @@
 	<div class="tabela">
 
 		<div class="col-md-12 col-lg-12 conteudo">
-			<div class="table-responsive">
-				<table class="table table-hover pedidotb">
+				<table class="table table-hover">
 					<thead>
 						<tr>
-							<th style="word-wrap: break-word; min-width: 50px; max-width: 160px;">Id</th>
-							<th style="word-wrap: break-word; min-width: 130px; max-width: 160px;">Nome cliente</th>
-							<th style="word-wrap: break-word; min-width: 122px; max-width: 160px;">Data pedido</th>
-							<th style="word-wrap: break-word; min-width: 135px; max-width: 180px;">Status pedido</th>
-							<th >Valor total</th>
-							<th>Ações</th>
+							<th scope="col">ID</th>
+							<th scope="col">Nome cliente</th>
+						    <th scope="col">Data pedido</th>
+							<th scope="col">Status pedido</th>
+							<th scope="col">Valor total</th>
+							<th scope="col">Ações</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -109,16 +122,14 @@
 							<tr>
 
 								<form action="ServletPedido" method="post">
-									<td><c:out value="${pedido.cod_pedido}" /> 
+									<td data-label="ID"><c:out value="${pedido.cod_pedido}" /> 
 										<input type="hidden" name="cod_pedido" value="${pedido.cod_pedido}" />
 									</td>
-									<td><c:out value="${pedido.nome_cliente}" /></td>
-
-									<td class="data"><c:out value="${pedido.data_pedido}" /></td>
-
-									<td><c:out value="${pedido.descricao_status_pedido}" /></td>
-									<td class="preco4"><c:out value="${pedido.valor_total}" /></td>
-									<td class="tdLast">
+									<td data-label="Nome Cliente"><c:out value="${pedido.nome_cliente}" /></td>
+									<td data-label="Data do Pedido" class="data"><c:out value="${pedido.data_pedido}" /></td>
+									<td data-label="Status pedido"><c:out value="${pedido.descricao_status_pedido}" /></td>
+									<td data-label="Valor total" class="preco4"><c:out value="${pedido.valor_total}" /></td>
+									<td data-label="Ações">
 										<button class="btn btn-primary btnPageReload" type="submit" name="optionPedido" value="detalhePedido">Detalhes</button>
 									</td>
 								</form>

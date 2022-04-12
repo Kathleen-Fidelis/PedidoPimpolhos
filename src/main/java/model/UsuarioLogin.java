@@ -18,12 +18,6 @@ public class UsuarioLogin {
 		this.senha = senha;
 	}
 	
-	public UsuarioLogin(String usuario, String senha) {
-		super();
-		this.usuario = usuario;
-		this.senha = senha;
-	}
-	
 	
 	public UsuarioLogin(Integer qtdUsuario) {
 		super();

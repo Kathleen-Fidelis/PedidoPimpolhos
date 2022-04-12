@@ -47,7 +47,7 @@ public class ServletCategoria extends HttpServlet {
 		
 		String optionCategoria = request.getParameter("optionCategoria");
 		if (optionCategoria == null) {
-			optionCategoria = "Opção Invalida";
+			optionCategoria = "Opï¿½ï¿½o Invalida";
 		}
 		switch(optionCategoria) {
 			case ("insertFormCategoria"):
@@ -64,6 +64,9 @@ public class ServletCategoria extends HttpServlet {
 			break;
 			case ("insertCategoria"):
 				inserirCategoria(request, response);
+			break;
+			case ("sair"):
+				sair(request, response);
 			break;
 			default:
 				selectAllCategoria(request, response);
@@ -159,6 +162,9 @@ public class ServletCategoria extends HttpServlet {
 		response.sendRedirect("ServletCategoria");
 	}
 	
+	private void sair(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		response.sendRedirect("deslogar.jsp");
+	}
 	
 	
 }

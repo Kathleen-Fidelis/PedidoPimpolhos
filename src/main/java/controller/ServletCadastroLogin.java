@@ -58,6 +58,59 @@ public class ServletCadastroLogin extends HttpServlet {
 		}
 	}
  
+//	private void testarUsuario(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		
+//		
+//			if(request.getParameter("usuario") != null && request.getParameter("senha") != null) {
+//				String login, senha;
+//				
+//				login = request.getParameter("usuario");
+//				senha = request.getParameter("senha");
+//				
+//				dao.logar(login, senha);
+//			}
+		
+		
+		
+		
+		
+//		if (dao.conferenciaUsuario(usuarioLogin)) {
+//			response.sendRedirect("home.jsp");
+//			if(usuarioLogin != null) {
+//				HttpSession session = request.getSession(true);
+//				session.setAttribute("usuario", nomeUsuarioBack);
+//			}
+//		}else {
+//			String message="Email ou Senha inválidos";
+//			request.setAttribute("message", message);
+//			request.getRequestDispatcher("index.jsp").forward(request, response);
+//		}
+		
+		//TESTE
+//		String nomeCompletoUsuarioBack = request.getParameter("nome");
+//		String nomeUsuarioBack = request.getParameter("usuario");
+//		String senhaBack = request.getParameter("senha");
+//			
+//            if ((request.getParameter("usuario") != null) && (request.getParameter("senha") !=null)) {
+//            	if(nomeUsuarioBack.equals("usuario") && senhaBack.equals("senha")) {
+//                
+//	        		UsuarioLogin usuarioLogin = new UsuarioLogin();
+//	        		
+//	        		usuarioLogin.setNome(nomeUsuarioBack);
+//	        		usuarioLogin.setUsuario(nomeUsuarioBack);
+//	        		usuarioLogin.setSenha(senhaBack);
+//	        		
+//	        		if(dao.conferenciaUsuario(usuarioLogin)) {
+//	        			response.sendRedirect("ServletQuantidade");
+//	        		} 
+//        		
+//            	}else {
+//        			String message="Email ou Senha inválidos";
+//        			request.setAttribute("message", message);
+//        			request.getRequestDispatcher("index.jsp").forward(request, response);
+//        		}
+//            }
+//	}
 	
 	private void inserirUsuarios(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		String nomeCompletoUsuarioBack = request.getParameter("nome");
@@ -70,17 +123,10 @@ public class ServletCadastroLogin extends HttpServlet {
 				if (!nomeCompletoUsuarioBack.equals("") && !nomeUsuarioBack.equals("") && !senhaBack.equals("") && !senhaBack2.equals("")){
 					if (senhaBack.equals(senhaBack2)) {
 						System.out.print("Senha correta");
-						UsuarioLogin usuario = new UsuarioLogin(nomeCompletoUsuarioBack ,nomeUsuarioBack , senhaBack);
-						this.dao.conferencia(nomeUsuarioBack, senhaBack2);
+						UsuarioLogin usuario = new UsuarioLogin(nomeCompletoUsuarioBack ,nomeUsuarioBack , senhaBack );
+						this.dao.conferencia(nomeCompletoUsuarioBack, nomeUsuarioBack, senhaBack2);
 						this.dao.inserirUsuario(usuario);
-						
-						try { 
-							Thread.sleep(1200); 
-							} 
-						catch(InterruptedException ex){ 
-								ex.printStackTrace(); 
-							} 
-						
+					
 					}else {
 						String message="Senhas não correspondem";
 						request.setAttribute("message", message);
@@ -88,11 +134,7 @@ public class ServletCadastroLogin extends HttpServlet {
 					}
 				}
 			}
-			
 			response.sendRedirect("ServletQuantidade");
 		
 	}	
-	
-	
-	
 }

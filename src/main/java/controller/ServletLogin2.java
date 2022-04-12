@@ -43,42 +43,27 @@ public class ServletLogin2 extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		String optionLogin = request.getParameter("optionLogin");
+		String nome = request.getParameter("nome");
+		String usuario = request.getParameter("usuario");
+		String senha = request.getParameter("senha");
+
+
 		
-		if (optionLogin == null) {
-			optionLogin = "Op��o Invalida";
-		}
-		
-		//testarUsuario(request, response);
-		
-		switch(optionLogin) {
-			case ("Entrar"):
-				conferencia(request, response);
-			break;
-		}
-	}
-		
-	protected void conferencia(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			
-			String usuario = request.getParameter("usuario");
-			String senha = request.getParameter("senha");
-			
-			if(dao.conferencia(usuario, senha) != null) {
-				UsuarioLogin user = dao.conferencia(usuario, senha); 
-				request.getServletContext().setAttribute("usuario", user.getUsuario()); 
-				
-				//request.getRequestDispatcher("index.jsp").forward(request, response);
-				request.getRequestDispatcher("ServletQuantidade").forward(request, response);
-				
-			} else {
-				String message="Email ou Senha inválidos";
-				request.setAttribute("message", message);
-				request.getRequestDispatcher("index.jsp").forward(request, response);
+		usuarioLogin.setNome(nome);
+		usuarioLogin.setUsuario(usuario);
+		usuarioLogin.setSenha(senha);
+		if (dao.conferenciaUsuario(usuarioLogin)){
+			response.sendRedirect("ServletQuantidade");
+			if(usuarioLogin != null) {
+				HttpSession session = request.getSession(true);
+				session.setAttribute("usuario", usuario);
 			}
-			
+		}else {
+			String message="Email ou Senha inválidos";
+			request.setAttribute("message", message);
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+		}
 	}
-	
 	
 
 }
-
