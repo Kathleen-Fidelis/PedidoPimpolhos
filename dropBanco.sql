@@ -26,7 +26,7 @@ drop table estado;
 drop table frete;
 drop table pesquisa_satisfacao;
 drop table status_pedido;
-drop table tipo_telefone;
+-- drop table tipo_telefone;
 drop table natureza_operacao;
 drop table login;
 

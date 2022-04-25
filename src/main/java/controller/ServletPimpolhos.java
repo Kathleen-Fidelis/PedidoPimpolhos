@@ -43,7 +43,7 @@ public class ServletPimpolhos extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String option = request.getParameter("option");
 		if (option == null) {
-			option = "Opção Invalida";
+			option = "Opï¿½ï¿½o Invalida";
 	
 		}
 	switch(option) {
@@ -65,6 +65,7 @@ public class ServletPimpolhos extends HttpServlet {
 		break;
 		default:
 			selectAllUsers(request, response);
+			//paginacao(request, response);
 		}
 		
 	
@@ -94,6 +95,12 @@ public class ServletPimpolhos extends HttpServlet {
 	
 	
 
-
+//	private void paginacao(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+//		String pageid = (request.getParameter("page"));
+//		int id = Integer.parseInt(pageid);
+//		int total = 5;
+//		
+//		request.setAttribute("listUser", this.dao.getRecords(id, total));
+//	}
 	
 }

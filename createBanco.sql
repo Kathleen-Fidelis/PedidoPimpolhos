@@ -68,21 +68,22 @@ create table cliente
   unique (cpf)
 );
 
-create table tipo_telefone 
-(
- cod_tipoTelefone smallint not null auto_increment,
- descricao_telefone varchar(7) not null,
- primary key (cod_tipoTelefone)
-);
+-- create table tipo_telefone 
+-- (
+ -- cod_tipoTelefone smallint not null auto_increment,
+ -- descricao_telefone varchar(7) not null,
+ -- primary key (cod_tipoTelefone)
+-- );
 
 create table telefone 
 (
   cod_telefone smallint not null auto_increment,
   ddd varchar(3) not null,
   numero_telefone varchar(9) not null,
-  cod_tipoTelefone smallInt not null,
-  primary key (cod_telefone),
-  foreign key (cod_tipoTelefone) references tipo_telefone (cod_tipoTelefone)
+  -- cod_tipoTelefone smallInt not null,
+  descricao_telefone varchar(20) not null,
+  primary key (cod_telefone)
+  -- foreign key (cod_tipoTelefone) references tipo_telefone (cod_tipoTelefone)
 );
 
 create table cliente_telefone

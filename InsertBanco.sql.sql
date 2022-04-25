@@ -614,8 +614,8 @@ insert into frete (cod_frete , descricao_frete , valor_frete) values (1 , 'Expre
 insert into frete (cod_frete , descricao_frete , valor_frete) values (2 , 'Normal até 9 dias', 15.90);
 
 -- tipo_telefone
-insert into tipo_telefone (descricao_telefone) values ('tel');
-insert into tipo_telefone (descricao_telefone) values ('cel');
+-- insert into tipo_telefone (descricao_telefone) values ('tel');
+-- insert into tipo_telefone (descricao_telefone) values ('cel');
 
 -- ENDERECO CLIENTE
 insert into endereco_cliente (cod_cliente,cod_endereco,flag_endereco) values(1,1,1);
@@ -821,16 +821,16 @@ insert into favoritos (cod_cliente, cod_produto) values (9, 2);
 insert into favoritos (cod_cliente, cod_produto) values (10, 1);
 
 -- TELEFONE
-insert into telefone (ddd,numero_telefone ,cod_tipoTelefone) values(85,988765382,2);
-insert into telefone (ddd,numero_telefone ,cod_tipoTelefone) values(11,36863559,1);
-insert into telefone (ddd,numero_telefone ,cod_tipoTelefone) values(83,39899368,1);
-insert into telefone (ddd,numero_telefone ,cod_tipoTelefone) values(11,987113914,2);
-insert into telefone (ddd,numero_telefone ,cod_tipoTelefone) values(11,987113913,2);
-insert into telefone (ddd,numero_telefone ,cod_tipoTelefone) values(45,984622644,2);
-insert into telefone (ddd,numero_telefone ,cod_tipoTelefone) values(19,982509100,2);
-insert into telefone (ddd,numero_telefone ,cod_tipoTelefone) values(67,998515635,2);
-insert into telefone (ddd,numero_telefone ,cod_tipoTelefone) values(44,999908146,2);
-insert into telefone (ddd,numero_telefone ,cod_tipoTelefone) values(97,993969148,2);
+insert into telefone (ddd,numero_telefone ,descricao_telefone) values(85,988765382,"celular");
+insert into telefone (ddd,numero_telefone ,descricao_telefone) values(11,36863559,"telefone fixo");
+insert into telefone (ddd,numero_telefone ,descricao_telefone) values(83,39899368,"telefone fixo");
+insert into telefone (ddd,numero_telefone ,descricao_telefone) values(11,987113914,"celular");
+insert into telefone (ddd,numero_telefone ,descricao_telefone) values(11,987113913,"celular");
+insert into telefone (ddd,numero_telefone ,descricao_telefone) values(45,984622644,"celular");
+insert into telefone (ddd,numero_telefone ,descricao_telefone) values(19,982509100,"celular");
+insert into telefone (ddd,numero_telefone ,descricao_telefone) values(67,998515635,"celular");
+insert into telefone (ddd,numero_telefone ,descricao_telefone) values(44,999908146,"celular");
+insert into telefone (ddd,numero_telefone ,descricao_telefone) values(97,993969148,"celular");
 
 -- TELEFONE CLIENTE
 insert into cliente_telefone (cod_cliente, cod_telefone) values (1, 10);
@@ -1044,10 +1044,10 @@ select cliente.cod_cliente ,cliente.nome_cliente, cliente.cpf,cliente.data_nasc 
 
 
 -- detalhe cliente
-select cliente.cod_cliente ,cliente.nome_cliente, cliente.cpf,cliente.data_nasc ,cliente.email, e.nome_rua, e.numero_casa,e.bairro,e.complemento,e.ponto_referencia, e.cep , e.nome_cidade,e2.descricao_estado,c.nome_titular,b.descricao_bandeira,t.ddd,t.numero_telefone,tt.descricao_telefone from cliente 
+select cliente.cod_cliente ,cliente.nome_cliente, cliente.cpf,cliente.data_nasc ,cliente.email, e.nome_rua, e.numero_casa,e.bairro,e.complemento,e.ponto_referencia, e.cep , e.nome_cidade,e2.descricao_estado,c.nome_titular,b.descricao_bandeira,t.ddd,t.numero_telefone,t.descricao_telefone from cliente 
 inner join cliente_telefone ct ON ct.cod_cliente = cliente.cod_cliente 
 inner join telefone t on t.cod_telefone = ct.cod_telefone 
-inner join tipo_telefone tt on tt.cod_tipoTelefone = t.cod_tipoTelefone 
+-- inner join tipo_telefone tt on tt.cod_tipoTelefone = t.cod_tipoTelefone 
 inner join cartao c on c.cod_cliente = cliente.cod_cliente 
 inner join bandeira b on b.cod_bandeira = c.cod_bandeira 
 inner join endereco_cliente ec on ec.cod_cliente = cliente.cod_cliente
@@ -1132,7 +1132,8 @@ select * from produto;
 select * from cliente;
 select * from marca;
 select * from fornecedor;
-
+select * from telefone;
+select * from cliente_telefone;
 
 
 

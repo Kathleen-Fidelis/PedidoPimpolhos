@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class DAO {
 
@@ -83,10 +84,9 @@ public class DAO {
 		Usuario detalhes = null;
 		ArrayList<Usuario> listDetalhesTelefone = new ArrayList<Usuario>();
 		try {
-			PreparedStatement p = con.prepareStatement("select c.cod_cliente,t.ddd ,t.numero_telefone ,tt.descricao_telefone from telefone t \r\n"
+			PreparedStatement p = con.prepareStatement("select c.cod_cliente,t.ddd ,t.numero_telefone ,t.descricao_telefone from telefone t \r\n"
 					+ "inner join cliente_telefone ct on ct.cod_telefone = t.cod_telefone \r\n"
 					+ "inner join cliente c on c.cod_cliente = ct.cod_cliente \r\n"
-					+ "inner join tipo_telefone tt on tt.cod_tipoTelefone = t.cod_tipoTelefone \r\n"
 					+ "where c.cod_cliente = ?");
 			p.setInt(1, id);
 			ResultSet r = p.executeQuery();			
@@ -96,9 +96,9 @@ public class DAO {
 				 Integer cliente = r.getInt("cod_cliente");
 			     String ddd = r.getString("ddd");
 			     String telefone = r.getString("numero_telefone");
-			     String tipotelefone = r.getString("descricao_telefone");
+			     String descricaotelefone = r.getString("descricao_telefone");
 			     
-			     Usuario detalheclienteT = new Usuario(cliente, ddd, telefone, tipotelefone);
+			     Usuario detalheclienteT = new Usuario(cliente, ddd, telefone, descricaotelefone);
 			     detalheclienteT.setCod_cliente(cliente);
 			     listDetalhesTelefone.add(detalheclienteT);
 			}
@@ -218,6 +218,44 @@ public class DAO {
 		}	
 	
 	
+		
+		
+		
+		
+		public static List<Usuario> getRecords(int start, int total){
+			List<Usuario> list = new ArrayList<Usuario>();
+			
+			try {
+				Conexao c = Conexao.getInstance();
+				Connection con = c.getConnection();
+				PreparedStatement p = con.prepareStatement("select * from LIMIT " + (start) + ", " + total);
+				ResultSet r = p.executeQuery();	
+				
+				while (r.next()) {
+					Integer id = r.getInt("cod_cliente");
+					String nome = r.getString("nome_cliente");
+					String cpf = r.getString("cpf");
+					String data = r.getString("data_nasc");
+					String email = r.getString("email");
+					Usuario usuario = new Usuario(nome, cpf, data, email);
+					usuario.setCod_cliente(id);
+					list.add(usuario);
+				}
+				r.close();
+				p.close();
+				con.close();
+			}catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return list;
+		}
+		
+		
+		
+		
+		
+		
 	
 	
 //---------- PEDIDO ------------------------------------------------------------------
